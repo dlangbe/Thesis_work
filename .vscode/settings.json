@@ -1,0 +1,10 @@
+{
+    "cmake.configureOnOpen": true,
+    "cmake.cmakePath": "E:\\Program Files\\CMake\\bin\\cmake.exe",
+    "cmake.mingwSearchDirs": [
+        "E:\\MinGW"
+    ],
+    "cmake.generator": "MinGW Makefiles",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "cmake.sourceDirectory": "${workspaceFolder}/Layers",
+}
