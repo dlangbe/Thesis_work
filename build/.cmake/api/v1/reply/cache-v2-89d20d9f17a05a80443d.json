@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/Documents/Research/Palmetto/NIWC-Clemson/build"
+			"value" : "d:/Documents/Research/Thesis_work/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/Documents/Research/Palmetto/NIWC-Clemson/Layers"
+			"value" : "D:/Documents/Research/Thesis_work/Layers"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1267,7 +1267,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Documents/Research/Palmetto/NIWC-Clemson/build"
+			"value" : "D:/Documents/Research/Thesis_work/build"
 		},
 		{
 			"name" : "Layers_SOURCE_DIR",
@@ -1279,7 +1279,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Documents/Research/Palmetto/NIWC-Clemson/Layers"
+			"value" : "D:/Documents/Research/Thesis_work/Layers"
 		}
 	],
 	"kind" : "cache",

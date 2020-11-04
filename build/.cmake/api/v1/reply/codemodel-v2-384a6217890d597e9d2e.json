@@ -38,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Layers::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Layers-Debug-5d13323eed01e5c7fcc5.json",
+					"jsonFile" : "target-Layers-Debug-af9636c97ae79496db75.json",
 					"name" : "Layers",
 					"projectIndex" : 0
 				}
@@ -48,8 +48,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Documents/Research/Palmetto/NIWC-Clemson/build",
-		"source" : "D:/Documents/Research/Palmetto/NIWC-Clemson/Layers"
+		"build" : "D:/Documents/Research/Thesis_work/build",
+		"source" : "D:/Documents/Research/Thesis_work/Layers"
 	},
 	"version" : 
 	{

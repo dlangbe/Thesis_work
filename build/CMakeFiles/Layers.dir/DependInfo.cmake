@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Documents/Research/Palmetto/NIWC-Clemson/Layers/CNN.cpp" "D:/Documents/Research/Palmetto/NIWC-Clemson/build/CMakeFiles/Layers.dir/CNN.cpp.obj"
-  "D:/Documents/Research/Palmetto/NIWC-Clemson/Layers/layers.cpp" "D:/Documents/Research/Palmetto/NIWC-Clemson/build/CMakeFiles/Layers.dir/layers.cpp.obj"
+  "D:/Documents/Research/Thesis_work/Layers/CNN.cpp" "D:/Documents/Research/Thesis_work/build/CMakeFiles/Layers.dir/CNN.cpp.obj"
+  "D:/Documents/Research/Thesis_work/Layers/layers.cpp" "D:/Documents/Research/Thesis_work/build/CMakeFiles/Layers.dir/layers.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "D:/Documents/Research/Palmetto/NIWC-Clemson/Layers/."
+  "D:/Documents/Research/Thesis_work/Layers/."
   )
 
 # Targets to which this target links.

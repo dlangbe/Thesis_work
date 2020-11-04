@@ -1,12 +1,12 @@
 [
 {
-  "directory": "D:/Documents/Research/Palmetto/NIWC-Clemson/build",
-  "command": "E:\\MinGW\\bin\\g++.exe  @CMakeFiles/Layers.dir/includes_CXX.rsp -std=c++14 -g -I -O3 -Wall -Wextra -g -o CMakeFiles\\Layers.dir\\layers.cpp.obj -c D:\\Documents\\Research\\Palmetto\\NIWC-Clemson\\Layers\\layers.cpp",
-  "file": "D:/Documents/Research/Palmetto/NIWC-Clemson/Layers/layers.cpp"
+  "directory": "D:/Documents/Research/Thesis_work/build",
+  "command": "E:\\MinGW\\bin\\g++.exe  @CMakeFiles/Layers.dir/includes_CXX.rsp -std=c++14 -g -I -O3 -Wall -Wextra -g -o CMakeFiles\\Layers.dir\\layers.cpp.obj -c D:\\Documents\\Research\\Thesis_work\\Layers\\layers.cpp",
+  "file": "D:/Documents/Research/Thesis_work/Layers/layers.cpp"
 },
 {
-  "directory": "D:/Documents/Research/Palmetto/NIWC-Clemson/build",
-  "command": "E:\\MinGW\\bin\\g++.exe  @CMakeFiles/Layers.dir/includes_CXX.rsp -std=c++14 -g -I -O3 -Wall -Wextra -g -o CMakeFiles\\Layers.dir\\CNN.cpp.obj -c D:\\Documents\\Research\\Palmetto\\NIWC-Clemson\\Layers\\CNN.cpp",
-  "file": "D:/Documents/Research/Palmetto/NIWC-Clemson/Layers/CNN.cpp"
+  "directory": "D:/Documents/Research/Thesis_work/build",
+  "command": "E:\\MinGW\\bin\\g++.exe  @CMakeFiles/Layers.dir/includes_CXX.rsp -std=c++14 -g -I -O3 -Wall -Wextra -g -o CMakeFiles\\Layers.dir\\CNN.cpp.obj -c D:\\Documents\\Research\\Thesis_work\\Layers\\CNN.cpp",
+  "file": "D:/Documents/Research/Thesis_work/Layers/CNN.cpp"
 }
 ]
