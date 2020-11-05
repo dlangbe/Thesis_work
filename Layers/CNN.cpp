@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <cstdio>
-#include <cstdlib>
+//#include <cstdlib>
 #include <time.h>
 #include <math.h>
 #include "layers.hpp"
 #include <fstream>
+#include <chrono>
 
 int main(void) {
     FILE *fpt1, *fpt2, *fpt3;
@@ -121,6 +122,8 @@ int main(void) {
 
     for (int epoch = 0; epoch < num_epochs; epoch++) {
         printf("--- Epoch %d ---\n", epoch+1);
+        auto epoch_start = std::chrono::high_resolution_clock::now();
+
         for (i = 0; i < num_train; i++) {
             if (i > 0 && i % per_print == (per_print-1)) {
                 printf("step %d: past %d steps avg loss: %.3f | accuracy: %.3f\n", i+1, per_print,
@@ -146,7 +149,23 @@ int main(void) {
             num_correct += *accuracy_p;
 
         }
-        //printf("Epoch completed in: %.3f seconds\n", ((double) (end_t - start_t) / CLOCKS_PER_SEC));
+
+        auto epoch_end = std::chrono::high_resolution_clock::now();
+        double epoch_duration = std::chrono::duration_cast<std::chrono::nanoseconds>(epoch_end-epoch_start).count()/1000000000.0;
+        printf("Epoch completed in: %.6lf seconds\n", epoch_duration);
+        printf("\tConv_forward: %.6lf sec, Maxpool_forward: %.6lf sec, Softmax_forward: %.6lf sec\n",
+        conv.get_duration(true), avgpool.get_duration(true), softmax.get_duration(true));
+        printf("\tConv_backward: %.6lf sec, Maxpool_backward: %.6lf sec, Softmax_backward: %.6lf sec\n\n",
+        conv.get_duration(false), avgpool.get_duration(false), softmax.get_duration(false));
+
+        // reset times
+        epoch_duration = 0.0;
+        conv.update_duration(0.0, true);
+        conv.update_duration(0.0, false);
+        avgpool.update_duration(0.0, true);
+        avgpool.update_duration(0.0, false);
+        softmax.update_duration(0.0, true);
+        softmax.update_duration(0.0, false);
     }
 
     /************************************************ testing ************************************************/
@@ -158,7 +177,7 @@ int main(void) {
     *accuracy_p = 0.0;
 
     printf("\nTesting:\n");
-    //test_start = clock();
+    auto test_start = std::chrono::high_resolution_clock::now();
 
     for (i = num_train; i < num_images; i++) {
         // re-initialize totals for each image
@@ -182,10 +201,9 @@ int main(void) {
         free(totals);
     }
 
-    //test_finish = clock();
-    //printf("Testing completed in %.6lf seconds\n", ((double) (test_finish - test_start)/CLOCKS_PER_SEC));
-
-
+    auto test_end = std::chrono::high_resolution_clock::now();
+    double test_duration = std::chrono::duration_cast<std::chrono::nanoseconds>(test_end-test_start).count()/1000000000.0;
+    printf("Testing completed in: %.6lf seconds\n", test_duration);
 
     return 0;
 }

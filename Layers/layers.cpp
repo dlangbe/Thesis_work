@@ -23,6 +23,12 @@ Conv_layer::Conv_layer(int in_rows, int in_cols, int in_num_filters, int in_filt
     learn_rate = in_learn_rate;
 }
 
+void Conv_layer::update_duration(double t, bool forward) {
+    if (forward) t_forward += t / 1000000000.0;
+    else t_back += t / 1000000000.0;
+    return;
+}
+
 void Conv_layer::forward(float *dest, float *image, float *filters) {
     int r, c, n, i, j;
 
@@ -120,6 +126,12 @@ Maxpool_layer::Maxpool_layer(int in_rows, int in_cols, int in_num_filters) {
     num_filters = in_num_filters;
 }
 
+void Maxpool_layer::update_duration(double t, bool forward) {
+    if (forward) t_forward += t / 1000000000.0;
+    else t_back += t / 1000000000.0;
+    return;
+}
+
 void Maxpool_layer::forward(float *dest, float *input) {
     int r, c, n, i, j;
     float holder;
@@ -182,6 +194,12 @@ Avgpool_layer::Avgpool_layer(int in_rows, int in_cols, int in_num_filters) {
     rows = in_rows;
     cols = in_cols;
     num_filters = in_num_filters;
+}
+
+void Avgpool_layer::update_duration(double t, bool forward) {
+    if (forward) t_forward += t / 1000000000.0;
+    else t_back += t / 1000000000.0;
+    return;
 }
 
 void Avgpool_layer::forward(float *dest, float *input) {
@@ -248,6 +266,12 @@ Softmax_layer::Softmax_layer(int in_in_length, int in_out_length, float in_learn
     learn_rate = in_learn_rate;
     exp_holder = (float *) calloc(out_length, sizeof(float));
     //sum = 0.0;
+}
+
+void Softmax_layer::update_duration(double t, bool forward) {
+    if (forward) t_forward += t / 1000000000.0;
+    else t_back += t / 1000000000.0;
+    return;
 }
 
 void Softmax_layer::forward(float *dest, float *input, float *totals, float *weight, float *bias) {
@@ -472,6 +496,7 @@ void forward2(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, 
 
     int rows, cols, num_filters, filter_size;
     float learn_rate;
+    double duration;
     conv.get_parameters(&rows, &cols, &num_filters, &filter_size, &learn_rate);
 
     // allocate memory
@@ -489,10 +514,23 @@ void forward2(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, 
     }
 
     // link forward layers
-
+    auto t_start = std::chrono::high_resolution_clock::now();
     conv.forward(conv_out, temp_image, filters);
+    auto t_end = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
+    conv.update_duration(duration, true);
+
+    t_start = std::chrono::high_resolution_clock::now();
     avgpool.forward(pool_out, conv_out);
+    t_end = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
+    avgpool.update_duration(duration, true);
+
+    t_start = std::chrono::high_resolution_clock::now();
     softmax.forward(out, pool_out, totals, soft_weight, soft_bias);
+    t_end = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
+    softmax.update_duration(duration, true);
 
     int i;
     for (i = 0; i < (rows-2)*(cols-2)*num_filters; i++) {
@@ -624,6 +662,7 @@ void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, in
 
     int rows, cols, num_filters, filter_size;
     float learn_rate;
+    double duration;
     conv.get_parameters(&rows, &cols, &num_filters, &filter_size, &learn_rate);
 
     // allocate arrays that need to be re-initialized for each image
@@ -696,9 +735,23 @@ void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, in
     // fout.open("D:/Documents/Research/Palmetto/NIWC-Clemson/Layers/test_print.txt");
 
     // link backward layers
+    auto t_start = std::chrono::high_resolution_clock::now();
     softmax.sback(ssoft_out, sgrad, slast_soft_input, ssoft_weight, ssoft_bias);
+    auto t_end = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
+    softmax.update_duration(duration, false);
+
+    t_start = std::chrono::high_resolution_clock::now();
     avgpool.sback(spool_out, ssoft_out);
+    t_end = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
+    avgpool.update_duration(duration, false);
+
+    t_start = std::chrono::high_resolution_clock::now();
     conv.sback(sfilters, spool_out, stemp_image);
+    t_end = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
+    conv.update_duration(duration, false);
 
     // for (int i = 0; i < 13*13*num_filters; i++)
     //     fout << i << '\t' << ssoft_out[i].reconstruct() << '\n';

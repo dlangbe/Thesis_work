@@ -1,8 +1,12 @@
 #include "secure_float.hpp"
+#include <chrono>
+
 class Conv_layer {
     private:
         int rows, cols, num_filters, filter_size;
         float learn_rate;
+        double t_forward = 0.0;
+        double t_back = 0.0;
 
     public:
         Conv_layer(int in_rows, int in_cols, int in_num_filters, int in_filter_size, float in_learn_rate);
@@ -11,22 +15,31 @@ class Conv_layer {
         void forward(float *dest, float *image, float *filters);
         void back(float *dest, float *gradient, float *last_input);
         void sback(sfloat *dest, sfloat *gradient,  sfloat *last_input);
+        void update_duration(double t, bool forward);
+        double get_duration(bool forward) {return forward ? t_forward : t_back;}
 };
 
 class Maxpool_layer {
     private:
         int rows, cols, num_filters;
+        double duration;
+        double t_forward = 0.0;
+        double t_back = 0.0;
 
     public:
         Maxpool_layer(int in_rows, int in_cols, int in_num_filters);
         Maxpool_layer();
         void forward(float *dest, float *input);
         void back(float *dest, float *gradient, float *last_input);
+        void update_duration(double t, bool forward);
+        double get_duration(bool forward) {return forward ? t_forward : t_back;}
 };
 
 class Avgpool_layer {
     private:
         int rows, cols, num_filters;
+        double t_forward = 0.0;
+        double t_back = 0.0;
 
     public:
         Avgpool_layer(int in_rows, int in_cols, int in_num_filters);
@@ -34,6 +47,8 @@ class Avgpool_layer {
         void forward(float *dest, float *input);
         void back(float *dest, float *gradient);
         void sback(sfloat *dest, sfloat *gradient);
+        void update_duration(double t, bool forward);
+        double get_duration(bool forward) {return forward ? t_forward : t_back;}
 };
 
 class Softmax_layer {
@@ -41,6 +56,8 @@ class Softmax_layer {
         int in_length, out_length;
         float learn_rate, sum;
         float *exp_holder;
+        double t_forward = 0.0;
+        double t_back = 0.0;
     
     public:
         Softmax_layer(int in_in_length, int in_out_length, float in_learn_rate);
@@ -48,6 +65,8 @@ class Softmax_layer {
         void forward(float *dest, float *input, float *totals, float *weight, float *bias);
         void back(float *dest, float *gradient, float *last_input, float *totals, float *weights, float *bias);
         void sback(sfloat *dest, sfloat *gradient, sfloat *last_input, sfloat *weights, sfloat *bias);
+        void update_duration(double t, bool forward);
+        double get_duration(bool forward) {return forward ? t_forward : t_back;}
         
 };
 
