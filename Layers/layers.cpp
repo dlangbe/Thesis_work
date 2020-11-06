@@ -1,11 +1,4 @@
-#include <stdlib.h>
-#include <math.h>
-#include <stdio.h>
-#include <cstdlib>
-#include <cstdio>
-#include <fstream>
 #include "layers.hpp"
-
 
 void Conv_layer::get_parameters(int *r, int *c, int *num, int *size, float *learn) {
     *r = rows;

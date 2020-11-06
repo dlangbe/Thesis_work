@@ -195,6 +195,33 @@ layers.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Layers.dir\build.make CMakeFiles/Layers.dir/layers.cpp.s
 .PHONY : layers.cpp.s
 
+networks.obj: networks.cpp.obj
+
+.PHONY : networks.obj
+
+# target to build an object file
+networks.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Layers.dir\build.make CMakeFiles/Layers.dir/networks.cpp.obj
+.PHONY : networks.cpp.obj
+
+networks.i: networks.cpp.i
+
+.PHONY : networks.i
+
+# target to preprocess a source file
+networks.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Layers.dir\build.make CMakeFiles/Layers.dir/networks.cpp.i
+.PHONY : networks.cpp.i
+
+networks.s: networks.cpp.s
+
+.PHONY : networks.s
+
+# target to generate assembly for a file
+networks.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Layers.dir\build.make CMakeFiles/Layers.dir/networks.cpp.s
+.PHONY : networks.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -210,6 +237,9 @@ help:
 	@echo ... layers.obj
 	@echo ... layers.i
 	@echo ... layers.s
+	@echo ... networks.obj
+	@echo ... networks.i
+	@echo ... networks.s
 .PHONY : help
 
 

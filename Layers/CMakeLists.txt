@@ -8,6 +8,8 @@ set(CMAKE_CXX_FLAGS "-std=c++14 -g -I -O3 -Wall -Wextra")
 
 add_executable(Layers layers.hpp
                         layers.cpp
+                        networks.hpp
+                        networks.cpp
                         secure_float.hpp
                         CNN.cpp)
 

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Layers.dir/CNN.cpp.obj"
   "CMakeFiles/Layers.dir/layers.cpp.obj"
+  "CMakeFiles/Layers.dir/networks.cpp.obj"
   "Layers.exe"
   "Layers.exe.manifest"
   "Layers.pdb"

@@ -8,6 +8,8 @@
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.sourceDirectory": "${workspaceFolder}/Layers",
     "files.associations": {
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "new": "cpp"
     },
+    "editor.smoothScrolling": true,
 }

@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Documents/Research/Thesis_work/Layers/CNN.cpp" "D:/Documents/Research/Thesis_work/build/CMakeFiles/Layers.dir/CNN.cpp.obj"
   "D:/Documents/Research/Thesis_work/Layers/layers.cpp" "D:/Documents/Research/Thesis_work/build/CMakeFiles/Layers.dir/layers.cpp.obj"
+  "D:/Documents/Research/Thesis_work/Layers/networks.cpp" "D:/Documents/Research/Thesis_work/build/CMakeFiles/Layers.dir/networks.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

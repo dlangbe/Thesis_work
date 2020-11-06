@@ -1,4 +1,10 @@
 #include "secure_float.hpp"
+#include <stdlib.h>
+#include <math.h>
+#include <stdio.h>
+#include <cstdlib>
+#include <cstdio>
+#include <fstream>
 #include <chrono>
 
 class Conv_layer {
