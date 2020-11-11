@@ -17,13 +17,15 @@ int main(void) {
     int i, j;
 
     // hyperparameters
-    int num_images = 1200;
-    int num_train = 1000;
+    int num_images = 12000;
+    int num_train = 10000;
     float learning_rate = 0.005;
-    int per_print = 100;
+    int per_print = 1000;
     int num_epochs = 1;
     int num_filters = 8;
     int filter_size = 3;
+    int num_nodes = 2;
+    int batch_size = 100;
 
     /************************************************ allocate memory ************************************************/
 
@@ -50,13 +52,13 @@ int main(void) {
     for (i = 0; i < num_images; i++) {
         fscanf(fpt3, "%d\n", &labels[i]);
         for (j = 0; j < 28*28; j++) {
-            if (i < num_images / 2)
+            if (i < 30000)
                 fscanf(fpt1, "%d,", &images[i][j]);
             else
                 fscanf(fpt2, "%d,", &images[i][j]);
             
         }
-        if (i < num_images / 2)
+        if (i < 30000)
                 fscanf(fpt1, "%c", &throwaway);
         else
             fscanf(fpt2, "%c", &throwaway);              
@@ -93,8 +95,11 @@ int main(void) {
         soft_bias_init[i] = 0.0;
     }
 
-    run_CNN(images, labels, num_images, num_train, learning_rate, per_print, num_epochs, num_filters, filter_size, 
-        filters_init, soft_weight_init, soft_bias_init);
+    // run_CNN(images, labels, num_images, num_train, learning_rate, per_print, num_epochs, num_filters, filter_size, 
+    //     filters_init, soft_weight_init, soft_bias_init);
+
+    run_FedAvg(images, labels, num_images, num_train, learning_rate, per_print, num_epochs, num_filters, filter_size, 
+        filters_init, soft_weight_init, soft_bias_init, num_nodes, batch_size);
 
     /************************************************ initialize layers ************************************************/
 
@@ -137,17 +142,17 @@ int main(void) {
     //         }
     //         //printf("Label: %d\n", labels[i]);
 
-    //         // train(conv, maxpool, softmax, images[i], filters_init, labels[i], loss_p, accuracy_p,
-    //         //         soft_weight_init, soft_bias_init, out, soft_out,
-    //         //         last_pool_input, last_soft_input);
+    //         train(conv, maxpool, softmax, images[i], filters_init, labels[i], loss_p, accuracy_p,
+    //                 soft_weight_init, soft_bias_init, out, soft_out,
+    //                 last_pool_input, last_soft_input);
 
     //         // train2(conv, avgpool, softmax, images[i], filters_init, labels[i], loss_p, accuracy_p,
     //         //         soft_weight_init, soft_bias_init, out, soft_out,
     //         //         last_pool_input, last_soft_input);
 
-    //         strain(conv, avgpool, softmax, images[i], filters_init, labels[i], loss_p, accuracy_p,
-    //                 soft_weight_init, soft_bias_init, out, soft_out,
-    //                 last_pool_input, last_soft_input);
+    //         // strain(conv, avgpool, softmax, images[i], filters_init, labels[i], loss_p, accuracy_p,
+    //         //         soft_weight_init, soft_bias_init, out, soft_out,
+    //         //         last_pool_input, last_soft_input);
 
     //         total_loss += *loss_p;
     //         num_correct += *accuracy_p;
@@ -188,11 +193,11 @@ int main(void) {
     //     float *totals;
     //     totals = (float *) calloc(10, sizeof(float));
 
-    //     // forward(images[i], filters_init, labels[i], out, loss_p, accuracy_p, 28, 28, 8, 3, last_pool_input,
-    //     //     last_soft_input, totals, soft_weight_init, soft_bias_init);
+    //     forward(conv, maxpool, softmax, images[i], filters_init, labels[i], out, loss_p, accuracy_p, last_pool_input,
+    //         last_soft_input, totals, soft_weight_init, soft_bias_init);
 
-    //     forward2(conv, avgpool, softmax, images[i], filters_init, labels[i], out, loss_p, accuracy_p,
-    //         last_pool_input, last_soft_input, totals, soft_weight_init, soft_bias_init);
+    //     // forward2(conv, avgpool, softmax, images[i], filters_init, labels[i], out, loss_p, accuracy_p,
+    //     //     last_pool_input, last_soft_input, totals, soft_weight_init, soft_bias_init);
 
     //     total_loss += *loss_p;
     //     num_correct += *accuracy_p;

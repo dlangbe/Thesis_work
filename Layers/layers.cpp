@@ -637,9 +637,23 @@ void train2(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, in
 
     // link backward layers
 
+    auto t_start = std::chrono::high_resolution_clock::now();
     softmax.back(soft_out, grad, last_soft_input, totals, soft_weight, soft_bias);
+    auto t_end = std::chrono::high_resolution_clock::now();
+    double duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
+    softmax.update_duration(duration, false);
+
+    t_start = std::chrono::high_resolution_clock::now();
     avgpool.back(pool_out, soft_out);
+    t_end = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
+    avgpool.update_duration(duration, false);
+
+    t_start = std::chrono::high_resolution_clock::now();
     conv.back(filters, pool_out, temp_image);
+    t_end = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
+    conv.update_duration(duration, false);
 
 
     free(temp_image);
