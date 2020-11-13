@@ -17,8 +17,8 @@ int main(void) {
     int i, j;
 
     // hyperparameters
-    int num_images = 12000;
-    int num_train = 10000;
+    int num_images = 60000;
+    int num_train = 50000;
     float learning_rate = 0.005;
     int per_print = 1000;
     int num_epochs = 1;

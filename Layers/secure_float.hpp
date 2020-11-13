@@ -215,6 +215,11 @@ class sfloat {
             return ret;
         }
 
+        sfloat operator /= (float obj) {
+            *this = *this / obj;
+            return *this;
+        }
+
         bool operator != (sfloat &obj) {
             if (v == obj.v && p == obj.p && s == obj.s && z == obj.z) return false;
             return true;
