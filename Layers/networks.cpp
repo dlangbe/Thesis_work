@@ -330,7 +330,7 @@ void run_FedAvg(int **images, int *labels, int num_images, int num_train, float 
                     i % batch_size == 0) {
                     //printf("\n\n\tHERE\n");
                     auto average_start = std::chrono::high_resolution_clock::now();
-                    saverage_weights(filters, soft_weights, soft_biases, num_filters, filter_size, num_nodes);
+                    average_weights(filters, soft_weights, soft_biases, num_filters, filter_size, num_nodes);
                     auto average_end = std::chrono::high_resolution_clock::now();
                     average_duration += std::chrono::duration_cast<std::chrono::nanoseconds>(average_end-average_start).count()/1000000000.0;
                 }
@@ -532,6 +532,7 @@ void run_sFedAvg(int **images, int *labels, int num_images, int num_train, float
         auto epoch_end = std::chrono::high_resolution_clock::now();
         double epoch_duration = std::chrono::duration_cast<std::chrono::nanoseconds>(epoch_end-epoch_start).count()/1000000000.0;
         printf("Epoch completed in: %.6lf seconds\n", epoch_duration);
+        printf("Federated Averaging completed in: %.6lf seconds\n\n", average_duration);
 
         // reset times
         for (int n = 0; n < num_nodes; n++) {

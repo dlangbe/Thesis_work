@@ -24,7 +24,7 @@ int main(void) {
     int num_epochs = 1;
     int num_filters = 8;
     int filter_size = 3;
-    int num_nodes = 2;
+    int num_nodes = 16;
     int batch_size = 100;
 
     /************************************************ allocate memory ************************************************/
@@ -95,11 +95,13 @@ int main(void) {
         soft_bias_init[i] = 0.0;
     }
 
+    sfloat test(0.15625);
+    test.print_values();
     // run_CNN(images, labels, num_images, num_train, learning_rate, per_print, num_epochs, num_filters, filter_size, 
     //     filters_init, soft_weight_init, soft_bias_init);
 
-    run_FedAvg(images, labels, num_images, num_train, learning_rate, per_print, num_epochs, num_filters, filter_size, 
-        filters_init, soft_weight_init, soft_bias_init, num_nodes, batch_size);
+    // run_FedAvg(images, labels, num_images, num_train, learning_rate, per_print, num_epochs, num_filters, filter_size, 
+    //     filters_init, soft_weight_init, soft_bias_init, num_nodes, batch_size);
 
     /************************************************ initialize layers ************************************************/
 
