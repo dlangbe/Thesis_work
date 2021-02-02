@@ -8,16 +8,23 @@
 #include <chrono>
 #include "layers.hpp"
 #include "networks.hpp"
+#include <fstream>
 
 int main(void) {
-    FILE *fpt1, *fpt2, *fpt3;
+    FILE **files;
+    FILE *fpt1;
     // if (fout.is_open()) printf("Is open\n");
-    int **images, *labels;
-    unsigned char throwaway;
+    RGB **images;
+    unsigned char *labels;
     int i, j;
+    int z;
 
     // hyperparameters
     int num_images = 60000;
+    int images_per_file = num_images / 6;
+    int img_size = 32;
+    int soft_size = (img_size - 2) / 2;
+    int num_classes = 10;
     int num_train = 50000;
     float learning_rate = 0.005;
     int per_print = 1000;
@@ -27,76 +34,103 @@ int main(void) {
     int num_nodes = 16;
     int batch_size = 100;
 
+    std::srand(1);
+
     /************************************************ allocate memory ************************************************/
 
     // allocate image and label arrays
-    images = (int **) calloc(num_images, sizeof(int *));
+    images = (RGB **) calloc(num_images, sizeof(RGB *));
     for (i = 0; i < num_images; i++) {
-        images[i] = (int *) calloc(28*28, sizeof(int));
+        images[i] = (RGB *) calloc(img_size*img_size, sizeof(RGB));
     }
-    labels = (int *) calloc(num_images, sizeof(int));
+    labels = (unsigned char *) calloc(num_images, sizeof(unsigned char));
+
+    // allocate files
+    files = (FILE **) calloc(6, sizeof(FILE *));
+    //std::ifstream files[6];
 
     // read in images and labels
     printf("** Reading images and labels **\n");
-    fpt1 = std::fopen("mnist_images_first.txt", "rb");
-    fpt2 = std::fopen("mnist_images_second.txt", "rb");
-    fpt3 = std::fopen("mnist_labels_full.txt", "rb");
-    if (fpt1 == NULL || fpt2 == NULL) {
-        printf("Image file == NULL\n");
-        perror("fopen");
-    } 
-    if (fpt3 == NULL) {
-        printf("Label file == NULL\n");
-        perror("fopen");
-    }
-    for (i = 0; i < num_images; i++) {
-        fscanf(fpt3, "%d\n", &labels[i]);
-        for (j = 0; j < 28*28; j++) {
-            if (i < 30000)
-                fscanf(fpt1, "%d,", &images[i][j]);
-            else
-                fscanf(fpt2, "%d,", &images[i][j]);
-            
+    files[0] = std::fopen("data_batch_1.bin", "rb");
+    files[1] = std::fopen("data_batch_2.bin", "rb");
+    files[2] = std::fopen("data_batch_3.bin", "rb");
+    files[3] = std::fopen("data_batch_4.bin", "rb");
+    files[4] = std::fopen("data_batch_5.bin", "rb");
+    files[5] = std::fopen("test_batch.bin", "rb");
+
+    unsigned char buffer[(1024*3) + 1];
+    for (int f = 0; f < 5; f++) {
+        if (files[f] == NULL) {
+            printf("data_batch_%d == NULL\n", i);
+            perror("fopen");
         }
-        if (i < 30000)
-                fscanf(fpt1, "%c", &throwaway);
-        else
-            fscanf(fpt2, "%c", &throwaway);              
+
+        for (i = f * images_per_file; i < f * images_per_file + images_per_file; i++) {
+            fread(&buffer, sizeof(unsigned char), (1024*3) + 1, files[f]);
+            labels[i] = buffer[0];
+
+            for (j = 0; j < img_size*img_size; j++) {
+                images[i][j].r = buffer[j+1];
+                images[i][j].g = buffer[j+1024+1];
+                images[i][j].b = buffer[j+2048+1];
+            }
+        }
+
+        fclose(files[f]);
+    }
+    
+    // read in test_batch
+    if (files[5] == NULL) {
+            printf("test_batch == NULL\n", i);
+            perror("fopen");
+    }
+    for (i = 5*images_per_file; i < num_images; i++) {
+        fread(&buffer, sizeof(unsigned char), (1024*3) + 1, files[5]);
+            labels[i] = buffer[0];
+
+            for (j = 0; j < img_size*img_size; j++) {
+                images[i][j].r = buffer[j+1];
+                images[i][j].g = buffer[j+1024+1];
+                images[i][j].b = buffer[j+2048+1];
+            }
+        if (i == 59999) printf("buffer[3072] = %d\n", buffer[3072]);
     }
 
-    fclose(fpt1);
-    fclose(fpt2);
-    fclose(fpt3);
+    fclose(files[5]);
+    free(files);
 
-    // read in initial filter weights
-    printf("** Reading initial filter weights **\n");
+    // create initial filter weights
+    printf("** Setting initial filter weights **\n");
     float *filters_init;
-    filters_init = (float *) calloc(8 * 9, sizeof(float));
-    fpt1 = fopen("filters_init.txt", "rb");
-    for (i = 0; i < 8 * 9; i++) {
-        fscanf(fpt1, "%f\n", &filters_init[i]);
+    filters_init = (float *) calloc(num_filters * filter_size * filter_size, sizeof(float));
+    for (i = 0; i < num_filters * filter_size * filter_size; i++) {
+        filters_init[i] = (std::rand() / RAND_MAX) / (filter_size * filter_size);
     }
-    fclose(fpt1);
 
-    // read in initial softmax weights
-    printf("** Reading initial softmax weights **\n");
+    // create initial softmax weights
+    printf("** Setting initial softmax weights **\n");
     float *soft_weight_init;
-    soft_weight_init = (float *) calloc(13*13*8*10, sizeof(float));
-    fpt1 = fopen("soft_weights.txt", "rb");
-    for (i = 0; i < 13*13*8*10; i++) {
-        fscanf(fpt1, "%f\n", &soft_weight_init[i]);
+    soft_weight_init = (float *) calloc(soft_size*soft_size*num_filters*num_classes, sizeof(float));
+    for (i = 0; i < soft_size*soft_size*num_filters*num_classes; i++) {
+        soft_weight_init[i] = (std::rand() / RAND_MAX) / (soft_size*soft_size*num_filters);
     }
-    fclose(fpt1);
 
     // set initial softmax biases
     float *soft_bias_init;
-    soft_bias_init = (float *) calloc(10, sizeof(float));
-    for (i = 0; i < 10; i++) {
+    soft_bias_init = (float *) calloc(num_classes, sizeof(float));
+    for (i = 0; i < num_classes; i++) {
         soft_bias_init[i] = 0.0;
     }
 
     sfloat test(0.15625);
     test.print_values();
+    printf("r = %d, g = %d, b = %d\n", (int) images[0][0].r, (int) images[0][0].g, (int) images[0][0].b);
+    printf("r = %d, g = %d, b = %d\n", 
+        (int) images[59999][1023].r, (int) images[59999][1023].g, (int) images[59999][1023].b);
+    for (i = 0; i < 10; i++) printf("%d\t", (int) labels[i]);
+    printf("\n");
+    for (i = 59990; i < 60000; i++) printf("%d\t", (int) labels[i]);
+    printf("\n");
     // run_CNN(images, labels, num_images, num_train, learning_rate, per_print, num_epochs, num_filters, filter_size, 
     //     filters_init, soft_weight_init, soft_bias_init);
 
@@ -105,10 +139,10 @@ int main(void) {
 
     /************************************************ initialize layers ************************************************/
 
-    // Conv_layer conv(28, 28, num_filters, filter_size, learning_rate);
+    // Conv_layer conv(img_size, img_size, num_filters, filter_size, learning_rate);
     // Maxpool_layer maxpool(26, 26, num_filters);
     // Avgpool_layer avgpool(26, 26, num_filters);
-    // Softmax_layer softmax(13*13*num_filters, 10, learning_rate);
+    // Softmax_layer softmax(soft_size*soft_size*num_filters, num_classes, learning_rate);
 
     // printf("** Layers initialized **\n");
 
@@ -126,10 +160,10 @@ int main(void) {
 
     // // declare variables that can be reused
     // float *out, *soft_out, *last_pool_input, *last_soft_input;
-    // out = (float *) calloc(10, sizeof(float));
-    // soft_out = (float *) calloc(1352, sizeof(float));
-    // last_pool_input = (float *) calloc(26*26*8, sizeof(float));
-    // last_soft_input = (float *) calloc(13*13*8, sizeof(float));
+    // out = (float *) calloc(num_classes, sizeof(float));
+    // soft_out = (float *) calloc(soft_size52, sizeof(float));
+    // last_pool_input = (float *) calloc(26*26*num_filters, sizeof(float));
+    // last_soft_input = (float *) calloc(soft_size*soft_size*num_filters, sizeof(float));
 
     // for (int epoch = 0; epoch < num_epochs; epoch++) {
     //     printf("--- Epoch %d ---\n", epoch+1);
@@ -193,7 +227,7 @@ int main(void) {
     // for (i = num_train; i < num_images; i++) {
     //     // re-initialize totals for each image
     //     float *totals;
-    //     totals = (float *) calloc(10, sizeof(float));
+    //     totals = (float *) calloc(num_classes, sizeof(float));
 
     //     forward(conv, maxpool, softmax, images[i], filters_init, labels[i], out, loss_p, accuracy_p, last_pool_input,
     //         last_soft_input, totals, soft_weight_init, soft_bias_init);

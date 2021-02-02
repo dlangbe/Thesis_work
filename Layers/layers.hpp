@@ -7,6 +7,10 @@
 #include <fstream>
 #include <chrono>
 
+struct RGB {
+    unsigned char r, g, b;
+};
+
 class Conv_layer {
     private:
         int rows, cols, num_filters, filter_size;
