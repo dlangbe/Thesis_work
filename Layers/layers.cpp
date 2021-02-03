@@ -23,15 +23,17 @@ void Conv_layer::update_duration(double t, bool forward) {
 }
 
 void Conv_layer::forward(float *dest, float *image, float *filters) {
-    int r, c, n, i, j;
+    int r, c, n, i, j, k;
 
     for (n = 0; n < num_filters; n++) {
         for (r = 0; r < rows-2; r++) {
             for (c = 0; c < cols-2; c++) {
                 for (i = 0; i < filter_size; i++) {
                     for (j = 0; j < filter_size; j++) {
-                        dest[n * ((rows-2) * (cols-2)) + (r * (cols-2) + c)] += image[(r+i) * cols + (c+j)] *
-                            filters[(n*filter_size*filter_size) + (i*filter_size + j)];
+                        for (k = 0; k < 3; k++){
+                            dest[n * ((rows-2) * (cols-2)) + (r * (cols-2) + c)] += image[((r+i) * cols + (c+j)*3) + k] *
+                                filters[(n*filter_size*filter_size*3) + (k*filter_size*filter_size) + (i*filter_size + j)];
+                        }
                     }
                 }
             }
@@ -43,21 +45,25 @@ void Conv_layer::forward(float *dest, float *image, float *filters) {
 
 void Conv_layer::back(float *dest, float *gradient, float *last_input) {
     float *holder;
-    holder = (float *) calloc(filter_size * filter_size, sizeof(float));
-    int r, c, n, i, j;
+    holder = new float[filter_size * filter_size * 3];
+    int r, c, n, i, j, k;
 
     for (n = 0; n < num_filters; n++) {
         for (i = 0; i < filter_size; i++) {
             for (j = 0; j < filter_size; j++) {
-                holder[i * filter_size + j] = 0;
+                for (k = 0; k < 3; k++) {
+                    holder[k * (i * filter_size + j)] = 0;
+                }
             }
         }
         for (r = 0; r < rows-2; r++) {
             for (c = 0; c < cols-2; c++) {
                 for (i = 0; i < filter_size; i++) {
                     for (j = 0; j < filter_size; j++) {
-                        holder[i * filter_size + j] += last_input[((r+i)*cols)+(c+j)] *
-                            gradient[(n*(rows-2)*(cols-2))+(r*(cols-2)+c)];
+                        for (k = 0; k < 3; k++) {
+                            holder[(k*filter_size*filter_size) + (i * filter_size + j)] += last_input[((r+i) * cols + (c+j)*3) + k] *
+                                gradient[(n*(rows-2)*(cols-2))+(r*(cols-2)+c)];
+                        }
                     }
                 }
             }
@@ -65,34 +71,42 @@ void Conv_layer::back(float *dest, float *gradient, float *last_input) {
         // Write local var to output var
         for (i = 0; i < filter_size; i++) {
             for (j = 0; j < filter_size; j++) {
-                dest[(n*filter_size*filter_size) + (i * filter_size + j)] -=
-                    learn_rate * holder[i * filter_size + j];
+                for (k = 0; k < 3; k++){
+                    dest[(n*filter_size*filter_size*3) + (k*filter_size*filter_size) + (i*filter_size + j)] -=
+                        learn_rate * holder[k * (i * filter_size + j)];
+                }
 
                 //dest[(n*filter_size*filter_size) + (i * filter_size + j)] = holder[i * filter_size + j];
             }
         }
     }
-
+    
+    delete[] holder;
     return;
 }
 
 void Conv_layer::sback(sfloat *dest, sfloat *gradient,  sfloat *last_input) {
     sfloat *holder;
     holder = new sfloat[filter_size*filter_size];
-    int r, c, n, i, j;
+    int r, c, n, i, j, k;
 
     for (n = 0; n < num_filters; n++) {
         for (i = 0; i < filter_size; i++) {
             for (j = 0; j < filter_size; j++) {
-                holder[i * filter_size + j].convert_in_place(0.0);
+                for (k = 0; k < 3; k++) {
+                    holder[k * (i * filter_size + j)].convert_in_place(0.0);
+                }
             }
         }
         for (r = 0; r < rows-2; r++) {
             for (c = 0; c < cols-2; c++) {
                 for (i = 0; i < filter_size; i++) {
                     for (j = 0; j < filter_size; j++) {
-                        holder[i * filter_size + j] = holder[i * filter_size + j] +
-                        (last_input[((r+i)*cols)+(c+j)] * gradient[(n*(rows-2)*(cols-2))+(r*(cols-2)+c)]);
+                        for (k = 0; k < 3; k++) {
+                            holder[(k*filter_size*filter_size) + (i * filter_size + j)] = 
+                                holder[(k*filter_size*filter_size) + (i * filter_size + j)] 
+                                + (last_input[((r+i)*cols)+(c+j)] * gradient[(n*(rows-2)*(cols-2))+(r*(cols-2)+c)]);
+                        }
                     }
                 }
             }
@@ -100,9 +114,11 @@ void Conv_layer::sback(sfloat *dest, sfloat *gradient,  sfloat *last_input) {
         // Write local var to output var
         for (i = 0; i < filter_size; i++) {
             for (j = 0; j < filter_size; j++) {
-                dest[(n*filter_size*filter_size) + (i * filter_size + j)] =
-                    dest[(n*filter_size*filter_size) + (i * filter_size + j)] - (holder[i * filter_size + j] * learn_rate);
-
+                for (k = 0; k < 3; k++) {
+                    dest[(n*filter_size*filter_size*3) + (k*filter_size*filter_size) + (i*filter_size + j)] =
+                        dest[(n*filter_size*filter_size*3) + (k*filter_size*filter_size) + (i*filter_size + j)]
+                        - (holder[k*(i*filter_size+j)] * learn_rate);
+                }
                 //dest[(n*filter_size*filter_size) + (i * filter_size + j)] = holder[i * filter_size + j];
             }
         }
@@ -189,6 +205,11 @@ Avgpool_layer::Avgpool_layer(int in_rows, int in_cols, int in_num_filters) {
     num_filters = in_num_filters;
 }
 
+void Avgpool_layer::get_parameters(int *r, int *c) {
+    *r = rows;
+    *c = cols;
+}
+
 void Avgpool_layer::update_duration(double t, bool forward) {
     if (forward) t_forward += t / 1000000000.0;
     else t_back += t / 1000000000.0;
@@ -261,6 +282,11 @@ Softmax_layer::Softmax_layer(int in_in_length, int in_out_length, float in_learn
     //sum = 0.0;
 }
 
+void Softmax_layer::get_parameters(int *in_len, int*out_len) {
+    *in_len = in_length;
+    *out_len = out_length;
+}
+
 void Softmax_layer::update_duration(double t, bool forward) {
     if (forward) t_forward += t / 1000000000.0;
     else t_back += t / 1000000000.0;
@@ -274,9 +300,9 @@ void Softmax_layer::forward(float *dest, float *input, float *totals, float *wei
     sum = 0.0;
     //printf("%0.6f\t%0.6f\t%0.6f\n\n", input[10], weight[100], input[10]*weight[100]);
 
-    for (i = 0; i < 10; i++) {
-        for (j = 0; j < 1352; j++) {
-            totals[i] += (float) input[j] * weight[j * 10 + i];
+    for (i = 0; i < out_length; i++) {
+        for (j = 0; j < in_length; j++) {
+            totals[i] += (float) input[j] * weight[j * out_length + i];
         }
         totals[i] += bias[i];
         exp_holder[i] = exp(totals[i]);
@@ -421,88 +447,29 @@ void Softmax_layer::sback(sfloat *dest, sfloat *gradient, sfloat *last_input, sf
     return;
 }
 
-void forward(Conv_layer &conv, Maxpool_layer &maxpool, Softmax_layer &softmax, int *image, float *filters, 
-    int label, float *out, float *loss, float *acc, float *last_pool_input, float *last_soft_input, 
+void forward(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, RGB *image, float *filters, 
+    unsigned char label, float *out, float *loss, float *acc, float *last_pool_input, float *last_soft_input, 
     float *totals, float *soft_weight, float *soft_bias) {
 
-    int rows, cols, num_filters, filter_size;
-    float learn_rate;
-    conv.get_parameters(&rows, &cols, &num_filters, &filter_size, &learn_rate);
-
-    // allocate memory
-    float *temp_image, *conv_out, *pool_out;
-    temp_image = (float *) calloc(rows*cols, sizeof(float));
-    conv_out = (float *) calloc((rows-2)*(cols-2)*num_filters, sizeof(float));
-    pool_out = (float *) calloc(((rows-2)/2)*((cols-2)/2)*num_filters, sizeof(float));
-
-    // normalize input image from -0.5 to 0.5
-    int r, c;
-    for (r = 0; r < rows; r++) {
-        for (c = 0; c < cols; c++) {
-            temp_image[r * cols + c] = ((float) image[r * cols + c] / 255.0) - 0.5;
-        }
-    }
-
-    // link forward layers
-
-    conv.forward(conv_out, temp_image, filters);
-    maxpool.forward(pool_out, conv_out);
-    softmax.forward(out, pool_out, totals, soft_weight, soft_bias);
-
-    int i;
-    for (i = 0; i < (rows-2)*(cols-2)*num_filters; i++) {
-        last_pool_input[i] = conv_out[i];
-    }
-    for (i = 0; i < ((rows-2)/2)*((cols-2)/2)*num_filters; i++) {
-        last_soft_input[i] = pool_out[i];
-    }
-
-
-
-    // calculate loss and accuracy
-    //printf("%.3f, %.3f\n", out[label], log(out[label]));
-    *loss = -1 * log(out[label]);
-    float holder = -100.0;
-    int index;
-    for (i = 0; i < 10; i++) {
-        if (out[i] > holder){
-            holder = out[i];
-            index = i;
-        }
-    }
-    if (index == label)
-        *acc = 1;
-    else
-        *acc = 0;
-
-    //printf("%d\t%d\n", label, index);
-
-    free(temp_image);
-    free(conv_out);
-    free(pool_out);
-    return;
-}
-
-void forward2(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, int *image, float *filters, 
-    int label, float *out, float *loss, float *acc, float *last_pool_input, float *last_soft_input, 
-    float *totals, float *soft_weight, float *soft_bias) {
-
-    int rows, cols, num_filters, filter_size;
+    int rows, cols, num_filters, filter_size, softmax_in_length, softmax_out_length;
     float learn_rate;
     double duration;
     conv.get_parameters(&rows, &cols, &num_filters, &filter_size, &learn_rate);
+    softmax.get_parameters(&softmax_in_length, &softmax_out_length);
 
-    // allocate memory
+     // allocate memory
     float *temp_image, *conv_out, *pool_out;
-    temp_image = (float *) calloc(rows*cols, sizeof(float));
-    conv_out = (float *) calloc((rows-2)*(cols-2)*num_filters, sizeof(float));
-    pool_out = (float *) calloc(((rows-2)/2)*((cols-2)/2)*num_filters, sizeof(float));
+    temp_image = new float[rows * cols * 3];
+    conv_out = new float[(rows-2)*(cols-2)*num_filters];
+    pool_out = new float[((rows-2)/2)*((cols-2)/2)*num_filters];
 
     // normalize input image from -0.5 to 0.5
     int r, c;
     for (r = 0; r < rows; r++) {
         for (c = 0; c < cols; c++) {
-            temp_image[r * cols + c] = ((float) image[r * cols + c] / 255.0) - 0.5;
+            temp_image[(r * cols + c)*3] = ((float) image[r * cols + c].r / 255.0) - 0.5;
+            temp_image[(r * cols + c)*3 + 1] = ((float) image[r * cols + c].g / 255.0) - 0.5;
+            temp_image[(r * cols + c)*3 + 2] = ((float) image[r * cols + c].b / 255.0) - 0.5;
         }
     }
 
@@ -524,6 +491,7 @@ void forward2(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, 
     t_end = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
     softmax.update_duration(duration, true);
+    
 
     int i;
     for (i = 0; i < (rows-2)*(cols-2)*num_filters; i++) {
@@ -532,18 +500,17 @@ void forward2(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, 
     for (i = 0; i < ((rows-2)/2)*((cols-2)/2)*num_filters; i++) {
         last_soft_input[i] = pool_out[i];
     }
-
-
+    
 
     // calculate loss and accuracy
     //printf("%.3f, %.3f\n", out[label], log(out[label]));
     *loss = -1 * log(out[label]);
     float holder = -100.0;
-    int index;
-    for (i = 0; i < 10; i++) {
+    unsigned char index;
+    for (i = 0; i < softmax_out_length; i++) {
         if (out[i] > holder){
             holder = out[i];
-            index = i;
+            index = (unsigned char) i;
         }
     }
     if (index == label)
@@ -553,90 +520,49 @@ void forward2(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, 
 
     //printf("%d\t%d\n", label, index);
 
-    free(temp_image);
-    free(conv_out);
-    free(pool_out);
+    delete[] temp_image;
+    delete[] conv_out;
+    delete[] pool_out;
     return;
 }
 
-void train(Conv_layer &conv, Maxpool_layer &maxpool, Softmax_layer &softmax, int *image, float *filters, 
-    int label, float *loss, float *acc, float *soft_weight, float *soft_bias,
+void train(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, RGB *image, float *filters, 
+    unsigned char label, float *loss, float *acc, float *soft_weight, float *soft_bias,
     float *out, float *soft_out, float *last_pool_input, float *last_soft_input) {
 
-    int rows, cols, num_filters, filter_size;
+    int rows, cols, num_filters, filter_size, avgpool_rows, avgpool_cols, softmax_in_length, softmax_out_length;
     float learn_rate;
     conv.get_parameters(&rows, &cols, &num_filters, &filter_size, &learn_rate);
+    avgpool.get_parameters(&avgpool_rows, &avgpool_cols);
+    softmax.get_parameters(&softmax_in_length, &softmax_out_length);
 
     // allocate arrays that need to be re-initialized for each image
     float *grad, *pool_out, *totals;
-    grad = (float *) calloc(10, sizeof(float));
-    pool_out = (float *) calloc(26*26*8, sizeof(float));
-    totals = (float *) calloc(10, sizeof(float));
+    grad = (float *) calloc(softmax_out_length, sizeof(float));
+    pool_out = (float *) calloc(avgpool_rows*avgpool_cols*num_filters, sizeof(float));
+    totals = (float *) calloc(softmax_out_length, sizeof(float));
 
     // do forward propagation
-    forward(conv, maxpool, softmax, image, filters, label, out, loss, acc,
+    forward(conv, avgpool, softmax, image, filters, label, out, loss, acc,
         last_pool_input, last_soft_input, totals, soft_weight, soft_bias);
-
+    
     // set initial gradient
     grad[label] = -1 / out[label];
 
     // normalize image
     float *temp_image;
-    temp_image = (float *) calloc(rows*cols, sizeof(float));
+    temp_image = new float [rows * cols * 3];
     int r, c;
     for (r = 0; r < rows; r++) {
         for (c = 0; c < cols; c++) {
-            temp_image[r * cols + c] = ((float) image[r * cols + c] / 255.0) - 0.5;
+            temp_image[(r * cols + c)*3] = ((float) image[r * cols + c].r / 255.0) - 0.5;
+            temp_image[(r * cols + c)*3 + 1] = ((float) image[r * cols + c].g / 255.0) - 0.5;
+            temp_image[(r * cols + c)*3 + 2] = ((float) image[r * cols + c].b / 255.0) - 0.5;
         }
     }
-
+    
+    
     // link backward layers
-
-    softmax.back(soft_out, grad, last_soft_input, totals, soft_weight, soft_bias);
-    maxpool.back(pool_out, soft_out, last_pool_input);
-    conv.back(filters, pool_out, temp_image);
-
-
-    free(temp_image);
-    free(grad);
-    free(pool_out);
-    free(totals);
-    return;
-}
-
-void train2(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, int *image, float *filters, 
-    int label, float *loss, float *acc, float *soft_weight, float *soft_bias,
-    float *out, float *soft_out, float *last_pool_input, float *last_soft_input) {
-
-    int rows, cols, num_filters, filter_size;
-    float learn_rate;
-    conv.get_parameters(&rows, &cols, &num_filters, &filter_size, &learn_rate);
-
-    // allocate arrays that need to be re-initialized for each image
-    float *grad, *pool_out, *totals;
-    grad = (float *) calloc(10, sizeof(float));
-    pool_out = (float *) calloc(26*26*8, sizeof(float));
-    totals = (float *) calloc(10, sizeof(float));
-
-    // do forward propagation
-    forward2(conv, avgpool, softmax, image, filters, label, out, loss, acc,
-        last_pool_input, last_soft_input, totals, soft_weight, soft_bias);
-
-    // set initial gradient
-    grad[label] = -1 / out[label];
-
-    // normalize image
-    float *temp_image;
-    temp_image = (float *) calloc(rows*cols, sizeof(float));
-    int r, c;
-    for (r = 0; r < rows; r++) {
-        for (c = 0; c < cols; c++) {
-            temp_image[r * cols + c] = ((float) image[r * cols + c] / 255.0) - 0.5;
-        }
-    }
-
-    // link backward layers
-
     auto t_start = std::chrono::high_resolution_clock::now();
     softmax.back(soft_out, grad, last_soft_input, totals, soft_weight, soft_bias);
     auto t_end = std::chrono::high_resolution_clock::now();
@@ -654,32 +580,33 @@ void train2(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, in
     t_end = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
     conv.update_duration(duration, false);
-
-
-    free(temp_image);
+    
+    delete[] temp_image;
     free(grad);
     free(pool_out);
     free(totals);
     return;
 }
 
-void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, int *image, float *filters, 
-    int label, float *loss, float *acc, float *soft_weight, float *soft_bias,
+void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, RGB *image, float *filters, 
+    unsigned char label, float *loss, float *acc, float *soft_weight, float *soft_bias,
     float *out, float *soft_out, float *last_pool_input, float *last_soft_input) {
 
-    int rows, cols, num_filters, filter_size;
     float learn_rate;
     double duration;
+    int rows, cols, num_filters, filter_size, avgpool_rows, avgpool_cols, softmax_in_length, softmax_out_length;
     conv.get_parameters(&rows, &cols, &num_filters, &filter_size, &learn_rate);
+    avgpool.get_parameters(&avgpool_rows, &avgpool_cols);
+    softmax.get_parameters(&softmax_in_length, &softmax_out_length);
 
     // allocate arrays that need to be re-initialized for each image
     float *grad, *pool_out, *totals;
-    grad = (float *) calloc(10, sizeof(float));
-    pool_out = (float *) calloc(26*26*8, sizeof(float));
-    totals = (float *) calloc(10, sizeof(float));
+    grad = (float *) calloc(softmax_out_length, sizeof(float));
+    pool_out = (float *) calloc(avgpool_rows*avgpool_cols*num_filters, sizeof(float));
+    totals = (float *) calloc(softmax_out_length, sizeof(float));
 
     // do forward propagation
-    forward2(conv, avgpool, softmax, image, filters, label, out, loss, acc,
+    forward(conv, avgpool, softmax, image, filters, label, out, loss, acc,
         last_pool_input, last_soft_input, totals, soft_weight, soft_bias);
 
     // set initial gradient
@@ -687,11 +614,13 @@ void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, in
 
     // normalize image
     float *temp_image;
-    temp_image = (float *) calloc(rows*cols, sizeof(float));
+    temp_image = new float[rows*cols*3];
     int r, c;
     for (r = 0; r < rows; r++) {
         for (c = 0; c < cols; c++) {
-            temp_image[r * cols + c] = ((float) image[r * cols + c] / 255.0) - 0.5;
+            temp_image[(r * cols + c)*3] = ((float) image[r * cols + c].r / 255.0) - 0.5;
+            temp_image[(r * cols + c)*3 + 1] = ((float) image[r * cols + c].g / 255.0) - 0.5;
+            temp_image[(r * cols + c)*3 + 2] = ((float) image[r * cols + c].b / 255.0) - 0.5;
         }
     }
 
@@ -704,12 +633,12 @@ void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, in
 
     sfilters = new sfloat[filter_size*filter_size*num_filters];
     spool_out = new sfloat[26*26*num_filters];
-    stemp_image = new sfloat[rows*cols];
-    ssoft_out = new sfloat[13*13*num_filters];
-    sgrad = new sfloat[10];
-    slast_soft_input = new sfloat[13*13*num_filters];
-    ssoft_weight = new sfloat[13*13*10*num_filters];
-    ssoft_bias = new sfloat[10];
+    stemp_image = new sfloat[rows*cols*3];
+    ssoft_out = new sfloat[softmax_in_length];
+    sgrad = new sfloat[softmax_out_length];
+    slast_soft_input = new sfloat[softmax_in_length];
+    ssoft_weight = new sfloat[softmax_in_length*softmax_out_length];
+    ssoft_bias = new sfloat[softmax_out_length];
 
     for (int i = 0; i < filter_size*filter_size*num_filters; i++) {
         sfilters[i].convert_in_place(filters[i]);
@@ -720,16 +649,16 @@ void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, in
     for (int i = 0; i < rows*cols; i++) {
         stemp_image[i].convert_in_place(temp_image[i]);
     }
-    for (int i = 0; i < 13*13*10*num_filters; i++) {
+    for (int i = 0; i < softmax_in_length*softmax_out_length; i++) {
         ssoft_weight[i].convert_in_place(soft_weight[i]);
     }
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < softmax_out_length; i++) {
         ssoft_bias[i].convert_in_place(soft_bias[i]);
     }
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < softmax_out_length; i++) {
         sgrad[i].convert_in_place(grad[i]);
     }
-    for (int i = 0; i < 13*13*num_filters; i++) {
+    for (int i = 0; i < softmax_in_length; i++) {
         slast_soft_input[i].convert_in_place(last_soft_input[i]);
     }
 
@@ -769,12 +698,12 @@ void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, in
         //if (i >= 9 && i < 18) 
             //printf("%0.12f\n", filters[i]);
     }
-    for (int i = 0; i < 13*13*10*num_filters; i++) {  
+    for (int i = 0; i < softmax_in_length*softmax_out_length; i++) {  
         soft_weight[i] = ssoft_weight[i].reconstruct();
         //fout << i << '\t' << soft_weight[i] << '\n';
     }
     //fout.close();
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < softmax_out_length; i++) {
         soft_bias[i] = ssoft_bias[i].reconstruct();
     }
 
@@ -792,7 +721,7 @@ void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, in
     delete[] sfilters;
     delete[] spool_out;
     delete[] stemp_image;
-    free(temp_image);
+    delete[] temp_image;
     free(grad);
     free(pool_out);
     free(totals);
