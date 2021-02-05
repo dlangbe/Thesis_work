@@ -14,25 +14,29 @@ int main(void) {
     FILE **files;
     FILE *fpt1;
     // if (fout.is_open()) printf("Is open\n");
-    RGB **images;
+    unsigned char **images;
     unsigned char *labels;
     int i, j;
     int z;
 
-    // hyperparameters
+    // dataset parameters
     int num_images = 6000;
+    int num_train = 5000;
+    int per_print = 100;
     int images_per_file = num_images / 6;
     int image_size = 32;
     int num_classes = 10;
-    int num_train = 5000;
+    int colors = 3;
+
+    // hyperparameters
     float learning_rate = 0.005;
-    int per_print = 100;
     int num_epochs = 1;
     int num_filters = 8;
     int filter_size = 5;
-    int soft_size = (image_size - (filter_size-1)) / 2;
     int num_nodes = 16;
     int batch_size = 100;
+
+    int soft_size = (image_size - (filter_size-1)) / 2;
     
 
     std::srand(1);
@@ -40,9 +44,9 @@ int main(void) {
     /************************************************ allocate memory ************************************************/
 
     // allocate image and label arrays
-    images = new RGB* [num_images];
+    images = new unsigned char* [num_images];
     for (i = 0; i < num_images; i++) {
-        images[i] = new RGB [image_size*image_size];
+        images[i] = new unsigned char [image_size*image_size*colors];
     }
     labels = new unsigned char[num_images];
 
@@ -71,9 +75,9 @@ int main(void) {
             labels[i] = buffer[0];
 
             for (j = 0; j < image_size*image_size; j++) {
-                images[i][j].r = buffer[j+1];
-                images[i][j].g = buffer[j+1024+1];
-                images[i][j].b = buffer[j+2048+1];
+                images[i][j*colors] = buffer[j+1];
+                images[i][j*colors+1] = buffer[j+1024+1];
+                images[i][j*colors+2] = buffer[j+2048+1];
             }
         }
 
@@ -90,11 +94,10 @@ int main(void) {
             labels[i] = buffer[0];
 
             for (j = 0; j < image_size*image_size; j++) {
-                images[i][j].r = buffer[j+1];
-                images[i][j].g = buffer[j+1024+1];
-                images[i][j].b = buffer[j+2048+1];
+                images[i][j*colors] = buffer[j+1];
+                images[i][j*colors+1] = buffer[j+1024+1];
+                images[i][j*colors+2] = buffer[j+2048+1];
             }
-        if (i == 59999) printf("buffer[3072] = %d\n", buffer[3072]);
     }
 
     fclose(files[5]);
@@ -103,8 +106,8 @@ int main(void) {
     // create initial filter weights
     printf("** Setting initial filter weights **\n");
     float *filters_init;
-    filters_init = new float[num_filters * filter_size * filter_size * 3];
-    for (i = 0; i < num_filters * filter_size * filter_size * 3; i++) {
+    filters_init = new float[num_filters * filter_size * filter_size * colors];
+    for (i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
         filters_init[i] = ((float) std::rand() / RAND_MAX) / (filter_size);
     }
     printf("filters[0] = %0.12f\n", filters_init[0]);
@@ -136,7 +139,7 @@ int main(void) {
     // printf("\n");
 
     run_CNN(images, labels, num_images, image_size, image_size, num_classes, num_train, learning_rate, per_print, num_epochs, 
-        num_filters, filter_size, filters_init, soft_weight_init, soft_bias_init);
+        num_filters, filter_size, filters_init, soft_weight_init, soft_bias_init, colors);
 
     // run_FedAvg(images, labels, num_images, num_train, learning_rate, per_print, num_epochs, num_filters, filter_size, 
     //     filters_init, soft_weight_init, soft_bias_init, num_nodes, batch_size);

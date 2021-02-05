@@ -2,9 +2,9 @@
 #include "networks.hpp"
 //#include "secure_float.hpp"
 
-void run_CNN(RGB **images, unsigned char *labels, int num_images, int image_rows, int image_cols, int num_classes, int num_train, 
+void run_CNN(unsigned char **images, unsigned char *labels, int num_images, int image_rows, int image_cols, int num_classes, int num_train, 
     float learning_rate, int per_print, int num_epochs, int num_filters, int filter_size, float *filters_init, 
-    float *soft_weight_init, float *soft_bias_init) {
+    float *soft_weight_init, float *soft_bias_init, int colors) {
     
     int avgpool_rows, avgpool_cols, softmax_in_len, softmax_out_len;
     avgpool_rows = image_rows - (filter_size - 1);
@@ -14,7 +14,7 @@ void run_CNN(RGB **images, unsigned char *labels, int num_images, int image_rows
 
     /************************************************ initialize layers ************************************************/
 
-    Conv_layer conv(image_rows, image_cols, num_filters, filter_size, learning_rate);
+    Conv_layer conv(image_rows, image_cols, num_filters, filter_size, colors, learning_rate);
     //Maxpool_layer maxpool(avgpool_rows, avgpool_cols, num_filters);
     Avgpool_layer avgpool(avgpool_rows, avgpool_cols, num_filters);
     Softmax_layer softmax(softmax_in_len, softmax_out_len, learning_rate);
@@ -128,9 +128,9 @@ void run_CNN(RGB **images, unsigned char *labels, int num_images, int image_rows
     return;
 }
 
-void run_sCNN(RGB **images, unsigned char *labels, int num_images, int image_rows, int image_cols, int num_classes, int num_train, 
+void run_sCNN(unsigned char **images, unsigned char *labels, int num_images, int image_rows, int image_cols, int num_classes, int num_train, 
     float learning_rate, int per_print, int num_epochs, int num_filters, int filter_size, float *filters_init, 
-    float *soft_weight_init, float *soft_bias_init) {
+    float *soft_weight_init, float *soft_bias_init, int colors) {
 
     int avgpool_rows, avgpool_cols, softmax_in_len, softmax_out_len;
     avgpool_rows = image_rows - (filter_size - 1);
@@ -140,7 +140,7 @@ void run_sCNN(RGB **images, unsigned char *labels, int num_images, int image_row
     
     /************************************************ initialize layers ************************************************/
 
-    Conv_layer conv(image_rows, image_cols, num_filters, filter_size, learning_rate);
+    Conv_layer conv(image_rows, image_cols, num_filters, filter_size, colors, learning_rate);
     //Maxpool_layer maxpool(avgpool_rows, avgpool_cols, num_filters);
     Avgpool_layer avgpool(avgpool_rows, avgpool_cols, num_filters);
     Softmax_layer softmax(softmax_in_len, softmax_out_len, learning_rate);
@@ -255,9 +255,9 @@ void run_sCNN(RGB **images, unsigned char *labels, int num_images, int image_row
     return;
 }
 
-void run_FedAvg(RGB **images, unsigned char *labels, int num_images, int image_rows, int image_cols, int num_classes, int num_train, 
+void run_FedAvg(unsigned char **images, unsigned char *labels, int num_images, int image_rows, int image_cols, int num_classes, int num_train, 
     float learning_rate, int per_print, int num_epochs, int num_filters, int filter_size, float *filters_init, 
-    float *soft_weight_init, float *soft_bias_init, int num_nodes, int batch_size) {
+    float *soft_weight_init, float *soft_bias_init, int num_nodes, int batch_size, int colors) {
 
     int avgpool_rows, avgpool_cols, softmax_in_len, softmax_out_len;
     avgpool_rows = image_rows - (filter_size - 1);
@@ -272,7 +272,7 @@ void run_FedAvg(RGB **images, unsigned char *labels, int num_images, int image_r
     Softmax_layer *softmax = (Softmax_layer *) calloc(num_nodes, sizeof(Softmax_layer));
 
     for (int i = 0; i < num_nodes; i++) {
-        conv[i] = Conv_layer(image_rows, image_cols, num_filters, filter_size, learning_rate);
+        conv[i] = Conv_layer(image_rows, image_cols, num_filters, filter_size, colors, learning_rate);
         //maxpool[i] = Maxpool_layer(avgpool_rows, avgpool_cols, num_filters);
         avgpool[i] = Avgpool_layer(avgpool_rows, avgpool_cols, num_filters);
         softmax[i] = Softmax_layer(softmax_in_len, softmax_out_len, learning_rate);
@@ -348,7 +348,7 @@ void run_FedAvg(RGB **images, unsigned char *labels, int num_images, int image_r
                     //printf("\n\n\tHERE\n");
                     auto average_start = std::chrono::high_resolution_clock::now();
                     average_weights(filters, soft_weights, soft_biases, num_filters, filter_size, num_nodes, num_classes,
-                    softmax_in_len, softmax_out_len);
+                    softmax_in_len, softmax_out_len, colors);
                     auto average_end = std::chrono::high_resolution_clock::now();
                     average_duration += std::chrono::duration_cast<std::chrono::nanoseconds>(average_end-average_start).count()/1000000000.0;
                 }
@@ -385,7 +385,7 @@ void run_FedAvg(RGB **images, unsigned char *labels, int num_images, int image_r
         
         epoch_duration = 0.0;
         average_weights(filters, soft_weights, soft_biases, num_filters, filter_size, num_nodes, num_classes, 
-            softmax_in_len, softmax_out_len);
+            softmax_in_len, softmax_out_len, colors);
         
     }
 
@@ -448,9 +448,9 @@ void run_FedAvg(RGB **images, unsigned char *labels, int num_images, int image_r
     return;
 }
 
-void run_sFedAvg(RGB **images, unsigned char *labels, int num_images, int image_rows, int image_cols, int num_classes, int num_train, 
+void run_sFedAvg(unsigned char **images, unsigned char *labels, int num_images, int image_rows, int image_cols, int num_classes, int num_train, 
     float learning_rate, int per_print, int num_epochs, int num_filters, int filter_size, float *filters_init, 
-    float *soft_weight_init, float *soft_bias_init, int num_nodes, int batch_size) {
+    float *soft_weight_init, float *soft_bias_init, int num_nodes, int batch_size, int colors) {
 
     int avgpool_rows, avgpool_cols, softmax_in_len, softmax_out_len;
     avgpool_rows = image_rows - (filter_size - 1);
@@ -465,7 +465,7 @@ void run_sFedAvg(RGB **images, unsigned char *labels, int num_images, int image_
     Softmax_layer *softmax = (Softmax_layer *) calloc(num_nodes, sizeof(Softmax_layer));
 
     for (int i = 0; i < num_nodes; i++) {
-        conv[i] = Conv_layer(image_rows, image_cols, num_filters, filter_size, learning_rate);
+        conv[i] = Conv_layer(image_rows, image_cols, num_filters, filter_size, colors, learning_rate);
         //maxpool[i] = Maxpool_layer(avgpool_rows, avgpool_cols, num_filters);
         avgpool[i] = Avgpool_layer(avgpool_rows, avgpool_cols, num_filters);
         softmax[i] = Softmax_layer(softmax_in_len, softmax_out_len, learning_rate);
@@ -541,7 +541,7 @@ void run_sFedAvg(RGB **images, unsigned char *labels, int num_images, int image_
                     //printf("\n\n\tHERE\n");
                     auto average_start = std::chrono::high_resolution_clock::now();
                     saverage_weights(filters, soft_weights, soft_biases, num_filters, filter_size, num_nodes, num_classes,
-                    softmax_in_len, softmax_out_len);
+                    softmax_in_len, softmax_out_len, colors);
                     auto average_end = std::chrono::high_resolution_clock::now();
                     average_duration += std::chrono::duration_cast<std::chrono::nanoseconds>(average_end-average_start).count()/1000000000.0;
                 }
@@ -578,7 +578,7 @@ void run_sFedAvg(RGB **images, unsigned char *labels, int num_images, int image_
         
         epoch_duration = 0.0;
         average_weights(filters, soft_weights, soft_biases, num_filters, filter_size, num_nodes, num_classes, 
-            softmax_in_len, softmax_out_len);
+            softmax_in_len, softmax_out_len, colors);
         
     }
 
@@ -642,9 +642,9 @@ void run_sFedAvg(RGB **images, unsigned char *labels, int num_images, int image_
 }
 
 void average_weights(float **filters, float **soft_weights, float **soft_biases, int num_filters, int filter_size, 
-    int num_nodes, int num_classes, int softmax_in_len, int softmax_out_len) {
+    int num_nodes, int num_classes, int softmax_in_len, int softmax_out_len, int colors) {
     // average holders
-    float *avg_filters = new float[num_filters * filter_size * filter_size * 3]();
+    float *avg_filters = new float[num_filters * filter_size * filter_size * colors]();
     float *avg_soft_weights = new float[softmax_in_len*softmax_out_len]();
     float *avg_soft_biases = new float[softmax_out_len]();
 
@@ -691,7 +691,7 @@ void average_weights(float **filters, float **soft_weights, float **soft_biases,
 }
 
 void saverage_weights(float **filters, float **soft_weights, float **soft_biases, int num_filters, int filter_size, 
-    int num_nodes, int num_classes, int softmax_in_len, int softmax_out_len) {
+    int num_nodes, int num_classes, int softmax_in_len, int softmax_out_len, int colors) {
     // average holders
     sfloat *avg_filters = new sfloat[num_filters * filter_size * filter_size]();
     sfloat *avg_soft_weights = new sfloat[softmax_in_len*softmax_out_len]();

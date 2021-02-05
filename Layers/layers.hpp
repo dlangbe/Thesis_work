@@ -7,21 +7,17 @@
 #include <fstream>
 #include <chrono>
 
-struct RGB {
-    unsigned char r, g, b;
-};
-
 class Conv_layer {
     private:
-        int rows, cols, num_filters, filter_size;
+        int rows, cols, num_filters, filter_size, colors;
         float learn_rate;
         double t_forward = 0.0;
         double t_back = 0.0;
 
     public:
-        Conv_layer(int in_rows, int in_cols, int in_num_filters, int in_filter_size, float in_learn_rate);
+        Conv_layer(int in_rows, int in_cols, int in_num_filters, int in_filter_size, int colors, float in_learn_rate);
         Conv_layer();
-        void get_parameters(int *r, int *c, int *num, int *size, float *learn);
+        void get_parameters(int *r, int *c, int *num, int *size, int *colors, float *learn);
         void forward(float *dest, float *image, float *filters);
         void back(float *dest, float *gradient, float *last_input);
         void sback(sfloat *dest, sfloat *gradient,  sfloat *last_input);
@@ -82,16 +78,17 @@ class Softmax_layer {
         
 };
 
-void forward(Conv_layer &conv, Avgpool_layer &maxpool, Softmax_layer &softmax, RGB *image, float *filters, 
+void forward(Conv_layer &conv, Avgpool_layer &maxpool, Softmax_layer &softmax, unsigned char *image, float *filters, 
     unsigned char label, float *out, float *loss, float *acc, float *last_pool_input, float *last_soft_input, 
     float *totals, float *soft_weight, float *soft_bias);
 
-void train(Conv_layer &conv, Avgpool_layer &maxpool, Softmax_layer &softmax, RGB *image, float *filters, 
+void train(Conv_layer &conv, Avgpool_layer &maxpool, Softmax_layer &softmax, unsigned char *image, float *filters, 
     unsigned char label, float *loss, float *acc, float *soft_weight, float *soft_bias,
     float *out, float *soft_out, float *last_pool_input, float *last_soft_input);
 
-void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, RGB *image, float *filters, 
+void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, unsigned char *image, float *filters, 
     unsigned char label, float *loss, float *acc, float *soft_weight, float *soft_bias,
     float *out, float *soft_out, float *last_pool_input, float *last_soft_input);
 
+void normalize_image(unsigned char *input, float *output, int rows, int cols, int colors);
 void relu(float *values, int size);
