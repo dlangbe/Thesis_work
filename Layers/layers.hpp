@@ -93,3 +93,5 @@ void train(Conv_layer &conv, Avgpool_layer &maxpool, Softmax_layer &softmax, RGB
 void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, RGB *image, float *filters, 
     unsigned char label, float *loss, float *acc, float *soft_weight, float *soft_bias,
     float *out, float *soft_out, float *last_pool_input, float *last_soft_input);
+
+void relu(float *values, int size);
