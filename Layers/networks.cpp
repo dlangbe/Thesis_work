@@ -286,11 +286,11 @@ void run_FedAvg(unsigned char **images, unsigned char *labels, int num_images, i
     float **soft_biases = new float*[num_nodes];
 
     for (int n = 0; n < num_nodes; n++) {
-        filters[n] = new float[num_filters * filter_size * filter_size];
+        filters[n] = new float[num_filters * filter_size * filter_size*colors];
         soft_weights[n] = new float[softmax_in_len*softmax_out_len];
         soft_biases[n] = new float[softmax_out_len];
 
-        for (int i = 0; i < num_filters * filter_size * filter_size; i++) {
+        for (int i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
             filters[n][i] = filters_init[i];
         }
         for (int i = 0; i < softmax_in_len*softmax_out_len; i++) {
@@ -479,11 +479,11 @@ void run_sFedAvg(unsigned char **images, unsigned char *labels, int num_images, 
     float **soft_biases = new float*[num_nodes];
 
     for (int n = 0; n < num_nodes; n++) {
-        filters[n] = new float[num_filters * filter_size * filter_size];
+        filters[n] = new float[num_filters * filter_size * filter_size * colors];
         soft_weights[n] = new float[softmax_in_len*softmax_out_len];
         soft_biases[n] = new float[softmax_out_len];
 
-        for (int i = 0; i < num_filters * filter_size * filter_size; i++) {
+        for (int i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
             filters[n][i] = filters_init[i];
         }
         for (int i = 0; i < softmax_in_len*softmax_out_len; i++) {
@@ -649,7 +649,7 @@ void average_weights(float **filters, float **soft_weights, float **soft_biases,
     float *avg_soft_biases = new float[softmax_out_len]();
 
     // average each node's weights and biases
-    for (int i = 0; i < num_filters * filter_size * filter_size; i++) {
+    for (int i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
         for (int n = 0; n < num_nodes; n++) {
             avg_filters[i] += filters[n][i];  
         }
@@ -672,7 +672,7 @@ void average_weights(float **filters, float **soft_weights, float **soft_biases,
 
     // update each node's weights and biases
     for (int n = 0; n < num_nodes; n++) {
-        for (int i = 0; i < num_filters * filter_size * filter_size; i++) {
+        for (int i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
             filters[n][i] = avg_filters[i];
         }
         for (int i = 0; i < softmax_in_len*softmax_out_len; i++) {
@@ -693,7 +693,7 @@ void average_weights(float **filters, float **soft_weights, float **soft_biases,
 void saverage_weights(float **filters, float **soft_weights, float **soft_biases, int num_filters, int filter_size, 
     int num_nodes, int num_classes, int softmax_in_len, int softmax_out_len, int colors) {
     // average holders
-    sfloat *avg_filters = new sfloat[num_filters * filter_size * filter_size]();
+    sfloat *avg_filters = new sfloat[num_filters * filter_size * filter_size * colors]();
     sfloat *avg_soft_weights = new sfloat[softmax_in_len*softmax_out_len]();
     sfloat *avg_soft_biases = new sfloat[softmax_out_len]();
 
@@ -703,12 +703,12 @@ void saverage_weights(float **filters, float **soft_weights, float **soft_biases
     sfloat **ssoft_biases = new sfloat*[num_nodes];
     
     for (int n = 0; n < num_nodes; n++) {
-        sfilters[n] = new sfloat[num_filters * filter_size * filter_size]();
+        sfilters[n] = new sfloat[num_filters * filter_size * filter_size *colors]();
         ssoft_weights[n] = new sfloat[softmax_in_len*softmax_out_len]();
         ssoft_biases[n] = new sfloat[softmax_out_len]();
 
         // set secure values
-        for (int i = 0; i < num_filters * filter_size * filter_size; i++) {
+        for (int i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
             sfilters[n][i].convert_in_place(filters[n][i]);  
         }
         for (int i = 0; i < softmax_in_len*softmax_out_len; i++) {
@@ -720,7 +720,7 @@ void saverage_weights(float **filters, float **soft_weights, float **soft_biases
     }   
 
     // initialize average values
-    for (int i = 0; i < num_filters * filter_size * filter_size; i++) {
+    for (int i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
         avg_filters[i].convert_in_place(0.0);  
     }
     for (int i = 0; i < softmax_in_len*softmax_out_len; i++) {
@@ -732,7 +732,7 @@ void saverage_weights(float **filters, float **soft_weights, float **soft_biases
 
 
     // average each node's weights and biases
-    for (int i = 0; i < num_filters * filter_size * filter_size; i++) {
+    for (int i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
         for (int n = 0; n < num_nodes; n++) {
             avg_filters[i] += sfilters[n][i];  
         }
@@ -755,7 +755,7 @@ void saverage_weights(float **filters, float **soft_weights, float **soft_biases
 
     // update each node's weights and biases
     for (int n = 0; n < num_nodes; n++) {
-        for (int i = 0; i < num_filters * filter_size * filter_size; i++) {
+        for (int i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
             sfilters[n][i] = avg_filters[i];
         }
         for (int i = 0; i < softmax_in_len*softmax_out_len; i++) {
@@ -768,7 +768,7 @@ void saverage_weights(float **filters, float **soft_weights, float **soft_biases
 
     // return non-secure values
     for (int n = 0; n < num_nodes; n++) {
-        for (int i = 0; i < num_filters * filter_size * filter_size; i++) {
+        for (int i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
             filters[n][i] = sfilters[n][i].reconstruct();  
         }
         for (int i = 0; i < softmax_in_len*softmax_out_len; i++) {
