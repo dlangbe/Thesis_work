@@ -473,14 +473,14 @@ void forward(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, u
     // link forward layers
     auto t_start = std::chrono::high_resolution_clock::now();
     conv.forward(conv_out, temp_image, filters);
-    //relu(conv_out, avgpool_rows*avgpool_cols*num_filters);
+    // relu(conv_out, avgpool_rows*avgpool_cols*num_filters);
     auto t_end = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
     conv.update_duration(duration, true);
 
     t_start = std::chrono::high_resolution_clock::now();
     avgpool.forward(pool_out, conv_out);
-    //relu(pool_out, softmax_in_length);
+    // relu(pool_out, softmax_in_length);
     t_end = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
     avgpool.update_duration(duration, true);
@@ -555,14 +555,14 @@ void train(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, uns
     // link backward layers
     auto t_start = std::chrono::high_resolution_clock::now();
     softmax.back(soft_out, grad, last_soft_input, totals, soft_weight, soft_bias);
-    //relu(soft_out, softmax_in_length);
+    // relu(soft_out, softmax_in_length);
     auto t_end = std::chrono::high_resolution_clock::now();
     double duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
     softmax.update_duration(duration, false);
 
     t_start = std::chrono::high_resolution_clock::now();
     avgpool.back(pool_out, soft_out);
-    //relu(pool_out, avgpool_rows*avgpool_cols*num_filters);
+    // relu(pool_out, avgpool_rows*avgpool_cols*num_filters);
     t_end = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
     avgpool.update_duration(duration, false);
@@ -722,7 +722,7 @@ void normalize_image(unsigned char *input, float *output, int rows, int cols, in
 
 void relu(float *values, int size) {
     for (int i = 0; i < size; i++) {
-        values[i] = values[i] > 0 ? values[i] : 0.00000000001;
+        values[i] = (values[i] > 0.0) ? values[i] : 0.000001 * values[i];
     }
     return;
 }

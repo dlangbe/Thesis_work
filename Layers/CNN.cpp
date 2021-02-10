@@ -32,7 +32,7 @@ int main(void) {
     int num_epochs = 1;
     int num_filters = 8;
     int filter_size = 3;
-    int num_nodes = 16;
+    int num_nodes = 2;
     int batch_size = 100;
 
     int soft_size = (image_size - (filter_size-1)) / 2;
@@ -94,10 +94,9 @@ int main(void) {
     float *filters_init;
     filters_init = new float[num_filters * filter_size * filter_size * colors];
     for (i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
-        filters_init[i] = ((float) std::rand() / RAND_MAX) / (filter_size);
+        filters_init[i] = ((float) std::rand() / RAND_MAX) / (filter_size*filter_size);
     }
-    printf("filters[0] = %0.12f\n", filters_init[0]);
-    printf("test\n");
+
     //printf("test: %0.12f\n", ((float) std::rand() / RAND_MAX));
 
     // create initial softmax weights
@@ -125,11 +124,12 @@ int main(void) {
     // for (i = 59990; i < 60000; i++) printf("%d\t", (int) labels[i]);
     // printf("\n");
 
-    run_CNN(images, labels, num_images, image_size, image_size, num_classes, num_train, learning_rate, per_print, num_epochs, 
-        num_filters, filter_size, filters_init, soft_weight_init, soft_bias_init, colors);
+    run_CNN(images, labels, num_images, image_size, image_size, num_classes, num_train, learning_rate, 
+        per_print, num_epochs, num_filters, filter_size, filters_init, soft_weight_init, soft_bias_init, colors);
 
-    // run_FedAvg(images, labels, num_images, num_train, learning_rate, per_print, num_epochs, num_filters, filter_size, 
-    //     filters_init, soft_weight_init, soft_bias_init, num_nodes, batch_size);
+    // run_sFedAvg(images, labels, num_images, image_size, image_size, num_classes, num_train, learning_rate, 
+    //     per_print, num_epochs, num_filters, filter_size, filters_init, soft_weight_init, soft_bias_init, 
+    //     num_nodes, batch_size, colors);
 
     /************************************************ initialize layers ************************************************/
 
