@@ -128,6 +128,180 @@ void run_CNN(unsigned char **images, unsigned char *labels, int num_images, int 
     return;
 }
 
+void run_mCNN(unsigned char **images, unsigned char *labels, int num_images, int image_rows, int image_cols, int num_classes, int num_train, 
+    float learning_rate, int per_print, int num_epochs, int num_filters, int filter_size, float **filters_init, 
+    float *soft_weight_init, float *soft_bias_init, int colors, int conv_layers) {
+
+    /* for 2 conv layers:
+        conv[0] in = 32 * 32
+        avgpool[0] in = 28 * 28 * 8
+        conv[1] in = 14 * 14 * 8
+        avgpool[1] in = 10 * 10 * 8
+        soft in = 5 * 5 * 8
+    */
+
+    int *conv_rows = new int[conv_layers];
+    int *conv_cols = new int[conv_layers];
+    int *avgpool_rows = new int[conv_layers];
+    int *avgpool_cols = new int[conv_layers];
+    int softmax_in_len, softmax_out_len;
+
+    for (int i = 0; i < conv_layers; i++) {
+        if (i == 0) {
+            conv_rows[i] = image_rows;
+            conv_cols[i] = image_cols;
+            avgpool_rows[i] = image_rows - (filter_size - 1);
+            avgpool_cols[i] = image_cols - (filter_size - 1);
+        }
+        else {
+            conv_rows[i] = avgpool_rows[i-1] / 2;
+            conv_cols[i] = avgpool_cols[i-1] / 2;
+            avgpool_rows[i] = conv_rows[i] - (filter_size - 1);
+            avgpool_cols[i] = conv_cols[i] - (filter_size - 1);
+        }
+    }
+    softmax_in_len = (avgpool_rows[conv_layers-1]/2) * (avgpool_cols[conv_layers-1]/2) * num_filters;
+    softmax_out_len = num_classes;
+
+    /************************************************ initialize layers ************************************************/
+
+    Conv_layer *conv = new Conv_layer[conv_layers];
+    Avgpool_layer *avgpool = new Avgpool_layer[conv_layers];
+    for (int i = 0; i < conv_layers; i++) {
+        if (i == 0)
+            conv[i] = Conv_layer(conv_rows[i], conv_cols[i], num_filters, filter_size, colors, learning_rate);
+        else
+            conv[i] = Conv_layer(conv_rows[i], conv_cols[i], num_filters, filter_size, num_filters, learning_rate);
+        avgpool[i] = Avgpool_layer(avgpool_rows[i], avgpool_cols[i], num_filters);
+    }
+    
+    //Maxpool_layer maxpool(avgpool_rows, avgpool_cols, num_filters);
+    Softmax_layer softmax(softmax_in_len, softmax_out_len, learning_rate);
+
+    printf("** Layers initialized **\n");
+
+    /************************************************ training ************************************************/
+
+    // accuracy variables
+    int i;
+    float *loss_p, *accuracy_p;
+    float loss, accuracy;
+    loss = 0;
+    accuracy = 0;
+    loss_p = &loss;
+    accuracy_p = &accuracy;
+    float num_correct = 0.0;
+    float total_loss = 0.0;
+
+    // declare variables that can be reused
+    float *out, *soft_out, **last_pool_input, **last_conv_input, *last_soft_input;
+    out = (float *) calloc(num_classes, sizeof(float));
+    soft_out = (float *) calloc(softmax_in_len, sizeof(float));
+    last_pool_input = new float *[conv_layers];
+    last_conv_input = new float *[conv_layers - 1];
+    for (i = 0; i < conv_layers; i++) {
+        last_pool_input[i] = new float[avgpool_rows[i]*avgpool_cols[i]*num_filters]();
+        if (i != 0)
+            last_conv_input[i-1] = new float[conv_rows[i-1]*conv_cols[i-1]*num_filters]();
+    }
+    last_soft_input = (float *) calloc(softmax_in_len, sizeof(float));
+
+    for (int epoch = 0; epoch < num_epochs; epoch++) {
+        printf("--- Epoch %d ---\n", epoch+1);
+        auto epoch_start = std::chrono::high_resolution_clock::now();
+
+        for (i = 0; i < num_train; i++) {
+            if (i > 0 && i % per_print == (per_print-1)) {
+                printf("step %d: past %d steps avg loss: %.3f | accuracy: %.3f\n", i+1, per_print,
+                    total_loss/per_print, num_correct/per_print);
+                total_loss = 0.0;
+                num_correct = 0.0;
+            }
+            //printf("Label: %d\n", labels[i]);
+
+            // train(conv, maxpool, softmax, images[i], filters_init, labels[i], loss_p, accuracy_p,
+            //         soft_weight_init, soft_bias_init, out, soft_out,
+            //         last_pool_input, last_soft_input);
+
+            // train(conv, avgpool, softmax, images[i], filters_init, labels[i], loss_p, accuracy_p,
+            //         soft_weight_init, soft_bias_init, out, soft_out,
+            //         last_pool_input, last_soft_input);
+
+            trainm(conv, avgpool, softmax, images[i], filters_init, labels[i], loss_p, accuracy_p,
+                    soft_weight_init, soft_bias_init, out, soft_out,
+                    last_conv_input, last_pool_input, last_soft_input, conv_layers);
+            total_loss += *loss_p;
+            num_correct += *accuracy_p;
+
+        }
+
+        auto epoch_end = std::chrono::high_resolution_clock::now();
+        double epoch_duration = std::chrono::duration_cast<std::chrono::nanoseconds>(epoch_end-epoch_start).count()/1000000000.0;
+        double conv_ft, conv_bt, avgpool_ft, avgpool_bt;
+        conv_ft = conv_bt = avgpool_ft = avgpool_bt = 0.0;
+        for (i = 0; i < conv_layers; i++) {
+            conv_ft += conv[i].get_duration(true);
+            conv_bt += conv[i].get_duration(false);
+            avgpool_ft += avgpool[i].get_duration(true);
+            avgpool_bt += avgpool[i].get_duration(false);
+
+            conv[i].update_duration(0.0, true);
+            conv[i].update_duration(0.0, false);
+            avgpool[i].update_duration(0.0, true);
+            avgpool[i].update_duration(0.0, false);
+        }
+        printf("Epoch completed in: %.6lf seconds\n", epoch_duration);
+        printf("\tConv_forward: %.6lf sec, Maxpool_forward: %.6lf sec, Softmax_forward: %.6lf sec\n",
+        conv_ft, avgpool_ft, softmax.get_duration(true));
+        printf("\tConv_backward: %.6lf sec, Maxpool_backward: %.6lf sec, Softmax_backward: %.6lf sec\n\n",
+        conv_bt, avgpool_bt, softmax.get_duration(false));
+
+        // reset times
+        epoch_duration = 0.0;
+        softmax.update_duration(0.0, true);
+        softmax.update_duration(0.0, false);
+    }
+
+    /************************************************ testing ************************************************/
+    // reset accuracy variables
+    total_loss = 0.0;
+    num_correct = 0.0;
+    float count = 0.0;
+    *loss_p = 0.0;
+    *accuracy_p = 0.0;
+
+    printf("\nTesting:\n");
+    auto test_start = std::chrono::high_resolution_clock::now();
+
+    for (i = num_train; i < num_images; i++) {
+        // re-initialize totals for each image
+        float *totals;
+        totals = (float *) calloc(num_classes, sizeof(float));
+
+        // forward(images[i], filters_init, labels[i], out, loss_p, accuracy_p, image_rows, image_cols, 8, 3, last_pool_input,
+        //     last_soft_input, totals, soft_weight_init, soft_bias_init);
+
+        forwardm(conv, avgpool, softmax, images[i], filters_init, labels[i], out, loss_p, accuracy_p,
+            last_conv_input, last_pool_input, last_soft_input, totals, soft_weight_init, soft_bias_init, conv_layers);
+
+        total_loss += *loss_p;
+        num_correct += *accuracy_p;
+
+        if (i > 0 && i % per_print == (per_print-1)) {
+            printf("step %d: past %d steps test loss: %.3f | test accuracy: %.3f\n", i+1, per_print,
+                (float) total_loss/count, (float) num_correct/count);
+        }
+        count += 1.0;
+        free(totals);
+    }
+
+    auto test_end = std::chrono::high_resolution_clock::now();
+    double test_duration = std::chrono::duration_cast<std::chrono::nanoseconds>(test_end-test_start).count()/1000000000.0;
+    printf("Testing completed in: %.6lf seconds\n", test_duration);
+
+    return;
+}
+
 void run_sCNN(unsigned char **images, unsigned char *labels, int num_images, int image_rows, int image_cols, int num_classes, int num_train, 
     float learning_rate, int per_print, int num_epochs, int num_filters, int filter_size, float *filters_init, 
     float *soft_weight_init, float *soft_bias_init, int colors) {

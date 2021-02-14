@@ -6,6 +6,10 @@ void run_CNN(unsigned char **images, unsigned char *labels, int num_images, int 
     float learning_rate, int per_print, int num_epochs, int num_filters, int filter_size, float *filters_init, 
     float *soft_weight_init, float *soft_bias_init, int colors);
 
+void run_mCNN(unsigned char **images, unsigned char *labels, int num_images, int image_rows, int image_cols, int num_classes, int num_train, 
+    float learning_rate, int per_print, int num_epochs, int num_filters, int filter_size, float **filters_init, 
+    float *soft_weight_init, float *soft_bias_init, int colors, int conv_layers);
+
 void run_sCNN(unsigned char **images, unsigned char *labels, int num_images, int image_rows, int image_cols, int num_classes, int num_train, 
     float learning_rate, int per_print, int num_epochs, int num_filters, int filter_size, float *filters_init, 
     float *soft_weight_init, float *soft_bias_init, int colors);

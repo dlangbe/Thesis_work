@@ -19,7 +19,9 @@ class Conv_layer {
         Conv_layer();
         void get_parameters(int *r, int *c, int *num, int *size, int *colors, float *learn);
         void forward(float *dest, float *image, float *filters);
+        void forwardm(float *dest, float *image, float *filters);
         void back(float *dest, float *gradient, float *last_input);
+        void backm(float *dest, float *weights, float *gradient, float *last_input);
         void sback(sfloat *dest, sfloat *gradient,  sfloat *last_input);
         void update_duration(double t, bool forward);
         double get_duration(bool forward) {return forward ? t_forward : t_back;}
@@ -78,13 +80,21 @@ class Softmax_layer {
         
 };
 
-void forward(Conv_layer &conv, Avgpool_layer &maxpool, Softmax_layer &softmax, unsigned char *image, float *filters, 
+void forward(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, unsigned char *image, float *filters, 
     unsigned char label, float *out, float *loss, float *acc, float *last_pool_input, float *last_soft_input, 
     float *totals, float *soft_weight, float *soft_bias);
 
-void train(Conv_layer &conv, Avgpool_layer &maxpool, Softmax_layer &softmax, unsigned char *image, float *filters, 
+void forwardm(Conv_layer *conv, Avgpool_layer *avgpool, Softmax_layer &softmax, unsigned char *image, float **filters, 
+    unsigned char label, float *out, float *loss, float *acc, float **last_conv_input, float **last_pool_input, float *last_soft_input, 
+    float *totals, float *soft_weight, float *soft_bias, int conv_layers);
+
+void train(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, unsigned char *image, float *filters, 
     unsigned char label, float *loss, float *acc, float *soft_weight, float *soft_bias,
     float *out, float *soft_out, float *last_pool_input, float *last_soft_input);
+
+void trainm(Conv_layer *conv, Avgpool_layer *avgpool, Softmax_layer &softmax, unsigned char *image, float **filters, 
+    unsigned char label, float *loss, float *acc, float *soft_weight, float *soft_bias,
+    float *out, float *soft_out, float **last_conv_input, float **last_pool_input, float *last_soft_input, int conv_layers);
 
 void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, unsigned char *image, float *filters, 
     unsigned char label, float *loss, float *acc, float *soft_weight, float *soft_bias,
