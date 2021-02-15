@@ -164,7 +164,7 @@ void Conv_layer::backm(float *dest, float *weights, float *gradient, float *last
                     for (j = 0;  j < filter_size; j++) {
                         for (k = 0; k < colors; k++) {      // colors = 8
                             // dest = 8x12x12 (k, r, c), gradient = 8x8x8 (k, r, c), weights = 8x8x5x5 (n, k, r, c)
-                            if (r+i-filter_offset >= 0 && r+i-filter_offset < rows && c+j-filter_offset >= 0 && c+j-filter_offset < cols) {
+                            if (r+i-filter_offset >= 0 && r+i-filter_offset < (rows-filter_offset) && c+j-filter_offset >= 0 && c+j-filter_offset < (cols-filter_offset)) {
                                 dest[(k*rows*cols) + (r * cols + c)] += 
                                     gradient[k * ((rows-filter_offset) * (cols-filter_offset)) + ((r+i-filter_offset) * (cols-filter_offset) + (c+j-filter_offset))] *
                                     weights[(n*filter_size*filter_size*colors) + (k*filter_size*filter_size) 

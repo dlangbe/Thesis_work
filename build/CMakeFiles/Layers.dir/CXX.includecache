@@ -6,10 +6,26 @@
 
 #IncludeRegexTransform: 
 
-D:/Documents/Research/Thesis_work/Layers/layers.cpp
+D:/Documents/Research/Thesis_work/Layers/CNN.cpp
+stdio.h
+-
+stdlib.h
+-
+cstdio
+-
+time.h
+-
+math.h
+-
+fstream
+-
+chrono
+-
 layers.hpp
 D:/Documents/Research/Thesis_work/Layers/layers.hpp
-algorithm
+networks.hpp
+D:/Documents/Research/Thesis_work/Layers/networks.hpp
+fstream
 -
 
 D:/Documents/Research/Thesis_work/Layers/layers.hpp
@@ -19,6 +35,10 @@ math.h
 -
 fstream
 -
+chrono
+-
+
+D:/Documents/Research/Thesis_work/Layers/networks.hpp
 chrono
 -
 

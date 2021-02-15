@@ -19,9 +19,9 @@ int main(void) {
     int z;
 
     // dataset parameters
-    int num_images = 6000;
-    int num_train = 5000;
-    int per_print = 1;
+    int num_images = 60000;
+    int num_train = 50000;
+    int per_print = 1000;
     int images_per_file = num_images / 2;
     int image_size = 28;
     int num_classes = 10;
@@ -98,13 +98,13 @@ int main(void) {
         if (n == 0) {
             filters_init[n] = new float[num_filters * filter_size * filter_size * colors];
             for (i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
-                filters_init[n][i] = ((float) std::rand() / RAND_MAX) / (filter_size*filter_size);
+                filters_init[n][i] = ((float) std::rand() / RAND_MAX) / (filter_size * filter_size);
             }
         }
         else {
             filters_init[n] = new float[num_filters * filter_size * filter_size * num_filters];
             for (i = 0; i < num_filters * filter_size * filter_size * num_filters; i++) {
-                filters_init[n][i] = ((float) std::rand() / RAND_MAX) / (filter_size * filter_size * num_filters);
+                filters_init[n][i] = ((float) std::rand() / RAND_MAX) / (filter_size * filter_size);
             }
         }
         
