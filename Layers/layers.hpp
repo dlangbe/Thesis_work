@@ -1,9 +1,9 @@
 #include "secure_float.hpp"
-#include <stdlib.h>
+//#include <stdlib.h>
 #include <math.h>
-#include <stdio.h>
-#include <cstdlib>
-#include <cstdio>
+//#include <stdio.h>
+//#include <cstdlib>
+//#include <cstdio>
 #include <fstream>
 #include <chrono>
 
@@ -101,4 +101,5 @@ void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, un
     float *out, float *soft_out, float *last_pool_input, float *last_soft_input);
 
 void normalize_image(unsigned char *input, float *output, int rows, int cols, int colors);
+void normalize(float *values, int size);
 void relu(float *values, int size);

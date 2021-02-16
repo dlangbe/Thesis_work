@@ -20,9 +20,9 @@ int main(void) {
     int z;
 
     // dataset parameters
-    int num_images = 6000;
-    int num_train = 5000;
-    int per_print = 100;
+    int num_images = 60000;
+    int num_train = 50000;
+    int per_print = 1000;
     int images_per_file = num_images / 6;
     int image_size = 32;
     int num_classes = 10;
@@ -31,7 +31,7 @@ int main(void) {
     // hyperparameters
     float learning_rate = 0.005;
     int num_epochs = 1;
-    int num_filters = 8;
+    int num_filters = 64;
     int filter_size = 5;
     int num_nodes = 16;
     int batch_size = 100;
@@ -108,16 +108,16 @@ int main(void) {
     float **filters_init;
     filters_init = new float* [conv_layers];
     for (int n = 0; n < conv_layers; n++) {
-        if (i == 0) {
+        if (n == 0) {
             filters_init[n] = new float[num_filters * filter_size * filter_size * colors];
             for (i = 0; i < num_filters * filter_size * filter_size * colors; i++) {
-                filters_init[n][i] = ((float) std::rand() / RAND_MAX) / (filter_size);
+                filters_init[n][i] = ((float) std::rand() / RAND_MAX) / (filter_size*num_filters);
             }
         }
         else {
             filters_init[n] = new float[num_filters * filter_size * filter_size * num_filters];
             for (i = 0; i < num_filters * filter_size * filter_size * num_filters; i++) {
-                filters_init[n][i] = ((float) std::rand() / RAND_MAX) / (filter_size);
+                filters_init[n][i] = ((float) std::rand() / RAND_MAX) / (filter_size*filter_size*num_filters);
             }
         }
         

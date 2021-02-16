@@ -1,4 +1,5 @@
 #include "layers.hpp"
+#include <algorithm>
 
 void Conv_layer::get_parameters(int *r, int *c, int *num, int *size, int *k, float *learn) {
     *r = rows;
@@ -116,6 +117,7 @@ void Conv_layer::backm(float *dest, float *weights, float *gradient, float *last
     float *holder;
     holder = new float[filter_size * filter_size * colors]();
     int r, c, n, i, j, k;
+    int filter_offset = filter_size - 1;
 
     for (n = 0; n < num_filters; n++) {
         for (i = 0; i < filter_size; i++) {
@@ -125,29 +127,48 @@ void Conv_layer::backm(float *dest, float *weights, float *gradient, float *last
                 }
             }
         }
-        for (r = 0; r < rows-(filter_size-1); r++) {
-            for (c = 0; c < cols-(filter_size-1); c++) {
+        for (r = 0; r < rows-filter_offset; r++) {
+            for (c = 0; c < cols-filter_offset; c++) {
                 for (i = 0; i < filter_size; i++) {
                     for (j = 0; j < filter_size; j++) {
                         for (k = 0; k < colors; k++) {
                             holder[(k*filter_size*filter_size) + (i * filter_size + j)] += last_input[(k*rows*cols) +((r+i) * cols + (c+j))] *
-                                gradient[n * ((rows-(filter_size-1)) * (cols-(filter_size-1))) + (r * (cols-(filter_size-1)) + c)];
+                                gradient[n * ((rows-filter_offset) * (cols-filter_offset)) + (r * (cols-filter_offset) + c)];
                         }
                     }
                 }
             }
         }
         // update output gradient
-        for (r = 1-filter_size; r < rows + (filter_size-1); r++) {
-            for (c = 1-filter_size; c < cols + (filter_size-1); c++) {
-                for (i = 0; i < filter_size; i++) {
+        // for (r = 1-filter_size; r < rows + (filter_size-1); r++) {
+        //     for (c = 1-filter_size; c < cols + (filter_size-1); c++) {
+        //         for (i = 0; i < filter_size; i++) {
+        //             for (j = 0;  j < filter_size; j++) {
+        //                 for (k = 0; k < colors; k++) {
+        //                     // dest = 8x12x12 (k, r, c), gradient = 8x8x8 (k, r, c), weights = 8x8x5x5 (n, k, r, c)
+        //                     if (r+i >= 0 && r+i < rows && c+j >= 0 && c+j < cols) {
+        //                         dest[(k*rows*cols) + ((r+i) * cols + (c+j))] += 
+        //                             gradient[n * ((rows-(filter_size-1)) * (cols-(filter_size-1))) + ((r+i) * (cols-(filter_size-1)) + (c+j))] *
+        //                             weights[(n*filter_size*filter_size*colors) + (k*filter_size*filter_size) 
+        //                                 + ((filter_size-1-j)*filter_size + (filter_size-1-i))];
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+        for (r = 0; r < rows; r++) {                        // rows = 12
+            for (c = 0; c < cols; c++) {                    // cols = 12
+                for (i = 0; i < filter_size; i++) {         //filter_size = 5
                     for (j = 0;  j < filter_size; j++) {
-                        for (k = 0; k < colors; k++) {
-                            if (r+i >= 0 && r+i < rows && c+j >= 0 && c+j < cols) {
-                                dest[(k*rows*cols) + ((r+i) * cols + (c+j))] += 
-                                    gradient[n * ((rows-(filter_size-1)) * (cols-(filter_size-1))) + ((r+i) * (cols-(filter_size-1)) + (c+j))] *
+                        for (k = 0; k < colors; k++) {      // colors = 8
+                            // dest = 8x12x12 (k, r, c), gradient = 8x8x8 (k, r, c), weights = 8x8x5x5 (n, k, r, c)
+                            if (r+i-filter_offset >= 0 && r+i-filter_offset < (rows-filter_offset) && c+j-filter_offset >= 0 && c+j-filter_offset < (cols-filter_offset)) {
+                                dest[(k*rows*cols) + (r * cols + c)] += 
+                                    gradient[k * ((rows-filter_offset) * (cols-filter_offset)) + ((r+i-filter_offset) * (cols-filter_offset) + (c+j-filter_offset))] *
                                     weights[(n*filter_size*filter_size*colors) + (k*filter_size*filter_size) 
-                                        + ((filter_size-1-j)*filter_size + (filter_size-1-i))];
+                                        + ((filter_offset-j)*filter_size + (filter_offset-i))];
                             }
                         }
                     }
@@ -566,7 +587,7 @@ void forward(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, u
 
     t_start = std::chrono::high_resolution_clock::now();
     avgpool.forward(pool_out, conv_out);
-    // relu(pool_out, softmax_in_length);
+    //relu(pool_out, softmax_in_length);
     t_end = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
     avgpool.update_duration(duration, true);
@@ -645,12 +666,16 @@ void forwardm(Conv_layer *conv, Avgpool_layer *avgpool, Softmax_layer &softmax, 
     // link forward layers
     for (int i = 0; i < conv_layers; i++) {
         auto t_start = std::chrono::high_resolution_clock::now();
-        if (i == 0)
+        if (i == 0) {
             conv[i].forward(conv_out[i], temp_image, filters[i]);
+            //normalize(conv_out[i], avgpool_rows[i]*avgpool_cols[i]*num_filters);
+        }
+            
         else
             conv[i].forwardm(conv_out[i], pool_out[i-1], filters[i]);
         
-        // relu(conv_out, avgpool_rows*avgpool_cols*num_filters);
+        // relu(conv_out[i], avgpool_rows[i]*avgpool_cols[i]*num_filters);
+        
         auto t_end = std::chrono::high_resolution_clock::now();
         duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
         conv[i].update_duration(duration, true);
@@ -837,8 +862,11 @@ void trainm(Conv_layer *conv, Avgpool_layer *avgpool, Softmax_layer &softmax, un
         avgpool[i].update_duration(duration, false);
 
         t_start = std::chrono::high_resolution_clock::now();
-        if (i == 0)
+        if (i == 0) {
+            //normalize(pool_out[i], avgpool_rows[i]*avgpool_cols[i]*num_filters);
             conv[i].back(filters[i], pool_out[i], temp_image);
+        }
+            
         else
             conv[i].backm(conv_out[i-1], filters[i], pool_out[i], last_conv_input[i-1]);
         t_end = std::chrono::high_resolution_clock::now();
@@ -990,6 +1018,7 @@ void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, un
     free(totals);
     return;
 }
+
 void normalize_image(unsigned char *input, float *output, int rows, int cols, int colors) {
     for (int r = 0; r < rows; r++) {
         for (int c = 0; c < cols; c++) {
@@ -1000,6 +1029,19 @@ void normalize_image(unsigned char *input, float *output, int rows, int cols, in
     }
     return;
 }
+
+void normalize(float *values, int size) {
+    float max = *std::max_element(values, values+size);
+    float min = *std::min_element(values, values+size);
+    for (int i = 0; i < size; i++) {
+        values[i] = (max - values[i]) / (max - min) - 0.5;
+    }
+}
+
+// void normalize_back(float *values, float *last_values, int size) {
+//     float max = *std::max_element(last_values, values+size);
+//     float min = *std::min_element(last_values, values+size);
+// }
 
 void relu(float *values, int size) {
     for (int i = 0; i < size; i++) {
