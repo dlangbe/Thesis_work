@@ -739,8 +739,6 @@ void forwardm(Conv_layer *conv, Avgpool_layer *avgpool, Softmax_layer &softmax, 
     delete[] conv_out;
     delete[] pool_out;
     delete[] temp_image;
-    delete[] conv_out;
-    delete[] pool_out;
     return;
 }
 
