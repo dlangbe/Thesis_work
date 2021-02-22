@@ -856,7 +856,7 @@ void trainm(Conv_layer *conv, Avgpool_layer *avgpool, Softmax_layer &softmax, un
         else
             avgpool[i].back(pool_out[i], conv_out[i]);
         
-        // relu(pool_out, avgpool_rows*avgpool_cols*num_filters);
+        // relu(pool_out[i], avgpool_rows[i]*avgpool_cols[i]*num_filters);
         t_end = std::chrono::high_resolution_clock::now();
         duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t_end-t_start).count();
         avgpool[i].update_duration(duration, false);

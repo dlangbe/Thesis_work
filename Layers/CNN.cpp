@@ -20,9 +20,9 @@ int main(void) {
     int z;
 
     // dataset parameters
-    int num_images = 60000;
-    int num_train = 50000;
-    int per_print = 1000;
+    int num_images = 6000;
+    int num_train = 5000;
+    int per_print = 100;
     int images_per_file = num_images / 6;
     int image_size = 32;
     int num_classes = 10;
@@ -31,13 +31,15 @@ int main(void) {
     // hyperparameters
     float learning_rate = 0.005;
     int num_epochs = 1;
-    int num_filters = 64;
+    int num_filters = 8;
     int filter_size = 5;
     int num_nodes = 16;
     int batch_size = 100;
     int conv_layers = 2;
 
-    int soft_size = (image_size - (filter_size-1)) / 2;
+    int soft_size;
+    if (conv_layers == 1) soft_size = (image_size - (filter_size-1)) / 2;
+    if (conv_layers == 2) soft_size = (((image_size - (filter_size - 1)) / 2) - (filter_size- 1)) / 2;
     
 
     std::srand(1);
