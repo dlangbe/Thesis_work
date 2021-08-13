@@ -1,0 +1,2777 @@
+nvcc -std=c++14 -g -I -O3 -o cnn  CNN.o layers.o networks.o
+** Reading images and labels **
+** Setting initial filter weights **
+** Setting initial softmax weights **
+Argc = 10
+0.005000 8 8 3 2 100 1 0
+** Layers initialized **
+--- Epoch 1 ---
+step 1000: past 1000 steps avg loss: 1.310 | accuracy: 0.570
+step 26000: past 1000 steps avg loss: 1.210 | accuracy: 0.607
+step 2000: past 1000 steps avg loss: 0.659 | accuracy: 0.785
+step 27000: past 1000 steps avg loss: 0.683 | accuracy: 0.791
+step 3000: past 1000 steps avg loss: 0.484 | accuracy: 0.843
+step 28000: past 1000 steps avg loss: 0.496 | accuracy: 0.837
+step 4000: past 1000 steps avg loss: 0.456 | accuracy: 0.857
+step 29000: past 1000 steps avg loss: 0.473 | accuracy: 0.864
+step 5000: past 1000 steps avg loss: 0.443 | accuracy: 0.857
+step 30000: past 1000 steps avg loss: 0.558 | accuracy: 0.812
+step 6000: past 1000 steps avg loss: 0.424 | accuracy: 0.871
+step 31000: past 1000 steps avg loss: 0.531 | accuracy: 0.826
+step 7000: past 1000 steps avg loss: 0.355 | accuracy: 0.897
+step 32000: past 1000 steps avg loss: 0.541 | accuracy: 0.833
+step 8000: past 1000 steps avg loss: 0.477 | accuracy: 0.854
+step 33000: past 1000 steps avg loss: 0.483 | accuracy: 0.859
+step 9000: past 1000 steps avg loss: 0.495 | accuracy: 0.856
+step 34000: past 1000 steps avg loss: 0.370 | accuracy: 0.889
+step 10000: past 1000 steps avg loss: 0.355 | accuracy: 0.903
+step 35000: past 1000 steps avg loss: 0.409 | accuracy: 0.870
+step 11000: past 1000 steps avg loss: 0.322 | accuracy: 0.895
+step 36000: past 1000 steps avg loss: 0.355 | accuracy: 0.887
+step 12000: past 1000 steps avg loss: 0.407 | accuracy: 0.879
+step 37000: past 1000 steps avg loss: 0.351 | accuracy: 0.893
+step 13000: past 1000 steps avg loss: 0.440 | accuracy: 0.871
+step 38000: past 1000 steps avg loss: 0.486 | accuracy: 0.860
+step 14000: past 1000 steps avg loss: 0.438 | accuracy: 0.876
+step 39000: past 1000 steps avg loss: 0.347 | accuracy: 0.881
+step 15000: past 1000 steps avg loss: 0.504 | accuracy: 0.847
+step 40000: past 1000 steps avg loss: 0.402 | accuracy: 0.884
+step 16000: past 1000 steps avg loss: 0.395 | accuracy: 0.890
+step 41000: past 1000 steps avg loss: 0.318 | accuracy: 0.908
+step 17000: past 1000 steps avg loss: 0.375 | accuracy: 0.889
+step 42000: past 1000 steps avg loss: 0.410 | accuracy: 0.870
+step 18000: past 1000 steps avg loss: 0.411 | accuracy: 0.876
+step 43000: past 1000 steps avg loss: 0.437 | accuracy: 0.855
+step 19000: past 1000 steps avg loss: 0.290 | accuracy: 0.918
+step 44000: past 1000 steps avg loss: 0.325 | accuracy: 0.902
+step 20000: past 1000 steps avg loss: 0.310 | accuracy: 0.908
+step 45000: past 1000 steps avg loss: 0.375 | accuracy: 0.891
+step 21000: past 1000 steps avg loss: 0.396 | accuracy: 0.892
+step 46000: past 1000 steps avg loss: 0.429 | accuracy: 0.864
+step 22000: past 1000 steps avg loss: 0.297 | accuracy: 0.924
+step 47000: past 1000 steps avg loss: 0.371 | accuracy: 0.887
+step 23000: past 1000 steps avg loss: 0.357 | accuracy: 0.879
+step 48000: past 1000 steps avg loss: 0.358 | accuracy: 0.893
+step 24000: past 1000 steps avg loss: 0.374 | accuracy: 0.890
+step 49000: past 1000 steps avg loss: 0.292 | accuracy: 0.911
+step 25000: past 1000 steps avg loss: 0.379 | accuracy: 0.882
+step 50000: past 1000 steps avg loss: 0.418 | accuracy: 0.883
+Epoch completed in: 179.325255 seconds
+Federated Averaging completed in: 0.210670 seconds
+
+Node 0
+	Conv_forward: 41.074931 sec, Maxpool_forward: 1.454069 sec, Softmax_forward: 3.090836 sec
+	Conv_backward: 33.590879 sec, Maxpool_backward: 1.820241 sec, Softmax_backward: 6.829754 sec
+
+Node 1
+	Conv_forward: 41.070469 sec, Maxpool_forward: 1.454447 sec, Softmax_forward: 3.087432 sec
+	Conv_backward: 33.572195 sec, Maxpool_backward: 1.820987 sec, Softmax_backward: 6.842517 sec
+
+--- Epoch 2 ---
+step 1000: past 1000 steps avg loss: 0.370 | accuracy: 0.892
+step 26000: past 1000 steps avg loss: 0.297 | accuracy: 0.904
+step 2000: past 1000 steps avg loss: 0.362 | accuracy: 0.897
+step 27000: past 1000 steps avg loss: 0.392 | accuracy: 0.898
+step 3000: past 1000 steps avg loss: 0.278 | accuracy: 0.919
+step 28000: past 1000 steps avg loss: 0.336 | accuracy: 0.890
+step 4000: past 1000 steps avg loss: 0.295 | accuracy: 0.914
+step 29000: past 1000 steps avg loss: 0.319 | accuracy: 0.912
+step 5000: past 1000 steps avg loss: 0.309 | accuracy: 0.912
+step 30000: past 1000 steps avg loss: 0.384 | accuracy: 0.879
+step 6000: past 1000 steps avg loss: 0.329 | accuracy: 0.911
+step 31000: past 1000 steps avg loss: 0.375 | accuracy: 0.882
+step 7000: past 1000 steps avg loss: 0.281 | accuracy: 0.923
+step 32000: past 1000 steps avg loss: 0.432 | accuracy: 0.875
+step 8000: past 1000 steps avg loss: 0.368 | accuracy: 0.887
+step 33000: past 1000 steps avg loss: 0.378 | accuracy: 0.890
+step 9000: past 1000 steps avg loss: 0.416 | accuracy: 0.886
+step 34000: past 1000 steps avg loss: 0.281 | accuracy: 0.913
+step 10000: past 1000 steps avg loss: 0.293 | accuracy: 0.918
+step 35000: past 1000 steps avg loss: 0.327 | accuracy: 0.899
+step 11000: past 1000 steps avg loss: 0.261 | accuracy: 0.920
+step 36000: past 1000 steps avg loss: 0.279 | accuracy: 0.905
+step 12000: past 1000 steps avg loss: 0.341 | accuracy: 0.896
+step 37000: past 1000 steps avg loss: 0.292 | accuracy: 0.913
+step 13000: past 1000 steps avg loss: 0.385 | accuracy: 0.889
+step 38000: past 1000 steps avg loss: 0.435 | accuracy: 0.879
+step 14000: past 1000 steps avg loss: 0.377 | accuracy: 0.906
+step 39000: past 1000 steps avg loss: 0.297 | accuracy: 0.900
+step 15000: past 1000 steps avg loss: 0.446 | accuracy: 0.861
+step 40000: past 1000 steps avg loss: 0.342 | accuracy: 0.906
+step 16000: past 1000 steps avg loss: 0.341 | accuracy: 0.901
+step 41000: past 1000 steps avg loss: 0.276 | accuracy: 0.922
+step 17000: past 1000 steps avg loss: 0.322 | accuracy: 0.895
+step 42000: past 1000 steps avg loss: 0.353 | accuracy: 0.892
+step 18000: past 1000 steps avg loss: 0.358 | accuracy: 0.901
+step 43000: past 1000 steps avg loss: 0.389 | accuracy: 0.886
+step 19000: past 1000 steps avg loss: 0.258 | accuracy: 0.930
+step 44000: past 1000 steps avg loss: 0.284 | accuracy: 0.915
+step 20000: past 1000 steps avg loss: 0.271 | accuracy: 0.924
+step 45000: past 1000 steps avg loss: 0.332 | accuracy: 0.906
+step 21000: past 1000 steps avg loss: 0.362 | accuracy: 0.910
+step 46000: past 1000 steps avg loss: 0.389 | accuracy: 0.875
+step 22000: past 1000 steps avg loss: 0.275 | accuracy: 0.927
+step 47000: past 1000 steps avg loss: 0.333 | accuracy: 0.899
+step 23000: past 1000 steps avg loss: 0.316 | accuracy: 0.891
+step 48000: past 1000 steps avg loss: 0.325 | accuracy: 0.902
+step 24000: past 1000 steps avg loss: 0.337 | accuracy: 0.902
+step 49000: past 1000 steps avg loss: 0.263 | accuracy: 0.923
+step 25000: past 1000 steps avg loss: 0.340 | accuracy: 0.895
+step 50000: past 1000 steps avg loss: 0.381 | accuracy: 0.894
+Epoch completed in: 179.285479 seconds
+Federated Averaging completed in: 0.419388 seconds
+
+Node 0
+	Conv_forward: 82.269410 sec, Maxpool_forward: 2.907778 sec, Softmax_forward: 6.126624 sec
+	Conv_backward: 67.170521 sec, Maxpool_backward: 3.633528 sec, Softmax_backward: 13.636075 sec
+
+Node 1
+	Conv_forward: 82.270629 sec, Maxpool_forward: 2.906448 sec, Softmax_forward: 6.123514 sec
+	Conv_backward: 67.160039 sec, Maxpool_backward: 3.634892 sec, Softmax_backward: 13.661525 sec
+
+--- Epoch 3 ---
+step 1000: past 1000 steps avg loss: 0.333 | accuracy: 0.907
+step 26000: past 1000 steps avg loss: 0.272 | accuracy: 0.915
+step 2000: past 1000 steps avg loss: 0.337 | accuracy: 0.898
+step 27000: past 1000 steps avg loss: 0.362 | accuracy: 0.905
+step 3000: past 1000 steps avg loss: 0.252 | accuracy: 0.926
+step 28000: past 1000 steps avg loss: 0.317 | accuracy: 0.901
+step 4000: past 1000 steps avg loss: 0.270 | accuracy: 0.927
+step 29000: past 1000 steps avg loss: 0.294 | accuracy: 0.919
+step 5000: past 1000 steps avg loss: 0.286 | accuracy: 0.921
+step 30000: past 1000 steps avg loss: 0.347 | accuracy: 0.891
+step 6000: past 1000 steps avg loss: 0.308 | accuracy: 0.918
+step 31000: past 1000 steps avg loss: 0.338 | accuracy: 0.904
+step 7000: past 1000 steps avg loss: 0.263 | accuracy: 0.932
+step 32000: past 1000 steps avg loss: 0.412 | accuracy: 0.880
+step 8000: past 1000 steps avg loss: 0.343 | accuracy: 0.896
+step 33000: past 1000 steps avg loss: 0.351 | accuracy: 0.896
+step 9000: past 1000 steps avg loss: 0.392 | accuracy: 0.891
+step 34000: past 1000 steps avg loss: 0.256 | accuracy: 0.913
+step 10000: past 1000 steps avg loss: 0.273 | accuracy: 0.922
+step 35000: past 1000 steps avg loss: 0.303 | accuracy: 0.906
+step 11000: past 1000 steps avg loss: 0.244 | accuracy: 0.932
+step 36000: past 1000 steps avg loss: 0.257 | accuracy: 0.913
+step 12000: past 1000 steps avg loss: 0.315 | accuracy: 0.903
+step 37000: past 1000 steps avg loss: 0.275 | accuracy: 0.921
+step 13000: past 1000 steps avg loss: 0.366 | accuracy: 0.902
+step 38000: past 1000 steps avg loss: 0.423 | accuracy: 0.883
+step 14000: past 1000 steps avg loss: 0.356 | accuracy: 0.908
+step 39000: past 1000 steps avg loss: 0.280 | accuracy: 0.907
+step 15000: past 1000 steps avg loss: 0.426 | accuracy: 0.866
+step 40000: past 1000 steps avg loss: 0.322 | accuracy: 0.904
+step 16000: past 1000 steps avg loss: 0.318 | accuracy: 0.904
+step 41000: past 1000 steps avg loss: 0.263 | accuracy: 0.925
+step 17000: past 1000 steps avg loss: 0.301 | accuracy: 0.901
+step 42000: past 1000 steps avg loss: 0.332 | accuracy: 0.899
+step 18000: past 1000 steps avg loss: 0.338 | accuracy: 0.905
+step 43000: past 1000 steps avg loss: 0.372 | accuracy: 0.891
+step 19000: past 1000 steps avg loss: 0.246 | accuracy: 0.935
+step 44000: past 1000 steps avg loss: 0.269 | accuracy: 0.922
+step 20000: past 1000 steps avg loss: 0.256 | accuracy: 0.932
+step 45000: past 1000 steps avg loss: 0.316 | accuracy: 0.913
+step 21000: past 1000 steps avg loss: 0.348 | accuracy: 0.916
+step 46000: past 1000 steps avg loss: 0.370 | accuracy: 0.890
+step 22000: past 1000 steps avg loss: 0.265 | accuracy: 0.931
+step 47000: past 1000 steps avg loss: 0.317 | accuracy: 0.899
+step 23000: past 1000 steps avg loss: 0.298 | accuracy: 0.906
+step 48000: past 1000 steps avg loss: 0.312 | accuracy: 0.902
+step 24000: past 1000 steps avg loss: 0.320 | accuracy: 0.902
+step 49000: past 1000 steps avg loss: 0.251 | accuracy: 0.924
+step 25000: past 1000 steps avg loss: 0.322 | accuracy: 0.902
+step 50000: past 1000 steps avg loss: 0.364 | accuracy: 0.903
+Epoch completed in: 180.014337 seconds
+Federated Averaging completed in: 0.628662 seconds
+
+Node 0
+	Conv_forward: 123.701808 sec, Maxpool_forward: 4.364587 sec, Softmax_forward: 9.146200 sec
+	Conv_backward: 100.889830 sec, Maxpool_backward: 5.454011 sec, Softmax_backward: 20.464388 sec
+
+Node 1
+	Conv_forward: 123.717215 sec, Maxpool_forward: 4.364274 sec, Softmax_forward: 9.146306 sec
+	Conv_backward: 100.861807 sec, Maxpool_backward: 5.452360 sec, Softmax_backward: 20.497030 sec
+
+--- Epoch 4 ---
+step 1000: past 1000 steps avg loss: 0.318 | accuracy: 0.914
+step 26000: past 1000 steps avg loss: 0.262 | accuracy: 0.917
+step 2000: past 1000 steps avg loss: 0.326 | accuracy: 0.906
+step 27000: past 1000 steps avg loss: 0.349 | accuracy: 0.910
+step 3000: past 1000 steps avg loss: 0.240 | accuracy: 0.929
+step 28000: past 1000 steps avg loss: 0.307 | accuracy: 0.904
+step 4000: past 1000 steps avg loss: 0.258 | accuracy: 0.930
+step 29000: past 1000 steps avg loss: 0.283 | accuracy: 0.924
+step 5000: past 1000 steps avg loss: 0.274 | accuracy: 0.926
+step 30000: past 1000 steps avg loss: 0.326 | accuracy: 0.903
+step 6000: past 1000 steps avg loss: 0.296 | accuracy: 0.922
+step 31000: past 1000 steps avg loss: 0.320 | accuracy: 0.905
+step 7000: past 1000 steps avg loss: 0.254 | accuracy: 0.935
+step 32000: past 1000 steps avg loss: 0.404 | accuracy: 0.888
+step 8000: past 1000 steps avg loss: 0.330 | accuracy: 0.904
+step 33000: past 1000 steps avg loss: 0.338 | accuracy: 0.900
+step 9000: past 1000 steps avg loss: 0.378 | accuracy: 0.896
+step 34000: past 1000 steps avg loss: 0.244 | accuracy: 0.920
+step 10000: past 1000 steps avg loss: 0.262 | accuracy: 0.927
+step 35000: past 1000 steps avg loss: 0.291 | accuracy: 0.912
+step 11000: past 1000 steps avg loss: 0.234 | accuracy: 0.938
+step 36000: past 1000 steps avg loss: 0.246 | accuracy: 0.923
+step 12000: past 1000 steps avg loss: 0.300 | accuracy: 0.907
+step 37000: past 1000 steps avg loss: 0.266 | accuracy: 0.926
+step 13000: past 1000 steps avg loss: 0.354 | accuracy: 0.903
+step 38000: past 1000 steps avg loss: 0.415 | accuracy: 0.889
+step 14000: past 1000 steps avg loss: 0.345 | accuracy: 0.908
+step 39000: past 1000 steps avg loss: 0.270 | accuracy: 0.910
+step 15000: past 1000 steps avg loss: 0.413 | accuracy: 0.870
+step 40000: past 1000 steps avg loss: 0.311 | accuracy: 0.910
+step 16000: past 1000 steps avg loss: 0.305 | accuracy: 0.906
+step 41000: past 1000 steps avg loss: 0.257 | accuracy: 0.927
+step 17000: past 1000 steps avg loss: 0.290 | accuracy: 0.903
+step 42000: past 1000 steps avg loss: 0.320 | accuracy: 0.898
+step 18000: past 1000 steps avg loss: 0.326 | accuracy: 0.909
+step 43000: past 1000 steps avg loss: 0.364 | accuracy: 0.898
+step 19000: past 1000 steps avg loss: 0.240 | accuracy: 0.937
+step 44000: past 1000 steps avg loss: 0.261 | accuracy: 0.924
+step 20000: past 1000 steps avg loss: 0.247 | accuracy: 0.932
+step 45000: past 1000 steps avg loss: 0.306 | accuracy: 0.916
+step 21000: past 1000 steps avg loss: 0.341 | accuracy: 0.917
+step 46000: past 1000 steps avg loss: 0.358 | accuracy: 0.896
+step 22000: past 1000 steps avg loss: 0.259 | accuracy: 0.931
+step 47000: past 1000 steps avg loss: 0.309 | accuracy: 0.905
+step 23000: past 1000 steps avg loss: 0.287 | accuracy: 0.915
+step 48000: past 1000 steps avg loss: 0.304 | accuracy: 0.909
+step 24000: past 1000 steps avg loss: 0.310 | accuracy: 0.903
+step 49000: past 1000 steps avg loss: 0.244 | accuracy: 0.927
+step 25000: past 1000 steps avg loss: 0.310 | accuracy: 0.909
+step 50000: past 1000 steps avg loss: 0.355 | accuracy: 0.906
+Epoch completed in: 178.561040 seconds
+Federated Averaging completed in: 0.835789 seconds
+
+Node 0
+	Conv_forward: 164.759144 sec, Maxpool_forward: 5.808328 sec, Softmax_forward: 12.136987 sec
+	Conv_backward: 134.359895 sec, Maxpool_backward: 7.262342 sec, Softmax_backward: 27.243540 sec
+
+Node 1
+	Conv_forward: 164.782585 sec, Maxpool_forward: 5.810988 sec, Softmax_forward: 12.148316 sec
+	Conv_backward: 134.333599 sec, Maxpool_backward: 7.264216 sec, Softmax_backward: 27.286746 sec
+
+--- Epoch 5 ---
+step 1000: past 1000 steps avg loss: 0.310 | accuracy: 0.916
+step 26000: past 1000 steps avg loss: 0.256 | accuracy: 0.921
+step 2000: past 1000 steps avg loss: 0.319 | accuracy: 0.911
+step 27000: past 1000 steps avg loss: 0.341 | accuracy: 0.911
+step 3000: past 1000 steps avg loss: 0.232 | accuracy: 0.930
+step 28000: past 1000 steps avg loss: 0.299 | accuracy: 0.903
+step 4000: past 1000 steps avg loss: 0.249 | accuracy: 0.933
+step 29000: past 1000 steps avg loss: 0.276 | accuracy: 0.926
+step 5000: past 1000 steps avg loss: 0.266 | accuracy: 0.926
+step 30000: past 1000 steps avg loss: 0.313 | accuracy: 0.906
+step 6000: past 1000 steps avg loss: 0.288 | accuracy: 0.928
+step 31000: past 1000 steps avg loss: 0.308 | accuracy: 0.908
+step 7000: past 1000 steps avg loss: 0.248 | accuracy: 0.934
+step 32000: past 1000 steps avg loss: 0.398 | accuracy: 0.891
+step 8000: past 1000 steps avg loss: 0.320 | accuracy: 0.904
+step 33000: past 1000 steps avg loss: 0.329 | accuracy: 0.905
+step 9000: past 1000 steps avg loss: 0.368 | accuracy: 0.898
+step 34000: past 1000 steps avg loss: 0.236 | accuracy: 0.925
+step 10000: past 1000 steps avg loss: 0.255 | accuracy: 0.928
+step 35000: past 1000 steps avg loss: 0.284 | accuracy: 0.913
+step 11000: past 1000 steps avg loss: 0.228 | accuracy: 0.940
+step 36000: past 1000 steps avg loss: 0.239 | accuracy: 0.928
+step 12000: past 1000 steps avg loss: 0.290 | accuracy: 0.911
+step 37000: past 1000 steps avg loss: 0.261 | accuracy: 0.927
+step 13000: past 1000 steps avg loss: 0.346 | accuracy: 0.906
+step 38000: past 1000 steps avg loss: 0.408 | accuracy: 0.891
+step 14000: past 1000 steps avg loss: 0.337 | accuracy: 0.906
+step 39000: past 1000 steps avg loss: 0.264 | accuracy: 0.913
+step 15000: past 1000 steps avg loss: 0.402 | accuracy: 0.872
+step 40000: past 1000 steps avg loss: 0.304 | accuracy: 0.910
+step 16000: past 1000 steps avg loss: 0.296 | accuracy: 0.909
+step 41000: past 1000 steps avg loss: 0.253 | accuracy: 0.930
+step 17000: past 1000 steps avg loss: 0.283 | accuracy: 0.904
+step 42000: past 1000 steps avg loss: 0.312 | accuracy: 0.905
+step 18000: past 1000 steps avg loss: 0.318 | accuracy: 0.909
+step 43000: past 1000 steps avg loss: 0.358 | accuracy: 0.899
+step 19000: past 1000 steps avg loss: 0.235 | accuracy: 0.943
+step 44000: past 1000 steps avg loss: 0.255 | accuracy: 0.920
+step 20000: past 1000 steps avg loss: 0.241 | accuracy: 0.933
+step 45000: past 1000 steps avg loss: 0.299 | accuracy: 0.918
+step 21000: past 1000 steps avg loss: 0.337 | accuracy: 0.914
+step 46000: past 1000 steps avg loss: 0.349 | accuracy: 0.897
+step 22000: past 1000 steps avg loss: 0.254 | accuracy: 0.936
+step 47000: past 1000 steps avg loss: 0.304 | accuracy: 0.907
+step 23000: past 1000 steps avg loss: 0.279 | accuracy: 0.916
+step 48000: past 1000 steps avg loss: 0.299 | accuracy: 0.911
+step 24000: past 1000 steps avg loss: 0.303 | accuracy: 0.903
+step 49000: past 1000 steps avg loss: 0.240 | accuracy: 0.927
+step 25000: past 1000 steps avg loss: 0.302 | accuracy: 0.909
+step 50000: past 1000 steps avg loss: 0.349 | accuracy: 0.908
+Epoch completed in: 178.711864 seconds
+Federated Averaging completed in: 1.043529 seconds
+
+Node 0
+	Conv_forward: 205.902992 sec, Maxpool_forward: 7.252542 sec, Softmax_forward: 15.113087 sec
+	Conv_backward: 167.844613 sec, Maxpool_backward: 9.072102 sec, Softmax_backward: 34.014169 sec
+
+Node 1
+	Conv_forward: 205.962713 sec, Maxpool_forward: 7.258473 sec, Softmax_forward: 15.123203 sec
+	Conv_backward: 167.833284 sec, Maxpool_backward: 9.073217 sec, Softmax_backward: 34.070628 sec
+
+--- Epoch 6 ---
+step 1000: past 1000 steps avg loss: 0.304 | accuracy: 0.916
+step 26000: past 1000 steps avg loss: 0.253 | accuracy: 0.922
+step 2000: past 1000 steps avg loss: 0.315 | accuracy: 0.913
+step 27000: past 1000 steps avg loss: 0.335 | accuracy: 0.910
+step 3000: past 1000 steps avg loss: 0.226 | accuracy: 0.930
+step 28000: past 1000 steps avg loss: 0.294 | accuracy: 0.905
+step 4000: past 1000 steps avg loss: 0.243 | accuracy: 0.932
+step 29000: past 1000 steps avg loss: 0.272 | accuracy: 0.929
+step 5000: past 1000 steps avg loss: 0.260 | accuracy: 0.927
+step 30000: past 1000 steps avg loss: 0.304 | accuracy: 0.909
+step 6000: past 1000 steps avg loss: 0.282 | accuracy: 0.932
+step 31000: past 1000 steps avg loss: 0.300 | accuracy: 0.909
+step 7000: past 1000 steps avg loss: 0.244 | accuracy: 0.933
+step 32000: past 1000 steps avg loss: 0.393 | accuracy: 0.895
+step 8000: past 1000 steps avg loss: 0.313 | accuracy: 0.904
+step 33000: past 1000 steps avg loss: 0.323 | accuracy: 0.905
+step 9000: past 1000 steps avg loss: 0.360 | accuracy: 0.902
+step 34000: past 1000 steps avg loss: 0.231 | accuracy: 0.930
+step 10000: past 1000 steps avg loss: 0.251 | accuracy: 0.926
+step 35000: past 1000 steps avg loss: 0.280 | accuracy: 0.914
+step 11000: past 1000 steps avg loss: 0.224 | accuracy: 0.941
+step 36000: past 1000 steps avg loss: 0.234 | accuracy: 0.925
+step 12000: past 1000 steps avg loss: 0.282 | accuracy: 0.914
+step 37000: past 1000 steps avg loss: 0.257 | accuracy: 0.929
+step 13000: past 1000 steps avg loss: 0.340 | accuracy: 0.907
+step 38000: past 1000 steps avg loss: 0.403 | accuracy: 0.895
+step 14000: past 1000 steps avg loss: 0.330 | accuracy: 0.908
+step 39000: past 1000 steps avg loss: 0.260 | accuracy: 0.919
+step 15000: past 1000 steps avg loss: 0.393 | accuracy: 0.874
+step 40000: past 1000 steps avg loss: 0.299 | accuracy: 0.916
+step 16000: past 1000 steps avg loss: 0.289 | accuracy: 0.913
+step 41000: past 1000 steps avg loss: 0.250 | accuracy: 0.930
+step 17000: past 1000 steps avg loss: 0.277 | accuracy: 0.904
+step 42000: past 1000 steps avg loss: 0.307 | accuracy: 0.906
+step 18000: past 1000 steps avg loss: 0.313 | accuracy: 0.908
+step 43000: past 1000 steps avg loss: 0.354 | accuracy: 0.899
+step 19000: past 1000 steps avg loss: 0.231 | accuracy: 0.944
+step 44000: past 1000 steps avg loss: 0.250 | accuracy: 0.919
+step 20000: past 1000 steps avg loss: 0.237 | accuracy: 0.932
+step 45000: past 1000 steps avg loss: 0.293 | accuracy: 0.920
+step 21000: past 1000 steps avg loss: 0.334 | accuracy: 0.918
+step 46000: past 1000 steps avg loss: 0.342 | accuracy: 0.899
+step 22000: past 1000 steps avg loss: 0.251 | accuracy: 0.937
+step 47000: past 1000 steps avg loss: 0.300 | accuracy: 0.910
+step 23000: past 1000 steps avg loss: 0.272 | accuracy: 0.919
+step 48000: past 1000 steps avg loss: 0.294 | accuracy: 0.913
+step 24000: past 1000 steps avg loss: 0.298 | accuracy: 0.905
+step 49000: past 1000 steps avg loss: 0.236 | accuracy: 0.931
+step 25000: past 1000 steps avg loss: 0.295 | accuracy: 0.911
+step 50000: past 1000 steps avg loss: 0.344 | accuracy: 0.910
+Epoch completed in: 178.598546 seconds
+Federated Averaging completed in: 1.250658 seconds
+
+Node 0
+	Conv_forward: 246.986716 sec, Maxpool_forward: 8.699417 sec, Softmax_forward: 18.103188 sec
+	Conv_backward: 201.314062 sec, Maxpool_backward: 10.880357 sec, Softmax_backward: 40.791180 sec
+
+Node 1
+	Conv_forward: 247.078211 sec, Maxpool_forward: 8.704655 sec, Softmax_forward: 18.109591 sec
+	Conv_backward: 201.302366 sec, Maxpool_backward: 10.881252 sec, Softmax_backward: 40.860031 sec
+
+--- Epoch 7 ---
+step 1000: past 1000 steps avg loss: 0.300 | accuracy: 0.919
+step 26000: past 1000 steps avg loss: 0.250 | accuracy: 0.924
+step 2000: past 1000 steps avg loss: 0.312 | accuracy: 0.914
+step 27000: past 1000 steps avg loss: 0.331 | accuracy: 0.909
+step 3000: past 1000 steps avg loss: 0.223 | accuracy: 0.931
+step 28000: past 1000 steps avg loss: 0.289 | accuracy: 0.907
+step 4000: past 1000 steps avg loss: 0.238 | accuracy: 0.935
+step 29000: past 1000 steps avg loss: 0.268 | accuracy: 0.934
+step 5000: past 1000 steps avg loss: 0.255 | accuracy: 0.929
+step 30000: past 1000 steps avg loss: 0.297 | accuracy: 0.912
+step 6000: past 1000 steps avg loss: 0.277 | accuracy: 0.933
+step 31000: past 1000 steps avg loss: 0.294 | accuracy: 0.911
+step 7000: past 1000 steps avg loss: 0.241 | accuracy: 0.935
+step 32000: past 1000 steps avg loss: 0.389 | accuracy: 0.892
+step 8000: past 1000 steps avg loss: 0.307 | accuracy: 0.908
+step 33000: past 1000 steps avg loss: 0.318 | accuracy: 0.905
+step 9000: past 1000 steps avg loss: 0.354 | accuracy: 0.905
+step 34000: past 1000 steps avg loss: 0.228 | accuracy: 0.933
+step 10000: past 1000 steps avg loss: 0.247 | accuracy: 0.927
+step 35000: past 1000 steps avg loss: 0.277 | accuracy: 0.915
+step 11000: past 1000 steps avg loss: 0.221 | accuracy: 0.943
+step 36000: past 1000 steps avg loss: 0.230 | accuracy: 0.926
+step 12000: past 1000 steps avg loss: 0.276 | accuracy: 0.917
+step 37000: past 1000 steps avg loss: 0.254 | accuracy: 0.930
+step 13000: past 1000 steps avg loss: 0.336 | accuracy: 0.906
+step 38000: past 1000 steps avg loss: 0.398 | accuracy: 0.896
+step 14000: past 1000 steps avg loss: 0.326 | accuracy: 0.912
+step 39000: past 1000 steps avg loss: 0.257 | accuracy: 0.923
+step 15000: past 1000 steps avg loss: 0.386 | accuracy: 0.878
+step 40000: past 1000 steps avg loss: 0.295 | accuracy: 0.920
+step 16000: past 1000 steps avg loss: 0.284 | accuracy: 0.914
+step 41000: past 1000 steps avg loss: 0.247 | accuracy: 0.929
+step 17000: past 1000 steps avg loss: 0.273 | accuracy: 0.905
+step 42000: past 1000 steps avg loss: 0.303 | accuracy: 0.907
+step 18000: past 1000 steps avg loss: 0.308 | accuracy: 0.909
+step 43000: past 1000 steps avg loss: 0.351 | accuracy: 0.903
+step 19000: past 1000 steps avg loss: 0.228 | accuracy: 0.945
+step 44000: past 1000 steps avg loss: 0.247 | accuracy: 0.920
+step 20000: past 1000 steps avg loss: 0.234 | accuracy: 0.935
+step 45000: past 1000 steps avg loss: 0.289 | accuracy: 0.922
+step 21000: past 1000 steps avg loss: 0.332 | accuracy: 0.917
+step 46000: past 1000 steps avg loss: 0.336 | accuracy: 0.899
+step 22000: past 1000 steps avg loss: 0.248 | accuracy: 0.938
+step 47000: past 1000 steps avg loss: 0.297 | accuracy: 0.910
+step 23000: past 1000 steps avg loss: 0.267 | accuracy: 0.921
+step 48000: past 1000 steps avg loss: 0.291 | accuracy: 0.914
+step 24000: past 1000 steps avg loss: 0.295 | accuracy: 0.906
+step 49000: past 1000 steps avg loss: 0.233 | accuracy: 0.934
+step 25000: past 1000 steps avg loss: 0.290 | accuracy: 0.914
+step 50000: past 1000 steps avg loss: 0.341 | accuracy: 0.909
+Epoch completed in: 179.278821 seconds
+Federated Averaging completed in: 1.459879 seconds
+
+Node 0
+	Conv_forward: 288.090264 sec, Maxpool_forward: 10.151044 sec, Softmax_forward: 21.178084 sec
+	Conv_backward: 234.900464 sec, Maxpool_backward: 12.702174 sec, Softmax_backward: 47.610926 sec
+
+Node 1
+	Conv_forward: 288.170866 sec, Maxpool_forward: 10.157500 sec, Softmax_forward: 21.185155 sec
+	Conv_backward: 234.874745 sec, Maxpool_backward: 12.699856 sec, Softmax_backward: 47.698831 sec
+
+--- Epoch 8 ---
+step 1000: past 1000 steps avg loss: 0.296 | accuracy: 0.920
+step 26000: past 1000 steps avg loss: 0.248 | accuracy: 0.927
+step 2000: past 1000 steps avg loss: 0.309 | accuracy: 0.912
+step 27000: past 1000 steps avg loss: 0.328 | accuracy: 0.909
+step 3000: past 1000 steps avg loss: 0.220 | accuracy: 0.933
+step 28000: past 1000 steps avg loss: 0.285 | accuracy: 0.906
+step 4000: past 1000 steps avg loss: 0.234 | accuracy: 0.935
+step 29000: past 1000 steps avg loss: 0.265 | accuracy: 0.932
+step 5000: past 1000 steps avg loss: 0.252 | accuracy: 0.930
+step 30000: past 1000 steps avg loss: 0.291 | accuracy: 0.913
+step 6000: past 1000 steps avg loss: 0.274 | accuracy: 0.934
+step 31000: past 1000 steps avg loss: 0.289 | accuracy: 0.911
+step 7000: past 1000 steps avg loss: 0.239 | accuracy: 0.936
+step 32000: past 1000 steps avg loss: 0.386 | accuracy: 0.892
+step 8000: past 1000 steps avg loss: 0.302 | accuracy: 0.910
+step 33000: past 1000 steps avg loss: 0.314 | accuracy: 0.908
+step 9000: past 1000 steps avg loss: 0.350 | accuracy: 0.908
+step 34000: past 1000 steps avg loss: 0.225 | accuracy: 0.935
+step 10000: past 1000 steps avg loss: 0.244 | accuracy: 0.929
+step 35000: past 1000 steps avg loss: 0.275 | accuracy: 0.916
+step 11000: past 1000 steps avg loss: 0.218 | accuracy: 0.945
+step 36000: past 1000 steps avg loss: 0.227 | accuracy: 0.928
+step 12000: past 1000 steps avg loss: 0.272 | accuracy: 0.920
+step 37000: past 1000 steps avg loss: 0.252 | accuracy: 0.930
+step 13000: past 1000 steps avg loss: 0.333 | accuracy: 0.905
+step 38000: past 1000 steps avg loss: 0.395 | accuracy: 0.896
+step 14000: past 1000 steps avg loss: 0.322 | accuracy: 0.911
+step 39000: past 1000 steps avg loss: 0.255 | accuracy: 0.924
+step 15000: past 1000 steps avg loss: 0.380 | accuracy: 0.881
+step 40000: past 1000 steps avg loss: 0.292 | accuracy: 0.921
+step 16000: past 1000 steps avg loss: 0.280 | accuracy: 0.916
+step 41000: past 1000 steps avg loss: 0.244 | accuracy: 0.929
+step 17000: past 1000 steps avg loss: 0.270 | accuracy: 0.911
+step 42000: past 1000 steps avg loss: 0.299 | accuracy: 0.909
+step 18000: past 1000 steps avg loss: 0.304 | accuracy: 0.910
+step 43000: past 1000 steps avg loss: 0.349 | accuracy: 0.905
+step 19000: past 1000 steps avg loss: 0.226 | accuracy: 0.945
+step 44000: past 1000 steps avg loss: 0.244 | accuracy: 0.919
+step 20000: past 1000 steps avg loss: 0.232 | accuracy: 0.937
+step 45000: past 1000 steps avg loss: 0.286 | accuracy: 0.924
+step 21000: past 1000 steps avg loss: 0.330 | accuracy: 0.916
+step 46000: past 1000 steps avg loss: 0.332 | accuracy: 0.899
+step 22000: past 1000 steps avg loss: 0.246 | accuracy: 0.937
+step 47000: past 1000 steps avg loss: 0.295 | accuracy: 0.913
+step 23000: past 1000 steps avg loss: 0.263 | accuracy: 0.923
+step 48000: past 1000 steps avg loss: 0.289 | accuracy: 0.916
+step 24000: past 1000 steps avg loss: 0.291 | accuracy: 0.908
+step 49000: past 1000 steps avg loss: 0.231 | accuracy: 0.933
+step 25000: past 1000 steps avg loss: 0.286 | accuracy: 0.915
+step 50000: past 1000 steps avg loss: 0.338 | accuracy: 0.908
+Epoch completed in: 179.356701 seconds
+Federated Averaging completed in: 1.668724 seconds
+
+Node 0
+	Conv_forward: 329.217021 sec, Maxpool_forward: 11.603478 sec, Softmax_forward: 24.234473 sec
+	Conv_backward: 268.507859 sec, Maxpool_backward: 14.521860 sec, Softmax_backward: 54.431267 sec
+
+Node 1
+	Conv_forward: 329.312075 sec, Maxpool_forward: 11.611043 sec, Softmax_forward: 24.240705 sec
+	Conv_backward: 268.479133 sec, Maxpool_backward: 14.519080 sec, Softmax_backward: 54.530571 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 0.350 | test accuracy: 0.915
+step 52000: past 1000 steps test loss: 0.309 | test accuracy: 0.919
+step 53000: past 1000 steps test loss: 0.329 | test accuracy: 0.913
+step 54000: past 1000 steps test loss: 0.322 | test accuracy: 0.913
+step 55000: past 1000 steps test loss: 0.315 | test accuracy: 0.913
+step 56000: past 1000 steps test loss: 0.304 | test accuracy: 0.917
+step 57000: past 1000 steps test loss: 0.297 | test accuracy: 0.918
+step 58000: past 1000 steps test loss: 0.293 | test accuracy: 0.918
+step 59000: past 1000 steps test loss: 0.280 | test accuracy: 0.922
+step 60000: past 1000 steps test loss: 0.275 | test accuracy: 0.925
+Testing completed in: 18.833170 seconds
+
+Tesing Complete
+
+** Reading images and labels **
+** Setting initial filter weights **
+** Setting initial softmax weights **
+Argc = 10
+0.005000 8 8 3 4 100 1 0
+** Layers initialized **
+--- Epoch 1 ---
+step 13000: past 1000 steps avg loss: 0.876 | accuracy: 0.208
+step 38000: past 1000 steps avg loss: 0.862 | accuracy: 0.216
+step 1000: past 1000 steps avg loss: 1.318 | accuracy: 0.554
+step 26000: past 1000 steps avg loss: 1.226 | accuracy: 0.600
+step 14000: past 1000 steps avg loss: 0.802 | accuracy: 0.748
+step 39000: past 1000 steps avg loss: 0.723 | accuracy: 0.751
+step 2000: past 1000 steps avg loss: 0.646 | accuracy: 0.789
+step 27000: past 1000 steps avg loss: 0.686 | accuracy: 0.791
+step 15000: past 1000 steps avg loss: 0.715 | accuracy: 0.762
+step 40000: past 1000 steps avg loss: 0.626 | accuracy: 0.783
+step 3000: past 1000 steps avg loss: 0.479 | accuracy: 0.836
+step 28000: past 1000 steps avg loss: 0.506 | accuracy: 0.828
+step 16000: past 1000 steps avg loss: 0.552 | accuracy: 0.830
+step 41000: past 1000 steps avg loss: 0.464 | accuracy: 0.847
+step 4000: past 1000 steps avg loss: 0.446 | accuracy: 0.863
+step 29000: past 1000 steps avg loss: 0.459 | accuracy: 0.863
+step 17000: past 1000 steps avg loss: 0.486 | accuracy: 0.847
+step 42000: past 1000 steps avg loss: 0.538 | accuracy: 0.819
+step 5000: past 1000 steps avg loss: 0.428 | accuracy: 0.863
+step 30000: past 1000 steps avg loss: 0.542 | accuracy: 0.815
+step 18000: past 1000 steps avg loss: 0.525 | accuracy: 0.833
+step 43000: past 1000 steps avg loss: 0.539 | accuracy: 0.836
+step 6000: past 1000 steps avg loss: 0.414 | accuracy: 0.876
+step 31000: past 1000 steps avg loss: 0.523 | accuracy: 0.839
+step 19000: past 1000 steps avg loss: 0.345 | accuracy: 0.899
+step 44000: past 1000 steps avg loss: 0.392 | accuracy: 0.882
+step 7000: past 1000 steps avg loss: 0.353 | accuracy: 0.898
+step 32000: past 1000 steps avg loss: 0.535 | accuracy: 0.834
+step 20000: past 1000 steps avg loss: 0.378 | accuracy: 0.871
+step 45000: past 1000 steps avg loss: 0.448 | accuracy: 0.861
+step 8000: past 1000 steps avg loss: 0.467 | accuracy: 0.853
+step 33000: past 1000 steps avg loss: 0.476 | accuracy: 0.864
+step 21000: past 1000 steps avg loss: 0.448 | accuracy: 0.866
+step 46000: past 1000 steps avg loss: 0.474 | accuracy: 0.846
+step 9000: past 1000 steps avg loss: 0.498 | accuracy: 0.856
+step 34000: past 1000 steps avg loss: 0.364 | accuracy: 0.894
+step 22000: past 1000 steps avg loss: 0.333 | accuracy: 0.910
+step 47000: past 1000 steps avg loss: 0.421 | accuracy: 0.865
+step 10000: past 1000 steps avg loss: 0.348 | accuracy: 0.903
+step 35000: past 1000 steps avg loss: 0.405 | accuracy: 0.879
+step 23000: past 1000 steps avg loss: 0.400 | accuracy: 0.860
+step 48000: past 1000 steps avg loss: 0.397 | accuracy: 0.873
+step 11000: past 1000 steps avg loss: 0.314 | accuracy: 0.904
+step 36000: past 1000 steps avg loss: 0.347 | accuracy: 0.887
+step 24000: past 1000 steps avg loss: 0.415 | accuracy: 0.869
+step 49000: past 1000 steps avg loss: 0.328 | accuracy: 0.897
+step 12000: past 1000 steps avg loss: 0.407 | accuracy: 0.878
+step 37000: past 1000 steps avg loss: 0.353 | accuracy: 0.888
+step 25000: past 1000 steps avg loss: 0.413 | accuracy: 0.871
+step 50000: past 1000 steps avg loss: 0.470 | accuracy: 0.859
+Epoch completed in: 179.214095 seconds
+Federated Averaging completed in: 0.377229 seconds
+
+Node 0
+	Conv_forward: 20.471565 sec, Maxpool_forward: 0.723378 sec, Softmax_forward: 1.544519 sec
+	Conv_backward: 16.781250 sec, Maxpool_backward: 0.909328 sec, Softmax_backward: 3.412825 sec
+
+Node 1
+	Conv_forward: 20.486025 sec, Maxpool_forward: 0.723549 sec, Softmax_forward: 1.543904 sec
+	Conv_backward: 16.783293 sec, Maxpool_backward: 0.910713 sec, Softmax_backward: 3.416425 sec
+
+Node 2
+	Conv_forward: 20.450891 sec, Maxpool_forward: 0.722950 sec, Softmax_forward: 1.542407 sec
+	Conv_backward: 16.779518 sec, Maxpool_backward: 0.909921 sec, Softmax_backward: 3.417606 sec
+
+Node 3
+	Conv_forward: 20.475653 sec, Maxpool_forward: 0.724197 sec, Softmax_forward: 1.543064 sec
+	Conv_backward: 16.784855 sec, Maxpool_backward: 0.911220 sec, Softmax_backward: 3.408790 sec
+
+--- Epoch 2 ---
+step 13000: past 1000 steps avg loss: 0.246 | accuracy: 0.428
+step 38000: past 1000 steps avg loss: 0.202 | accuracy: 0.439
+step 1000: past 1000 steps avg loss: 0.597 | accuracy: 1.317
+step 26000: past 1000 steps avg loss: 0.601 | accuracy: 1.317
+step 14000: past 1000 steps avg loss: 0.433 | accuracy: 0.880
+step 39000: past 1000 steps avg loss: 0.340 | accuracy: 0.891
+step 2000: past 1000 steps avg loss: 0.389 | accuracy: 0.893
+step 27000: past 1000 steps avg loss: 0.426 | accuracy: 0.887
+step 15000: past 1000 steps avg loss: 0.485 | accuracy: 0.860
+step 40000: past 1000 steps avg loss: 0.395 | accuracy: 0.880
+step 3000: past 1000 steps avg loss: 0.309 | accuracy: 0.905
+step 28000: past 1000 steps avg loss: 0.358 | accuracy: 0.884
+step 16000: past 1000 steps avg loss: 0.389 | accuracy: 0.885
+step 41000: past 1000 steps avg loss: 0.315 | accuracy: 0.906
+step 4000: past 1000 steps avg loss: 0.318 | accuracy: 0.910
+step 29000: past 1000 steps avg loss: 0.338 | accuracy: 0.899
+step 17000: past 1000 steps avg loss: 0.366 | accuracy: 0.886
+step 42000: past 1000 steps avg loss: 0.398 | accuracy: 0.863
+step 5000: past 1000 steps avg loss: 0.329 | accuracy: 0.896
+step 30000: past 1000 steps avg loss: 0.413 | accuracy: 0.875
+step 18000: past 1000 steps avg loss: 0.405 | accuracy: 0.883
+step 43000: past 1000 steps avg loss: 0.437 | accuracy: 0.856
+step 6000: past 1000 steps avg loss: 0.343 | accuracy: 0.897
+step 31000: past 1000 steps avg loss: 0.410 | accuracy: 0.878
+step 19000: past 1000 steps avg loss: 0.279 | accuracy: 0.923
+step 44000: past 1000 steps avg loss: 0.317 | accuracy: 0.909
+step 7000: past 1000 steps avg loss: 0.297 | accuracy: 0.916
+step 32000: past 1000 steps avg loss: 0.453 | accuracy: 0.861
+step 20000: past 1000 steps avg loss: 0.306 | accuracy: 0.906
+step 45000: past 1000 steps avg loss: 0.369 | accuracy: 0.893
+step 8000: past 1000 steps avg loss: 0.391 | accuracy: 0.887
+step 33000: past 1000 steps avg loss: 0.399 | accuracy: 0.888
+step 21000: past 1000 steps avg loss: 0.390 | accuracy: 0.888
+step 46000: past 1000 steps avg loss: 0.420 | accuracy: 0.865
+step 9000: past 1000 steps avg loss: 0.440 | accuracy: 0.882
+step 34000: past 1000 steps avg loss: 0.302 | accuracy: 0.903
+step 22000: past 1000 steps avg loss: 0.293 | accuracy: 0.931
+step 47000: past 1000 steps avg loss: 0.366 | accuracy: 0.884
+step 10000: past 1000 steps avg loss: 0.302 | accuracy: 0.918
+step 35000: past 1000 steps avg loss: 0.349 | accuracy: 0.897
+step 23000: past 1000 steps avg loss: 0.347 | accuracy: 0.883
+step 48000: past 1000 steps avg loss: 0.349 | accuracy: 0.889
+step 11000: past 1000 steps avg loss: 0.272 | accuracy: 0.919
+step 36000: past 1000 steps avg loss: 0.294 | accuracy: 0.905
+step 24000: past 1000 steps avg loss: 0.367 | accuracy: 0.894
+step 49000: past 1000 steps avg loss: 0.285 | accuracy: 0.911
+step 12000: past 1000 steps avg loss: 0.360 | accuracy: 0.895
+step 37000: past 1000 steps avg loss: 0.312 | accuracy: 0.903
+step 25000: past 1000 steps avg loss: 0.363 | accuracy: 0.890
+step 50000: past 1000 steps avg loss: 0.420 | accuracy: 0.882
+Epoch completed in: 179.235501 seconds
+Federated Averaging completed in: 0.754681 seconds
+
+Node 0
+	Conv_forward: 40.943266 sec, Maxpool_forward: 1.448286 sec, Softmax_forward: 3.091344 sec
+	Conv_backward: 33.564451 sec, Maxpool_backward: 1.820350 sec, Softmax_backward: 6.831145 sec
+
+Node 1
+	Conv_forward: 40.970589 sec, Maxpool_forward: 1.447723 sec, Softmax_forward: 3.088347 sec
+	Conv_backward: 33.563111 sec, Maxpool_backward: 1.824616 sec, Softmax_backward: 6.836195 sec
+
+Node 2
+	Conv_forward: 40.903616 sec, Maxpool_forward: 1.446926 sec, Softmax_forward: 3.085911 sec
+	Conv_backward: 33.561661 sec, Maxpool_backward: 1.819616 sec, Softmax_backward: 6.838419 sec
+
+Node 3
+	Conv_forward: 40.951048 sec, Maxpool_forward: 1.448805 sec, Softmax_forward: 3.091238 sec
+	Conv_backward: 33.563388 sec, Maxpool_backward: 1.823961 sec, Softmax_backward: 6.820249 sec
+
+--- Epoch 3 ---
+step 13000: past 1000 steps avg loss: 0.227 | accuracy: 0.436
+step 38000: past 1000 steps avg loss: 0.183 | accuracy: 0.451
+step 1000: past 1000 steps avg loss: 0.536 | accuracy: 1.336
+step 26000: past 1000 steps avg loss: 0.550 | accuracy: 1.332
+step 14000: past 1000 steps avg loss: 0.392 | accuracy: 0.896
+step 39000: past 1000 steps avg loss: 0.309 | accuracy: 0.898
+step 2000: past 1000 steps avg loss: 0.357 | accuracy: 0.898
+step 27000: past 1000 steps avg loss: 0.388 | accuracy: 0.901
+step 15000: past 1000 steps avg loss: 0.449 | accuracy: 0.865
+step 40000: past 1000 steps avg loss: 0.358 | accuracy: 0.892
+step 3000: past 1000 steps avg loss: 0.277 | accuracy: 0.921
+step 28000: past 1000 steps avg loss: 0.334 | accuracy: 0.893
+step 16000: past 1000 steps avg loss: 0.354 | accuracy: 0.892
+step 41000: past 1000 steps avg loss: 0.287 | accuracy: 0.917
+step 4000: past 1000 steps avg loss: 0.289 | accuracy: 0.915
+step 29000: past 1000 steps avg loss: 0.307 | accuracy: 0.911
+step 17000: past 1000 steps avg loss: 0.334 | accuracy: 0.891
+step 42000: past 1000 steps avg loss: 0.361 | accuracy: 0.879
+step 5000: past 1000 steps avg loss: 0.302 | accuracy: 0.909
+step 30000: past 1000 steps avg loss: 0.374 | accuracy: 0.888
+step 18000: past 1000 steps avg loss: 0.371 | accuracy: 0.896
+step 43000: past 1000 steps avg loss: 0.407 | accuracy: 0.867
+step 6000: past 1000 steps avg loss: 0.320 | accuracy: 0.908
+step 31000: past 1000 steps avg loss: 0.371 | accuracy: 0.886
+step 19000: past 1000 steps avg loss: 0.259 | accuracy: 0.926
+step 44000: past 1000 steps avg loss: 0.292 | accuracy: 0.913
+step 7000: past 1000 steps avg loss: 0.278 | accuracy: 0.924
+step 32000: past 1000 steps avg loss: 0.427 | accuracy: 0.877
+step 20000: past 1000 steps avg loss: 0.281 | accuracy: 0.918
+step 45000: past 1000 steps avg loss: 0.342 | accuracy: 0.905
+step 8000: past 1000 steps avg loss: 0.363 | accuracy: 0.895
+step 33000: past 1000 steps avg loss: 0.370 | accuracy: 0.896
+step 21000: past 1000 steps avg loss: 0.369 | accuracy: 0.900
+step 46000: past 1000 steps avg loss: 0.395 | accuracy: 0.874
+step 9000: past 1000 steps avg loss: 0.416 | accuracy: 0.885
+step 34000: past 1000 steps avg loss: 0.277 | accuracy: 0.907
+step 22000: past 1000 steps avg loss: 0.278 | accuracy: 0.934
+step 47000: past 1000 steps avg loss: 0.343 | accuracy: 0.889
+step 10000: past 1000 steps avg loss: 0.281 | accuracy: 0.925
+step 35000: past 1000 steps avg loss: 0.323 | accuracy: 0.903
+step 23000: past 1000 steps avg loss: 0.323 | accuracy: 0.893
+step 48000: past 1000 steps avg loss: 0.328 | accuracy: 0.897
+step 11000: past 1000 steps avg loss: 0.254 | accuracy: 0.926
+step 36000: past 1000 steps avg loss: 0.271 | accuracy: 0.915
+step 24000: past 1000 steps avg loss: 0.345 | accuracy: 0.903
+step 49000: past 1000 steps avg loss: 0.267 | accuracy: 0.919
+step 12000: past 1000 steps avg loss: 0.336 | accuracy: 0.902
+step 37000: past 1000 steps avg loss: 0.293 | accuracy: 0.909
+step 25000: past 1000 steps avg loss: 0.339 | accuracy: 0.895
+step 50000: past 1000 steps avg loss: 0.397 | accuracy: 0.893
+Epoch completed in: 179.138563 seconds
+Federated Averaging completed in: 1.134060 seconds
+
+Node 0
+	Conv_forward: 61.402972 sec, Maxpool_forward: 2.171121 sec, Softmax_forward: 4.637677 sec
+	Conv_backward: 50.337757 sec, Maxpool_backward: 2.730024 sec, Softmax_backward: 10.244924 sec
+
+Node 1
+	Conv_forward: 61.442742 sec, Maxpool_forward: 2.170206 sec, Softmax_forward: 4.633059 sec
+	Conv_backward: 50.337011 sec, Maxpool_backward: 2.736570 sec, Softmax_backward: 10.252971 sec
+
+Node 2
+	Conv_forward: 61.348060 sec, Maxpool_forward: 2.170855 sec, Softmax_forward: 4.630636 sec
+	Conv_backward: 50.328645 sec, Maxpool_backward: 2.729856 sec, Softmax_backward: 10.253274 sec
+
+Node 3
+	Conv_forward: 61.415661 sec, Maxpool_forward: 2.173421 sec, Softmax_forward: 4.634194 sec
+	Conv_backward: 50.334569 sec, Maxpool_backward: 2.736031 sec, Softmax_backward: 10.230206 sec
+
+--- Epoch 4 ---
+step 13000: past 1000 steps avg loss: 0.218 | accuracy: 0.437
+step 38000: past 1000 steps avg loss: 0.175 | accuracy: 0.453
+step 1000: past 1000 steps avg loss: 0.505 | accuracy: 1.349
+step 26000: past 1000 steps avg loss: 0.528 | accuracy: 1.335
+step 14000: past 1000 steps avg loss: 0.371 | accuracy: 0.902
+step 39000: past 1000 steps avg loss: 0.293 | accuracy: 0.901
+step 2000: past 1000 steps avg loss: 0.341 | accuracy: 0.902
+step 27000: past 1000 steps avg loss: 0.369 | accuracy: 0.908
+step 15000: past 1000 steps avg loss: 0.432 | accuracy: 0.866
+step 40000: past 1000 steps avg loss: 0.338 | accuracy: 0.903
+step 3000: past 1000 steps avg loss: 0.261 | accuracy: 0.924
+step 28000: past 1000 steps avg loss: 0.322 | accuracy: 0.897
+step 16000: past 1000 steps avg loss: 0.334 | accuracy: 0.900
+step 41000: past 1000 steps avg loss: 0.273 | accuracy: 0.920
+step 4000: past 1000 steps avg loss: 0.273 | accuracy: 0.921
+step 29000: past 1000 steps avg loss: 0.292 | accuracy: 0.916
+step 17000: past 1000 steps avg loss: 0.315 | accuracy: 0.898
+step 42000: past 1000 steps avg loss: 0.341 | accuracy: 0.888
+step 5000: past 1000 steps avg loss: 0.287 | accuracy: 0.920
+step 30000: past 1000 steps avg loss: 0.352 | accuracy: 0.897
+step 18000: past 1000 steps avg loss: 0.353 | accuracy: 0.903
+step 43000: past 1000 steps avg loss: 0.390 | accuracy: 0.878
+step 6000: past 1000 steps avg loss: 0.308 | accuracy: 0.917
+step 31000: past 1000 steps avg loss: 0.349 | accuracy: 0.897
+step 19000: past 1000 steps avg loss: 0.248 | accuracy: 0.934
+step 44000: past 1000 steps avg loss: 0.278 | accuracy: 0.917
+step 7000: past 1000 steps avg loss: 0.267 | accuracy: 0.930
+step 32000: past 1000 steps avg loss: 0.414 | accuracy: 0.887
+step 20000: past 1000 steps avg loss: 0.267 | accuracy: 0.924
+step 45000: past 1000 steps avg loss: 0.328 | accuracy: 0.912
+step 8000: past 1000 steps avg loss: 0.348 | accuracy: 0.898
+step 33000: past 1000 steps avg loss: 0.354 | accuracy: 0.903
+step 21000: past 1000 steps avg loss: 0.356 | accuracy: 0.908
+step 46000: past 1000 steps avg loss: 0.380 | accuracy: 0.886
+step 9000: past 1000 steps avg loss: 0.402 | accuracy: 0.892
+step 34000: past 1000 steps avg loss: 0.263 | accuracy: 0.913
+step 22000: past 1000 steps avg loss: 0.270 | accuracy: 0.933
+step 47000: past 1000 steps avg loss: 0.329 | accuracy: 0.897
+step 10000: past 1000 steps avg loss: 0.268 | accuracy: 0.926
+step 35000: past 1000 steps avg loss: 0.308 | accuracy: 0.911
+step 23000: past 1000 steps avg loss: 0.308 | accuracy: 0.894
+step 48000: past 1000 steps avg loss: 0.317 | accuracy: 0.898
+step 11000: past 1000 steps avg loss: 0.243 | accuracy: 0.928
+step 36000: past 1000 steps avg loss: 0.258 | accuracy: 0.918
+step 24000: past 1000 steps avg loss: 0.331 | accuracy: 0.908
+step 49000: past 1000 steps avg loss: 0.257 | accuracy: 0.922
+step 12000: past 1000 steps avg loss: 0.320 | accuracy: 0.907
+step 37000: past 1000 steps avg loss: 0.282 | accuracy: 0.911
+step 25000: past 1000 steps avg loss: 0.325 | accuracy: 0.898
+step 50000: past 1000 steps avg loss: 0.382 | accuracy: 0.896
+Epoch completed in: 179.407598 seconds
+Federated Averaging completed in: 1.512819 seconds
+
+Node 0
+	Conv_forward: 81.893950 sec, Maxpool_forward: 2.897289 sec, Softmax_forward: 6.185127 sec
+	Conv_backward: 67.138642 sec, Maxpool_backward: 3.641130 sec, Softmax_backward: 13.665772 sec
+
+Node 1
+	Conv_forward: 81.943866 sec, Maxpool_forward: 2.895351 sec, Softmax_forward: 6.177759 sec
+	Conv_backward: 67.134823 sec, Maxpool_backward: 3.648355 sec, Softmax_backward: 13.671801 sec
+
+Node 2
+	Conv_forward: 81.823991 sec, Maxpool_forward: 2.895192 sec, Softmax_forward: 6.174869 sec
+	Conv_backward: 67.125005 sec, Maxpool_backward: 3.641156 sec, Softmax_backward: 13.675063 sec
+
+Node 3
+	Conv_forward: 81.905945 sec, Maxpool_forward: 2.900205 sec, Softmax_forward: 6.178794 sec
+	Conv_backward: 67.134451 sec, Maxpool_backward: 3.649868 sec, Softmax_backward: 13.643801 sec
+
+--- Epoch 5 ---
+step 13000: past 1000 steps avg loss: 0.211 | accuracy: 0.439
+step 38000: past 1000 steps avg loss: 0.171 | accuracy: 0.454
+step 1000: past 1000 steps avg loss: 0.485 | accuracy: 1.358
+step 26000: past 1000 steps avg loss: 0.515 | accuracy: 1.339
+step 14000: past 1000 steps avg loss: 0.358 | accuracy: 0.904
+step 39000: past 1000 steps avg loss: 0.282 | accuracy: 0.905
+step 2000: past 1000 steps avg loss: 0.332 | accuracy: 0.900
+step 27000: past 1000 steps avg loss: 0.356 | accuracy: 0.912
+step 15000: past 1000 steps avg loss: 0.421 | accuracy: 0.867
+step 40000: past 1000 steps avg loss: 0.326 | accuracy: 0.903
+step 3000: past 1000 steps avg loss: 0.251 | accuracy: 0.931
+step 28000: past 1000 steps avg loss: 0.314 | accuracy: 0.896
+step 16000: past 1000 steps avg loss: 0.321 | accuracy: 0.906
+step 41000: past 1000 steps avg loss: 0.265 | accuracy: 0.926
+step 4000: past 1000 steps avg loss: 0.262 | accuracy: 0.925
+step 29000: past 1000 steps avg loss: 0.283 | accuracy: 0.923
+step 17000: past 1000 steps avg loss: 0.302 | accuracy: 0.901
+step 42000: past 1000 steps avg loss: 0.329 | accuracy: 0.891
+step 5000: past 1000 steps avg loss: 0.277 | accuracy: 0.924
+step 30000: past 1000 steps avg loss: 0.336 | accuracy: 0.901
+step 18000: past 1000 steps avg loss: 0.341 | accuracy: 0.909
+step 43000: past 1000 steps avg loss: 0.380 | accuracy: 0.886
+step 6000: past 1000 steps avg loss: 0.299 | accuracy: 0.917
+step 31000: past 1000 steps avg loss: 0.333 | accuracy: 0.900
+step 19000: past 1000 steps avg loss: 0.242 | accuracy: 0.935
+step 44000: past 1000 steps avg loss: 0.269 | accuracy: 0.919
+step 7000: past 1000 steps avg loss: 0.259 | accuracy: 0.931
+step 32000: past 1000 steps avg loss: 0.406 | accuracy: 0.892
+step 20000: past 1000 steps avg loss: 0.257 | accuracy: 0.929
+step 45000: past 1000 steps avg loss: 0.318 | accuracy: 0.914
+step 8000: past 1000 steps avg loss: 0.338 | accuracy: 0.899
+step 33000: past 1000 steps avg loss: 0.343 | accuracy: 0.902
+step 21000: past 1000 steps avg loss: 0.348 | accuracy: 0.912
+step 46000: past 1000 steps avg loss: 0.368 | accuracy: 0.892
+step 9000: past 1000 steps avg loss: 0.391 | accuracy: 0.895
+step 34000: past 1000 steps avg loss: 0.253 | accuracy: 0.916
+step 22000: past 1000 steps avg loss: 0.265 | accuracy: 0.929
+step 47000: past 1000 steps avg loss: 0.320 | accuracy: 0.900
+step 10000: past 1000 steps avg loss: 0.259 | accuracy: 0.925
+step 35000: past 1000 steps avg loss: 0.297 | accuracy: 0.915
+step 23000: past 1000 steps avg loss: 0.298 | accuracy: 0.901
+step 48000: past 1000 steps avg loss: 0.310 | accuracy: 0.903
+step 11000: past 1000 steps avg loss: 0.235 | accuracy: 0.932
+step 36000: past 1000 steps avg loss: 0.249 | accuracy: 0.919
+step 24000: past 1000 steps avg loss: 0.321 | accuracy: 0.909
+step 49000: past 1000 steps avg loss: 0.250 | accuracy: 0.926
+step 12000: past 1000 steps avg loss: 0.309 | accuracy: 0.906
+step 37000: past 1000 steps avg loss: 0.275 | accuracy: 0.916
+step 25000: past 1000 steps avg loss: 0.314 | accuracy: 0.906
+step 50000: past 1000 steps avg loss: 0.372 | accuracy: 0.896
+Epoch completed in: 179.314323 seconds
+Federated Averaging completed in: 1.890254 seconds
+
+Node 0
+	Conv_forward: 102.371428 sec, Maxpool_forward: 3.620283 sec, Softmax_forward: 7.731316 sec
+	Conv_backward: 83.929581 sec, Maxpool_backward: 4.552073 sec, Softmax_backward: 17.084229 sec
+
+Node 1
+	Conv_forward: 102.429049 sec, Maxpool_forward: 3.618471 sec, Softmax_forward: 7.724776 sec
+	Conv_backward: 83.932344 sec, Maxpool_backward: 4.560257 sec, Softmax_backward: 17.090890 sec
+
+Node 2
+	Conv_forward: 102.281287 sec, Maxpool_forward: 3.618782 sec, Softmax_forward: 7.721614 sec
+	Conv_backward: 83.911539 sec, Maxpool_backward: 4.551119 sec, Softmax_backward: 17.095786 sec
+
+Node 3
+	Conv_forward: 102.383029 sec, Maxpool_forward: 3.624326 sec, Softmax_forward: 7.723501 sec
+	Conv_backward: 83.923765 sec, Maxpool_backward: 4.562117 sec, Softmax_backward: 17.056986 sec
+
+--- Epoch 6 ---
+step 13000: past 1000 steps avg loss: 0.206 | accuracy: 0.440
+step 38000: past 1000 steps avg loss: 0.169 | accuracy: 0.456
+step 1000: past 1000 steps avg loss: 0.472 | accuracy: 1.363
+step 26000: past 1000 steps avg loss: 0.506 | accuracy: 1.347
+step 14000: past 1000 steps avg loss: 0.349 | accuracy: 0.904
+step 39000: past 1000 steps avg loss: 0.274 | accuracy: 0.910
+step 2000: past 1000 steps avg loss: 0.325 | accuracy: 0.902
+step 27000: past 1000 steps avg loss: 0.347 | accuracy: 0.915
+step 15000: past 1000 steps avg loss: 0.412 | accuracy: 0.869
+step 40000: past 1000 steps avg loss: 0.317 | accuracy: 0.907
+step 3000: past 1000 steps avg loss: 0.243 | accuracy: 0.930
+step 28000: past 1000 steps avg loss: 0.307 | accuracy: 0.898
+step 16000: past 1000 steps avg loss: 0.311 | accuracy: 0.907
+step 41000: past 1000 steps avg loss: 0.259 | accuracy: 0.926
+step 4000: past 1000 steps avg loss: 0.254 | accuracy: 0.926
+step 29000: past 1000 steps avg loss: 0.276 | accuracy: 0.925
+step 17000: past 1000 steps avg loss: 0.294 | accuracy: 0.902
+step 42000: past 1000 steps avg loss: 0.320 | accuracy: 0.894
+step 5000: past 1000 steps avg loss: 0.270 | accuracy: 0.927
+step 30000: past 1000 steps avg loss: 0.325 | accuracy: 0.904
+step 18000: past 1000 steps avg loss: 0.333 | accuracy: 0.908
+step 43000: past 1000 steps avg loss: 0.373 | accuracy: 0.887
+step 6000: past 1000 steps avg loss: 0.292 | accuracy: 0.923
+step 31000: past 1000 steps avg loss: 0.322 | accuracy: 0.904
+step 19000: past 1000 steps avg loss: 0.237 | accuracy: 0.938
+step 44000: past 1000 steps avg loss: 0.263 | accuracy: 0.923
+step 7000: past 1000 steps avg loss: 0.254 | accuracy: 0.932
+step 32000: past 1000 steps avg loss: 0.401 | accuracy: 0.892
+step 20000: past 1000 steps avg loss: 0.251 | accuracy: 0.930
+step 45000: past 1000 steps avg loss: 0.310 | accuracy: 0.917
+step 8000: past 1000 steps avg loss: 0.331 | accuracy: 0.899
+step 33000: past 1000 steps avg loss: 0.335 | accuracy: 0.904
+step 21000: past 1000 steps avg loss: 0.342 | accuracy: 0.915
+step 46000: past 1000 steps avg loss: 0.359 | accuracy: 0.894
+step 9000: past 1000 steps avg loss: 0.382 | accuracy: 0.892
+step 34000: past 1000 steps avg loss: 0.246 | accuracy: 0.919
+step 22000: past 1000 steps avg loss: 0.260 | accuracy: 0.930
+step 47000: past 1000 steps avg loss: 0.313 | accuracy: 0.902
+step 10000: past 1000 steps avg loss: 0.252 | accuracy: 0.928
+step 35000: past 1000 steps avg loss: 0.290 | accuracy: 0.917
+step 23000: past 1000 steps avg loss: 0.290 | accuracy: 0.903
+step 48000: past 1000 steps avg loss: 0.304 | accuracy: 0.905
+step 11000: past 1000 steps avg loss: 0.229 | accuracy: 0.939
+step 36000: past 1000 steps avg loss: 0.242 | accuracy: 0.923
+step 24000: past 1000 steps avg loss: 0.314 | accuracy: 0.909
+step 49000: past 1000 steps avg loss: 0.244 | accuracy: 0.925
+step 12000: past 1000 steps avg loss: 0.301 | accuracy: 0.908
+step 37000: past 1000 steps avg loss: 0.270 | accuracy: 0.919
+step 25000: past 1000 steps avg loss: 0.306 | accuracy: 0.907
+step 50000: past 1000 steps avg loss: 0.364 | accuracy: 0.897
+Epoch completed in: 178.895433 seconds
+Federated Averaging completed in: 2.267279 seconds
+
+Node 0
+	Conv_forward: 122.813877 sec, Maxpool_forward: 4.341874 sec, Softmax_forward: 9.270490 sec
+	Conv_backward: 100.682169 sec, Maxpool_backward: 5.460754 sec, Softmax_backward: 20.490620 sec
+
+Node 1
+	Conv_forward: 122.882980 sec, Maxpool_forward: 4.339652 sec, Softmax_forward: 9.262531 sec
+	Conv_backward: 100.687731 sec, Maxpool_backward: 5.470095 sec, Softmax_backward: 20.500796 sec
+
+Node 2
+	Conv_forward: 122.707503 sec, Maxpool_forward: 4.340229 sec, Softmax_forward: 9.259404 sec
+	Conv_backward: 100.664252 sec, Maxpool_backward: 5.459129 sec, Softmax_backward: 20.506283 sec
+
+Node 3
+	Conv_forward: 122.825541 sec, Maxpool_forward: 4.347820 sec, Softmax_forward: 9.262173 sec
+	Conv_backward: 100.677865 sec, Maxpool_backward: 5.472295 sec, Softmax_backward: 20.458721 sec
+
+--- Epoch 7 ---
+step 13000: past 1000 steps avg loss: 0.202 | accuracy: 0.441
+step 38000: past 1000 steps avg loss: 0.167 | accuracy: 0.458
+step 1000: past 1000 steps avg loss: 0.463 | accuracy: 1.364
+step 26000: past 1000 steps avg loss: 0.499 | accuracy: 1.356
+step 14000: past 1000 steps avg loss: 0.342 | accuracy: 0.905
+step 39000: past 1000 steps avg loss: 0.268 | accuracy: 0.912
+step 2000: past 1000 steps avg loss: 0.320 | accuracy: 0.902
+step 27000: past 1000 steps avg loss: 0.341 | accuracy: 0.914
+step 15000: past 1000 steps avg loss: 0.405 | accuracy: 0.869
+step 40000: past 1000 steps avg loss: 0.310 | accuracy: 0.911
+step 3000: past 1000 steps avg loss: 0.237 | accuracy: 0.931
+step 28000: past 1000 steps avg loss: 0.302 | accuracy: 0.899
+step 16000: past 1000 steps avg loss: 0.303 | accuracy: 0.904
+step 41000: past 1000 steps avg loss: 0.255 | accuracy: 0.928
+step 4000: past 1000 steps avg loss: 0.248 | accuracy: 0.928
+step 29000: past 1000 steps avg loss: 0.272 | accuracy: 0.928
+step 17000: past 1000 steps avg loss: 0.287 | accuracy: 0.905
+step 42000: past 1000 steps avg loss: 0.313 | accuracy: 0.898
+step 5000: past 1000 steps avg loss: 0.264 | accuracy: 0.926
+step 30000: past 1000 steps avg loss: 0.316 | accuracy: 0.906
+step 18000: past 1000 steps avg loss: 0.326 | accuracy: 0.911
+step 43000: past 1000 steps avg loss: 0.368 | accuracy: 0.891
+step 6000: past 1000 steps avg loss: 0.286 | accuracy: 0.924
+step 31000: past 1000 steps avg loss: 0.314 | accuracy: 0.907
+step 19000: past 1000 steps avg loss: 0.233 | accuracy: 0.941
+step 44000: past 1000 steps avg loss: 0.258 | accuracy: 0.925
+step 7000: past 1000 steps avg loss: 0.249 | accuracy: 0.932
+step 32000: past 1000 steps avg loss: 0.397 | accuracy: 0.894
+step 20000: past 1000 steps avg loss: 0.245 | accuracy: 0.930
+step 45000: past 1000 steps avg loss: 0.304 | accuracy: 0.919
+step 8000: past 1000 steps avg loss: 0.324 | accuracy: 0.904
+step 33000: past 1000 steps avg loss: 0.329 | accuracy: 0.907
+step 21000: past 1000 steps avg loss: 0.337 | accuracy: 0.917
+step 46000: past 1000 steps avg loss: 0.352 | accuracy: 0.897
+step 9000: past 1000 steps avg loss: 0.375 | accuracy: 0.896
+step 34000: past 1000 steps avg loss: 0.241 | accuracy: 0.921
+step 22000: past 1000 steps avg loss: 0.257 | accuracy: 0.934
+step 47000: past 1000 steps avg loss: 0.309 | accuracy: 0.905
+step 10000: past 1000 steps avg loss: 0.246 | accuracy: 0.932
+step 35000: past 1000 steps avg loss: 0.284 | accuracy: 0.919
+step 23000: past 1000 steps avg loss: 0.285 | accuracy: 0.906
+step 48000: past 1000 steps avg loss: 0.300 | accuracy: 0.906
+step 11000: past 1000 steps avg loss: 0.224 | accuracy: 0.941
+step 36000: past 1000 steps avg loss: 0.237 | accuracy: 0.924
+step 24000: past 1000 steps avg loss: 0.309 | accuracy: 0.908
+step 49000: past 1000 steps avg loss: 0.240 | accuracy: 0.926
+step 12000: past 1000 steps avg loss: 0.294 | accuracy: 0.908
+step 37000: past 1000 steps avg loss: 0.266 | accuracy: 0.922
+step 25000: past 1000 steps avg loss: 0.300 | accuracy: 0.910
+step 50000: past 1000 steps avg loss: 0.359 | accuracy: 0.900
+Epoch completed in: 179.233372 seconds
+Federated Averaging completed in: 2.644924 seconds
+
+Node 0
+	Conv_forward: 143.287009 sec, Maxpool_forward: 5.065369 sec, Softmax_forward: 10.814696 sec
+	Conv_backward: 117.465764 sec, Maxpool_backward: 6.371401 sec, Softmax_backward: 23.905911 sec
+
+Node 1
+	Conv_forward: 143.366410 sec, Maxpool_forward: 5.062225 sec, Softmax_forward: 10.803396 sec
+	Conv_backward: 117.469790 sec, Maxpool_backward: 6.381758 sec, Softmax_backward: 23.918877 sec
+
+Node 2
+	Conv_forward: 143.164316 sec, Maxpool_forward: 5.063057 sec, Softmax_forward: 10.801418 sec
+	Conv_backward: 117.447762 sec, Maxpool_backward: 6.369552 sec, Softmax_backward: 23.924216 sec
+
+Node 3
+	Conv_forward: 143.300436 sec, Maxpool_forward: 5.072466 sec, Softmax_forward: 10.804598 sec
+	Conv_backward: 117.462110 sec, Maxpool_backward: 6.384581 sec, Softmax_backward: 23.869041 sec
+
+--- Epoch 8 ---
+step 13000: past 1000 steps avg loss: 0.198 | accuracy: 0.446
+step 38000: past 1000 steps avg loss: 0.165 | accuracy: 0.458
+step 1000: past 1000 steps avg loss: 0.456 | accuracy: 1.366
+step 26000: past 1000 steps avg loss: 0.493 | accuracy: 1.359
+step 14000: past 1000 steps avg loss: 0.337 | accuracy: 0.907
+step 39000: past 1000 steps avg loss: 0.264 | accuracy: 0.913
+step 2000: past 1000 steps avg loss: 0.317 | accuracy: 0.903
+step 27000: past 1000 steps avg loss: 0.336 | accuracy: 0.914
+step 15000: past 1000 steps avg loss: 0.398 | accuracy: 0.871
+step 40000: past 1000 steps avg loss: 0.305 | accuracy: 0.912
+step 3000: past 1000 steps avg loss: 0.232 | accuracy: 0.932
+step 28000: past 1000 steps avg loss: 0.297 | accuracy: 0.903
+step 16000: past 1000 steps avg loss: 0.297 | accuracy: 0.907
+step 41000: past 1000 steps avg loss: 0.252 | accuracy: 0.931
+step 4000: past 1000 steps avg loss: 0.244 | accuracy: 0.929
+step 29000: past 1000 steps avg loss: 0.268 | accuracy: 0.930
+step 17000: past 1000 steps avg loss: 0.282 | accuracy: 0.910
+step 42000: past 1000 steps avg loss: 0.307 | accuracy: 0.895
+step 5000: past 1000 steps avg loss: 0.260 | accuracy: 0.926
+step 30000: past 1000 steps avg loss: 0.309 | accuracy: 0.911
+step 18000: past 1000 steps avg loss: 0.321 | accuracy: 0.913
+step 43000: past 1000 steps avg loss: 0.363 | accuracy: 0.895
+step 6000: past 1000 steps avg loss: 0.282 | accuracy: 0.926
+step 31000: past 1000 steps avg loss: 0.307 | accuracy: 0.907
+step 19000: past 1000 steps avg loss: 0.230 | accuracy: 0.944
+step 44000: past 1000 steps avg loss: 0.254 | accuracy: 0.924
+step 7000: past 1000 steps avg loss: 0.246 | accuracy: 0.931
+step 32000: past 1000 steps avg loss: 0.393 | accuracy: 0.894
+step 20000: past 1000 steps avg loss: 0.241 | accuracy: 0.928
+step 45000: past 1000 steps avg loss: 0.299 | accuracy: 0.918
+step 8000: past 1000 steps avg loss: 0.319 | accuracy: 0.904
+step 33000: past 1000 steps avg loss: 0.324 | accuracy: 0.907
+step 21000: past 1000 steps avg loss: 0.334 | accuracy: 0.919
+step 46000: past 1000 steps avg loss: 0.346 | accuracy: 0.899
+step 9000: past 1000 steps avg loss: 0.369 | accuracy: 0.897
+step 34000: past 1000 steps avg loss: 0.236 | accuracy: 0.923
+step 22000: past 1000 steps avg loss: 0.253 | accuracy: 0.934
+step 47000: past 1000 steps avg loss: 0.305 | accuracy: 0.907
+step 10000: past 1000 steps avg loss: 0.242 | accuracy: 0.931
+step 35000: past 1000 steps avg loss: 0.280 | accuracy: 0.918
+step 23000: past 1000 steps avg loss: 0.280 | accuracy: 0.912
+step 48000: past 1000 steps avg loss: 0.297 | accuracy: 0.908
+step 11000: past 1000 steps avg loss: 0.220 | accuracy: 0.944
+step 36000: past 1000 steps avg loss: 0.233 | accuracy: 0.927
+step 24000: past 1000 steps avg loss: 0.304 | accuracy: 0.908
+step 49000: past 1000 steps avg loss: 0.237 | accuracy: 0.929
+step 12000: past 1000 steps avg loss: 0.289 | accuracy: 0.913
+step 37000: past 1000 steps avg loss: 0.263 | accuracy: 0.922
+step 25000: past 1000 steps avg loss: 0.294 | accuracy: 0.914
+step 50000: past 1000 steps avg loss: 0.354 | accuracy: 0.902
+Epoch completed in: 178.699403 seconds
+Federated Averaging completed in: 3.021115 seconds
+
+Node 0
+	Conv_forward: 163.710077 sec, Maxpool_forward: 5.786350 sec, Softmax_forward: 12.348418 sec
+	Conv_backward: 134.205809 sec, Maxpool_backward: 7.278620 sec, Softmax_backward: 27.306278 sec
+
+Node 1
+	Conv_forward: 163.804366 sec, Maxpool_forward: 5.782778 sec, Softmax_forward: 12.335642 sec
+	Conv_backward: 134.208669 sec, Maxpool_backward: 7.290439 sec, Softmax_backward: 27.321368 sec
+
+Node 2
+	Conv_forward: 163.570449 sec, Maxpool_forward: 5.783745 sec, Softmax_forward: 12.332692 sec
+	Conv_backward: 134.191059 sec, Maxpool_backward: 7.276587 sec, Softmax_backward: 27.328734 sec
+
+Node 3
+	Conv_forward: 163.726287 sec, Maxpool_forward: 5.794914 sec, Softmax_forward: 12.337128 sec
+	Conv_backward: 134.203141 sec, Maxpool_backward: 7.293255 sec, Softmax_backward: 27.264681 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 0.355 | test accuracy: 0.907
+step 52000: past 1000 steps test loss: 0.311 | test accuracy: 0.917
+step 53000: past 1000 steps test loss: 0.327 | test accuracy: 0.910
+step 54000: past 1000 steps test loss: 0.322 | test accuracy: 0.910
+step 55000: past 1000 steps test loss: 0.318 | test accuracy: 0.912
+step 56000: past 1000 steps test loss: 0.307 | test accuracy: 0.915
+step 57000: past 1000 steps test loss: 0.300 | test accuracy: 0.917
+step 58000: past 1000 steps test loss: 0.296 | test accuracy: 0.917
+step 59000: past 1000 steps test loss: 0.283 | test accuracy: 0.921
+step 60000: past 1000 steps test loss: 0.280 | test accuracy: 0.923
+Testing completed in: 18.666410 seconds
+
+Tesing Complete
+
+** Reading images and labels **
+** Setting initial filter weights **
+** Setting initial softmax weights **
+Argc = 10
+0.005000 8 8 3 8 50 1 0
+** Layers initialized **
+--- Epoch 1 ---
+step 19000: past 1000 steps avg loss: 0.520 | accuracy: 0.073
+step 44000: past 1000 steps avg loss: 0.530 | accuracy: 0.061
+step 13000: past 1000 steps avg loss: 0.879 | accuracy: 0.205
+step 38000: past 1000 steps avg loss: 0.863 | accuracy: 0.222
+step 7000: past 1000 steps avg loss: 1.084 | accuracy: 0.410
+step 32000: past 1000 steps avg loss: 1.148 | accuracy: 0.369
+step 1000: past 1000 steps avg loss: 1.313 | accuracy: 0.563
+step 26000: past 1000 steps avg loss: 1.229 | accuracy: 0.599
+step 20000: past 1000 steps avg loss: 0.854 | accuracy: 0.717
+step 45000: past 1000 steps avg loss: 0.936 | accuracy: 0.695
+step 14000: past 1000 steps avg loss: 0.794 | accuracy: 0.741
+step 39000: past 1000 steps avg loss: 0.703 | accuracy: 0.764
+step 8000: past 1000 steps avg loss: 0.747 | accuracy: 0.765
+step 33000: past 1000 steps avg loss: 0.769 | accuracy: 0.749
+step 2000: past 1000 steps avg loss: 0.632 | accuracy: 0.793
+step 27000: past 1000 steps avg loss: 0.674 | accuracy: 0.805
+step 21000: past 1000 steps avg loss: 0.626 | accuracy: 0.792
+step 46000: past 1000 steps avg loss: 0.634 | accuracy: 0.798
+step 15000: past 1000 steps avg loss: 0.716 | accuracy: 0.754
+step 40000: past 1000 steps avg loss: 0.607 | accuracy: 0.799
+step 9000: past 1000 steps avg loss: 0.632 | accuracy: 0.811
+step 34000: past 1000 steps avg loss: 0.507 | accuracy: 0.839
+step 3000: past 1000 steps avg loss: 0.463 | accuracy: 0.850
+step 28000: past 1000 steps avg loss: 0.505 | accuracy: 0.834
+step 22000: past 1000 steps avg loss: 0.418 | accuracy: 0.874
+step 47000: past 1000 steps avg loss: 0.549 | accuracy: 0.823
+step 16000: past 1000 steps avg loss: 0.534 | accuracy: 0.826
+step 41000: past 1000 steps avg loss: 0.458 | accuracy: 0.842
+step 10000: past 1000 steps avg loss: 0.434 | accuracy: 0.869
+step 35000: past 1000 steps avg loss: 0.500 | accuracy: 0.841
+step 4000: past 1000 steps avg loss: 0.441 | accuracy: 0.861
+step 29000: past 1000 steps avg loss: 0.461 | accuracy: 0.863
+step 23000: past 1000 steps avg loss: 0.472 | accuracy: 0.843
+step 48000: past 1000 steps avg loss: 0.487 | accuracy: 0.839
+step 17000: past 1000 steps avg loss: 0.479 | accuracy: 0.845
+step 42000: past 1000 steps avg loss: 0.534 | accuracy: 0.813
+step 11000: past 1000 steps avg loss: 0.373 | accuracy: 0.877
+step 36000: past 1000 steps avg loss: 0.440 | accuracy: 0.849
+step 5000: past 1000 steps avg loss: 0.418 | accuracy: 0.869
+step 30000: past 1000 steps avg loss: 0.540 | accuracy: 0.806
+step 24000: past 1000 steps avg loss: 0.467 | accuracy: 0.853
+step 49000: past 1000 steps avg loss: 0.388 | accuracy: 0.881
+step 18000: past 1000 steps avg loss: 0.523 | accuracy: 0.837
+step 43000: past 1000 steps avg loss: 0.548 | accuracy: 0.834
+step 12000: past 1000 steps avg loss: 0.462 | accuracy: 0.856
+step 37000: past 1000 steps avg loss: 0.404 | accuracy: 0.871
+step 6000: past 1000 steps avg loss: 0.406 | accuracy: 0.881
+step 31000: past 1000 steps avg loss: 0.514 | accuracy: 0.841
+step 25000: past 1000 steps avg loss: 0.471 | accuracy: 0.852
+step 50000: past 1000 steps avg loss: 0.533 | accuracy: 0.838
+Epoch completed in: 180.452905 seconds
+Federated Averaging completed in: 1.425418 seconds
+
+Node 0
+	Conv_forward: 10.248992 sec, Maxpool_forward: 0.361540 sec, Softmax_forward: 0.775976 sec
+	Conv_backward: 8.390599 sec, Maxpool_backward: 0.455844 sec, Softmax_backward: 1.708046 sec
+
+Node 1
+	Conv_forward: 10.249395 sec, Maxpool_forward: 0.361212 sec, Softmax_forward: 0.775807 sec
+	Conv_backward: 8.390901 sec, Maxpool_backward: 0.455625 sec, Softmax_backward: 1.711845 sec
+
+Node 2
+	Conv_forward: 10.243504 sec, Maxpool_forward: 0.361860 sec, Softmax_forward: 0.774306 sec
+	Conv_backward: 8.393901 sec, Maxpool_backward: 0.455486 sec, Softmax_backward: 1.709260 sec
+
+Node 3
+	Conv_forward: 10.250956 sec, Maxpool_forward: 0.362750 sec, Softmax_forward: 0.774768 sec
+	Conv_backward: 8.391524 sec, Maxpool_backward: 0.454465 sec, Softmax_backward: 1.708503 sec
+
+Node 4
+	Conv_forward: 10.251876 sec, Maxpool_forward: 0.362893 sec, Softmax_forward: 0.773712 sec
+	Conv_backward: 8.391753 sec, Maxpool_backward: 0.455418 sec, Softmax_backward: 1.709769 sec
+
+Node 5
+	Conv_forward: 10.260681 sec, Maxpool_forward: 0.363111 sec, Softmax_forward: 0.773774 sec
+	Conv_backward: 8.395401 sec, Maxpool_backward: 0.456245 sec, Softmax_backward: 1.711155 sec
+
+Node 6
+	Conv_forward: 10.260393 sec, Maxpool_forward: 0.362457 sec, Softmax_forward: 0.773223 sec
+	Conv_backward: 8.388421 sec, Maxpool_backward: 0.457538 sec, Softmax_backward: 1.719678 sec
+
+Node 7
+	Conv_forward: 10.251920 sec, Maxpool_forward: 0.362657 sec, Softmax_forward: 0.773744 sec
+	Conv_backward: 8.391275 sec, Maxpool_backward: 0.457755 sec, Softmax_backward: 1.708261 sec
+
+--- Epoch 2 ---
+step 19000: past 1000 steps avg loss: 0.072 | accuracy: 0.231
+step 44000: past 1000 steps avg loss: 0.125 | accuracy: 0.213
+step 13000: past 1000 steps avg loss: 0.537 | accuracy: 1.091
+step 38000: past 1000 steps avg loss: 0.486 | accuracy: 1.103
+step 7000: past 1000 steps avg loss: 0.497 | accuracy: 1.096
+step 32000: past 1000 steps avg loss: 0.707 | accuracy: 1.029
+step 1000: past 1000 steps avg loss: 0.510 | accuracy: 1.093
+step 26000: past 1000 steps avg loss: 0.488 | accuracy: 1.090
+step 20000: past 1000 steps avg loss: 0.374 | accuracy: 0.885
+step 45000: past 1000 steps avg loss: 0.431 | accuracy: 0.860
+step 14000: past 1000 steps avg loss: 0.483 | accuracy: 0.854
+step 39000: past 1000 steps avg loss: 0.366 | accuracy: 0.882
+step 8000: past 1000 steps avg loss: 0.455 | accuracy: 0.860
+step 33000: past 1000 steps avg loss: 0.467 | accuracy: 0.869
+step 2000: past 1000 steps avg loss: 0.428 | accuracy: 0.874
+step 27000: past 1000 steps avg loss: 0.463 | accuracy: 0.882
+step 21000: past 1000 steps avg loss: 0.436 | accuracy: 0.876
+step 46000: past 1000 steps avg loss: 0.473 | accuracy: 0.855
+step 15000: past 1000 steps avg loss: 0.532 | accuracy: 0.827
+step 40000: past 1000 steps avg loss: 0.433 | accuracy: 0.870
+step 9000: past 1000 steps avg loss: 0.485 | accuracy: 0.855
+step 34000: past 1000 steps avg loss: 0.350 | accuracy: 0.899
+step 3000: past 1000 steps avg loss: 0.334 | accuracy: 0.898
+step 28000: past 1000 steps avg loss: 0.382 | accuracy: 0.871
+step 22000: past 1000 steps avg loss: 0.323 | accuracy: 0.910
+step 47000: past 1000 steps avg loss: 0.416 | accuracy: 0.868
+step 16000: past 1000 steps avg loss: 0.414 | accuracy: 0.876
+step 41000: past 1000 steps avg loss: 0.343 | accuracy: 0.885
+step 10000: past 1000 steps avg loss: 0.347 | accuracy: 0.902
+step 35000: past 1000 steps avg loss: 0.400 | accuracy: 0.878
+step 4000: past 1000 steps avg loss: 0.343 | accuracy: 0.901
+step 29000: past 1000 steps avg loss: 0.368 | accuracy: 0.894
+step 23000: past 1000 steps avg loss: 0.383 | accuracy: 0.873
+step 48000: past 1000 steps avg loss: 0.393 | accuracy: 0.869
+step 17000: past 1000 steps avg loss: 0.394 | accuracy: 0.883
+step 42000: past 1000 steps avg loss: 0.432 | accuracy: 0.864
+step 11000: past 1000 steps avg loss: 0.298 | accuracy: 0.911
+step 36000: past 1000 steps avg loss: 0.348 | accuracy: 0.880
+step 5000: past 1000 steps avg loss: 0.346 | accuracy: 0.890
+step 30000: past 1000 steps avg loss: 0.444 | accuracy: 0.860
+step 24000: past 1000 steps avg loss: 0.397 | accuracy: 0.882
+step 49000: past 1000 steps avg loss: 0.324 | accuracy: 0.902
+step 18000: past 1000 steps avg loss: 0.433 | accuracy: 0.860
+step 43000: past 1000 steps avg loss: 0.473 | accuracy: 0.856
+step 12000: past 1000 steps avg loss: 0.400 | accuracy: 0.876
+step 37000: past 1000 steps avg loss: 0.347 | accuracy: 0.899
+step 6000: past 1000 steps avg loss: 0.355 | accuracy: 0.900
+step 31000: past 1000 steps avg loss: 0.436 | accuracy: 0.875
+step 25000: past 1000 steps avg loss: 0.406 | accuracy: 0.879
+step 50000: past 1000 steps avg loss: 0.465 | accuracy: 0.862
+Epoch completed in: 180.734223 seconds
+Federated Averaging completed in: 2.853755 seconds
+
+Node 0
+	Conv_forward: 20.512938 sec, Maxpool_forward: 0.724402 sec, Softmax_forward: 1.554167 sec
+	Conv_backward: 16.795059 sec, Maxpool_backward: 0.912671 sec, Softmax_backward: 3.418573 sec
+
+Node 1
+	Conv_forward: 20.510953 sec, Maxpool_forward: 0.722841 sec, Softmax_forward: 1.551953 sec
+	Conv_backward: 16.797618 sec, Maxpool_backward: 0.911862 sec, Softmax_backward: 3.424841 sec
+
+Node 2
+	Conv_forward: 20.507801 sec, Maxpool_forward: 0.725731 sec, Softmax_forward: 1.551116 sec
+	Conv_backward: 16.794583 sec, Maxpool_backward: 0.911531 sec, Softmax_backward: 3.420788 sec
+
+Node 3
+	Conv_forward: 20.519023 sec, Maxpool_forward: 0.726108 sec, Softmax_forward: 1.550275 sec
+	Conv_backward: 16.797888 sec, Maxpool_backward: 0.910667 sec, Softmax_backward: 3.419560 sec
+
+Node 4
+	Conv_forward: 20.523727 sec, Maxpool_forward: 0.725492 sec, Softmax_forward: 1.548180 sec
+	Conv_backward: 16.793265 sec, Maxpool_backward: 0.912452 sec, Softmax_backward: 3.421110 sec
+
+Node 5
+	Conv_forward: 20.536026 sec, Maxpool_forward: 0.726272 sec, Softmax_forward: 1.549056 sec
+	Conv_backward: 16.800743 sec, Maxpool_backward: 0.913276 sec, Softmax_backward: 3.425639 sec
+
+Node 6
+	Conv_forward: 20.530166 sec, Maxpool_forward: 0.725319 sec, Softmax_forward: 1.548888 sec
+	Conv_backward: 16.792857 sec, Maxpool_backward: 0.916110 sec, Softmax_backward: 3.441330 sec
+
+Node 7
+	Conv_forward: 20.514949 sec, Maxpool_forward: 0.727304 sec, Softmax_forward: 1.549630 sec
+	Conv_backward: 16.792738 sec, Maxpool_backward: 0.913977 sec, Softmax_backward: 3.417226 sec
+
+--- Epoch 3 ---
+step 19000: past 1000 steps avg loss: 0.062 | accuracy: 0.231
+step 44000: past 1000 steps avg loss: 0.111 | accuracy: 0.218
+step 13000: past 1000 steps avg loss: 0.478 | accuracy: 1.119
+step 38000: past 1000 steps avg loss: 0.424 | accuracy: 1.111
+step 7000: past 1000 steps avg loss: 0.445 | accuracy: 1.110
+step 32000: past 1000 steps avg loss: 0.637 | accuracy: 1.047
+step 1000: past 1000 steps avg loss: 0.451 | accuracy: 1.114
+step 26000: past 1000 steps avg loss: 0.435 | accuracy: 1.111
+step 20000: past 1000 steps avg loss: 0.327 | accuracy: 0.899
+step 45000: past 1000 steps avg loss: 0.382 | accuracy: 0.885
+step 14000: past 1000 steps avg loss: 0.433 | accuracy: 0.873
+step 39000: past 1000 steps avg loss: 0.330 | accuracy: 0.894
+step 8000: past 1000 steps avg loss: 0.408 | accuracy: 0.878
+step 33000: past 1000 steps avg loss: 0.418 | accuracy: 0.886
+step 2000: past 1000 steps avg loss: 0.390 | accuracy: 0.888
+step 27000: past 1000 steps avg loss: 0.421 | accuracy: 0.889
+step 21000: past 1000 steps avg loss: 0.401 | accuracy: 0.885
+step 46000: past 1000 steps avg loss: 0.438 | accuracy: 0.863
+step 15000: past 1000 steps avg loss: 0.488 | accuracy: 0.848
+step 40000: past 1000 steps avg loss: 0.392 | accuracy: 0.887
+step 9000: past 1000 steps avg loss: 0.448 | accuracy: 0.873
+step 34000: past 1000 steps avg loss: 0.314 | accuracy: 0.907
+step 3000: past 1000 steps avg loss: 0.300 | accuracy: 0.913
+step 28000: past 1000 steps avg loss: 0.353 | accuracy: 0.882
+step 22000: past 1000 steps avg loss: 0.299 | accuracy: 0.916
+step 47000: past 1000 steps avg loss: 0.380 | accuracy: 0.881
+step 16000: past 1000 steps avg loss: 0.379 | accuracy: 0.887
+step 41000: past 1000 steps avg loss: 0.313 | accuracy: 0.902
+step 10000: past 1000 steps avg loss: 0.318 | accuracy: 0.910
+step 35000: past 1000 steps avg loss: 0.366 | accuracy: 0.888
+step 4000: past 1000 steps avg loss: 0.314 | accuracy: 0.908
+step 29000: past 1000 steps avg loss: 0.335 | accuracy: 0.899
+step 23000: past 1000 steps avg loss: 0.352 | accuracy: 0.877
+step 48000: past 1000 steps avg loss: 0.361 | accuracy: 0.881
+step 17000: past 1000 steps avg loss: 0.363 | accuracy: 0.887
+step 42000: past 1000 steps avg loss: 0.396 | accuracy: 0.868
+step 11000: past 1000 steps avg loss: 0.274 | accuracy: 0.916
+step 36000: past 1000 steps avg loss: 0.315 | accuracy: 0.892
+step 5000: past 1000 steps avg loss: 0.320 | accuracy: 0.902
+step 30000: past 1000 steps avg loss: 0.407 | accuracy: 0.872
+step 24000: past 1000 steps avg loss: 0.368 | accuracy: 0.889
+step 49000: past 1000 steps avg loss: 0.299 | accuracy: 0.905
+step 18000: past 1000 steps avg loss: 0.396 | accuracy: 0.886
+step 43000: past 1000 steps avg loss: 0.442 | accuracy: 0.859
+step 12000: past 1000 steps avg loss: 0.371 | accuracy: 0.886
+step 37000: past 1000 steps avg loss: 0.324 | accuracy: 0.906
+step 6000: past 1000 steps avg loss: 0.334 | accuracy: 0.907
+step 31000: past 1000 steps avg loss: 0.402 | accuracy: 0.877
+step 25000: past 1000 steps avg loss: 0.377 | accuracy: 0.889
+step 50000: past 1000 steps avg loss: 0.436 | accuracy: 0.873
+Epoch completed in: 180.439671 seconds
+Federated Averaging completed in: 4.281854 seconds
+
+Node 0
+	Conv_forward: 30.760550 sec, Maxpool_forward: 1.086004 sec, Softmax_forward: 2.330040 sec
+	Conv_backward: 25.187459 sec, Maxpool_backward: 1.369056 sec, Softmax_backward: 5.125704 sec
+
+Node 1
+	Conv_forward: 30.760631 sec, Maxpool_forward: 1.084602 sec, Softmax_forward: 2.326366 sec
+	Conv_backward: 25.191180 sec, Maxpool_backward: 1.367669 sec, Softmax_backward: 5.135493 sec
+
+Node 2
+	Conv_forward: 30.754612 sec, Maxpool_forward: 1.088085 sec, Softmax_forward: 2.326482 sec
+	Conv_backward: 25.191712 sec, Maxpool_backward: 1.367867 sec, Softmax_backward: 5.130674 sec
+
+Node 3
+	Conv_forward: 30.759285 sec, Maxpool_forward: 1.088966 sec, Softmax_forward: 2.325050 sec
+	Conv_backward: 25.187146 sec, Maxpool_backward: 1.365848 sec, Softmax_backward: 5.127065 sec
+
+Node 4
+	Conv_forward: 30.771396 sec, Maxpool_forward: 1.087907 sec, Softmax_forward: 2.320938 sec
+	Conv_backward: 25.187852 sec, Maxpool_backward: 1.368213 sec, Softmax_backward: 5.128388 sec
+
+Node 5
+	Conv_forward: 30.789462 sec, Maxpool_forward: 1.088852 sec, Softmax_forward: 2.323853 sec
+	Conv_backward: 25.191691 sec, Maxpool_backward: 1.368833 sec, Softmax_backward: 5.139247 sec
+
+Node 6
+	Conv_forward: 30.782088 sec, Maxpool_forward: 1.087584 sec, Softmax_forward: 2.321650 sec
+	Conv_backward: 25.182960 sec, Maxpool_backward: 1.374105 sec, Softmax_backward: 5.162783 sec
+
+Node 7
+	Conv_forward: 30.754282 sec, Maxpool_forward: 1.089807 sec, Softmax_forward: 2.322747 sec
+	Conv_backward: 25.187222 sec, Maxpool_backward: 1.369509 sec, Softmax_backward: 5.122949 sec
+
+--- Epoch 4 ---
+step 19000: past 1000 steps avg loss: 0.058 | accuracy: 0.235
+step 44000: past 1000 steps avg loss: 0.104 | accuracy: 0.223
+step 13000: past 1000 steps avg loss: 0.453 | accuracy: 1.125
+step 38000: past 1000 steps avg loss: 0.396 | accuracy: 1.123
+step 7000: past 1000 steps avg loss: 0.420 | accuracy: 1.125
+step 32000: past 1000 steps avg loss: 0.606 | accuracy: 1.060
+step 1000: past 1000 steps avg loss: 0.422 | accuracy: 1.129
+step 26000: past 1000 steps avg loss: 0.411 | accuracy: 1.121
+step 20000: past 1000 steps avg loss: 0.305 | accuracy: 0.912
+step 45000: past 1000 steps avg loss: 0.360 | accuracy: 0.894
+step 14000: past 1000 steps avg loss: 0.407 | accuracy: 0.888
+step 39000: past 1000 steps avg loss: 0.312 | accuracy: 0.903
+step 8000: past 1000 steps avg loss: 0.384 | accuracy: 0.887
+step 33000: past 1000 steps avg loss: 0.393 | accuracy: 0.893
+step 2000: past 1000 steps avg loss: 0.370 | accuracy: 0.896
+step 27000: past 1000 steps avg loss: 0.398 | accuracy: 0.899
+step 21000: past 1000 steps avg loss: 0.383 | accuracy: 0.892
+step 46000: past 1000 steps avg loss: 0.419 | accuracy: 0.869
+step 15000: past 1000 steps avg loss: 0.465 | accuracy: 0.855
+step 40000: past 1000 steps avg loss: 0.371 | accuracy: 0.897
+step 9000: past 1000 steps avg loss: 0.427 | accuracy: 0.882
+step 34000: past 1000 steps avg loss: 0.294 | accuracy: 0.910
+step 3000: past 1000 steps avg loss: 0.283 | accuracy: 0.917
+step 28000: past 1000 steps avg loss: 0.339 | accuracy: 0.886
+step 22000: past 1000 steps avg loss: 0.286 | accuracy: 0.925
+step 47000: past 1000 steps avg loss: 0.361 | accuracy: 0.885
+step 16000: past 1000 steps avg loss: 0.360 | accuracy: 0.889
+step 41000: past 1000 steps avg loss: 0.296 | accuracy: 0.912
+step 10000: past 1000 steps avg loss: 0.301 | accuracy: 0.916
+step 35000: past 1000 steps avg loss: 0.345 | accuracy: 0.892
+step 4000: past 1000 steps avg loss: 0.298 | accuracy: 0.912
+step 29000: past 1000 steps avg loss: 0.317 | accuracy: 0.908
+step 23000: past 1000 steps avg loss: 0.334 | accuracy: 0.886
+step 48000: past 1000 steps avg loss: 0.343 | accuracy: 0.889
+step 17000: past 1000 steps avg loss: 0.344 | accuracy: 0.890
+step 42000: past 1000 steps avg loss: 0.376 | accuracy: 0.872
+step 11000: past 1000 steps avg loss: 0.260 | accuracy: 0.926
+step 36000: past 1000 steps avg loss: 0.296 | accuracy: 0.898
+step 5000: past 1000 steps avg loss: 0.304 | accuracy: 0.908
+step 30000: past 1000 steps avg loss: 0.385 | accuracy: 0.883
+step 24000: past 1000 steps avg loss: 0.351 | accuracy: 0.896
+step 49000: past 1000 steps avg loss: 0.284 | accuracy: 0.906
+step 18000: past 1000 steps avg loss: 0.375 | accuracy: 0.893
+step 43000: past 1000 steps avg loss: 0.424 | accuracy: 0.862
+step 12000: past 1000 steps avg loss: 0.353 | accuracy: 0.894
+step 37000: past 1000 steps avg loss: 0.309 | accuracy: 0.909
+step 6000: past 1000 steps avg loss: 0.321 | accuracy: 0.909
+step 31000: past 1000 steps avg loss: 0.380 | accuracy: 0.882
+step 25000: past 1000 steps avg loss: 0.359 | accuracy: 0.891
+step 50000: past 1000 steps avg loss: 0.417 | accuracy: 0.884
+Epoch completed in: 180.435863 seconds
+Federated Averaging completed in: 5.709713 seconds
+
+Node 0
+	Conv_forward: 41.013344 sec, Maxpool_forward: 1.447345 sec, Softmax_forward: 3.105203 sec
+	Conv_backward: 33.579288 sec, Maxpool_backward: 1.825515 sec, Softmax_backward: 6.832462 sec
+
+Node 1
+	Conv_forward: 41.010606 sec, Maxpool_forward: 1.445582 sec, Softmax_forward: 3.101980 sec
+	Conv_backward: 33.583175 sec, Maxpool_backward: 1.824349 sec, Softmax_backward: 6.846165 sec
+
+Node 2
+	Conv_forward: 41.000173 sec, Maxpool_forward: 1.449604 sec, Softmax_forward: 3.100810 sec
+	Conv_backward: 33.587207 sec, Maxpool_backward: 1.824625 sec, Softmax_backward: 6.841644 sec
+
+Node 3
+	Conv_forward: 41.003959 sec, Maxpool_forward: 1.451583 sec, Softmax_forward: 3.099467 sec
+	Conv_backward: 33.582452 sec, Maxpool_backward: 1.821133 sec, Softmax_backward: 6.835529 sec
+
+Node 4
+	Conv_forward: 41.019078 sec, Maxpool_forward: 1.449824 sec, Softmax_forward: 3.094930 sec
+	Conv_backward: 33.581313 sec, Maxpool_backward: 1.823887 sec, Softmax_backward: 6.835745 sec
+
+Node 5
+	Conv_forward: 41.042870 sec, Maxpool_forward: 1.450989 sec, Softmax_forward: 3.097153 sec
+	Conv_backward: 33.581085 sec, Maxpool_backward: 1.825490 sec, Softmax_backward: 6.851505 sec
+
+Node 6
+	Conv_forward: 41.032384 sec, Maxpool_forward: 1.449700 sec, Softmax_forward: 3.095286 sec
+	Conv_backward: 33.570174 sec, Maxpool_backward: 1.831545 sec, Softmax_backward: 6.881220 sec
+
+Node 7
+	Conv_forward: 40.994101 sec, Maxpool_forward: 1.453007 sec, Softmax_forward: 3.096666 sec
+	Conv_backward: 33.579789 sec, Maxpool_backward: 1.825219 sec, Softmax_backward: 6.830974 sec
+
+--- Epoch 5 ---
+step 19000: past 1000 steps avg loss: 0.055 | accuracy: 0.235
+step 44000: past 1000 steps avg loss: 0.099 | accuracy: 0.225
+step 13000: past 1000 steps avg loss: 0.437 | accuracy: 1.128
+step 38000: past 1000 steps avg loss: 0.380 | accuracy: 1.129
+step 7000: past 1000 steps avg loss: 0.404 | accuracy: 1.140
+step 32000: past 1000 steps avg loss: 0.588 | accuracy: 1.070
+step 1000: past 1000 steps avg loss: 0.403 | accuracy: 1.137
+step 26000: past 1000 steps avg loss: 0.396 | accuracy: 1.126
+step 20000: past 1000 steps avg loss: 0.290 | accuracy: 0.917
+step 45000: past 1000 steps avg loss: 0.346 | accuracy: 0.899
+step 14000: past 1000 steps avg loss: 0.391 | accuracy: 0.893
+step 39000: past 1000 steps avg loss: 0.300 | accuracy: 0.911
+step 8000: past 1000 steps avg loss: 0.369 | accuracy: 0.888
+step 33000: past 1000 steps avg loss: 0.377 | accuracy: 0.899
+step 2000: past 1000 steps avg loss: 0.357 | accuracy: 0.901
+step 27000: past 1000 steps avg loss: 0.382 | accuracy: 0.907
+step 21000: past 1000 steps avg loss: 0.371 | accuracy: 0.895
+step 46000: past 1000 steps avg loss: 0.405 | accuracy: 0.873
+step 15000: past 1000 steps avg loss: 0.450 | accuracy: 0.859
+step 40000: past 1000 steps avg loss: 0.356 | accuracy: 0.903
+step 9000: past 1000 steps avg loss: 0.413 | accuracy: 0.886
+step 34000: past 1000 steps avg loss: 0.280 | accuracy: 0.910
+step 3000: past 1000 steps avg loss: 0.271 | accuracy: 0.924
+step 28000: past 1000 steps avg loss: 0.330 | accuracy: 0.889
+step 22000: past 1000 steps avg loss: 0.278 | accuracy: 0.926
+step 47000: past 1000 steps avg loss: 0.348 | accuracy: 0.891
+step 16000: past 1000 steps avg loss: 0.347 | accuracy: 0.890
+step 41000: past 1000 steps avg loss: 0.285 | accuracy: 0.916
+step 10000: past 1000 steps avg loss: 0.289 | accuracy: 0.917
+step 35000: past 1000 steps avg loss: 0.331 | accuracy: 0.894
+step 4000: past 1000 steps avg loss: 0.287 | accuracy: 0.915
+step 29000: past 1000 steps avg loss: 0.305 | accuracy: 0.910
+step 23000: past 1000 steps avg loss: 0.321 | accuracy: 0.891
+step 48000: past 1000 steps avg loss: 0.331 | accuracy: 0.893
+step 17000: past 1000 steps avg loss: 0.330 | accuracy: 0.891
+step 42000: past 1000 steps avg loss: 0.361 | accuracy: 0.875
+step 11000: past 1000 steps avg loss: 0.250 | accuracy: 0.927
+step 36000: past 1000 steps avg loss: 0.283 | accuracy: 0.900
+step 5000: past 1000 steps avg loss: 0.294 | accuracy: 0.913
+step 30000: past 1000 steps avg loss: 0.369 | accuracy: 0.894
+step 24000: past 1000 steps avg loss: 0.338 | accuracy: 0.903
+step 49000: past 1000 steps avg loss: 0.274 | accuracy: 0.908
+step 18000: past 1000 steps avg loss: 0.360 | accuracy: 0.897
+step 43000: past 1000 steps avg loss: 0.411 | accuracy: 0.868
+step 12000: past 1000 steps avg loss: 0.340 | accuracy: 0.897
+step 37000: past 1000 steps avg loss: 0.299 | accuracy: 0.913
+step 6000: past 1000 steps avg loss: 0.313 | accuracy: 0.910
+step 31000: past 1000 steps avg loss: 0.364 | accuracy: 0.884
+step 25000: past 1000 steps avg loss: 0.346 | accuracy: 0.896
+step 50000: past 1000 steps avg loss: 0.405 | accuracy: 0.888
+Epoch completed in: 180.392509 seconds
+Federated Averaging completed in: 7.133796 seconds
+
+Node 0
+	Conv_forward: 51.266386 sec, Maxpool_forward: 1.808884 sec, Softmax_forward: 3.878283 sec
+	Conv_backward: 41.967289 sec, Maxpool_backward: 2.281118 sec, Softmax_backward: 8.535815 sec
+
+Node 1
+	Conv_forward: 51.264031 sec, Maxpool_forward: 1.807064 sec, Softmax_forward: 3.875807 sec
+	Conv_backward: 41.975882 sec, Maxpool_backward: 2.280692 sec, Softmax_backward: 8.552832 sec
+
+Node 2
+	Conv_forward: 51.253801 sec, Maxpool_forward: 1.811673 sec, Softmax_forward: 3.873050 sec
+	Conv_backward: 41.979135 sec, Maxpool_backward: 2.279629 sec, Softmax_backward: 8.549446 sec
+
+Node 3
+	Conv_forward: 51.264632 sec, Maxpool_forward: 1.814079 sec, Softmax_forward: 3.870836 sec
+	Conv_backward: 41.977989 sec, Maxpool_backward: 2.276241 sec, Softmax_backward: 8.540526 sec
+
+Node 4
+	Conv_forward: 51.280086 sec, Maxpool_forward: 1.811685 sec, Softmax_forward: 3.865216 sec
+	Conv_backward: 41.967361 sec, Maxpool_backward: 2.279240 sec, Softmax_backward: 8.540302 sec
+
+Node 5
+	Conv_forward: 51.307864 sec, Maxpool_forward: 1.813204 sec, Softmax_forward: 3.867998 sec
+	Conv_backward: 41.969261 sec, Maxpool_backward: 2.280367 sec, Softmax_backward: 8.561903 sec
+
+Node 6
+	Conv_forward: 51.290973 sec, Maxpool_forward: 1.812046 sec, Softmax_forward: 3.866213 sec
+	Conv_backward: 41.958765 sec, Maxpool_backward: 2.288218 sec, Softmax_backward: 8.598056 sec
+
+Node 7
+	Conv_forward: 51.242549 sec, Maxpool_forward: 1.815288 sec, Softmax_forward: 3.868564 sec
+	Conv_backward: 41.968720 sec, Maxpool_backward: 2.280387 sec, Softmax_backward: 8.535541 sec
+
+--- Epoch 6 ---
+step 19000: past 1000 steps avg loss: 0.053 | accuracy: 0.235
+step 44000: past 1000 steps avg loss: 0.096 | accuracy: 0.225
+step 13000: past 1000 steps avg loss: 0.427 | accuracy: 1.131
+step 38000: past 1000 steps avg loss: 0.368 | accuracy: 1.137
+step 7000: past 1000 steps avg loss: 0.392 | accuracy: 1.140
+step 32000: past 1000 steps avg loss: 0.576 | accuracy: 1.077
+step 1000: past 1000 steps avg loss: 0.389 | accuracy: 1.144
+step 26000: past 1000 steps avg loss: 0.385 | accuracy: 1.130
+step 20000: past 1000 steps avg loss: 0.280 | accuracy: 0.923
+step 45000: past 1000 steps avg loss: 0.336 | accuracy: 0.902
+step 14000: past 1000 steps avg loss: 0.379 | accuracy: 0.894
+step 39000: past 1000 steps avg loss: 0.292 | accuracy: 0.912
+step 8000: past 1000 steps avg loss: 0.358 | accuracy: 0.894
+step 33000: past 1000 steps avg loss: 0.365 | accuracy: 0.900
+step 2000: past 1000 steps avg loss: 0.348 | accuracy: 0.904
+step 27000: past 1000 steps avg loss: 0.371 | accuracy: 0.908
+step 21000: past 1000 steps avg loss: 0.363 | accuracy: 0.896
+step 46000: past 1000 steps avg loss: 0.395 | accuracy: 0.877
+step 15000: past 1000 steps avg loss: 0.439 | accuracy: 0.866
+step 40000: past 1000 steps avg loss: 0.346 | accuracy: 0.902
+step 9000: past 1000 steps avg loss: 0.403 | accuracy: 0.890
+step 34000: past 1000 steps avg loss: 0.270 | accuracy: 0.911
+step 3000: past 1000 steps avg loss: 0.263 | accuracy: 0.922
+step 28000: past 1000 steps avg loss: 0.323 | accuracy: 0.893
+step 22000: past 1000 steps avg loss: 0.272 | accuracy: 0.929
+step 47000: past 1000 steps avg loss: 0.338 | accuracy: 0.894
+step 16000: past 1000 steps avg loss: 0.337 | accuracy: 0.893
+step 41000: past 1000 steps avg loss: 0.278 | accuracy: 0.919
+step 10000: past 1000 steps avg loss: 0.280 | accuracy: 0.922
+step 35000: past 1000 steps avg loss: 0.320 | accuracy: 0.903
+step 4000: past 1000 steps avg loss: 0.278 | accuracy: 0.917
+step 29000: past 1000 steps avg loss: 0.296 | accuracy: 0.914
+step 23000: past 1000 steps avg loss: 0.312 | accuracy: 0.895
+step 48000: past 1000 steps avg loss: 0.322 | accuracy: 0.894
+step 17000: past 1000 steps avg loss: 0.320 | accuracy: 0.893
+step 42000: past 1000 steps avg loss: 0.351 | accuracy: 0.879
+step 11000: past 1000 steps avg loss: 0.243 | accuracy: 0.929
+step 36000: past 1000 steps avg loss: 0.274 | accuracy: 0.907
+step 5000: past 1000 steps avg loss: 0.286 | accuracy: 0.912
+step 30000: past 1000 steps avg loss: 0.357 | accuracy: 0.895
+step 24000: past 1000 steps avg loss: 0.329 | accuracy: 0.905
+step 49000: past 1000 steps avg loss: 0.267 | accuracy: 0.914
+step 18000: past 1000 steps avg loss: 0.349 | accuracy: 0.897
+step 43000: past 1000 steps avg loss: 0.401 | accuracy: 0.871
+step 12000: past 1000 steps avg loss: 0.330 | accuracy: 0.898
+step 37000: past 1000 steps avg loss: 0.292 | accuracy: 0.915
+step 6000: past 1000 steps avg loss: 0.306 | accuracy: 0.917
+step 31000: past 1000 steps avg loss: 0.352 | accuracy: 0.888
+step 25000: past 1000 steps avg loss: 0.337 | accuracy: 0.902
+step 50000: past 1000 steps avg loss: 0.395 | accuracy: 0.891
+Epoch completed in: 180.602420 seconds
+Federated Averaging completed in: 8.559631 seconds
+
+Node 0
+	Conv_forward: 61.535443 sec, Maxpool_forward: 2.170934 sec, Softmax_forward: 4.652445 sec
+	Conv_backward: 50.368073 sec, Maxpool_backward: 2.738348 sec, Softmax_backward: 10.242693 sec
+
+Node 1
+	Conv_forward: 61.529534 sec, Maxpool_forward: 2.168260 sec, Softmax_forward: 4.649227 sec
+	Conv_backward: 50.377719 sec, Maxpool_backward: 2.737919 sec, Softmax_backward: 10.262674 sec
+
+Node 2
+	Conv_forward: 61.510331 sec, Maxpool_forward: 2.174357 sec, Softmax_forward: 4.647224 sec
+	Conv_backward: 50.382015 sec, Maxpool_backward: 2.735605 sec, Softmax_backward: 10.257017 sec
+
+Node 3
+	Conv_forward: 61.525866 sec, Maxpool_forward: 2.177040 sec, Softmax_forward: 4.644154 sec
+	Conv_backward: 50.379378 sec, Maxpool_backward: 2.732321 sec, Softmax_backward: 10.247649 sec
+
+Node 4
+	Conv_forward: 61.545475 sec, Maxpool_forward: 2.174233 sec, Softmax_forward: 4.636915 sec
+	Conv_backward: 50.364124 sec, Maxpool_backward: 2.736100 sec, Softmax_backward: 10.247207 sec
+
+Node 5
+	Conv_forward: 61.584096 sec, Maxpool_forward: 2.177441 sec, Softmax_forward: 4.641820 sec
+	Conv_backward: 50.371125 sec, Maxpool_backward: 2.736458 sec, Softmax_backward: 10.272341 sec
+
+Node 6
+	Conv_forward: 61.563803 sec, Maxpool_forward: 2.174726 sec, Softmax_forward: 4.638468 sec
+	Conv_backward: 50.356453 sec, Maxpool_backward: 2.746091 sec, Softmax_backward: 10.316680 sec
+
+Node 7
+	Conv_forward: 61.506175 sec, Maxpool_forward: 2.178599 sec, Softmax_forward: 4.640168 sec
+	Conv_backward: 50.368278 sec, Maxpool_backward: 2.736806 sec, Softmax_backward: 10.244598 sec
+
+--- Epoch 7 ---
+step 19000: past 1000 steps avg loss: 0.051 | accuracy: 0.235
+step 44000: past 1000 steps avg loss: 0.093 | accuracy: 0.224
+step 13000: past 1000 steps avg loss: 0.420 | accuracy: 1.136
+step 38000: past 1000 steps avg loss: 0.360 | accuracy: 1.138
+step 7000: past 1000 steps avg loss: 0.383 | accuracy: 1.144
+step 32000: past 1000 steps avg loss: 0.568 | accuracy: 1.081
+step 1000: past 1000 steps avg loss: 0.379 | accuracy: 1.149
+step 26000: past 1000 steps avg loss: 0.377 | accuracy: 1.132
+step 20000: past 1000 steps avg loss: 0.272 | accuracy: 0.925
+step 45000: past 1000 steps avg loss: 0.328 | accuracy: 0.909
+step 14000: past 1000 steps avg loss: 0.370 | accuracy: 0.898
+step 39000: past 1000 steps avg loss: 0.285 | accuracy: 0.915
+step 8000: past 1000 steps avg loss: 0.350 | accuracy: 0.894
+step 33000: past 1000 steps avg loss: 0.356 | accuracy: 0.900
+step 2000: past 1000 steps avg loss: 0.341 | accuracy: 0.906
+step 27000: past 1000 steps avg loss: 0.362 | accuracy: 0.912
+step 21000: past 1000 steps avg loss: 0.356 | accuracy: 0.902
+step 46000: past 1000 steps avg loss: 0.387 | accuracy: 0.882
+step 15000: past 1000 steps avg loss: 0.431 | accuracy: 0.864
+step 40000: past 1000 steps avg loss: 0.338 | accuracy: 0.905
+step 9000: past 1000 steps avg loss: 0.395 | accuracy: 0.891
+step 34000: past 1000 steps avg loss: 0.262 | accuracy: 0.916
+step 3000: past 1000 steps avg loss: 0.256 | accuracy: 0.926
+step 28000: past 1000 steps avg loss: 0.318 | accuracy: 0.896
+step 22000: past 1000 steps avg loss: 0.268 | accuracy: 0.930
+step 47000: past 1000 steps avg loss: 0.330 | accuracy: 0.899
+step 16000: past 1000 steps avg loss: 0.329 | accuracy: 0.897
+step 41000: past 1000 steps avg loss: 0.272 | accuracy: 0.920
+step 10000: past 1000 steps avg loss: 0.272 | accuracy: 0.924
+step 35000: past 1000 steps avg loss: 0.311 | accuracy: 0.908
+step 4000: past 1000 steps avg loss: 0.271 | accuracy: 0.917
+step 29000: past 1000 steps avg loss: 0.290 | accuracy: 0.917
+step 23000: past 1000 steps avg loss: 0.305 | accuracy: 0.899
+step 48000: past 1000 steps avg loss: 0.316 | accuracy: 0.896
+step 17000: past 1000 steps avg loss: 0.311 | accuracy: 0.899
+step 42000: past 1000 steps avg loss: 0.343 | accuracy: 0.884
+step 11000: past 1000 steps avg loss: 0.238 | accuracy: 0.930
+step 36000: past 1000 steps avg loss: 0.266 | accuracy: 0.909
+step 5000: past 1000 steps avg loss: 0.279 | accuracy: 0.915
+step 30000: past 1000 steps avg loss: 0.347 | accuracy: 0.897
+step 24000: past 1000 steps avg loss: 0.321 | accuracy: 0.907
+step 49000: past 1000 steps avg loss: 0.261 | accuracy: 0.917
+step 18000: past 1000 steps avg loss: 0.341 | accuracy: 0.899
+step 43000: past 1000 steps avg loss: 0.394 | accuracy: 0.873
+step 12000: past 1000 steps avg loss: 0.321 | accuracy: 0.900
+step 37000: past 1000 steps avg loss: 0.287 | accuracy: 0.916
+step 6000: past 1000 steps avg loss: 0.301 | accuracy: 0.917
+step 31000: past 1000 steps avg loss: 0.342 | accuracy: 0.892
+step 25000: past 1000 steps avg loss: 0.329 | accuracy: 0.901
+step 50000: past 1000 steps avg loss: 0.387 | accuracy: 0.890
+Epoch completed in: 180.362558 seconds
+Federated Averaging completed in: 9.988214 seconds
+
+Node 0
+	Conv_forward: 71.781107 sec, Maxpool_forward: 2.533498 sec, Softmax_forward: 5.427125 sec
+	Conv_backward: 58.758589 sec, Maxpool_backward: 3.194758 sec, Softmax_backward: 11.949376 sec
+
+Node 1
+	Conv_forward: 71.772435 sec, Maxpool_forward: 2.529498 sec, Softmax_forward: 5.424408 sec
+	Conv_backward: 58.766861 sec, Maxpool_backward: 3.194225 sec, Softmax_backward: 11.971048 sec
+
+Node 2
+	Conv_forward: 71.755784 sec, Maxpool_forward: 2.536625 sec, Softmax_forward: 5.420492 sec
+	Conv_backward: 58.770729 sec, Maxpool_backward: 3.191686 sec, Softmax_backward: 11.964269 sec
+
+Node 3
+	Conv_forward: 71.776584 sec, Maxpool_forward: 2.540552 sec, Softmax_forward: 5.415690 sec
+	Conv_backward: 58.770941 sec, Maxpool_backward: 3.187467 sec, Softmax_backward: 11.952170 sec
+
+Node 4
+	Conv_forward: 71.795809 sec, Maxpool_forward: 2.536492 sec, Softmax_forward: 5.410453 sec
+	Conv_backward: 58.753955 sec, Maxpool_backward: 3.192714 sec, Softmax_backward: 11.952408 sec
+
+Node 5
+	Conv_forward: 71.840669 sec, Maxpool_forward: 2.539865 sec, Softmax_forward: 5.413593 sec
+	Conv_backward: 58.764165 sec, Maxpool_backward: 3.192690 sec, Softmax_backward: 11.980766 sec
+
+Node 6
+	Conv_forward: 71.813449 sec, Maxpool_forward: 2.537075 sec, Softmax_forward: 5.410867 sec
+	Conv_backward: 58.747133 sec, Maxpool_backward: 3.203272 sec, Softmax_backward: 12.031621 sec
+
+Node 7
+	Conv_forward: 71.752505 sec, Maxpool_forward: 2.541177 sec, Softmax_forward: 5.411021 sec
+	Conv_backward: 58.758740 sec, Maxpool_backward: 3.193364 sec, Softmax_backward: 11.950596 sec
+
+--- Epoch 8 ---
+step 19000: past 1000 steps avg loss: 0.050 | accuracy: 0.237
+step 44000: past 1000 steps avg loss: 0.091 | accuracy: 0.224
+step 13000: past 1000 steps avg loss: 0.414 | accuracy: 1.135
+step 38000: past 1000 steps avg loss: 0.354 | accuracy: 1.138
+step 7000: past 1000 steps avg loss: 0.376 | accuracy: 1.147
+step 32000: past 1000 steps avg loss: 0.561 | accuracy: 1.083
+step 1000: past 1000 steps avg loss: 0.371 | accuracy: 1.153
+step 26000: past 1000 steps avg loss: 0.372 | accuracy: 1.136
+step 20000: past 1000 steps avg loss: 0.266 | accuracy: 0.927
+step 45000: past 1000 steps avg loss: 0.322 | accuracy: 0.912
+step 14000: past 1000 steps avg loss: 0.363 | accuracy: 0.900
+step 39000: past 1000 steps avg loss: 0.280 | accuracy: 0.916
+step 8000: past 1000 steps avg loss: 0.343 | accuracy: 0.894
+step 33000: past 1000 steps avg loss: 0.349 | accuracy: 0.903
+step 2000: past 1000 steps avg loss: 0.336 | accuracy: 0.906
+step 27000: past 1000 steps avg loss: 0.355 | accuracy: 0.915
+step 21000: past 1000 steps avg loss: 0.351 | accuracy: 0.906
+step 46000: past 1000 steps avg loss: 0.380 | accuracy: 0.885
+step 15000: past 1000 steps avg loss: 0.425 | accuracy: 0.864
+step 40000: past 1000 steps avg loss: 0.331 | accuracy: 0.906
+step 9000: past 1000 steps avg loss: 0.388 | accuracy: 0.890
+step 34000: past 1000 steps avg loss: 0.256 | accuracy: 0.921
+step 3000: past 1000 steps avg loss: 0.251 | accuracy: 0.929
+step 28000: past 1000 steps avg loss: 0.314 | accuracy: 0.894
+step 22000: past 1000 steps avg loss: 0.264 | accuracy: 0.932
+step 47000: past 1000 steps avg loss: 0.324 | accuracy: 0.902
+step 16000: past 1000 steps avg loss: 0.322 | accuracy: 0.904
+step 41000: past 1000 steps avg loss: 0.267 | accuracy: 0.922
+step 10000: past 1000 steps avg loss: 0.266 | accuracy: 0.927
+step 35000: past 1000 steps avg loss: 0.304 | accuracy: 0.911
+step 4000: past 1000 steps avg loss: 0.266 | accuracy: 0.920
+step 29000: past 1000 steps avg loss: 0.285 | accuracy: 0.919
+step 23000: past 1000 steps avg loss: 0.299 | accuracy: 0.901
+step 48000: past 1000 steps avg loss: 0.311 | accuracy: 0.898
+step 17000: past 1000 steps avg loss: 0.304 | accuracy: 0.899
+step 42000: past 1000 steps avg loss: 0.336 | accuracy: 0.888
+step 11000: past 1000 steps avg loss: 0.233 | accuracy: 0.934
+step 36000: past 1000 steps avg loss: 0.261 | accuracy: 0.909
+step 5000: past 1000 steps avg loss: 0.274 | accuracy: 0.917
+step 30000: past 1000 steps avg loss: 0.338 | accuracy: 0.901
+step 24000: past 1000 steps avg loss: 0.315 | accuracy: 0.913
+step 49000: past 1000 steps avg loss: 0.257 | accuracy: 0.920
+step 18000: past 1000 steps avg loss: 0.334 | accuracy: 0.903
+step 43000: past 1000 steps avg loss: 0.388 | accuracy: 0.878
+step 12000: past 1000 steps avg loss: 0.314 | accuracy: 0.902
+step 37000: past 1000 steps avg loss: 0.282 | accuracy: 0.919
+step 6000: past 1000 steps avg loss: 0.297 | accuracy: 0.919
+step 31000: past 1000 steps avg loss: 0.334 | accuracy: 0.892
+step 25000: past 1000 steps avg loss: 0.323 | accuracy: 0.900
+step 50000: past 1000 steps avg loss: 0.380 | accuracy: 0.892
+Epoch completed in: 180.267149 seconds
+Federated Averaging completed in: 11.408339 seconds
+
+Node 0
+	Conv_forward: 82.034702 sec, Maxpool_forward: 2.894558 sec, Softmax_forward: 6.197084 sec
+	Conv_backward: 67.142897 sec, Maxpool_backward: 3.650395 sec, Softmax_backward: 13.649099 sec
+
+Node 1
+	Conv_forward: 82.025975 sec, Maxpool_forward: 2.890151 sec, Softmax_forward: 6.194883 sec
+	Conv_backward: 67.150026 sec, Maxpool_backward: 3.649623 sec, Softmax_backward: 13.673483 sec
+
+Node 2
+	Conv_forward: 82.004923 sec, Maxpool_forward: 2.897950 sec, Softmax_forward: 6.191377 sec
+	Conv_backward: 67.155186 sec, Maxpool_backward: 3.647172 sec, Softmax_backward: 13.666275 sec
+
+Node 3
+	Conv_forward: 82.030466 sec, Maxpool_forward: 2.902764 sec, Softmax_forward: 6.184781 sec
+	Conv_backward: 67.155369 sec, Maxpool_backward: 3.643583 sec, Softmax_backward: 13.653266 sec
+
+Node 4
+	Conv_forward: 82.054210 sec, Maxpool_forward: 2.898643 sec, Softmax_forward: 6.178128 sec
+	Conv_backward: 67.139976 sec, Maxpool_backward: 3.649652 sec, Softmax_backward: 13.653677 sec
+
+Node 5
+	Conv_forward: 82.109345 sec, Maxpool_forward: 2.901642 sec, Softmax_forward: 6.183146 sec
+	Conv_backward: 67.151080 sec, Maxpool_backward: 3.647769 sec, Softmax_backward: 13.686763 sec
+
+Node 6
+	Conv_forward: 82.077612 sec, Maxpool_forward: 2.898812 sec, Softmax_forward: 6.180551 sec
+	Conv_backward: 67.130790 sec, Maxpool_backward: 3.659725 sec, Softmax_backward: 13.744981 sec
+
+Node 7
+	Conv_forward: 82.011600 sec, Maxpool_forward: 2.902842 sec, Softmax_forward: 6.179835 sec
+	Conv_backward: 67.146093 sec, Maxpool_backward: 3.649001 sec, Softmax_backward: 13.651638 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 0.352 | test accuracy: 0.911
+step 52000: past 1000 steps test loss: 0.312 | test accuracy: 0.914
+step 53000: past 1000 steps test loss: 0.333 | test accuracy: 0.906
+step 54000: past 1000 steps test loss: 0.325 | test accuracy: 0.907
+step 55000: past 1000 steps test loss: 0.321 | test accuracy: 0.908
+step 56000: past 1000 steps test loss: 0.310 | test accuracy: 0.912
+step 57000: past 1000 steps test loss: 0.303 | test accuracy: 0.913
+step 58000: past 1000 steps test loss: 0.297 | test accuracy: 0.915
+step 59000: past 1000 steps test loss: 0.283 | test accuracy: 0.919
+step 60000: past 1000 steps test loss: 0.280 | test accuracy: 0.920
+Testing completed in: 18.739448 seconds
+
+Tesing Complete
+
+** Reading images and labels **
+** Setting initial filter weights **
+** Setting initial softmax weights **
+Argc = 10
+0.005000 8 8 3 16 25 1 0
+** Layers initialized **
+--- Epoch 1 ---
+step 22000: past 1000 steps avg loss: 0.266 | accuracy: 0.037
+step 47000: past 1000 steps avg loss: 0.275 | accuracy: 0.026
+step 19000: past 1000 steps avg loss: 0.511 | accuracy: 0.078
+step 44000: past 1000 steps avg loss: 0.523 | accuracy: 0.067
+step 16000: past 1000 steps avg loss: 0.708 | accuracy: 0.147
+step 41000: past 1000 steps avg loss: 0.669 | accuracy: 0.155
+step 13000: past 1000 steps avg loss: 0.847 | accuracy: 0.220
+step 38000: past 1000 steps avg loss: 0.833 | accuracy: 0.226
+step 10000: past 1000 steps avg loss: 0.891 | accuracy: 0.350
+step 35000: past 1000 steps avg loss: 0.971 | accuracy: 0.306
+step 7000: past 1000 steps avg loss: 1.040 | accuracy: 0.437
+step 32000: past 1000 steps avg loss: 1.107 | accuracy: 0.382
+step 4000: past 1000 steps avg loss: 1.112 | accuracy: 0.507
+step 29000: past 1000 steps avg loss: 1.106 | accuracy: 0.519
+step 1000: past 1000 steps avg loss: 1.280 | accuracy: 0.567
+step 26000: past 1000 steps avg loss: 1.189 | accuracy: 0.608
+step 23000: past 1000 steps avg loss: 1.056 | accuracy: 0.655
+step 48000: past 1000 steps avg loss: 1.046 | accuracy: 0.659
+step 20000: past 1000 steps avg loss: 0.806 | accuracy: 0.743
+step 45000: past 1000 steps avg loss: 0.899 | accuracy: 0.714
+step 17000: past 1000 steps avg loss: 0.789 | accuracy: 0.740
+step 42000: past 1000 steps avg loss: 0.872 | accuracy: 0.699
+step 14000: past 1000 steps avg loss: 0.765 | accuracy: 0.745
+step 39000: past 1000 steps avg loss: 0.668 | accuracy: 0.783
+step 11000: past 1000 steps avg loss: 0.573 | accuracy: 0.815
+step 36000: past 1000 steps avg loss: 0.651 | accuracy: 0.771
+step 8000: past 1000 steps avg loss: 0.737 | accuracy: 0.759
+step 33000: past 1000 steps avg loss: 0.747 | accuracy: 0.764
+step 5000: past 1000 steps avg loss: 0.566 | accuracy: 0.807
+step 30000: past 1000 steps avg loss: 0.746 | accuracy: 0.740
+step 2000: past 1000 steps avg loss: 0.611 | accuracy: 0.804
+step 27000: past 1000 steps avg loss: 0.658 | accuracy: 0.803
+step 24000: past 1000 steps avg loss: 0.589 | accuracy: 0.809
+step 49000: past 1000 steps avg loss: 0.506 | accuracy: 0.834
+step 21000: past 1000 steps avg loss: 0.613 | accuracy: 0.804
+step 46000: past 1000 steps avg loss: 0.630 | accuracy: 0.793
+step 18000: past 1000 steps avg loss: 0.671 | accuracy: 0.780
+step 43000: past 1000 steps avg loss: 0.684 | accuracy: 0.788
+step 15000: past 1000 steps avg loss: 0.719 | accuracy: 0.766
+step 40000: past 1000 steps avg loss: 0.593 | accuracy: 0.806
+step 12000: past 1000 steps avg loss: 0.552 | accuracy: 0.824
+step 37000: past 1000 steps avg loss: 0.479 | accuracy: 0.853
+step 9000: past 1000 steps avg loss: 0.619 | accuracy: 0.813
+step 34000: past 1000 steps avg loss: 0.479 | accuracy: 0.843
+step 6000: past 1000 steps avg loss: 0.470 | accuracy: 0.847
+step 31000: past 1000 steps avg loss: 0.626 | accuracy: 0.801
+step 3000: past 1000 steps avg loss: 0.437 | accuracy: 0.862
+step 28000: past 1000 steps avg loss: 0.493 | accuracy: 0.842
+step 25000: past 1000 steps avg loss: 0.568 | accuracy: 0.825
+step 50000: past 1000 steps avg loss: 0.632 | accuracy: 0.790
+Epoch completed in: 186.925008 seconds
+Federated Averaging completed in: 5.584726 seconds
+
+Node 0
+	Conv_forward: 5.203761 sec, Maxpool_forward: 0.183347 sec, Softmax_forward: 0.393032 sec
+	Conv_backward: 4.244979 sec, Maxpool_backward: 0.228464 sec, Softmax_backward: 0.860091 sec
+
+Node 1
+	Conv_forward: 5.209821 sec, Maxpool_forward: 0.183233 sec, Softmax_forward: 0.392379 sec
+	Conv_backward: 4.247437 sec, Maxpool_backward: 0.230153 sec, Softmax_backward: 0.860590 sec
+
+Node 2
+	Conv_forward: 5.190890 sec, Maxpool_forward: 0.183552 sec, Softmax_forward: 0.391812 sec
+	Conv_backward: 4.245266 sec, Maxpool_backward: 0.229121 sec, Softmax_backward: 0.858460 sec
+
+Node 3
+	Conv_forward: 5.207554 sec, Maxpool_forward: 0.182904 sec, Softmax_forward: 0.390993 sec
+	Conv_backward: 4.245227 sec, Maxpool_backward: 0.229356 sec, Softmax_backward: 0.859819 sec
+
+Node 4
+	Conv_forward: 5.210448 sec, Maxpool_forward: 0.183292 sec, Softmax_forward: 0.391696 sec
+	Conv_backward: 4.244196 sec, Maxpool_backward: 0.228966 sec, Softmax_backward: 0.856533 sec
+
+Node 5
+	Conv_forward: 5.218406 sec, Maxpool_forward: 0.183605 sec, Softmax_forward: 0.391398 sec
+	Conv_backward: 4.246697 sec, Maxpool_backward: 0.228957 sec, Softmax_backward: 0.857478 sec
+
+Node 6
+	Conv_forward: 5.226107 sec, Maxpool_forward: 0.182822 sec, Softmax_forward: 0.392082 sec
+	Conv_backward: 4.242422 sec, Maxpool_backward: 0.229139 sec, Softmax_backward: 0.859547 sec
+
+Node 7
+	Conv_forward: 5.207683 sec, Maxpool_forward: 0.183248 sec, Softmax_forward: 0.393067 sec
+	Conv_backward: 4.248712 sec, Maxpool_backward: 0.228893 sec, Softmax_backward: 0.854030 sec
+
+Node 8
+	Conv_forward: 5.211150 sec, Maxpool_forward: 0.183214 sec, Softmax_forward: 0.391726 sec
+	Conv_backward: 4.375957 sec, Maxpool_backward: 0.229087 sec, Softmax_backward: 0.855186 sec
+
+Node 9
+	Conv_forward: 5.214116 sec, Maxpool_forward: 0.184004 sec, Softmax_forward: 0.392219 sec
+	Conv_backward: 4.262394 sec, Maxpool_backward: 0.228886 sec, Softmax_backward: 0.855116 sec
+
+Node 10
+	Conv_forward: 5.198741 sec, Maxpool_forward: 0.182678 sec, Softmax_forward: 0.392415 sec
+	Conv_backward: 4.257902 sec, Maxpool_backward: 0.229056 sec, Softmax_backward: 0.856628 sec
+
+Node 11
+	Conv_forward: 5.211200 sec, Maxpool_forward: 0.182404 sec, Softmax_forward: 0.391652 sec
+	Conv_backward: 4.252698 sec, Maxpool_backward: 0.228773 sec, Softmax_backward: 0.854831 sec
+
+Node 12
+	Conv_forward: 5.217084 sec, Maxpool_forward: 0.182556 sec, Softmax_forward: 0.392273 sec
+	Conv_backward: 4.250025 sec, Maxpool_backward: 0.228855 sec, Softmax_backward: 0.855495 sec
+
+Node 13
+	Conv_forward: 5.208717 sec, Maxpool_forward: 0.182823 sec, Softmax_forward: 0.392045 sec
+	Conv_backward: 4.244556 sec, Maxpool_backward: 0.228852 sec, Softmax_backward: 0.857838 sec
+
+Node 14
+	Conv_forward: 5.208508 sec, Maxpool_forward: 0.182430 sec, Softmax_forward: 0.391999 sec
+	Conv_backward: 4.243338 sec, Maxpool_backward: 0.229456 sec, Softmax_backward: 0.858526 sec
+
+Node 15
+	Conv_forward: 5.216449 sec, Maxpool_forward: 0.183145 sec, Softmax_forward: 0.391117 sec
+	Conv_backward: 4.247458 sec, Maxpool_backward: 0.228784 sec, Softmax_backward: 0.858164 sec
+
+--- Epoch 2 ---
+step 22000: past 1000 steps avg loss: 0.048 | accuracy: 0.114
+step 47000: past 1000 steps avg loss: 0.055 | accuracy: 0.107
+step 19000: past 1000 steps avg loss: 0.441 | accuracy: 0.990
+step 44000: past 1000 steps avg loss: 0.602 | accuracy: 0.935
+step 16000: past 1000 steps avg loss: 0.535 | accuracy: 0.955
+step 41000: past 1000 steps avg loss: 0.448 | accuracy: 0.974
+step 13000: past 1000 steps avg loss: 0.603 | accuracy: 0.937
+step 38000: past 1000 steps avg loss: 0.535 | accuracy: 0.944
+step 10000: past 1000 steps avg loss: 0.510 | accuracy: 0.968
+step 35000: past 1000 steps avg loss: 0.698 | accuracy: 0.911
+step 7000: past 1000 steps avg loss: 0.478 | accuracy: 0.980
+step 32000: past 1000 steps avg loss: 0.593 | accuracy: 0.934
+step 4000: past 1000 steps avg loss: 0.421 | accuracy: 0.997
+step 29000: past 1000 steps avg loss: 0.552 | accuracy: 0.962
+step 1000: past 1000 steps avg loss: 0.575 | accuracy: 0.936
+step 26000: past 1000 steps avg loss: 0.458 | accuracy: 0.970
+step 23000: past 1000 steps avg loss: 0.450 | accuracy: 0.852
+step 48000: past 1000 steps avg loss: 0.467 | accuracy: 0.845
+step 20000: past 1000 steps avg loss: 0.419 | accuracy: 0.860
+step 45000: past 1000 steps avg loss: 0.482 | accuracy: 0.834
+step 17000: past 1000 steps avg loss: 0.457 | accuracy: 0.852
+step 42000: past 1000 steps avg loss: 0.513 | accuracy: 0.828
+step 14000: past 1000 steps avg loss: 0.532 | accuracy: 0.843
+step 39000: past 1000 steps avg loss: 0.403 | accuracy: 0.868
+step 11000: past 1000 steps avg loss: 0.349 | accuracy: 0.890
+step 36000: past 1000 steps avg loss: 0.412 | accuracy: 0.861
+step 8000: past 1000 steps avg loss: 0.514 | accuracy: 0.849
+step 33000: past 1000 steps avg loss: 0.521 | accuracy: 0.840
+step 5000: past 1000 steps avg loss: 0.398 | accuracy: 0.869
+step 30000: past 1000 steps avg loss: 0.535 | accuracy: 0.814
+step 2000: past 1000 steps avg loss: 0.456 | accuracy: 0.859
+step 27000: past 1000 steps avg loss: 0.496 | accuracy: 0.867
+step 24000: past 1000 steps avg loss: 0.445 | accuracy: 0.856
+step 49000: past 1000 steps avg loss: 0.371 | accuracy: 0.887
+step 21000: past 1000 steps avg loss: 0.479 | accuracy: 0.865
+step 46000: past 1000 steps avg loss: 0.511 | accuracy: 0.832
+step 18000: past 1000 steps avg loss: 0.506 | accuracy: 0.829
+step 43000: past 1000 steps avg loss: 0.541 | accuracy: 0.843
+step 15000: past 1000 steps avg loss: 0.592 | accuracy: 0.807
+step 40000: past 1000 steps avg loss: 0.472 | accuracy: 0.853
+step 12000: past 1000 steps avg loss: 0.453 | accuracy: 0.856
+step 37000: past 1000 steps avg loss: 0.383 | accuracy: 0.887
+step 9000: past 1000 steps avg loss: 0.524 | accuracy: 0.854
+step 34000: past 1000 steps avg loss: 0.374 | accuracy: 0.883
+step 6000: past 1000 steps avg loss: 0.387 | accuracy: 0.877
+step 31000: past 1000 steps avg loss: 0.499 | accuracy: 0.843
+step 3000: past 1000 steps avg loss: 0.353 | accuracy: 0.889
+step 28000: past 1000 steps avg loss: 0.408 | accuracy: 0.864
+step 25000: past 1000 steps avg loss: 0.466 | accuracy: 0.853
+step 50000: past 1000 steps avg loss: 0.529 | accuracy: 0.839
+Epoch completed in: 193.137538 seconds
+Federated Averaging completed in: 11.320039 seconds
+
+Node 0
+	Conv_forward: 10.576560 sec, Maxpool_forward: 0.372512 sec, Softmax_forward: 0.803787 sec
+	Conv_backward: 8.626164 sec, Maxpool_backward: 0.464187 sec, Softmax_backward: 1.743644 sec
+
+Node 1
+	Conv_forward: 10.602273 sec, Maxpool_forward: 0.372526 sec, Softmax_forward: 0.803592 sec
+	Conv_backward: 8.629690 sec, Maxpool_backward: 0.465880 sec, Softmax_backward: 1.748168 sec
+
+Node 2
+	Conv_forward: 10.557796 sec, Maxpool_forward: 0.373008 sec, Softmax_forward: 0.802533 sec
+	Conv_backward: 8.625200 sec, Maxpool_backward: 0.465096 sec, Softmax_backward: 1.744521 sec
+
+Node 3
+	Conv_forward: 10.588899 sec, Maxpool_forward: 0.371962 sec, Softmax_forward: 0.802037 sec
+	Conv_backward: 8.626327 sec, Maxpool_backward: 0.466423 sec, Softmax_backward: 1.745207 sec
+
+Node 4
+	Conv_forward: 10.602153 sec, Maxpool_forward: 0.372430 sec, Softmax_forward: 0.802987 sec
+	Conv_backward: 8.627865 sec, Maxpool_backward: 0.464807 sec, Softmax_backward: 1.739405 sec
+
+Node 5
+	Conv_forward: 10.620619 sec, Maxpool_forward: 0.373855 sec, Softmax_forward: 0.802984 sec
+	Conv_backward: 8.625751 sec, Maxpool_backward: 0.465869 sec, Softmax_backward: 1.741221 sec
+
+Node 6
+	Conv_forward: 10.626546 sec, Maxpool_forward: 0.372686 sec, Softmax_forward: 0.803560 sec
+	Conv_backward: 8.626351 sec, Maxpool_backward: 0.465873 sec, Softmax_backward: 1.745612 sec
+
+Node 7
+	Conv_forward: 10.591001 sec, Maxpool_forward: 0.373022 sec, Softmax_forward: 0.805754 sec
+	Conv_backward: 8.628711 sec, Maxpool_backward: 0.465172 sec, Softmax_backward: 1.734287 sec
+
+Node 8
+	Conv_forward: 10.605580 sec, Maxpool_forward: 0.372293 sec, Softmax_forward: 0.803492 sec
+	Conv_backward: 8.892446 sec, Maxpool_backward: 0.465361 sec, Softmax_backward: 1.737550 sec
+
+Node 9
+	Conv_forward: 10.612034 sec, Maxpool_forward: 0.372393 sec, Softmax_forward: 0.804884 sec
+	Conv_backward: 8.662842 sec, Maxpool_backward: 0.464881 sec, Softmax_backward: 1.736484 sec
+
+Node 10
+	Conv_forward: 10.577463 sec, Maxpool_forward: 0.371713 sec, Softmax_forward: 0.805660 sec
+	Conv_backward: 8.652182 sec, Maxpool_backward: 0.464976 sec, Softmax_backward: 1.739377 sec
+
+Node 11
+	Conv_forward: 10.606381 sec, Maxpool_forward: 0.370833 sec, Softmax_forward: 0.803563 sec
+	Conv_backward: 8.636526 sec, Maxpool_backward: 0.464481 sec, Softmax_backward: 1.734160 sec
+
+Node 12
+	Conv_forward: 10.608961 sec, Maxpool_forward: 0.370747 sec, Softmax_forward: 0.806530 sec
+	Conv_backward: 8.634062 sec, Maxpool_backward: 0.464608 sec, Softmax_backward: 1.738999 sec
+
+Node 13
+	Conv_forward: 10.599575 sec, Maxpool_forward: 0.371576 sec, Softmax_forward: 0.803519 sec
+	Conv_backward: 8.627626 sec, Maxpool_backward: 0.464707 sec, Softmax_backward: 1.742025 sec
+
+Node 14
+	Conv_forward: 10.596310 sec, Maxpool_forward: 0.370569 sec, Softmax_forward: 0.804007 sec
+	Conv_backward: 8.629532 sec, Maxpool_backward: 0.465818 sec, Softmax_backward: 1.741495 sec
+
+Node 15
+	Conv_forward: 10.610783 sec, Maxpool_forward: 0.372208 sec, Softmax_forward: 0.804120 sec
+	Conv_backward: 8.631112 sec, Maxpool_backward: 0.465142 sec, Softmax_backward: 1.742578 sec
+
+--- Epoch 3 ---
+step 22000: past 1000 steps avg loss: 0.045 | accuracy: 0.115
+step 47000: past 1000 steps avg loss: 0.045 | accuracy: 0.113
+step 19000: past 1000 steps avg loss: 0.365 | accuracy: 1.019
+step 44000: past 1000 steps avg loss: 0.515 | accuracy: 0.961
+step 16000: past 1000 steps avg loss: 0.444 | accuracy: 0.991
+step 41000: past 1000 steps avg loss: 0.373 | accuracy: 1.004
+step 13000: past 1000 steps avg loss: 0.524 | accuracy: 0.969
+step 38000: past 1000 steps avg loss: 0.450 | accuracy: 0.975
+step 10000: past 1000 steps avg loss: 0.446 | accuracy: 0.992
+step 35000: past 1000 steps avg loss: 0.624 | accuracy: 0.945
+step 7000: past 1000 steps avg loss: 0.415 | accuracy: 1.003
+step 32000: past 1000 steps avg loss: 0.507 | accuracy: 0.972
+step 4000: past 1000 steps avg loss: 0.356 | accuracy: 1.021
+step 29000: past 1000 steps avg loss: 0.487 | accuracy: 0.984
+step 1000: past 1000 steps avg loss: 0.499 | accuracy: 0.969
+step 26000: past 1000 steps avg loss: 0.389 | accuracy: 0.992
+step 23000: past 1000 steps avg loss: 0.392 | accuracy: 0.876
+step 48000: past 1000 steps avg loss: 0.411 | accuracy: 0.860
+step 20000: past 1000 steps avg loss: 0.364 | accuracy: 0.884
+step 45000: past 1000 steps avg loss: 0.418 | accuracy: 0.860
+step 17000: past 1000 steps avg loss: 0.405 | accuracy: 0.870
+step 42000: past 1000 steps avg loss: 0.449 | accuracy: 0.847
+step 14000: past 1000 steps avg loss: 0.476 | accuracy: 0.856
+step 39000: past 1000 steps avg loss: 0.358 | accuracy: 0.879
+step 11000: past 1000 steps avg loss: 0.306 | accuracy: 0.906
+step 36000: past 1000 steps avg loss: 0.359 | accuracy: 0.884
+step 8000: past 1000 steps avg loss: 0.460 | accuracy: 0.862
+step 33000: past 1000 steps avg loss: 0.464 | accuracy: 0.863
+step 5000: past 1000 steps avg loss: 0.355 | accuracy: 0.890
+step 30000: past 1000 steps avg loss: 0.474 | accuracy: 0.851
+step 2000: past 1000 steps avg loss: 0.413 | accuracy: 0.874
+step 27000: past 1000 steps avg loss: 0.451 | accuracy: 0.886
+step 24000: past 1000 steps avg loss: 0.403 | accuracy: 0.875
+step 49000: past 1000 steps avg loss: 0.334 | accuracy: 0.903
+step 21000: past 1000 steps avg loss: 0.439 | accuracy: 0.881
+step 46000: past 1000 steps avg loss: 0.473 | accuracy: 0.852
+step 18000: past 1000 steps avg loss: 0.451 | accuracy: 0.849
+step 43000: past 1000 steps avg loss: 0.494 | accuracy: 0.860
+step 15000: past 1000 steps avg loss: 0.545 | accuracy: 0.828
+step 40000: past 1000 steps avg loss: 0.430 | accuracy: 0.865
+step 12000: past 1000 steps avg loss: 0.416 | accuracy: 0.872
+step 37000: past 1000 steps avg loss: 0.353 | accuracy: 0.892
+step 9000: past 1000 steps avg loss: 0.488 | accuracy: 0.863
+step 34000: past 1000 steps avg loss: 0.338 | accuracy: 0.902
+step 6000: past 1000 steps avg loss: 0.357 | accuracy: 0.889
+step 31000: past 1000 steps avg loss: 0.452 | accuracy: 0.863
+step 3000: past 1000 steps avg loss: 0.321 | accuracy: 0.900
+step 28000: past 1000 steps avg loss: 0.377 | accuracy: 0.871
+step 25000: past 1000 steps avg loss: 0.427 | accuracy: 0.873
+step 50000: past 1000 steps avg loss: 0.488 | accuracy: 0.855
+Epoch completed in: 192.209261 seconds
+Federated Averaging completed in: 17.017240 seconds
+
+Node 0
+	Conv_forward: 15.926674 sec, Maxpool_forward: 0.560759 sec, Softmax_forward: 1.209910 sec
+	Conv_backward: 12.992852 sec, Maxpool_backward: 0.698906 sec, Softmax_backward: 2.624031 sec
+
+Node 1
+	Conv_forward: 15.964597 sec, Maxpool_forward: 0.560491 sec, Softmax_forward: 1.208212 sec
+	Conv_backward: 12.996037 sec, Maxpool_backward: 0.700955 sec, Softmax_backward: 2.630405 sec
+
+Node 2
+	Conv_forward: 15.903269 sec, Maxpool_forward: 0.561805 sec, Softmax_forward: 1.208351 sec
+	Conv_backward: 12.990009 sec, Maxpool_backward: 0.700590 sec, Softmax_backward: 2.625264 sec
+
+Node 3
+	Conv_forward: 15.942497 sec, Maxpool_forward: 0.560092 sec, Softmax_forward: 1.207162 sec
+	Conv_backward: 12.992549 sec, Maxpool_backward: 0.702044 sec, Softmax_backward: 2.627172 sec
+
+Node 4
+	Conv_forward: 15.971376 sec, Maxpool_forward: 0.560674 sec, Softmax_forward: 1.208252 sec
+	Conv_backward: 12.991064 sec, Maxpool_backward: 0.700139 sec, Softmax_backward: 2.618941 sec
+
+Node 5
+	Conv_forward: 16.000490 sec, Maxpool_forward: 0.562408 sec, Softmax_forward: 1.207820 sec
+	Conv_backward: 12.988734 sec, Maxpool_backward: 0.700549 sec, Softmax_backward: 2.620911 sec
+
+Node 6
+	Conv_forward: 16.010013 sec, Maxpool_forward: 0.560843 sec, Softmax_forward: 1.208535 sec
+	Conv_backward: 12.988289 sec, Maxpool_backward: 0.701159 sec, Softmax_backward: 2.627071 sec
+
+Node 7
+	Conv_forward: 15.952838 sec, Maxpool_forward: 0.562135 sec, Softmax_forward: 1.212020 sec
+	Conv_backward: 12.993881 sec, Maxpool_backward: 0.700539 sec, Softmax_backward: 2.610780 sec
+
+Node 8
+	Conv_forward: 15.974588 sec, Maxpool_forward: 0.560587 sec, Softmax_forward: 1.208902 sec
+	Conv_backward: 13.391330 sec, Maxpool_backward: 0.700893 sec, Softmax_backward: 2.614796 sec
+
+Node 9
+	Conv_forward: 15.986675 sec, Maxpool_forward: 0.560045 sec, Softmax_forward: 1.210192 sec
+	Conv_backward: 13.041279 sec, Maxpool_backward: 0.700087 sec, Softmax_backward: 2.614245 sec
+
+Node 10
+	Conv_forward: 15.928774 sec, Maxpool_forward: 0.559858 sec, Softmax_forward: 1.211694 sec
+	Conv_backward: 13.027828 sec, Maxpool_backward: 0.700081 sec, Softmax_backward: 2.617723 sec
+
+Node 11
+	Conv_forward: 15.977676 sec, Maxpool_forward: 0.558613 sec, Softmax_forward: 1.208909 sec
+	Conv_backward: 13.002405 sec, Maxpool_backward: 0.699220 sec, Softmax_backward: 2.611004 sec
+
+Node 12
+	Conv_forward: 15.973790 sec, Maxpool_forward: 0.558563 sec, Softmax_forward: 1.212437 sec
+	Conv_backward: 12.999532 sec, Maxpool_backward: 0.700163 sec, Softmax_backward: 2.617944 sec
+
+Node 13
+	Conv_forward: 15.965358 sec, Maxpool_forward: 0.559369 sec, Softmax_forward: 1.208681 sec
+	Conv_backward: 12.989784 sec, Maxpool_backward: 0.699907 sec, Softmax_backward: 2.623200 sec
+
+Node 14
+	Conv_forward: 15.961969 sec, Maxpool_forward: 0.558008 sec, Softmax_forward: 1.210376 sec
+	Conv_backward: 12.997930 sec, Maxpool_backward: 0.701239 sec, Softmax_backward: 2.621768 sec
+
+Node 15
+	Conv_forward: 15.978356 sec, Maxpool_forward: 0.560471 sec, Softmax_forward: 1.209522 sec
+	Conv_backward: 12.999313 sec, Maxpool_backward: 0.700542 sec, Softmax_backward: 2.623811 sec
+
+--- Epoch 4 ---
+step 22000: past 1000 steps avg loss: 0.043 | accuracy: 0.115
+step 47000: past 1000 steps avg loss: 0.041 | accuracy: 0.114
+step 19000: past 1000 steps avg loss: 0.336 | accuracy: 1.033
+step 44000: past 1000 steps avg loss: 0.479 | accuracy: 0.975
+step 16000: past 1000 steps avg loss: 0.409 | accuracy: 1.004
+step 41000: past 1000 steps avg loss: 0.344 | accuracy: 1.017
+step 13000: past 1000 steps avg loss: 0.492 | accuracy: 0.982
+step 38000: past 1000 steps avg loss: 0.415 | accuracy: 0.991
+step 10000: past 1000 steps avg loss: 0.416 | accuracy: 0.998
+step 35000: past 1000 steps avg loss: 0.590 | accuracy: 0.953
+step 7000: past 1000 steps avg loss: 0.388 | accuracy: 1.009
+step 32000: past 1000 steps avg loss: 0.469 | accuracy: 0.978
+step 4000: past 1000 steps avg loss: 0.329 | accuracy: 1.034
+step 29000: past 1000 steps avg loss: 0.456 | accuracy: 0.999
+step 1000: past 1000 steps avg loss: 0.464 | accuracy: 0.985
+step 26000: past 1000 steps avg loss: 0.358 | accuracy: 1.005
+step 23000: past 1000 steps avg loss: 0.365 | accuracy: 0.878
+step 48000: past 1000 steps avg loss: 0.384 | accuracy: 0.871
+step 20000: past 1000 steps avg loss: 0.337 | accuracy: 0.896
+step 45000: past 1000 steps avg loss: 0.388 | accuracy: 0.878
+step 17000: past 1000 steps avg loss: 0.379 | accuracy: 0.884
+step 42000: past 1000 steps avg loss: 0.417 | accuracy: 0.863
+step 14000: past 1000 steps avg loss: 0.447 | accuracy: 0.864
+step 39000: past 1000 steps avg loss: 0.337 | accuracy: 0.893
+step 11000: past 1000 steps avg loss: 0.287 | accuracy: 0.911
+step 36000: past 1000 steps avg loss: 0.333 | accuracy: 0.892
+step 8000: past 1000 steps avg loss: 0.431 | accuracy: 0.868
+step 33000: past 1000 steps avg loss: 0.435 | accuracy: 0.876
+step 5000: past 1000 steps avg loss: 0.333 | accuracy: 0.897
+step 30000: past 1000 steps avg loss: 0.441 | accuracy: 0.862
+step 2000: past 1000 steps avg loss: 0.391 | accuracy: 0.885
+step 27000: past 1000 steps avg loss: 0.426 | accuracy: 0.896
+step 24000: past 1000 steps avg loss: 0.380 | accuracy: 0.882
+step 49000: past 1000 steps avg loss: 0.313 | accuracy: 0.906
+step 21000: past 1000 steps avg loss: 0.418 | accuracy: 0.880
+step 46000: past 1000 steps avg loss: 0.452 | accuracy: 0.860
+step 18000: past 1000 steps avg loss: 0.421 | accuracy: 0.860
+step 43000: past 1000 steps avg loss: 0.468 | accuracy: 0.863
+step 15000: past 1000 steps avg loss: 0.519 | accuracy: 0.834
+step 40000: past 1000 steps avg loss: 0.407 | accuracy: 0.870
+step 12000: past 1000 steps avg loss: 0.395 | accuracy: 0.878
+step 37000: past 1000 steps avg loss: 0.336 | accuracy: 0.899
+step 9000: past 1000 steps avg loss: 0.467 | accuracy: 0.870
+step 34000: past 1000 steps avg loss: 0.317 | accuracy: 0.912
+step 6000: past 1000 steps avg loss: 0.341 | accuracy: 0.899
+step 31000: past 1000 steps avg loss: 0.425 | accuracy: 0.873
+step 3000: past 1000 steps avg loss: 0.302 | accuracy: 0.910
+step 28000: past 1000 steps avg loss: 0.360 | accuracy: 0.871
+step 25000: past 1000 steps avg loss: 0.405 | accuracy: 0.875
+step 50000: past 1000 steps avg loss: 0.464 | accuracy: 0.866
+Epoch completed in: 186.380293 seconds
+Federated Averaging completed in: 22.515654 seconds
+
+Node 0
+	Conv_forward: 21.117478 sec, Maxpool_forward: 0.743162 sec, Softmax_forward: 1.587834 sec
+	Conv_backward: 17.239222 sec, Maxpool_backward: 0.926876 sec, Softmax_backward: 3.477915 sec
+
+Node 1
+	Conv_forward: 21.176194 sec, Maxpool_forward: 0.742917 sec, Softmax_forward: 1.585116 sec
+	Conv_backward: 17.241651 sec, Maxpool_backward: 0.929044 sec, Softmax_backward: 3.484628 sec
+
+Node 2
+	Conv_forward: 21.088445 sec, Maxpool_forward: 0.744504 sec, Softmax_forward: 1.585861 sec
+	Conv_backward: 17.235742 sec, Maxpool_backward: 0.928805 sec, Softmax_backward: 3.478886 sec
+
+Node 3
+	Conv_forward: 21.140547 sec, Maxpool_forward: 0.742017 sec, Softmax_forward: 1.583962 sec
+	Conv_backward: 17.239731 sec, Maxpool_backward: 0.930554 sec, Softmax_backward: 3.482419 sec
+
+Node 4
+	Conv_forward: 21.187622 sec, Maxpool_forward: 0.742681 sec, Softmax_forward: 1.585547 sec
+	Conv_backward: 17.235576 sec, Maxpool_backward: 0.928560 sec, Softmax_backward: 3.471513 sec
+
+Node 5
+	Conv_forward: 21.236427 sec, Maxpool_forward: 0.745129 sec, Softmax_forward: 1.584450 sec
+	Conv_backward: 17.232761 sec, Maxpool_backward: 0.928366 sec, Softmax_backward: 3.472835 sec
+
+Node 6
+	Conv_forward: 21.247078 sec, Maxpool_forward: 0.742721 sec, Softmax_forward: 1.585192 sec
+	Conv_backward: 17.233245 sec, Maxpool_backward: 0.929475 sec, Softmax_backward: 3.482199 sec
+
+Node 7
+	Conv_forward: 21.157670 sec, Maxpool_forward: 0.744912 sec, Softmax_forward: 1.589709 sec
+	Conv_backward: 17.239506 sec, Maxpool_backward: 0.928938 sec, Softmax_backward: 3.459272 sec
+
+Node 8
+	Conv_forward: 21.191129 sec, Maxpool_forward: 0.742721 sec, Softmax_forward: 1.585595 sec
+	Conv_backward: 17.764908 sec, Maxpool_backward: 0.929245 sec, Softmax_backward: 3.465867 sec
+
+Node 9
+	Conv_forward: 21.217068 sec, Maxpool_forward: 0.742616 sec, Softmax_forward: 1.586542 sec
+	Conv_backward: 17.302807 sec, Maxpool_backward: 0.928137 sec, Softmax_backward: 3.465667 sec
+
+Node 10
+	Conv_forward: 21.124528 sec, Maxpool_forward: 0.741753 sec, Softmax_forward: 1.589467 sec
+	Conv_backward: 17.279218 sec, Maxpool_backward: 0.928699 sec, Softmax_backward: 3.469538 sec
+
+Node 11
+	Conv_forward: 21.197446 sec, Maxpool_forward: 0.740628 sec, Softmax_forward: 1.585373 sec
+	Conv_backward: 17.250023 sec, Maxpool_backward: 0.927911 sec, Softmax_backward: 3.460365 sec
+
+Node 12
+	Conv_forward: 21.189133 sec, Maxpool_forward: 0.741014 sec, Softmax_forward: 1.589273 sec
+	Conv_backward: 17.247285 sec, Maxpool_backward: 0.927634 sec, Softmax_backward: 3.470170 sec
+
+Node 13
+	Conv_forward: 21.177279 sec, Maxpool_forward: 0.741168 sec, Softmax_forward: 1.586694 sec
+	Conv_backward: 17.233140 sec, Maxpool_backward: 0.927942 sec, Softmax_backward: 3.476931 sec
+
+Node 14
+	Conv_forward: 21.172327 sec, Maxpool_forward: 0.740059 sec, Softmax_forward: 1.587571 sec
+	Conv_backward: 17.245399 sec, Maxpool_backward: 0.929649 sec, Softmax_backward: 3.475393 sec
+
+Node 15
+	Conv_forward: 21.196900 sec, Maxpool_forward: 0.743013 sec, Softmax_forward: 1.585769 sec
+	Conv_backward: 17.247583 sec, Maxpool_backward: 0.928545 sec, Softmax_backward: 3.477639 sec
+
+--- Epoch 5 ---
+step 22000: past 1000 steps avg loss: 0.042 | accuracy: 0.115
+step 47000: past 1000 steps avg loss: 0.038 | accuracy: 0.115
+step 19000: past 1000 steps avg loss: 0.320 | accuracy: 1.043
+step 44000: past 1000 steps avg loss: 0.457 | accuracy: 0.987
+step 16000: past 1000 steps avg loss: 0.390 | accuracy: 1.012
+step 41000: past 1000 steps avg loss: 0.328 | accuracy: 1.020
+step 13000: past 1000 steps avg loss: 0.473 | accuracy: 0.987
+step 38000: past 1000 steps avg loss: 0.394 | accuracy: 1.000
+step 10000: past 1000 steps avg loss: 0.397 | accuracy: 1.006
+step 35000: past 1000 steps avg loss: 0.570 | accuracy: 0.960
+step 7000: past 1000 steps avg loss: 0.372 | accuracy: 1.013
+step 32000: past 1000 steps avg loss: 0.446 | accuracy: 0.979
+step 4000: past 1000 steps avg loss: 0.312 | accuracy: 1.037
+step 29000: past 1000 steps avg loss: 0.437 | accuracy: 1.003
+step 1000: past 1000 steps avg loss: 0.443 | accuracy: 0.993
+step 26000: past 1000 steps avg loss: 0.339 | accuracy: 1.010
+step 23000: past 1000 steps avg loss: 0.348 | accuracy: 0.886
+step 48000: past 1000 steps avg loss: 0.367 | accuracy: 0.878
+step 20000: past 1000 steps avg loss: 0.321 | accuracy: 0.900
+step 45000: past 1000 steps avg loss: 0.370 | accuracy: 0.885
+step 17000: past 1000 steps avg loss: 0.362 | accuracy: 0.891
+step 42000: past 1000 steps avg loss: 0.398 | accuracy: 0.871
+step 14000: past 1000 steps avg loss: 0.428 | accuracy: 0.870
+step 39000: past 1000 steps avg loss: 0.324 | accuracy: 0.898
+step 11000: past 1000 steps avg loss: 0.274 | accuracy: 0.921
+step 36000: past 1000 steps avg loss: 0.316 | accuracy: 0.896
+step 8000: past 1000 steps avg loss: 0.412 | accuracy: 0.874
+step 33000: past 1000 steps avg loss: 0.417 | accuracy: 0.885
+step 5000: past 1000 steps avg loss: 0.318 | accuracy: 0.899
+step 30000: past 1000 steps avg loss: 0.420 | accuracy: 0.875
+step 2000: past 1000 steps avg loss: 0.377 | accuracy: 0.889
+step 27000: past 1000 steps avg loss: 0.410 | accuracy: 0.900
+step 24000: past 1000 steps avg loss: 0.365 | accuracy: 0.885
+step 49000: past 1000 steps avg loss: 0.300 | accuracy: 0.912
+step 21000: past 1000 steps avg loss: 0.404 | accuracy: 0.883
+step 46000: past 1000 steps avg loss: 0.438 | accuracy: 0.867
+step 18000: past 1000 steps avg loss: 0.402 | accuracy: 0.870
+step 43000: past 1000 steps avg loss: 0.451 | accuracy: 0.866
+step 15000: past 1000 steps avg loss: 0.501 | accuracy: 0.839
+step 40000: past 1000 steps avg loss: 0.391 | accuracy: 0.875
+step 12000: past 1000 steps avg loss: 0.380 | accuracy: 0.884
+step 37000: past 1000 steps avg loss: 0.324 | accuracy: 0.901
+step 9000: past 1000 steps avg loss: 0.452 | accuracy: 0.877
+step 34000: past 1000 steps avg loss: 0.303 | accuracy: 0.913
+step 6000: past 1000 steps avg loss: 0.330 | accuracy: 0.907
+step 31000: past 1000 steps avg loss: 0.407 | accuracy: 0.879
+step 3000: past 1000 steps avg loss: 0.290 | accuracy: 0.914
+step 28000: past 1000 steps avg loss: 0.349 | accuracy: 0.876
+step 25000: past 1000 steps avg loss: 0.390 | accuracy: 0.880
+step 50000: past 1000 steps avg loss: 0.448 | accuracy: 0.872
+Epoch completed in: 185.808378 seconds
+Federated Averaging completed in: 28.003136 seconds
+
+Node 0
+	Conv_forward: 26.296810 sec, Maxpool_forward: 0.925168 sec, Softmax_forward: 1.964040 sec
+	Conv_backward: 21.476992 sec, Maxpool_backward: 1.154966 sec, Softmax_backward: 4.328204 sec
+
+Node 1
+	Conv_forward: 26.371060 sec, Maxpool_forward: 0.924346 sec, Softmax_forward: 1.959831 sec
+	Conv_backward: 21.475428 sec, Maxpool_backward: 1.157033 sec, Softmax_backward: 4.336086 sec
+
+Node 2
+	Conv_forward: 26.264943 sec, Maxpool_forward: 0.927351 sec, Softmax_forward: 1.960339 sec
+	Conv_backward: 21.468880 sec, Maxpool_backward: 1.155824 sec, Softmax_backward: 4.329909 sec
+
+Node 3
+	Conv_forward: 26.324119 sec, Maxpool_forward: 0.923802 sec, Softmax_forward: 1.959432 sec
+	Conv_backward: 21.473380 sec, Maxpool_backward: 1.158234 sec, Softmax_backward: 4.334019 sec
+
+Node 4
+	Conv_forward: 26.387574 sec, Maxpool_forward: 0.924403 sec, Softmax_forward: 1.962580 sec
+	Conv_backward: 21.468543 sec, Maxpool_backward: 1.156461 sec, Softmax_backward: 4.319776 sec
+
+Node 5
+	Conv_forward: 26.458181 sec, Maxpool_forward: 0.927487 sec, Softmax_forward: 1.959463 sec
+	Conv_backward: 21.465603 sec, Maxpool_backward: 1.156085 sec, Softmax_backward: 4.322970 sec
+
+Node 6
+	Conv_forward: 26.466882 sec, Maxpool_forward: 0.924090 sec, Softmax_forward: 1.959732 sec
+	Conv_backward: 21.464887 sec, Maxpool_backward: 1.157584 sec, Softmax_backward: 4.333152 sec
+
+Node 7
+	Conv_forward: 26.345758 sec, Maxpool_forward: 0.926771 sec, Softmax_forward: 1.965698 sec
+	Conv_backward: 21.471250 sec, Maxpool_backward: 1.156729 sec, Softmax_backward: 4.305285 sec
+
+Node 8
+	Conv_forward: 26.392435 sec, Maxpool_forward: 0.924659 sec, Softmax_forward: 1.959575 sec
+	Conv_backward: 22.124291 sec, Maxpool_backward: 1.156683 sec, Softmax_backward: 4.314340 sec
+
+Node 9
+	Conv_forward: 26.433475 sec, Maxpool_forward: 0.924499 sec, Softmax_forward: 1.962667 sec
+	Conv_backward: 21.547323 sec, Maxpool_backward: 1.155559 sec, Softmax_backward: 4.313254 sec
+
+Node 10
+	Conv_forward: 26.300867 sec, Maxpool_forward: 0.923396 sec, Softmax_forward: 1.964378 sec
+	Conv_backward: 21.522033 sec, Maxpool_backward: 1.156278 sec, Softmax_backward: 4.318997 sec
+
+Node 11
+	Conv_forward: 26.397542 sec, Maxpool_forward: 0.921798 sec, Softmax_forward: 1.961049 sec
+	Conv_backward: 21.488155 sec, Maxpool_backward: 1.155703 sec, Softmax_backward: 4.307750 sec
+
+Node 12
+	Conv_forward: 26.388728 sec, Maxpool_forward: 0.922227 sec, Softmax_forward: 1.964734 sec
+	Conv_backward: 21.477967 sec, Maxpool_backward: 1.155146 sec, Softmax_backward: 4.320705 sec
+
+Node 13
+	Conv_forward: 26.373198 sec, Maxpool_forward: 0.922797 sec, Softmax_forward: 1.961391 sec
+	Conv_backward: 21.466466 sec, Maxpool_backward: 1.155181 sec, Softmax_backward: 4.326817 sec
+
+Node 14
+	Conv_forward: 26.363271 sec, Maxpool_forward: 0.921497 sec, Softmax_forward: 1.962915 sec
+	Conv_backward: 21.477395 sec, Maxpool_backward: 1.157795 sec, Softmax_backward: 4.325497 sec
+
+Node 15
+	Conv_forward: 26.396455 sec, Maxpool_forward: 0.925087 sec, Softmax_forward: 1.960612 sec
+	Conv_backward: 21.482665 sec, Maxpool_backward: 1.156261 sec, Softmax_backward: 4.328514 sec
+
+--- Epoch 6 ---
+step 22000: past 1000 steps avg loss: 0.041 | accuracy: 0.115
+step 47000: past 1000 steps avg loss: 0.037 | accuracy: 0.115
+step 19000: past 1000 steps avg loss: 0.309 | accuracy: 1.045
+step 44000: past 1000 steps avg loss: 0.442 | accuracy: 0.993
+step 16000: past 1000 steps avg loss: 0.377 | accuracy: 1.022
+step 41000: past 1000 steps avg loss: 0.316 | accuracy: 1.019
+step 13000: past 1000 steps avg loss: 0.459 | accuracy: 0.993
+step 38000: past 1000 steps avg loss: 0.380 | accuracy: 1.006
+step 10000: past 1000 steps avg loss: 0.383 | accuracy: 1.010
+step 35000: past 1000 steps avg loss: 0.555 | accuracy: 0.965
+step 7000: past 1000 steps avg loss: 0.360 | accuracy: 1.019
+step 32000: past 1000 steps avg loss: 0.429 | accuracy: 0.982
+step 4000: past 1000 steps avg loss: 0.301 | accuracy: 1.039
+step 29000: past 1000 steps avg loss: 0.423 | accuracy: 1.006
+step 1000: past 1000 steps avg loss: 0.427 | accuracy: 0.999
+step 26000: past 1000 steps avg loss: 0.326 | accuracy: 1.017
+step 23000: past 1000 steps avg loss: 0.337 | accuracy: 0.885
+step 48000: past 1000 steps avg loss: 0.354 | accuracy: 0.884
+step 20000: past 1000 steps avg loss: 0.309 | accuracy: 0.904
+step 45000: past 1000 steps avg loss: 0.357 | accuracy: 0.890
+step 17000: past 1000 steps avg loss: 0.350 | accuracy: 0.891
+step 42000: past 1000 steps avg loss: 0.384 | accuracy: 0.873
+step 14000: past 1000 steps avg loss: 0.414 | accuracy: 0.873
+step 39000: past 1000 steps avg loss: 0.315 | accuracy: 0.902
+step 11000: past 1000 steps avg loss: 0.266 | accuracy: 0.924
+step 36000: past 1000 steps avg loss: 0.304 | accuracy: 0.898
+step 8000: past 1000 steps avg loss: 0.399 | accuracy: 0.883
+step 33000: past 1000 steps avg loss: 0.403 | accuracy: 0.886
+step 5000: past 1000 steps avg loss: 0.308 | accuracy: 0.905
+step 30000: past 1000 steps avg loss: 0.404 | accuracy: 0.880
+step 2000: past 1000 steps avg loss: 0.367 | accuracy: 0.895
+step 27000: past 1000 steps avg loss: 0.398 | accuracy: 0.902
+step 24000: past 1000 steps avg loss: 0.354 | accuracy: 0.891
+step 49000: past 1000 steps avg loss: 0.290 | accuracy: 0.915
+step 21000: past 1000 steps avg loss: 0.394 | accuracy: 0.887
+step 46000: past 1000 steps avg loss: 0.427 | accuracy: 0.870
+step 18000: past 1000 steps avg loss: 0.387 | accuracy: 0.880
+step 43000: past 1000 steps avg loss: 0.439 | accuracy: 0.867
+step 15000: past 1000 steps avg loss: 0.489 | accuracy: 0.844
+step 40000: past 1000 steps avg loss: 0.379 | accuracy: 0.882
+step 12000: past 1000 steps avg loss: 0.369 | accuracy: 0.887
+step 37000: past 1000 steps avg loss: 0.316 | accuracy: 0.902
+step 9000: past 1000 steps avg loss: 0.441 | accuracy: 0.878
+step 34000: past 1000 steps avg loss: 0.292 | accuracy: 0.912
+step 6000: past 1000 steps avg loss: 0.321 | accuracy: 0.910
+step 31000: past 1000 steps avg loss: 0.392 | accuracy: 0.882
+step 3000: past 1000 steps avg loss: 0.281 | accuracy: 0.917
+step 28000: past 1000 steps avg loss: 0.342 | accuracy: 0.879
+step 25000: past 1000 steps avg loss: 0.378 | accuracy: 0.883
+step 50000: past 1000 steps avg loss: 0.436 | accuracy: 0.876
+Epoch completed in: 185.411202 seconds
+Federated Averaging completed in: 33.480675 seconds
+
+Node 0
+	Conv_forward: 31.462800 sec, Maxpool_forward: 1.106648 sec, Softmax_forward: 2.339215 sec
+	Conv_backward: 25.701115 sec, Maxpool_backward: 1.382133 sec, Softmax_backward: 5.177348 sec
+
+Node 1
+	Conv_forward: 31.555300 sec, Maxpool_forward: 1.106026 sec, Softmax_forward: 2.334287 sec
+	Conv_backward: 25.701570 sec, Maxpool_backward: 1.384203 sec, Softmax_backward: 5.185377 sec
+
+Node 2
+	Conv_forward: 31.424719 sec, Maxpool_forward: 1.109584 sec, Softmax_forward: 2.335251 sec
+	Conv_backward: 25.694930 sec, Maxpool_backward: 1.382837 sec, Softmax_backward: 5.178605 sec
+
+Node 3
+	Conv_forward: 31.499009 sec, Maxpool_forward: 1.105173 sec, Softmax_forward: 2.333798 sec
+	Conv_backward: 25.698815 sec, Maxpool_backward: 1.385722 sec, Softmax_backward: 5.184299 sec
+
+Node 4
+	Conv_forward: 31.578156 sec, Maxpool_forward: 1.106292 sec, Softmax_forward: 2.337392 sec
+	Conv_backward: 25.692100 sec, Maxpool_backward: 1.383802 sec, Softmax_backward: 5.167419 sec
+
+Node 5
+	Conv_forward: 31.669664 sec, Maxpool_forward: 1.109165 sec, Softmax_forward: 2.333798 sec
+	Conv_backward: 25.688424 sec, Maxpool_backward: 1.383461 sec, Softmax_backward: 5.171676 sec
+
+Node 6
+	Conv_forward: 31.678212 sec, Maxpool_forward: 1.105781 sec, Softmax_forward: 2.334695 sec
+	Conv_backward: 25.687387 sec, Maxpool_backward: 1.384636 sec, Softmax_backward: 5.181809 sec
+
+Node 7
+	Conv_forward: 31.521825 sec, Maxpool_forward: 1.108667 sec, Softmax_forward: 2.339965 sec
+	Conv_backward: 25.695859 sec, Maxpool_backward: 1.384153 sec, Softmax_backward: 5.150380 sec
+
+Node 8
+	Conv_forward: 31.584210 sec, Maxpool_forward: 1.106062 sec, Softmax_forward: 2.333151 sec
+	Conv_backward: 26.474151 sec, Maxpool_backward: 1.383877 sec, Softmax_backward: 5.159417 sec
+
+Node 9
+	Conv_forward: 31.633915 sec, Maxpool_forward: 1.106101 sec, Softmax_forward: 2.338080 sec
+	Conv_backward: 25.784027 sec, Maxpool_backward: 1.382845 sec, Softmax_backward: 5.159058 sec
+
+Node 10
+	Conv_forward: 31.466248 sec, Maxpool_forward: 1.104706 sec, Softmax_forward: 2.338722 sec
+	Conv_backward: 25.751334 sec, Maxpool_backward: 1.383610 sec, Softmax_backward: 5.164744 sec
+
+Node 11
+	Conv_forward: 31.585619 sec, Maxpool_forward: 1.103354 sec, Softmax_forward: 2.335211 sec
+	Conv_backward: 25.714298 sec, Maxpool_backward: 1.382828 sec, Softmax_backward: 5.153289 sec
+
+Node 12
+	Conv_forward: 31.576029 sec, Maxpool_forward: 1.103777 sec, Softmax_forward: 2.339874 sec
+	Conv_backward: 25.700603 sec, Maxpool_backward: 1.382180 sec, Softmax_backward: 5.168182 sec
+
+Node 13
+	Conv_forward: 31.556293 sec, Maxpool_forward: 1.103980 sec, Softmax_forward: 2.335536 sec
+	Conv_backward: 25.690626 sec, Maxpool_backward: 1.382279 sec, Softmax_backward: 5.174947 sec
+
+Node 14
+	Conv_forward: 31.545847 sec, Maxpool_forward: 1.102650 sec, Softmax_forward: 2.337176 sec
+	Conv_backward: 25.702606 sec, Maxpool_backward: 1.384997 sec, Softmax_backward: 5.173406 sec
+
+Node 15
+	Conv_forward: 31.588394 sec, Maxpool_forward: 1.106274 sec, Softmax_forward: 2.334908 sec
+	Conv_backward: 25.706671 sec, Maxpool_backward: 1.383292 sec, Softmax_backward: 5.177750 sec
+
+--- Epoch 7 ---
+step 22000: past 1000 steps avg loss: 0.040 | accuracy: 0.116
+step 47000: past 1000 steps avg loss: 0.036 | accuracy: 0.115
+step 19000: past 1000 steps avg loss: 0.302 | accuracy: 1.047
+step 44000: past 1000 steps avg loss: 0.430 | accuracy: 0.999
+step 16000: past 1000 steps avg loss: 0.367 | accuracy: 1.027
+step 41000: past 1000 steps avg loss: 0.308 | accuracy: 1.028
+step 13000: past 1000 steps avg loss: 0.449 | accuracy: 0.996
+step 38000: past 1000 steps avg loss: 0.369 | accuracy: 1.010
+step 10000: past 1000 steps avg loss: 0.372 | accuracy: 1.017
+step 35000: past 1000 steps avg loss: 0.544 | accuracy: 0.969
+step 7000: past 1000 steps avg loss: 0.352 | accuracy: 1.024
+step 32000: past 1000 steps avg loss: 0.417 | accuracy: 0.988
+step 4000: past 1000 steps avg loss: 0.292 | accuracy: 1.044
+step 29000: past 1000 steps avg loss: 0.413 | accuracy: 1.010
+step 1000: past 1000 steps avg loss: 0.415 | accuracy: 1.004
+step 26000: past 1000 steps avg loss: 0.317 | accuracy: 1.025
+step 23000: past 1000 steps avg loss: 0.327 | accuracy: 0.888
+step 48000: past 1000 steps avg loss: 0.345 | accuracy: 0.886
+step 20000: past 1000 steps avg loss: 0.300 | accuracy: 0.906
+step 45000: past 1000 steps avg loss: 0.348 | accuracy: 0.893
+step 17000: past 1000 steps avg loss: 0.340 | accuracy: 0.895
+step 42000: past 1000 steps avg loss: 0.374 | accuracy: 0.874
+step 14000: past 1000 steps avg loss: 0.404 | accuracy: 0.879
+step 39000: past 1000 steps avg loss: 0.308 | accuracy: 0.906
+step 11000: past 1000 steps avg loss: 0.260 | accuracy: 0.925
+step 36000: past 1000 steps avg loss: 0.294 | accuracy: 0.905
+step 8000: past 1000 steps avg loss: 0.389 | accuracy: 0.883
+step 33000: past 1000 steps avg loss: 0.393 | accuracy: 0.889
+step 5000: past 1000 steps avg loss: 0.301 | accuracy: 0.911
+step 30000: past 1000 steps avg loss: 0.392 | accuracy: 0.883
+step 2000: past 1000 steps avg loss: 0.359 | accuracy: 0.897
+step 27000: past 1000 steps avg loss: 0.388 | accuracy: 0.905
+step 24000: past 1000 steps avg loss: 0.345 | accuracy: 0.894
+step 49000: past 1000 steps avg loss: 0.282 | accuracy: 0.916
+step 21000: past 1000 steps avg loss: 0.386 | accuracy: 0.887
+step 46000: past 1000 steps avg loss: 0.419 | accuracy: 0.874
+step 18000: past 1000 steps avg loss: 0.376 | accuracy: 0.881
+step 43000: past 1000 steps avg loss: 0.429 | accuracy: 0.871
+step 15000: past 1000 steps avg loss: 0.479 | accuracy: 0.845
+step 40000: past 1000 steps avg loss: 0.370 | accuracy: 0.886
+step 12000: past 1000 steps avg loss: 0.360 | accuracy: 0.890
+step 37000: past 1000 steps avg loss: 0.309 | accuracy: 0.909
+step 9000: past 1000 steps avg loss: 0.433 | accuracy: 0.883
+step 34000: past 1000 steps avg loss: 0.284 | accuracy: 0.919
+step 6000: past 1000 steps avg loss: 0.315 | accuracy: 0.912
+step 31000: past 1000 steps avg loss: 0.381 | accuracy: 0.884
+step 3000: past 1000 steps avg loss: 0.274 | accuracy: 0.917
+step 28000: past 1000 steps avg loss: 0.336 | accuracy: 0.886
+step 25000: past 1000 steps avg loss: 0.369 | accuracy: 0.887
+step 50000: past 1000 steps avg loss: 0.427 | accuracy: 0.884
+Epoch completed in: 184.756691 seconds
+Federated Averaging completed in: 38.941726 seconds
+
+Node 0
+	Conv_forward: 36.609170 sec, Maxpool_forward: 1.287513 sec, Softmax_forward: 2.711835 sec
+	Conv_backward: 29.912184 sec, Maxpool_backward: 1.608521 sec, Softmax_backward: 6.022582 sec
+
+Node 1
+	Conv_forward: 36.720415 sec, Maxpool_forward: 1.287129 sec, Softmax_forward: 2.706719 sec
+	Conv_backward: 29.916151 sec, Maxpool_backward: 1.610495 sec, Softmax_backward: 6.031684 sec
+
+Node 2
+	Conv_forward: 36.566375 sec, Maxpool_forward: 1.290608 sec, Softmax_forward: 2.707546 sec
+	Conv_backward: 29.906534 sec, Maxpool_backward: 1.609137 sec, Softmax_backward: 6.025251 sec
+
+Node 3
+	Conv_forward: 36.653268 sec, Maxpool_forward: 1.285512 sec, Softmax_forward: 2.705647 sec
+	Conv_backward: 29.913114 sec, Maxpool_backward: 1.612842 sec, Softmax_backward: 6.031331 sec
+
+Node 4
+	Conv_forward: 36.749348 sec, Maxpool_forward: 1.287418 sec, Softmax_forward: 2.709825 sec
+	Conv_backward: 29.903905 sec, Maxpool_backward: 1.610181 sec, Softmax_backward: 6.012291 sec
+
+Node 5
+	Conv_forward: 36.862076 sec, Maxpool_forward: 1.290484 sec, Softmax_forward: 2.705587 sec
+	Conv_backward: 29.899314 sec, Maxpool_backward: 1.610248 sec, Softmax_backward: 6.017528 sec
+
+Node 6
+	Conv_forward: 36.871349 sec, Maxpool_forward: 1.286554 sec, Softmax_forward: 2.707419 sec
+	Conv_backward: 29.900622 sec, Maxpool_backward: 1.610952 sec, Softmax_backward: 6.028117 sec
+
+Node 7
+	Conv_forward: 36.680880 sec, Maxpool_forward: 1.289552 sec, Softmax_forward: 2.712189 sec
+	Conv_backward: 29.906989 sec, Maxpool_backward: 1.610965 sec, Softmax_backward: 5.992463 sec
+
+Node 8
+	Conv_forward: 36.758109 sec, Maxpool_forward: 1.287112 sec, Softmax_forward: 2.704645 sec
+	Conv_backward: 30.811778 sec, Maxpool_backward: 1.610294 sec, Softmax_backward: 6.001619 sec
+
+Node 9
+	Conv_forward: 36.818885 sec, Maxpool_forward: 1.286919 sec, Softmax_forward: 2.710983 sec
+	Conv_backward: 30.006516 sec, Maxpool_backward: 1.609294 sec, Softmax_backward: 6.001961 sec
+
+Node 10
+	Conv_forward: 36.613207 sec, Maxpool_forward: 1.285213 sec, Softmax_forward: 2.711069 sec
+	Conv_backward: 29.968791 sec, Maxpool_backward: 1.610029 sec, Softmax_backward: 6.007826 sec
+
+Node 11
+	Conv_forward: 36.756828 sec, Maxpool_forward: 1.283592 sec, Softmax_forward: 2.707353 sec
+	Conv_backward: 29.929753 sec, Maxpool_backward: 1.609189 sec, Softmax_backward: 5.995717 sec
+
+Node 12
+	Conv_forward: 36.743285 sec, Maxpool_forward: 1.284067 sec, Softmax_forward: 2.711697 sec
+	Conv_backward: 29.912763 sec, Maxpool_backward: 1.608480 sec, Softmax_backward: 6.012035 sec
+
+Node 13
+	Conv_forward: 36.717671 sec, Maxpool_forward: 1.284393 sec, Softmax_forward: 2.707077 sec
+	Conv_backward: 29.899185 sec, Maxpool_backward: 1.608452 sec, Softmax_backward: 6.019256 sec
+
+Node 14
+	Conv_forward: 36.706197 sec, Maxpool_forward: 1.283277 sec, Softmax_forward: 2.709333 sec
+	Conv_backward: 29.912220 sec, Maxpool_backward: 1.611276 sec, Softmax_backward: 6.018382 sec
+
+Node 15
+	Conv_forward: 36.758419 sec, Maxpool_forward: 1.286951 sec, Softmax_forward: 2.707322 sec
+	Conv_backward: 29.917908 sec, Maxpool_backward: 1.609581 sec, Softmax_backward: 6.023362 sec
+
+--- Epoch 8 ---
+step 22000: past 1000 steps avg loss: 0.039 | accuracy: 0.116
+step 47000: past 1000 steps avg loss: 0.035 | accuracy: 0.115
+step 19000: past 1000 steps avg loss: 0.296 | accuracy: 1.046
+step 44000: past 1000 steps avg loss: 0.421 | accuracy: 1.002
+step 16000: past 1000 steps avg loss: 0.360 | accuracy: 1.028
+step 41000: past 1000 steps avg loss: 0.301 | accuracy: 1.027
+step 13000: past 1000 steps avg loss: 0.441 | accuracy: 0.997
+step 38000: past 1000 steps avg loss: 0.361 | accuracy: 1.015
+step 10000: past 1000 steps avg loss: 0.363 | accuracy: 1.021
+step 35000: past 1000 steps avg loss: 0.536 | accuracy: 0.971
+step 7000: past 1000 steps avg loss: 0.345 | accuracy: 1.028
+step 32000: past 1000 steps avg loss: 0.408 | accuracy: 0.990
+step 4000: past 1000 steps avg loss: 0.286 | accuracy: 1.045
+step 29000: past 1000 steps avg loss: 0.405 | accuracy: 1.011
+step 1000: past 1000 steps avg loss: 0.406 | accuracy: 1.006
+step 26000: past 1000 steps avg loss: 0.309 | accuracy: 1.025
+step 23000: past 1000 steps avg loss: 0.320 | accuracy: 0.891
+step 48000: past 1000 steps avg loss: 0.338 | accuracy: 0.888
+step 20000: past 1000 steps avg loss: 0.292 | accuracy: 0.909
+step 45000: past 1000 steps avg loss: 0.340 | accuracy: 0.896
+step 17000: past 1000 steps avg loss: 0.332 | accuracy: 0.898
+step 42000: past 1000 steps avg loss: 0.366 | accuracy: 0.875
+step 14000: past 1000 steps avg loss: 0.395 | accuracy: 0.884
+step 39000: past 1000 steps avg loss: 0.303 | accuracy: 0.910
+step 11000: past 1000 steps avg loss: 0.255 | accuracy: 0.925
+step 36000: past 1000 steps avg loss: 0.287 | accuracy: 0.912
+step 8000: past 1000 steps avg loss: 0.380 | accuracy: 0.887
+step 33000: past 1000 steps avg loss: 0.384 | accuracy: 0.889
+step 5000: past 1000 steps avg loss: 0.294 | accuracy: 0.913
+step 30000: past 1000 steps avg loss: 0.382 | accuracy: 0.881
+step 2000: past 1000 steps avg loss: 0.353 | accuracy: 0.901
+step 27000: past 1000 steps avg loss: 0.381 | accuracy: 0.908
+step 24000: past 1000 steps avg loss: 0.338 | accuracy: 0.898
+step 49000: past 1000 steps avg loss: 0.276 | accuracy: 0.917
+step 21000: past 1000 steps avg loss: 0.379 | accuracy: 0.889
+step 46000: past 1000 steps avg loss: 0.412 | accuracy: 0.879
+step 18000: past 1000 steps avg loss: 0.367 | accuracy: 0.889
+step 43000: past 1000 steps avg loss: 0.421 | accuracy: 0.867
+step 15000: past 1000 steps avg loss: 0.471 | accuracy: 0.849
+step 40000: past 1000 steps avg loss: 0.363 | accuracy: 0.888
+step 12000: past 1000 steps avg loss: 0.353 | accuracy: 0.895
+step 37000: past 1000 steps avg loss: 0.304 | accuracy: 0.911
+step 9000: past 1000 steps avg loss: 0.426 | accuracy: 0.882
+step 34000: past 1000 steps avg loss: 0.277 | accuracy: 0.918
+step 6000: past 1000 steps avg loss: 0.310 | accuracy: 0.912
+step 31000: past 1000 steps avg loss: 0.372 | accuracy: 0.888
+step 3000: past 1000 steps avg loss: 0.268 | accuracy: 0.916
+step 28000: past 1000 steps avg loss: 0.331 | accuracy: 0.886
+step 25000: past 1000 steps avg loss: 0.362 | accuracy: 0.888
+step 50000: past 1000 steps avg loss: 0.419 | accuracy: 0.886
+Epoch completed in: 184.326031 seconds
+Federated Averaging completed in: 44.386251 seconds
+
+Node 0
+	Conv_forward: 41.737306 sec, Maxpool_forward: 1.467719 sec, Softmax_forward: 3.083023 sec
+	Conv_backward: 34.123010 sec, Maxpool_backward: 1.834151 sec, Softmax_backward: 6.865454 sec
+
+Node 1
+	Conv_forward: 41.866232 sec, Maxpool_forward: 1.467721 sec, Softmax_forward: 3.077372 sec
+	Conv_backward: 34.125387 sec, Maxpool_backward: 1.836298 sec, Softmax_backward: 6.875291 sec
+
+Node 2
+	Conv_forward: 41.689802 sec, Maxpool_forward: 1.471068 sec, Softmax_forward: 3.077809 sec
+	Conv_backward: 34.116691 sec, Maxpool_backward: 1.834989 sec, Softmax_backward: 6.868656 sec
+
+Node 3
+	Conv_forward: 41.788641 sec, Maxpool_forward: 1.465580 sec, Softmax_forward: 3.076026 sec
+	Conv_backward: 34.124643 sec, Maxpool_backward: 1.838971 sec, Softmax_backward: 6.875132 sec
+
+Node 4
+	Conv_forward: 41.903610 sec, Maxpool_forward: 1.468142 sec, Softmax_forward: 3.081488 sec
+	Conv_backward: 34.112181 sec, Maxpool_backward: 1.836088 sec, Softmax_backward: 6.854299 sec
+
+Node 5
+	Conv_forward: 42.039309 sec, Maxpool_forward: 1.470822 sec, Softmax_forward: 3.076237 sec
+	Conv_backward: 34.105259 sec, Maxpool_backward: 1.836211 sec, Softmax_backward: 6.859891 sec
+
+Node 6
+	Conv_forward: 42.047882 sec, Maxpool_forward: 1.466918 sec, Softmax_forward: 3.078497 sec
+	Conv_backward: 34.108592 sec, Maxpool_backward: 1.836962 sec, Softmax_backward: 6.871984 sec
+
+Node 7
+	Conv_forward: 41.821598 sec, Maxpool_forward: 1.470174 sec, Softmax_forward: 3.082877 sec
+	Conv_backward: 34.116416 sec, Maxpool_backward: 1.837222 sec, Softmax_backward: 6.831512 sec
+
+Node 8
+	Conv_forward: 41.914233 sec, Maxpool_forward: 1.467436 sec, Softmax_forward: 3.075024 sec
+	Conv_backward: 35.144336 sec, Maxpool_backward: 1.836061 sec, Softmax_backward: 6.841316 sec
+
+Node 9
+	Conv_forward: 41.987384 sec, Maxpool_forward: 1.467096 sec, Softmax_forward: 3.082606 sec
+	Conv_backward: 34.223843 sec, Maxpool_backward: 1.835182 sec, Softmax_backward: 6.842057 sec
+
+Node 10
+	Conv_forward: 41.742371 sec, Maxpool_forward: 1.465599 sec, Softmax_forward: 3.082265 sec
+	Conv_backward: 34.187204 sec, Maxpool_backward: 1.835762 sec, Softmax_backward: 6.847877 sec
+
+Node 11
+	Conv_forward: 41.912200 sec, Maxpool_forward: 1.463464 sec, Softmax_forward: 3.078216 sec
+	Conv_backward: 34.144915 sec, Maxpool_backward: 1.835096 sec, Softmax_backward: 6.836119 sec
+
+Node 12
+	Conv_forward: 41.892457 sec, Maxpool_forward: 1.463603 sec, Softmax_forward: 3.082534 sec
+	Conv_backward: 34.123880 sec, Maxpool_backward: 1.834223 sec, Softmax_backward: 6.853722 sec
+
+Node 13
+	Conv_forward: 41.863198 sec, Maxpool_forward: 1.464259 sec, Softmax_forward: 3.077492 sec
+	Conv_backward: 34.106780 sec, Maxpool_backward: 1.834109 sec, Softmax_backward: 6.861792 sec
+
+Node 14
+	Conv_forward: 41.850171 sec, Maxpool_forward: 1.463116 sec, Softmax_forward: 3.079700 sec
+	Conv_backward: 34.120221 sec, Maxpool_backward: 1.837056 sec, Softmax_backward: 6.860593 sec
+
+Node 15
+	Conv_forward: 41.913635 sec, Maxpool_forward: 1.466979 sec, Softmax_forward: 3.077612 sec
+	Conv_backward: 34.126136 sec, Maxpool_backward: 1.835229 sec, Softmax_backward: 6.866200 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 0.361 | test accuracy: 0.902
+step 52000: past 1000 steps test loss: 0.324 | test accuracy: 0.908
+step 53000: past 1000 steps test loss: 0.348 | test accuracy: 0.900
+step 54000: past 1000 steps test loss: 0.338 | test accuracy: 0.903
+step 55000: past 1000 steps test loss: 0.333 | test accuracy: 0.904
+step 56000: past 1000 steps test loss: 0.321 | test accuracy: 0.908
+step 57000: past 1000 steps test loss: 0.313 | test accuracy: 0.909
+step 58000: past 1000 steps test loss: 0.307 | test accuracy: 0.910
+step 59000: past 1000 steps test loss: 0.292 | test accuracy: 0.914
+step 60000: past 1000 steps test loss: 0.288 | test accuracy: 0.916
+Testing completed in: 18.733791 seconds
+
+Tesing Complete
+

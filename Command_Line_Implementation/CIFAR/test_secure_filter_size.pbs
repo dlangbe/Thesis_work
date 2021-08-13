@@ -1,0 +1,15 @@
+#PBS -N Sec_F_Size
+
+#PBS -l select=1:ncpus=1:mem=12gb
+#PBS -l Walltime=72:00:00
+#PBS -j oe
+#PBS -o CIFAR_Tests_Secure_Filter_Size.txt
+
+cd /home/dlangbe/Thesis/CIFAR
+
+make
+
+# inputs are fout, learning_rate, num_epochs, num_filters, filter_size, num_nodes, batch_size, conv_layers, secure
+./cnn output.txt 0.008 4 8 5 1 100 1 1
+./cnn output.txt 0.008 4 8 7 1 100 1 1
+./cnn output.txt 0.008 4 8 9 1 100 1 1

@@ -1,0 +1,13 @@
+#PBS -N CIFAR_Tests
+
+#PBS -l select=1:ncpus=1:mem=12gb
+#PBS -l Walltime=72:00:00
+#PBS -j oe
+#PBS -o CIFAR_Tests_Secure_Epochs.txt
+
+cd /home/dlangbe/Thesis/CIFAR
+
+
+# inputs are fout, learning_rate, num_epochs, num_filters, filter_size, num_nodes, batch_size, conv_layers, secure
+./cnn output.txt 0.001 32 8 3 1 100 1 1
+
