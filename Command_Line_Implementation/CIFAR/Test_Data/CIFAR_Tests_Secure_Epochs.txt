@@ -1,0 +1,2185 @@
+** Reading images and labels **
+** Setting initial filter weights **
+filters[0][0] = 0.035007823259
+** Setting initial softmax weights **
+0.001000 32 8 3 1 100 1 1
+** Layers initialized **
+--- Epoch 1 ---
+step 1000: past 1000 steps avg loss: 2.213 | accuracy: 0.212
+step 2000: past 1000 steps avg loss: 2.150 | accuracy: 0.241
+step 3000: past 1000 steps avg loss: 2.103 | accuracy: 0.254
+step 4000: past 1000 steps avg loss: 2.092 | accuracy: 0.263
+step 5000: past 1000 steps avg loss: 2.098 | accuracy: 0.260
+step 6000: past 1000 steps avg loss: 2.066 | accuracy: 0.268
+step 7000: past 1000 steps avg loss: 2.082 | accuracy: 0.266
+step 8000: past 1000 steps avg loss: 2.079 | accuracy: 0.261
+step 9000: past 1000 steps avg loss: 2.069 | accuracy: 0.274
+step 10000: past 1000 steps avg loss: 2.071 | accuracy: 0.280
+step 11000: past 1000 steps avg loss: 2.087 | accuracy: 0.283
+step 12000: past 1000 steps avg loss: 2.077 | accuracy: 0.282
+step 13000: past 1000 steps avg loss: 2.072 | accuracy: 0.265
+step 14000: past 1000 steps avg loss: 2.087 | accuracy: 0.259
+step 15000: past 1000 steps avg loss: 2.068 | accuracy: 0.279
+step 16000: past 1000 steps avg loss: 2.076 | accuracy: 0.286
+step 17000: past 1000 steps avg loss: 2.038 | accuracy: 0.245
+step 18000: past 1000 steps avg loss: 2.037 | accuracy: 0.280
+step 19000: past 1000 steps avg loss: 2.077 | accuracy: 0.282
+step 20000: past 1000 steps avg loss: 2.058 | accuracy: 0.278
+step 21000: past 1000 steps avg loss: 2.049 | accuracy: 0.283
+step 22000: past 1000 steps avg loss: 2.077 | accuracy: 0.269
+step 23000: past 1000 steps avg loss: 2.068 | accuracy: 0.299
+step 24000: past 1000 steps avg loss: 1.998 | accuracy: 0.310
+step 25000: past 1000 steps avg loss: 2.038 | accuracy: 0.274
+step 26000: past 1000 steps avg loss: 2.061 | accuracy: 0.295
+step 27000: past 1000 steps avg loss: 2.002 | accuracy: 0.311
+step 28000: past 1000 steps avg loss: 2.082 | accuracy: 0.273
+step 29000: past 1000 steps avg loss: 2.064 | accuracy: 0.255
+step 30000: past 1000 steps avg loss: 2.078 | accuracy: 0.271
+step 31000: past 1000 steps avg loss: 2.104 | accuracy: 0.258
+step 32000: past 1000 steps avg loss: 2.103 | accuracy: 0.249
+step 33000: past 1000 steps avg loss: 2.067 | accuracy: 0.293
+step 34000: past 1000 steps avg loss: 2.084 | accuracy: 0.272
+step 35000: past 1000 steps avg loss: 2.053 | accuracy: 0.283
+step 36000: past 1000 steps avg loss: 2.109 | accuracy: 0.259
+step 37000: past 1000 steps avg loss: 2.051 | accuracy: 0.269
+step 38000: past 1000 steps avg loss: 2.082 | accuracy: 0.261
+step 39000: past 1000 steps avg loss: 2.086 | accuracy: 0.253
+step 40000: past 1000 steps avg loss: 2.090 | accuracy: 0.253
+step 41000: past 1000 steps avg loss: 2.087 | accuracy: 0.255
+step 42000: past 1000 steps avg loss: 2.082 | accuracy: 0.259
+step 43000: past 1000 steps avg loss: 2.067 | accuracy: 0.262
+step 44000: past 1000 steps avg loss: 2.057 | accuracy: 0.278
+step 45000: past 1000 steps avg loss: 2.055 | accuracy: 0.277
+step 46000: past 1000 steps avg loss: 2.072 | accuracy: 0.257
+step 47000: past 1000 steps avg loss: 2.088 | accuracy: 0.254
+step 48000: past 1000 steps avg loss: 2.074 | accuracy: 0.294
+step 49000: past 1000 steps avg loss: 2.126 | accuracy: 0.237
+step 50000: past 1000 steps avg loss: 2.130 | accuracy: 0.274
+Epoch completed in: 3805.549715 seconds
+	Conv_forward: 278.785530 sec, Maxpool_forward: 3.670064 sec, Softmax_forward: 7.472063 sec
+	Conv_backward: 2333.420805 sec, Maxpool_backward: 115.475607 sec, Softmax_backward: 694.574685 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.044 | test accuracy: 0.293
+step 52000: past 1000 steps test loss: 2.058 | test accuracy: 0.284
+step 53000: past 1000 steps test loss: 2.056 | test accuracy: 0.281
+step 54000: past 1000 steps test loss: 2.041 | test accuracy: 0.283
+step 55000: past 1000 steps test loss: 2.045 | test accuracy: 0.280
+step 56000: past 1000 steps test loss: 2.049 | test accuracy: 0.280
+step 57000: past 1000 steps test loss: 2.054 | test accuracy: 0.278
+step 58000: past 1000 steps test loss: 2.051 | test accuracy: 0.278
+step 59000: past 1000 steps test loss: 2.054 | test accuracy: 0.276
+step 60000: past 1000 steps test loss: 2.058 | test accuracy: 0.274
+Testing completed in: 58.851920 seconds
+--- Epoch 2 ---
+step 1000: past 1000 steps avg loss: 2.067 | accuracy: 0.261
+step 2000: past 1000 steps avg loss: 2.076 | accuracy: 0.269
+step 3000: past 1000 steps avg loss: 2.083 | accuracy: 0.251
+step 4000: past 1000 steps avg loss: 2.094 | accuracy: 0.258
+step 5000: past 1000 steps avg loss: 2.112 | accuracy: 0.255
+step 6000: past 1000 steps avg loss: 2.076 | accuracy: 0.258
+step 7000: past 1000 steps avg loss: 2.118 | accuracy: 0.243
+step 8000: past 1000 steps avg loss: 2.123 | accuracy: 0.250
+step 9000: past 1000 steps avg loss: 2.095 | accuracy: 0.273
+step 10000: past 1000 steps avg loss: 2.104 | accuracy: 0.267
+step 11000: past 1000 steps avg loss: 2.130 | accuracy: 0.264
+step 12000: past 1000 steps avg loss: 2.111 | accuracy: 0.257
+step 13000: past 1000 steps avg loss: 2.119 | accuracy: 0.262
+step 14000: past 1000 steps avg loss: 2.140 | accuracy: 0.239
+step 15000: past 1000 steps avg loss: 2.122 | accuracy: 0.274
+step 16000: past 1000 steps avg loss: 2.115 | accuracy: 0.263
+step 17000: past 1000 steps avg loss: 2.086 | accuracy: 0.248
+step 18000: past 1000 steps avg loss: 2.107 | accuracy: 0.260
+step 19000: past 1000 steps avg loss: 2.147 | accuracy: 0.260
+step 20000: past 1000 steps avg loss: 2.123 | accuracy: 0.257
+step 21000: past 1000 steps avg loss: 2.104 | accuracy: 0.272
+step 22000: past 1000 steps avg loss: 2.148 | accuracy: 0.242
+step 23000: past 1000 steps avg loss: 2.126 | accuracy: 0.270
+step 24000: past 1000 steps avg loss: 2.051 | accuracy: 0.294
+step 25000: past 1000 steps avg loss: 2.083 | accuracy: 0.294
+step 26000: past 1000 steps avg loss: 2.128 | accuracy: 0.271
+step 27000: past 1000 steps avg loss: 2.049 | accuracy: 0.310
+step 28000: past 1000 steps avg loss: 2.167 | accuracy: 0.262
+step 29000: past 1000 steps avg loss: 2.129 | accuracy: 0.252
+step 30000: past 1000 steps avg loss: 2.150 | accuracy: 0.261
+step 31000: past 1000 steps avg loss: 2.178 | accuracy: 0.246
+step 32000: past 1000 steps avg loss: 2.179 | accuracy: 0.251
+step 33000: past 1000 steps avg loss: 2.128 | accuracy: 0.262
+step 34000: past 1000 steps avg loss: 2.144 | accuracy: 0.268
+step 35000: past 1000 steps avg loss: 2.112 | accuracy: 0.270
+step 36000: past 1000 steps avg loss: 2.166 | accuracy: 0.253
+step 37000: past 1000 steps avg loss: 2.096 | accuracy: 0.277
+step 38000: past 1000 steps avg loss: 2.129 | accuracy: 0.268
+step 39000: past 1000 steps avg loss: 2.130 | accuracy: 0.265
+step 40000: past 1000 steps avg loss: 2.129 | accuracy: 0.253
+step 41000: past 1000 steps avg loss: 2.148 | accuracy: 0.256
+step 42000: past 1000 steps avg loss: 2.136 | accuracy: 0.260
+step 43000: past 1000 steps avg loss: 2.108 | accuracy: 0.258
+step 44000: past 1000 steps avg loss: 2.105 | accuracy: 0.283
+step 45000: past 1000 steps avg loss: 2.088 | accuracy: 0.295
+step 46000: past 1000 steps avg loss: 2.103 | accuracy: 0.265
+step 47000: past 1000 steps avg loss: 2.117 | accuracy: 0.258
+step 48000: past 1000 steps avg loss: 2.089 | accuracy: 0.294
+step 49000: past 1000 steps avg loss: 2.140 | accuracy: 0.236
+step 50000: past 1000 steps avg loss: 2.146 | accuracy: 0.265
+Epoch completed in: 3833.653300 seconds
+	Conv_forward: 613.190937 sec, Maxpool_forward: 8.067073 sec, Softmax_forward: 16.422976 sec
+	Conv_backward: 4681.507701 sec, Maxpool_backward: 230.907219 sec, Softmax_backward: 1403.044304 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.049 | test accuracy: 0.286
+step 52000: past 1000 steps test loss: 2.061 | test accuracy: 0.283
+step 53000: past 1000 steps test loss: 2.061 | test accuracy: 0.282
+step 54000: past 1000 steps test loss: 2.044 | test accuracy: 0.284
+step 55000: past 1000 steps test loss: 2.048 | test accuracy: 0.280
+step 56000: past 1000 steps test loss: 2.051 | test accuracy: 0.278
+step 57000: past 1000 steps test loss: 2.055 | test accuracy: 0.277
+step 58000: past 1000 steps test loss: 2.052 | test accuracy: 0.277
+step 59000: past 1000 steps test loss: 2.057 | test accuracy: 0.275
+step 60000: past 1000 steps test loss: 2.061 | test accuracy: 0.273
+Testing completed in: 59.134033 seconds
+--- Epoch 3 ---
+step 1000: past 1000 steps avg loss: 2.081 | accuracy: 0.267
+step 2000: past 1000 steps avg loss: 2.071 | accuracy: 0.274
+step 3000: past 1000 steps avg loss: 2.102 | accuracy: 0.247
+step 4000: past 1000 steps avg loss: 2.107 | accuracy: 0.257
+step 5000: past 1000 steps avg loss: 2.131 | accuracy: 0.252
+step 6000: past 1000 steps avg loss: 2.090 | accuracy: 0.253
+step 7000: past 1000 steps avg loss: 2.124 | accuracy: 0.255
+step 8000: past 1000 steps avg loss: 2.135 | accuracy: 0.261
+step 9000: past 1000 steps avg loss: 2.105 | accuracy: 0.288
+step 10000: past 1000 steps avg loss: 2.121 | accuracy: 0.260
+step 11000: past 1000 steps avg loss: 2.140 | accuracy: 0.263
+step 12000: past 1000 steps avg loss: 2.107 | accuracy: 0.269
+step 13000: past 1000 steps avg loss: 2.119 | accuracy: 0.267
+step 14000: past 1000 steps avg loss: 2.139 | accuracy: 0.249
+step 15000: past 1000 steps avg loss: 2.132 | accuracy: 0.263
+step 16000: past 1000 steps avg loss: 2.107 | accuracy: 0.278
+step 17000: past 1000 steps avg loss: 2.083 | accuracy: 0.252
+step 18000: past 1000 steps avg loss: 2.099 | accuracy: 0.275
+step 19000: past 1000 steps avg loss: 2.137 | accuracy: 0.267
+step 20000: past 1000 steps avg loss: 2.102 | accuracy: 0.260
+step 21000: past 1000 steps avg loss: 2.084 | accuracy: 0.283
+step 22000: past 1000 steps avg loss: 2.117 | accuracy: 0.258
+step 23000: past 1000 steps avg loss: 2.087 | accuracy: 0.289
+step 24000: past 1000 steps avg loss: 2.023 | accuracy: 0.293
+step 25000: past 1000 steps avg loss: 2.056 | accuracy: 0.304
+step 26000: past 1000 steps avg loss: 2.103 | accuracy: 0.277
+step 27000: past 1000 steps avg loss: 2.027 | accuracy: 0.312
+step 28000: past 1000 steps avg loss: 2.151 | accuracy: 0.260
+step 29000: past 1000 steps avg loss: 2.120 | accuracy: 0.275
+step 30000: past 1000 steps avg loss: 2.144 | accuracy: 0.271
+step 31000: past 1000 steps avg loss: 2.173 | accuracy: 0.247
+step 32000: past 1000 steps avg loss: 2.167 | accuracy: 0.247
+step 33000: past 1000 steps avg loss: 2.122 | accuracy: 0.265
+step 34000: past 1000 steps avg loss: 2.133 | accuracy: 0.274
+step 35000: past 1000 steps avg loss: 2.118 | accuracy: 0.264
+step 36000: past 1000 steps avg loss: 2.175 | accuracy: 0.261
+step 37000: past 1000 steps avg loss: 2.092 | accuracy: 0.281
+step 38000: past 1000 steps avg loss: 2.154 | accuracy: 0.266
+step 39000: past 1000 steps avg loss: 2.157 | accuracy: 0.257
+step 40000: past 1000 steps avg loss: 2.157 | accuracy: 0.245
+step 41000: past 1000 steps avg loss: 2.179 | accuracy: 0.254
+step 42000: past 1000 steps avg loss: 2.158 | accuracy: 0.265
+step 43000: past 1000 steps avg loss: 2.124 | accuracy: 0.259
+step 44000: past 1000 steps avg loss: 2.126 | accuracy: 0.279
+step 45000: past 1000 steps avg loss: 2.126 | accuracy: 0.281
+step 46000: past 1000 steps avg loss: 2.149 | accuracy: 0.246
+step 47000: past 1000 steps avg loss: 2.164 | accuracy: 0.258
+step 48000: past 1000 steps avg loss: 2.152 | accuracy: 0.275
+step 49000: past 1000 steps avg loss: 2.212 | accuracy: 0.240
+step 50000: past 1000 steps avg loss: 2.234 | accuracy: 0.238
+Epoch completed in: 3819.312063 seconds
+	Conv_forward: 947.902163 sec, Maxpool_forward: 12.471398 sec, Softmax_forward: 25.385376 sec
+	Conv_backward: 7008.660680 sec, Maxpool_backward: 346.351829 sec, Softmax_backward: 2118.202023 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.148 | test accuracy: 0.240
+step 52000: past 1000 steps test loss: 2.163 | test accuracy: 0.244
+step 53000: past 1000 steps test loss: 2.170 | test accuracy: 0.241
+step 54000: past 1000 steps test loss: 2.147 | test accuracy: 0.247
+step 55000: past 1000 steps test loss: 2.150 | test accuracy: 0.250
+step 56000: past 1000 steps test loss: 2.151 | test accuracy: 0.249
+step 57000: past 1000 steps test loss: 2.155 | test accuracy: 0.249
+step 58000: past 1000 steps test loss: 2.150 | test accuracy: 0.250
+step 59000: past 1000 steps test loss: 2.156 | test accuracy: 0.247
+step 60000: past 1000 steps test loss: 2.160 | test accuracy: 0.246
+Testing completed in: 58.931686 seconds
+--- Epoch 4 ---
+step 1000: past 1000 steps avg loss: 2.177 | accuracy: 0.254
+step 2000: past 1000 steps avg loss: 2.183 | accuracy: 0.268
+step 3000: past 1000 steps avg loss: 2.221 | accuracy: 0.244
+step 4000: past 1000 steps avg loss: 2.226 | accuracy: 0.256
+step 5000: past 1000 steps avg loss: 2.237 | accuracy: 0.255
+step 6000: past 1000 steps avg loss: 2.211 | accuracy: 0.253
+step 7000: past 1000 steps avg loss: 2.268 | accuracy: 0.247
+step 8000: past 1000 steps avg loss: 2.290 | accuracy: 0.247
+step 9000: past 1000 steps avg loss: 2.263 | accuracy: 0.264
+step 10000: past 1000 steps avg loss: 2.289 | accuracy: 0.261
+step 11000: past 1000 steps avg loss: 2.308 | accuracy: 0.244
+step 12000: past 1000 steps avg loss: 2.287 | accuracy: 0.249
+step 13000: past 1000 steps avg loss: 2.331 | accuracy: 0.239
+step 14000: past 1000 steps avg loss: 2.365 | accuracy: 0.228
+step 15000: past 1000 steps avg loss: 2.381 | accuracy: 0.233
+step 16000: past 1000 steps avg loss: 2.340 | accuracy: 0.234
+step 17000: past 1000 steps avg loss: 2.321 | accuracy: 0.246
+step 18000: past 1000 steps avg loss: 2.361 | accuracy: 0.246
+step 19000: past 1000 steps avg loss: 2.418 | accuracy: 0.249
+step 20000: past 1000 steps avg loss: 2.385 | accuracy: 0.232
+step 21000: past 1000 steps avg loss: 2.365 | accuracy: 0.227
+step 22000: past 1000 steps avg loss: 2.445 | accuracy: 0.219
+step 23000: past 1000 steps avg loss: 2.407 | accuracy: 0.242
+step 24000: past 1000 steps avg loss: 2.333 | accuracy: 0.254
+step 25000: past 1000 steps avg loss: 2.319 | accuracy: 0.273
+step 26000: past 1000 steps avg loss: 2.379 | accuracy: 0.261
+step 27000: past 1000 steps avg loss: 2.275 | accuracy: 0.275
+step 28000: past 1000 steps avg loss: 2.447 | accuracy: 0.217
+step 29000: past 1000 steps avg loss: 2.356 | accuracy: 0.244
+step 30000: past 1000 steps avg loss: 2.404 | accuracy: 0.232
+step 31000: past 1000 steps avg loss: 2.430 | accuracy: 0.236
+step 32000: past 1000 steps avg loss: 2.416 | accuracy: 0.225
+step 33000: past 1000 steps avg loss: 2.358 | accuracy: 0.228
+step 34000: past 1000 steps avg loss: 2.385 | accuracy: 0.227
+step 35000: past 1000 steps avg loss: 2.371 | accuracy: 0.246
+step 36000: past 1000 steps avg loss: 2.431 | accuracy: 0.237
+step 37000: past 1000 steps avg loss: 2.286 | accuracy: 0.266
+step 38000: past 1000 steps avg loss: 2.385 | accuracy: 0.241
+step 39000: past 1000 steps avg loss: 2.369 | accuracy: 0.232
+step 40000: past 1000 steps avg loss: 2.353 | accuracy: 0.224
+step 41000: past 1000 steps avg loss: 2.424 | accuracy: 0.236
+step 42000: past 1000 steps avg loss: 2.399 | accuracy: 0.234
+step 43000: past 1000 steps avg loss: 2.327 | accuracy: 0.252
+step 44000: past 1000 steps avg loss: 2.348 | accuracy: 0.228
+step 45000: past 1000 steps avg loss: 2.348 | accuracy: 0.269
+step 46000: past 1000 steps avg loss: 2.326 | accuracy: 0.232
+step 47000: past 1000 steps avg loss: 2.337 | accuracy: 0.239
+step 48000: past 1000 steps avg loss: 2.298 | accuracy: 0.268
+step 49000: past 1000 steps avg loss: 2.390 | accuracy: 0.219
+step 50000: past 1000 steps avg loss: 2.396 | accuracy: 0.228
+Epoch completed in: 3803.845344 seconds
+	Conv_forward: 1282.409657 sec, Maxpool_forward: 16.874189 sec, Softmax_forward: 34.340801 sec
+	Conv_backward: 9306.866307 sec, Maxpool_backward: 461.801178 sec, Softmax_backward: 2846.835225 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.340 | test accuracy: 0.235
+step 52000: past 1000 steps test loss: 2.369 | test accuracy: 0.223
+step 53000: past 1000 steps test loss: 2.388 | test accuracy: 0.217
+step 54000: past 1000 steps test loss: 2.359 | test accuracy: 0.224
+step 55000: past 1000 steps test loss: 2.362 | test accuracy: 0.223
+step 56000: past 1000 steps test loss: 2.358 | test accuracy: 0.223
+step 57000: past 1000 steps test loss: 2.366 | test accuracy: 0.223
+step 58000: past 1000 steps test loss: 2.358 | test accuracy: 0.225
+step 59000: past 1000 steps test loss: 2.365 | test accuracy: 0.222
+step 60000: past 1000 steps test loss: 2.369 | test accuracy: 0.222
+Testing completed in: 58.843950 seconds
+--- Epoch 5 ---
+step 1000: past 1000 steps avg loss: 2.324 | accuracy: 0.230
+step 2000: past 1000 steps avg loss: 2.319 | accuracy: 0.261
+step 3000: past 1000 steps avg loss: 2.391 | accuracy: 0.232
+step 4000: past 1000 steps avg loss: 2.422 | accuracy: 0.217
+step 5000: past 1000 steps avg loss: 2.384 | accuracy: 0.245
+step 6000: past 1000 steps avg loss: 2.364 | accuracy: 0.240
+step 7000: past 1000 steps avg loss: 2.404 | accuracy: 0.241
+step 8000: past 1000 steps avg loss: 2.433 | accuracy: 0.233
+step 9000: past 1000 steps avg loss: 2.382 | accuracy: 0.259
+step 10000: past 1000 steps avg loss: 2.396 | accuracy: 0.246
+step 11000: past 1000 steps avg loss: 2.399 | accuracy: 0.235
+step 12000: past 1000 steps avg loss: 2.343 | accuracy: 0.251
+step 13000: past 1000 steps avg loss: 2.382 | accuracy: 0.245
+step 14000: past 1000 steps avg loss: 2.409 | accuracy: 0.215
+step 15000: past 1000 steps avg loss: 2.416 | accuracy: 0.232
+step 16000: past 1000 steps avg loss: 2.357 | accuracy: 0.238
+step 17000: past 1000 steps avg loss: 2.330 | accuracy: 0.238
+step 18000: past 1000 steps avg loss: 2.352 | accuracy: 0.250
+step 19000: past 1000 steps avg loss: 2.389 | accuracy: 0.256
+step 20000: past 1000 steps avg loss: 2.346 | accuracy: 0.234
+step 21000: past 1000 steps avg loss: 2.300 | accuracy: 0.242
+step 22000: past 1000 steps avg loss: 2.353 | accuracy: 0.240
+step 23000: past 1000 steps avg loss: 2.315 | accuracy: 0.261
+step 24000: past 1000 steps avg loss: 2.253 | accuracy: 0.269
+step 25000: past 1000 steps avg loss: 2.263 | accuracy: 0.280
+step 26000: past 1000 steps avg loss: 2.337 | accuracy: 0.270
+step 27000: past 1000 steps avg loss: 2.216 | accuracy: 0.294
+step 28000: past 1000 steps avg loss: 2.407 | accuracy: 0.232
+step 29000: past 1000 steps avg loss: 2.328 | accuracy: 0.238
+step 30000: past 1000 steps avg loss: 2.399 | accuracy: 0.221
+step 31000: past 1000 steps avg loss: 2.442 | accuracy: 0.242
+step 32000: past 1000 steps avg loss: 2.438 | accuracy: 0.230
+step 33000: past 1000 steps avg loss: 2.395 | accuracy: 0.236
+step 34000: past 1000 steps avg loss: 2.418 | accuracy: 0.224
+step 35000: past 1000 steps avg loss: 2.421 | accuracy: 0.243
+step 36000: past 1000 steps avg loss: 2.462 | accuracy: 0.234
+step 37000: past 1000 steps avg loss: 2.309 | accuracy: 0.266
+step 38000: past 1000 steps avg loss: 2.446 | accuracy: 0.249
+step 39000: past 1000 steps avg loss: 2.427 | accuracy: 0.239
+step 40000: past 1000 steps avg loss: 2.401 | accuracy: 0.235
+step 41000: past 1000 steps avg loss: 2.438 | accuracy: 0.249
+step 42000: past 1000 steps avg loss: 2.406 | accuracy: 0.234
+step 43000: past 1000 steps avg loss: 2.320 | accuracy: 0.252
+step 44000: past 1000 steps avg loss: 2.332 | accuracy: 0.247
+step 45000: past 1000 steps avg loss: 2.335 | accuracy: 0.273
+step 46000: past 1000 steps avg loss: 2.339 | accuracy: 0.232
+step 47000: past 1000 steps avg loss: 2.348 | accuracy: 0.241
+step 48000: past 1000 steps avg loss: 2.310 | accuracy: 0.257
+step 49000: past 1000 steps avg loss: 2.413 | accuracy: 0.228
+step 50000: past 1000 steps avg loss: 2.434 | accuracy: 0.229
+Epoch completed in: 3794.246046 seconds
+	Conv_forward: 1616.751841 sec, Maxpool_forward: 21.269115 sec, Softmax_forward: 43.291376 sec
+	Conv_backward: 11590.812018 sec, Maxpool_backward: 577.229003 sec, Softmax_backward: 3580.151636 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.398 | test accuracy: 0.227
+step 52000: past 1000 steps test loss: 2.413 | test accuracy: 0.222
+step 53000: past 1000 steps test loss: 2.434 | test accuracy: 0.211
+step 54000: past 1000 steps test loss: 2.403 | test accuracy: 0.216
+step 55000: past 1000 steps test loss: 2.403 | test accuracy: 0.216
+step 56000: past 1000 steps test loss: 2.400 | test accuracy: 0.217
+step 57000: past 1000 steps test loss: 2.407 | test accuracy: 0.216
+step 58000: past 1000 steps test loss: 2.398 | test accuracy: 0.218
+step 59000: past 1000 steps test loss: 2.405 | test accuracy: 0.215
+step 60000: past 1000 steps test loss: 2.408 | test accuracy: 0.215
+Testing completed in: 58.770276 seconds
+--- Epoch 6 ---
+step 1000: past 1000 steps avg loss: 2.361 | accuracy: 0.240
+step 2000: past 1000 steps avg loss: 2.377 | accuracy: 0.254
+step 3000: past 1000 steps avg loss: 2.458 | accuracy: 0.237
+step 4000: past 1000 steps avg loss: 2.496 | accuracy: 0.225
+step 5000: past 1000 steps avg loss: 2.507 | accuracy: 0.241
+step 6000: past 1000 steps avg loss: 2.489 | accuracy: 0.233
+step 7000: past 1000 steps avg loss: 2.526 | accuracy: 0.237
+step 8000: past 1000 steps avg loss: 2.552 | accuracy: 0.229
+step 9000: past 1000 steps avg loss: 2.531 | accuracy: 0.254
+step 10000: past 1000 steps avg loss: 2.548 | accuracy: 0.232
+step 11000: past 1000 steps avg loss: 2.589 | accuracy: 0.223
+step 12000: past 1000 steps avg loss: 2.503 | accuracy: 0.240
+step 13000: past 1000 steps avg loss: 2.550 | accuracy: 0.251
+step 14000: past 1000 steps avg loss: 2.609 | accuracy: 0.217
+step 15000: past 1000 steps avg loss: 2.581 | accuracy: 0.226
+step 16000: past 1000 steps avg loss: 2.531 | accuracy: 0.223
+step 17000: past 1000 steps avg loss: 2.471 | accuracy: 0.237
+step 18000: past 1000 steps avg loss: 2.493 | accuracy: 0.241
+step 19000: past 1000 steps avg loss: 2.539 | accuracy: 0.248
+step 20000: past 1000 steps avg loss: 2.480 | accuracy: 0.233
+step 21000: past 1000 steps avg loss: 2.442 | accuracy: 0.231
+step 22000: past 1000 steps avg loss: 2.540 | accuracy: 0.213
+step 23000: past 1000 steps avg loss: 2.512 | accuracy: 0.244
+step 24000: past 1000 steps avg loss: 2.446 | accuracy: 0.246
+step 25000: past 1000 steps avg loss: 2.432 | accuracy: 0.250
+step 26000: past 1000 steps avg loss: 2.503 | accuracy: 0.245
+step 27000: past 1000 steps avg loss: 2.383 | accuracy: 0.290
+step 28000: past 1000 steps avg loss: 2.591 | accuracy: 0.219
+step 29000: past 1000 steps avg loss: 2.470 | accuracy: 0.228
+step 30000: past 1000 steps avg loss: 2.561 | accuracy: 0.221
+step 31000: past 1000 steps avg loss: 2.542 | accuracy: 0.220
+step 32000: past 1000 steps avg loss: 2.526 | accuracy: 0.233
+step 33000: past 1000 steps avg loss: 2.492 | accuracy: 0.230
+step 34000: past 1000 steps avg loss: 2.516 | accuracy: 0.226
+step 35000: past 1000 steps avg loss: 2.494 | accuracy: 0.252
+step 36000: past 1000 steps avg loss: 2.534 | accuracy: 0.226
+step 37000: past 1000 steps avg loss: 2.368 | accuracy: 0.271
+step 38000: past 1000 steps avg loss: 2.486 | accuracy: 0.250
+step 39000: past 1000 steps avg loss: 2.479 | accuracy: 0.237
+step 40000: past 1000 steps avg loss: 2.451 | accuracy: 0.236
+step 41000: past 1000 steps avg loss: 2.511 | accuracy: 0.246
+step 42000: past 1000 steps avg loss: 2.476 | accuracy: 0.231
+step 43000: past 1000 steps avg loss: 2.391 | accuracy: 0.253
+step 44000: past 1000 steps avg loss: 2.407 | accuracy: 0.247
+step 45000: past 1000 steps avg loss: 2.442 | accuracy: 0.258
+step 46000: past 1000 steps avg loss: 2.390 | accuracy: 0.235
+step 47000: past 1000 steps avg loss: 2.435 | accuracy: 0.232
+step 48000: past 1000 steps avg loss: 2.405 | accuracy: 0.256
+step 49000: past 1000 steps avg loss: 2.523 | accuracy: 0.229
+step 50000: past 1000 steps avg loss: 2.533 | accuracy: 0.222
+Epoch completed in: 3786.420974 seconds
+	Conv_forward: 1950.956882 sec, Maxpool_forward: 25.661655 sec, Softmax_forward: 52.234321 sec
+	Conv_backward: 13859.858667 sec, Maxpool_backward: 692.642315 sec, Softmax_backward: 4320.681445 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.460 | test accuracy: 0.222
+step 52000: past 1000 steps test loss: 2.477 | test accuracy: 0.213
+step 53000: past 1000 steps test loss: 2.501 | test accuracy: 0.205
+step 54000: past 1000 steps test loss: 2.470 | test accuracy: 0.211
+step 55000: past 1000 steps test loss: 2.469 | test accuracy: 0.211
+step 56000: past 1000 steps test loss: 2.465 | test accuracy: 0.213
+step 57000: past 1000 steps test loss: 2.471 | test accuracy: 0.213
+step 58000: past 1000 steps test loss: 2.461 | test accuracy: 0.216
+step 59000: past 1000 steps test loss: 2.468 | test accuracy: 0.213
+step 60000: past 1000 steps test loss: 2.473 | test accuracy: 0.214
+Testing completed in: 58.867872 seconds
+--- Epoch 7 ---
+step 1000: past 1000 steps avg loss: 2.459 | accuracy: 0.234
+step 2000: past 1000 steps avg loss: 2.426 | accuracy: 0.263
+step 3000: past 1000 steps avg loss: 2.514 | accuracy: 0.236
+step 4000: past 1000 steps avg loss: 2.545 | accuracy: 0.235
+step 5000: past 1000 steps avg loss: 2.555 | accuracy: 0.231
+step 6000: past 1000 steps avg loss: 2.503 | accuracy: 0.237
+step 7000: past 1000 steps avg loss: 2.544 | accuracy: 0.228
+step 8000: past 1000 steps avg loss: 2.558 | accuracy: 0.243
+step 9000: past 1000 steps avg loss: 2.500 | accuracy: 0.258
+step 10000: past 1000 steps avg loss: 2.528 | accuracy: 0.230
+step 11000: past 1000 steps avg loss: 2.569 | accuracy: 0.224
+step 12000: past 1000 steps avg loss: 2.479 | accuracy: 0.246
+step 13000: past 1000 steps avg loss: 2.498 | accuracy: 0.241
+step 14000: past 1000 steps avg loss: 2.573 | accuracy: 0.230
+step 15000: past 1000 steps avg loss: 2.589 | accuracy: 0.232
+step 16000: past 1000 steps avg loss: 2.546 | accuracy: 0.246
+step 17000: past 1000 steps avg loss: 2.531 | accuracy: 0.229
+step 18000: past 1000 steps avg loss: 2.571 | accuracy: 0.236
+step 19000: past 1000 steps avg loss: 2.623 | accuracy: 0.247
+step 20000: past 1000 steps avg loss: 2.583 | accuracy: 0.230
+step 21000: past 1000 steps avg loss: 2.565 | accuracy: 0.226
+step 22000: past 1000 steps avg loss: 2.649 | accuracy: 0.235
+step 23000: past 1000 steps avg loss: 2.588 | accuracy: 0.244
+step 24000: past 1000 steps avg loss: 2.505 | accuracy: 0.249
+step 25000: past 1000 steps avg loss: 2.458 | accuracy: 0.264
+step 26000: past 1000 steps avg loss: 2.508 | accuracy: 0.255
+step 27000: past 1000 steps avg loss: 2.398 | accuracy: 0.271
+step 28000: past 1000 steps avg loss: 2.588 | accuracy: 0.217
+step 29000: past 1000 steps avg loss: 2.458 | accuracy: 0.225
+step 30000: past 1000 steps avg loss: 2.544 | accuracy: 0.222
+step 31000: past 1000 steps avg loss: 2.525 | accuracy: 0.237
+step 32000: past 1000 steps avg loss: 2.522 | accuracy: 0.231
+step 33000: past 1000 steps avg loss: 2.494 | accuracy: 0.226
+step 34000: past 1000 steps avg loss: 2.503 | accuracy: 0.233
+step 35000: past 1000 steps avg loss: 2.506 | accuracy: 0.247
+step 36000: past 1000 steps avg loss: 2.555 | accuracy: 0.238
+step 37000: past 1000 steps avg loss: 2.397 | accuracy: 0.270
+step 38000: past 1000 steps avg loss: 2.538 | accuracy: 0.250
+step 39000: past 1000 steps avg loss: 2.529 | accuracy: 0.232
+step 40000: past 1000 steps avg loss: 2.498 | accuracy: 0.219
+step 41000: past 1000 steps avg loss: 2.577 | accuracy: 0.241
+step 42000: past 1000 steps avg loss: 2.554 | accuracy: 0.233
+step 43000: past 1000 steps avg loss: 2.443 | accuracy: 0.239
+step 44000: past 1000 steps avg loss: 2.479 | accuracy: 0.236
+step 45000: past 1000 steps avg loss: 2.503 | accuracy: 0.256
+step 46000: past 1000 steps avg loss: 2.489 | accuracy: 0.232
+step 47000: past 1000 steps avg loss: 2.494 | accuracy: 0.241
+step 48000: past 1000 steps avg loss: 2.470 | accuracy: 0.266
+step 49000: past 1000 steps avg loss: 2.605 | accuracy: 0.217
+step 50000: past 1000 steps avg loss: 2.591 | accuracy: 0.224
+Epoch completed in: 3777.525493 seconds
+	Conv_forward: 2285.273394 sec, Maxpool_forward: 30.056436 sec, Softmax_forward: 61.180020 sec
+	Conv_backward: 16116.303190 sec, Maxpool_backward: 808.031920 sec, Softmax_backward: 5064.896306 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.578 | test accuracy: 0.199
+step 52000: past 1000 steps test loss: 2.586 | test accuracy: 0.199
+step 53000: past 1000 steps test loss: 2.616 | test accuracy: 0.194
+step 54000: past 1000 steps test loss: 2.580 | test accuracy: 0.201
+step 55000: past 1000 steps test loss: 2.574 | test accuracy: 0.203
+step 56000: past 1000 steps test loss: 2.565 | test accuracy: 0.204
+step 57000: past 1000 steps test loss: 2.569 | test accuracy: 0.205
+step 58000: past 1000 steps test loss: 2.557 | test accuracy: 0.208
+step 59000: past 1000 steps test loss: 2.565 | test accuracy: 0.206
+step 60000: past 1000 steps test loss: 2.569 | test accuracy: 0.206
+Testing completed in: 58.785580 seconds
+--- Epoch 8 ---
+step 1000: past 1000 steps avg loss: 2.487 | accuracy: 0.237
+step 2000: past 1000 steps avg loss: 2.489 | accuracy: 0.250
+step 3000: past 1000 steps avg loss: 2.581 | accuracy: 0.228
+step 4000: past 1000 steps avg loss: 2.611 | accuracy: 0.218
+step 5000: past 1000 steps avg loss: 2.591 | accuracy: 0.241
+step 6000: past 1000 steps avg loss: 2.554 | accuracy: 0.237
+step 7000: past 1000 steps avg loss: 2.587 | accuracy: 0.232
+step 8000: past 1000 steps avg loss: 2.598 | accuracy: 0.238
+step 9000: past 1000 steps avg loss: 2.545 | accuracy: 0.254
+step 10000: past 1000 steps avg loss: 2.532 | accuracy: 0.242
+step 11000: past 1000 steps avg loss: 2.600 | accuracy: 0.230
+step 12000: past 1000 steps avg loss: 2.518 | accuracy: 0.250
+step 13000: past 1000 steps avg loss: 2.544 | accuracy: 0.246
+step 14000: past 1000 steps avg loss: 2.615 | accuracy: 0.221
+step 15000: past 1000 steps avg loss: 2.639 | accuracy: 0.223
+step 16000: past 1000 steps avg loss: 2.601 | accuracy: 0.227
+step 17000: past 1000 steps avg loss: 2.574 | accuracy: 0.235
+step 18000: past 1000 steps avg loss: 2.614 | accuracy: 0.247
+step 19000: past 1000 steps avg loss: 2.679 | accuracy: 0.243
+step 20000: past 1000 steps avg loss: 2.642 | accuracy: 0.228
+step 21000: past 1000 steps avg loss: 2.658 | accuracy: 0.221
+step 22000: past 1000 steps avg loss: 2.743 | accuracy: 0.228
+step 23000: past 1000 steps avg loss: 2.696 | accuracy: 0.242
+step 24000: past 1000 steps avg loss: 2.610 | accuracy: 0.251
+step 25000: past 1000 steps avg loss: 2.606 | accuracy: 0.266
+step 26000: past 1000 steps avg loss: 2.656 | accuracy: 0.251
+step 27000: past 1000 steps avg loss: 2.468 | accuracy: 0.279
+step 28000: past 1000 steps avg loss: 2.685 | accuracy: 0.220
+step 29000: past 1000 steps avg loss: 2.532 | accuracy: 0.236
+step 30000: past 1000 steps avg loss: 2.611 | accuracy: 0.225
+step 31000: past 1000 steps avg loss: 2.581 | accuracy: 0.236
+step 32000: past 1000 steps avg loss: 2.582 | accuracy: 0.230
+step 33000: past 1000 steps avg loss: 2.534 | accuracy: 0.233
+step 34000: past 1000 steps avg loss: 2.559 | accuracy: 0.228
+step 35000: past 1000 steps avg loss: 2.558 | accuracy: 0.241
+step 36000: past 1000 steps avg loss: 2.601 | accuracy: 0.236
+step 37000: past 1000 steps avg loss: 2.434 | accuracy: 0.270
+step 38000: past 1000 steps avg loss: 2.591 | accuracy: 0.247
+step 39000: past 1000 steps avg loss: 2.565 | accuracy: 0.248
+step 40000: past 1000 steps avg loss: 2.546 | accuracy: 0.217
+step 41000: past 1000 steps avg loss: 2.621 | accuracy: 0.239
+step 42000: past 1000 steps avg loss: 2.561 | accuracy: 0.225
+step 43000: past 1000 steps avg loss: 2.437 | accuracy: 0.241
+step 44000: past 1000 steps avg loss: 2.468 | accuracy: 0.247
+step 45000: past 1000 steps avg loss: 2.504 | accuracy: 0.261
+step 46000: past 1000 steps avg loss: 2.461 | accuracy: 0.239
+step 47000: past 1000 steps avg loss: 2.457 | accuracy: 0.246
+step 48000: past 1000 steps avg loss: 2.443 | accuracy: 0.269
+step 49000: past 1000 steps avg loss: 2.593 | accuracy: 0.221
+step 50000: past 1000 steps avg loss: 2.578 | accuracy: 0.239
+Epoch completed in: 3795.078368 seconds
+	Conv_forward: 2619.496073 sec, Maxpool_forward: 34.451869 sec, Softmax_forward: 70.125769 sec
+	Conv_backward: 18386.139164 sec, Maxpool_backward: 923.403953 sec, Softmax_backward: 5813.366604 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.549 | test accuracy: 0.226
+step 52000: past 1000 steps test loss: 2.566 | test accuracy: 0.219
+step 53000: past 1000 steps test loss: 2.598 | test accuracy: 0.209
+step 54000: past 1000 steps test loss: 2.567 | test accuracy: 0.212
+step 55000: past 1000 steps test loss: 2.560 | test accuracy: 0.212
+step 56000: past 1000 steps test loss: 2.553 | test accuracy: 0.215
+step 57000: past 1000 steps test loss: 2.559 | test accuracy: 0.216
+step 58000: past 1000 steps test loss: 2.547 | test accuracy: 0.218
+step 59000: past 1000 steps test loss: 2.557 | test accuracy: 0.216
+step 60000: past 1000 steps test loss: 2.559 | test accuracy: 0.216
+Testing completed in: 59.775539 seconds
+--- Epoch 9 ---
+step 1000: past 1000 steps avg loss: 2.473 | accuracy: 0.237
+step 2000: past 1000 steps avg loss: 2.463 | accuracy: 0.270
+step 3000: past 1000 steps avg loss: 2.567 | accuracy: 0.239
+step 4000: past 1000 steps avg loss: 2.584 | accuracy: 0.217
+step 5000: past 1000 steps avg loss: 2.541 | accuracy: 0.249
+step 6000: past 1000 steps avg loss: 2.493 | accuracy: 0.241
+step 7000: past 1000 steps avg loss: 2.539 | accuracy: 0.254
+step 8000: past 1000 steps avg loss: 2.586 | accuracy: 0.231
+step 9000: past 1000 steps avg loss: 2.514 | accuracy: 0.257
+step 10000: past 1000 steps avg loss: 2.503 | accuracy: 0.255
+step 11000: past 1000 steps avg loss: 2.596 | accuracy: 0.232
+step 12000: past 1000 steps avg loss: 2.514 | accuracy: 0.258
+step 13000: past 1000 steps avg loss: 2.541 | accuracy: 0.241
+step 14000: past 1000 steps avg loss: 2.599 | accuracy: 0.234
+step 15000: past 1000 steps avg loss: 2.613 | accuracy: 0.238
+step 16000: past 1000 steps avg loss: 2.593 | accuracy: 0.238
+step 17000: past 1000 steps avg loss: 2.584 | accuracy: 0.237
+step 18000: past 1000 steps avg loss: 2.633 | accuracy: 0.243
+step 19000: past 1000 steps avg loss: 2.674 | accuracy: 0.255
+step 20000: past 1000 steps avg loss: 2.644 | accuracy: 0.240
+step 21000: past 1000 steps avg loss: 2.655 | accuracy: 0.223
+step 22000: past 1000 steps avg loss: 2.732 | accuracy: 0.236
+step 23000: past 1000 steps avg loss: 2.691 | accuracy: 0.237
+step 24000: past 1000 steps avg loss: 2.610 | accuracy: 0.245
+step 25000: past 1000 steps avg loss: 2.571 | accuracy: 0.269
+step 26000: past 1000 steps avg loss: 2.616 | accuracy: 0.250
+step 27000: past 1000 steps avg loss: 2.480 | accuracy: 0.283
+step 28000: past 1000 steps avg loss: 2.737 | accuracy: 0.219
+step 29000: past 1000 steps avg loss: 2.574 | accuracy: 0.236
+step 30000: past 1000 steps avg loss: 2.679 | accuracy: 0.225
+step 31000: past 1000 steps avg loss: 2.647 | accuracy: 0.234
+step 32000: past 1000 steps avg loss: 2.650 | accuracy: 0.232
+step 33000: past 1000 steps avg loss: 2.620 | accuracy: 0.224
+step 34000: past 1000 steps avg loss: 2.619 | accuracy: 0.238
+step 35000: past 1000 steps avg loss: 2.650 | accuracy: 0.238
+step 36000: past 1000 steps avg loss: 2.675 | accuracy: 0.239
+step 37000: past 1000 steps avg loss: 2.544 | accuracy: 0.279
+step 38000: past 1000 steps avg loss: 2.689 | accuracy: 0.246
+step 39000: past 1000 steps avg loss: 2.676 | accuracy: 0.229
+step 40000: past 1000 steps avg loss: 2.632 | accuracy: 0.237
+step 41000: past 1000 steps avg loss: 2.739 | accuracy: 0.237
+step 42000: past 1000 steps avg loss: 2.703 | accuracy: 0.234
+step 43000: past 1000 steps avg loss: 2.575 | accuracy: 0.244
+step 44000: past 1000 steps avg loss: 2.643 | accuracy: 0.248
+step 45000: past 1000 steps avg loss: 2.682 | accuracy: 0.248
+step 46000: past 1000 steps avg loss: 2.630 | accuracy: 0.230
+step 47000: past 1000 steps avg loss: 2.695 | accuracy: 0.245
+step 48000: past 1000 steps avg loss: 2.645 | accuracy: 0.245
+step 49000: past 1000 steps avg loss: 2.773 | accuracy: 0.227
+step 50000: past 1000 steps avg loss: 2.742 | accuracy: 0.227
+Epoch completed in: 3954.581425 seconds
+	Conv_forward: 2962.138201 sec, Maxpool_forward: 39.014707 sec, Softmax_forward: 79.456565 sec
+	Conv_backward: 20756.660430 sec, Maxpool_backward: 1043.690788 sec, Softmax_backward: 6591.863307 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.742 | test accuracy: 0.201
+step 52000: past 1000 steps test loss: 2.762 | test accuracy: 0.200
+step 53000: past 1000 steps test loss: 2.802 | test accuracy: 0.189
+step 54000: past 1000 steps test loss: 2.766 | test accuracy: 0.197
+step 55000: past 1000 steps test loss: 2.756 | test accuracy: 0.198
+step 56000: past 1000 steps test loss: 2.744 | test accuracy: 0.198
+step 57000: past 1000 steps test loss: 2.746 | test accuracy: 0.199
+step 58000: past 1000 steps test loss: 2.734 | test accuracy: 0.201
+step 59000: past 1000 steps test loss: 2.743 | test accuracy: 0.199
+step 60000: past 1000 steps test loss: 2.746 | test accuracy: 0.200
+Testing completed in: 60.157138 seconds
+--- Epoch 10 ---
+step 1000: past 1000 steps avg loss: 2.671 | accuracy: 0.236
+step 2000: past 1000 steps avg loss: 2.660 | accuracy: 0.255
+step 3000: past 1000 steps avg loss: 2.746 | accuracy: 0.237
+step 4000: past 1000 steps avg loss: 2.767 | accuracy: 0.218
+step 5000: past 1000 steps avg loss: 2.759 | accuracy: 0.245
+step 6000: past 1000 steps avg loss: 2.708 | accuracy: 0.233
+step 7000: past 1000 steps avg loss: 2.745 | accuracy: 0.240
+step 8000: past 1000 steps avg loss: 2.783 | accuracy: 0.232
+step 9000: past 1000 steps avg loss: 2.706 | accuracy: 0.252
+step 10000: past 1000 steps avg loss: 2.687 | accuracy: 0.245
+step 11000: past 1000 steps avg loss: 2.760 | accuracy: 0.228
+step 12000: past 1000 steps avg loss: 2.633 | accuracy: 0.262
+step 13000: past 1000 steps avg loss: 2.641 | accuracy: 0.250
+step 14000: past 1000 steps avg loss: 2.716 | accuracy: 0.230
+step 15000: past 1000 steps avg loss: 2.729 | accuracy: 0.232
+step 16000: past 1000 steps avg loss: 2.673 | accuracy: 0.240
+step 17000: past 1000 steps avg loss: 2.653 | accuracy: 0.252
+step 18000: past 1000 steps avg loss: 2.707 | accuracy: 0.242
+step 19000: past 1000 steps avg loss: 2.725 | accuracy: 0.254
+step 20000: past 1000 steps avg loss: 2.721 | accuracy: 0.240
+step 21000: past 1000 steps avg loss: 2.705 | accuracy: 0.231
+step 22000: past 1000 steps avg loss: 2.769 | accuracy: 0.234
+step 23000: past 1000 steps avg loss: 2.728 | accuracy: 0.247
+step 24000: past 1000 steps avg loss: 2.609 | accuracy: 0.257
+step 25000: past 1000 steps avg loss: 2.562 | accuracy: 0.282
+step 26000: past 1000 steps avg loss: 2.584 | accuracy: 0.259
+step 27000: past 1000 steps avg loss: 2.436 | accuracy: 0.287
+step 28000: past 1000 steps avg loss: 2.660 | accuracy: 0.224
+step 29000: past 1000 steps avg loss: 2.542 | accuracy: 0.251
+step 30000: past 1000 steps avg loss: 2.673 | accuracy: 0.229
+step 31000: past 1000 steps avg loss: 2.609 | accuracy: 0.241
+step 32000: past 1000 steps avg loss: 2.591 | accuracy: 0.247
+step 33000: past 1000 steps avg loss: 2.583 | accuracy: 0.235
+step 34000: past 1000 steps avg loss: 2.593 | accuracy: 0.237
+step 35000: past 1000 steps avg loss: 2.598 | accuracy: 0.261
+step 36000: past 1000 steps avg loss: 2.627 | accuracy: 0.243
+step 37000: past 1000 steps avg loss: 2.472 | accuracy: 0.289
+step 38000: past 1000 steps avg loss: 2.630 | accuracy: 0.259
+step 39000: past 1000 steps avg loss: 2.599 | accuracy: 0.244
+step 40000: past 1000 steps avg loss: 2.567 | accuracy: 0.236
+step 41000: past 1000 steps avg loss: 2.676 | accuracy: 0.247
+step 42000: past 1000 steps avg loss: 2.663 | accuracy: 0.222
+step 43000: past 1000 steps avg loss: 2.519 | accuracy: 0.258
+step 44000: past 1000 steps avg loss: 2.607 | accuracy: 0.254
+step 45000: past 1000 steps avg loss: 2.597 | accuracy: 0.253
+step 46000: past 1000 steps avg loss: 2.570 | accuracy: 0.240
+step 47000: past 1000 steps avg loss: 2.602 | accuracy: 0.242
+step 48000: past 1000 steps avg loss: 2.577 | accuracy: 0.268
+step 49000: past 1000 steps avg loss: 2.713 | accuracy: 0.220
+step 50000: past 1000 steps avg loss: 2.654 | accuracy: 0.235
+Epoch completed in: 3933.279805 seconds
+	Conv_forward: 3303.776935 sec, Maxpool_forward: 43.568843 sec, Softmax_forward: 88.768793 sec
+	Conv_backward: 23111.538574 sec, Maxpool_backward: 1163.197897 sec, Softmax_backward: 7369.240631 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.715 | test accuracy: 0.199
+step 52000: past 1000 steps test loss: 2.704 | test accuracy: 0.201
+step 53000: past 1000 steps test loss: 2.739 | test accuracy: 0.191
+step 54000: past 1000 steps test loss: 2.710 | test accuracy: 0.196
+step 55000: past 1000 steps test loss: 2.700 | test accuracy: 0.194
+step 56000: past 1000 steps test loss: 2.692 | test accuracy: 0.196
+step 57000: past 1000 steps test loss: 2.696 | test accuracy: 0.199
+step 58000: past 1000 steps test loss: 2.681 | test accuracy: 0.200
+step 59000: past 1000 steps test loss: 2.691 | test accuracy: 0.200
+step 60000: past 1000 steps test loss: 2.694 | test accuracy: 0.200
+Testing completed in: 58.759613 seconds
+--- Epoch 11 ---
+step 1000: past 1000 steps avg loss: 2.590 | accuracy: 0.247
+step 2000: past 1000 steps avg loss: 2.596 | accuracy: 0.259
+step 3000: past 1000 steps avg loss: 2.754 | accuracy: 0.234
+step 4000: past 1000 steps avg loss: 2.752 | accuracy: 0.211
+step 5000: past 1000 steps avg loss: 2.710 | accuracy: 0.253
+step 6000: past 1000 steps avg loss: 2.675 | accuracy: 0.241
+step 7000: past 1000 steps avg loss: 2.709 | accuracy: 0.241
+step 8000: past 1000 steps avg loss: 2.748 | accuracy: 0.238
+step 9000: past 1000 steps avg loss: 2.698 | accuracy: 0.252
+step 10000: past 1000 steps avg loss: 2.655 | accuracy: 0.238
+step 11000: past 1000 steps avg loss: 2.710 | accuracy: 0.230
+step 12000: past 1000 steps avg loss: 2.629 | accuracy: 0.251
+step 13000: past 1000 steps avg loss: 2.633 | accuracy: 0.252
+step 14000: past 1000 steps avg loss: 2.673 | accuracy: 0.240
+step 15000: past 1000 steps avg loss: 2.681 | accuracy: 0.245
+step 16000: past 1000 steps avg loss: 2.640 | accuracy: 0.238
+step 17000: past 1000 steps avg loss: 2.584 | accuracy: 0.257
+step 18000: past 1000 steps avg loss: 2.625 | accuracy: 0.253
+step 19000: past 1000 steps avg loss: 2.660 | accuracy: 0.263
+step 20000: past 1000 steps avg loss: 2.636 | accuracy: 0.248
+step 21000: past 1000 steps avg loss: 2.601 | accuracy: 0.239
+step 22000: past 1000 steps avg loss: 2.669 | accuracy: 0.240
+step 23000: past 1000 steps avg loss: 2.654 | accuracy: 0.267
+step 24000: past 1000 steps avg loss: 2.595 | accuracy: 0.260
+step 25000: past 1000 steps avg loss: 2.547 | accuracy: 0.269
+step 26000: past 1000 steps avg loss: 2.563 | accuracy: 0.280
+step 27000: past 1000 steps avg loss: 2.399 | accuracy: 0.295
+step 28000: past 1000 steps avg loss: 2.639 | accuracy: 0.229
+step 29000: past 1000 steps avg loss: 2.487 | accuracy: 0.245
+step 30000: past 1000 steps avg loss: 2.585 | accuracy: 0.230
+step 31000: past 1000 steps avg loss: 2.555 | accuracy: 0.244
+step 32000: past 1000 steps avg loss: 2.548 | accuracy: 0.243
+step 33000: past 1000 steps avg loss: 2.553 | accuracy: 0.229
+step 34000: past 1000 steps avg loss: 2.559 | accuracy: 0.241
+step 35000: past 1000 steps avg loss: 2.595 | accuracy: 0.251
+step 36000: past 1000 steps avg loss: 2.595 | accuracy: 0.251
+step 37000: past 1000 steps avg loss: 2.469 | accuracy: 0.289
+step 38000: past 1000 steps avg loss: 2.615 | accuracy: 0.263
+step 39000: past 1000 steps avg loss: 2.609 | accuracy: 0.256
+step 40000: past 1000 steps avg loss: 2.561 | accuracy: 0.237
+step 41000: past 1000 steps avg loss: 2.715 | accuracy: 0.234
+step 42000: past 1000 steps avg loss: 2.665 | accuracy: 0.241
+step 43000: past 1000 steps avg loss: 2.489 | accuracy: 0.260
+step 44000: past 1000 steps avg loss: 2.565 | accuracy: 0.258
+step 45000: past 1000 steps avg loss: 2.593 | accuracy: 0.268
+step 46000: past 1000 steps avg loss: 2.546 | accuracy: 0.240
+step 47000: past 1000 steps avg loss: 2.589 | accuracy: 0.247
+step 48000: past 1000 steps avg loss: 2.561 | accuracy: 0.251
+step 49000: past 1000 steps avg loss: 2.704 | accuracy: 0.236
+step 50000: past 1000 steps avg loss: 2.672 | accuracy: 0.242
+Epoch completed in: 3827.292967 seconds
+	Conv_forward: 3638.019193 sec, Maxpool_forward: 47.962303 sec, Softmax_forward: 97.715241 sec
+	Conv_backward: 25404.779202 sec, Maxpool_backward: 1278.586934 sec, Softmax_backward: 8126.464122 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.656 | test accuracy: 0.206
+step 52000: past 1000 steps test loss: 2.675 | test accuracy: 0.207
+step 53000: past 1000 steps test loss: 2.718 | test accuracy: 0.198
+step 54000: past 1000 steps test loss: 2.687 | test accuracy: 0.204
+step 55000: past 1000 steps test loss: 2.676 | test accuracy: 0.202
+step 56000: past 1000 steps test loss: 2.667 | test accuracy: 0.204
+step 57000: past 1000 steps test loss: 2.670 | test accuracy: 0.207
+step 58000: past 1000 steps test loss: 2.656 | test accuracy: 0.209
+step 59000: past 1000 steps test loss: 2.662 | test accuracy: 0.208
+step 60000: past 1000 steps test loss: 2.666 | test accuracy: 0.209
+Testing completed in: 58.786612 seconds
+--- Epoch 12 ---
+step 1000: past 1000 steps avg loss: 2.604 | accuracy: 0.251
+step 2000: past 1000 steps avg loss: 2.621 | accuracy: 0.264
+step 3000: past 1000 steps avg loss: 2.764 | accuracy: 0.248
+step 4000: past 1000 steps avg loss: 2.750 | accuracy: 0.228
+step 5000: past 1000 steps avg loss: 2.734 | accuracy: 0.236
+step 6000: past 1000 steps avg loss: 2.671 | accuracy: 0.245
+step 7000: past 1000 steps avg loss: 2.665 | accuracy: 0.248
+step 8000: past 1000 steps avg loss: 2.690 | accuracy: 0.249
+step 9000: past 1000 steps avg loss: 2.640 | accuracy: 0.253
+step 10000: past 1000 steps avg loss: 2.640 | accuracy: 0.261
+step 11000: past 1000 steps avg loss: 2.726 | accuracy: 0.226
+step 12000: past 1000 steps avg loss: 2.633 | accuracy: 0.245
+step 13000: past 1000 steps avg loss: 2.641 | accuracy: 0.248
+step 14000: past 1000 steps avg loss: 2.711 | accuracy: 0.248
+step 15000: past 1000 steps avg loss: 2.748 | accuracy: 0.245
+step 16000: past 1000 steps avg loss: 2.722 | accuracy: 0.230
+step 17000: past 1000 steps avg loss: 2.650 | accuracy: 0.248
+step 18000: past 1000 steps avg loss: 2.703 | accuracy: 0.251
+step 19000: past 1000 steps avg loss: 2.719 | accuracy: 0.276
+step 20000: past 1000 steps avg loss: 2.692 | accuracy: 0.240
+step 21000: past 1000 steps avg loss: 2.655 | accuracy: 0.236
+step 22000: past 1000 steps avg loss: 2.732 | accuracy: 0.235
+step 23000: past 1000 steps avg loss: 2.694 | accuracy: 0.258
+step 24000: past 1000 steps avg loss: 2.575 | accuracy: 0.277
+step 25000: past 1000 steps avg loss: 2.566 | accuracy: 0.275
+step 26000: past 1000 steps avg loss: 2.576 | accuracy: 0.270
+step 27000: past 1000 steps avg loss: 2.428 | accuracy: 0.299
+step 28000: past 1000 steps avg loss: 2.664 | accuracy: 0.233
+step 29000: past 1000 steps avg loss: 2.513 | accuracy: 0.259
+step 30000: past 1000 steps avg loss: 2.615 | accuracy: 0.246
+step 31000: past 1000 steps avg loss: 2.606 | accuracy: 0.249
+step 32000: past 1000 steps avg loss: 2.608 | accuracy: 0.247
+step 33000: past 1000 steps avg loss: 2.612 | accuracy: 0.244
+step 34000: past 1000 steps avg loss: 2.608 | accuracy: 0.241
+step 35000: past 1000 steps avg loss: 2.622 | accuracy: 0.263
+step 36000: past 1000 steps avg loss: 2.615 | accuracy: 0.258
+step 37000: past 1000 steps avg loss: 2.461 | accuracy: 0.295
+step 38000: past 1000 steps avg loss: 2.613 | accuracy: 0.261
+step 39000: past 1000 steps avg loss: 2.586 | accuracy: 0.257
+step 40000: past 1000 steps avg loss: 2.528 | accuracy: 0.240
+step 41000: past 1000 steps avg loss: 2.636 | accuracy: 0.251
+step 42000: past 1000 steps avg loss: 2.608 | accuracy: 0.241
+step 43000: past 1000 steps avg loss: 2.465 | accuracy: 0.281
+step 44000: past 1000 steps avg loss: 2.544 | accuracy: 0.258
+step 45000: past 1000 steps avg loss: 2.568 | accuracy: 0.280
+step 46000: past 1000 steps avg loss: 2.562 | accuracy: 0.253
+step 47000: past 1000 steps avg loss: 2.553 | accuracy: 0.266
+step 48000: past 1000 steps avg loss: 2.501 | accuracy: 0.277
+step 49000: past 1000 steps avg loss: 2.637 | accuracy: 0.230
+step 50000: past 1000 steps avg loss: 2.570 | accuracy: 0.249
+Epoch completed in: 3828.104199 seconds
+	Conv_forward: 3972.251491 sec, Maxpool_forward: 52.360667 sec, Softmax_forward: 106.658503 sec
+	Conv_backward: 27696.482965 sec, Maxpool_backward: 1393.981898 sec, Softmax_backward: 8886.023405 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.539 | test accuracy: 0.222
+step 52000: past 1000 steps test loss: 2.542 | test accuracy: 0.227
+step 53000: past 1000 steps test loss: 2.568 | test accuracy: 0.220
+step 54000: past 1000 steps test loss: 2.539 | test accuracy: 0.224
+step 55000: past 1000 steps test loss: 2.532 | test accuracy: 0.223
+step 56000: past 1000 steps test loss: 2.522 | test accuracy: 0.226
+step 57000: past 1000 steps test loss: 2.525 | test accuracy: 0.226
+step 58000: past 1000 steps test loss: 2.513 | test accuracy: 0.227
+step 59000: past 1000 steps test loss: 2.521 | test accuracy: 0.225
+step 60000: past 1000 steps test loss: 2.524 | test accuracy: 0.226
+Testing completed in: 58.768214 seconds
+--- Epoch 13 ---
+step 1000: past 1000 steps avg loss: 2.472 | accuracy: 0.267
+step 2000: past 1000 steps avg loss: 2.492 | accuracy: 0.279
+step 3000: past 1000 steps avg loss: 2.615 | accuracy: 0.257
+step 4000: past 1000 steps avg loss: 2.616 | accuracy: 0.236
+step 5000: past 1000 steps avg loss: 2.587 | accuracy: 0.263
+step 6000: past 1000 steps avg loss: 2.551 | accuracy: 0.251
+step 7000: past 1000 steps avg loss: 2.595 | accuracy: 0.261
+step 8000: past 1000 steps avg loss: 2.608 | accuracy: 0.256
+step 9000: past 1000 steps avg loss: 2.579 | accuracy: 0.277
+step 10000: past 1000 steps avg loss: 2.608 | accuracy: 0.262
+step 11000: past 1000 steps avg loss: 2.664 | accuracy: 0.241
+step 12000: past 1000 steps avg loss: 2.595 | accuracy: 0.268
+step 13000: past 1000 steps avg loss: 2.643 | accuracy: 0.271
+step 14000: past 1000 steps avg loss: 2.701 | accuracy: 0.259
+step 15000: past 1000 steps avg loss: 2.745 | accuracy: 0.253
+step 16000: past 1000 steps avg loss: 2.735 | accuracy: 0.247
+step 17000: past 1000 steps avg loss: 2.669 | accuracy: 0.255
+step 18000: past 1000 steps avg loss: 2.738 | accuracy: 0.256
+step 19000: past 1000 steps avg loss: 2.762 | accuracy: 0.259
+step 20000: past 1000 steps avg loss: 2.693 | accuracy: 0.261
+step 21000: past 1000 steps avg loss: 2.702 | accuracy: 0.254
+step 22000: past 1000 steps avg loss: 2.748 | accuracy: 0.246
+step 23000: past 1000 steps avg loss: 2.747 | accuracy: 0.261
+step 24000: past 1000 steps avg loss: 2.656 | accuracy: 0.271
+step 25000: past 1000 steps avg loss: 2.641 | accuracy: 0.282
+step 26000: past 1000 steps avg loss: 2.665 | accuracy: 0.275
+step 27000: past 1000 steps avg loss: 2.519 | accuracy: 0.286
+step 28000: past 1000 steps avg loss: 2.800 | accuracy: 0.242
+step 29000: past 1000 steps avg loss: 2.640 | accuracy: 0.244
+step 30000: past 1000 steps avg loss: 2.754 | accuracy: 0.245
+step 31000: past 1000 steps avg loss: 2.738 | accuracy: 0.255
+step 32000: past 1000 steps avg loss: 2.752 | accuracy: 0.258
+step 33000: past 1000 steps avg loss: 2.737 | accuracy: 0.240
+step 34000: past 1000 steps avg loss: 2.777 | accuracy: 0.237
+step 35000: past 1000 steps avg loss: 2.852 | accuracy: 0.263
+step 36000: past 1000 steps avg loss: 2.795 | accuracy: 0.279
+step 37000: past 1000 steps avg loss: 2.642 | accuracy: 0.281
+step 38000: past 1000 steps avg loss: 2.726 | accuracy: 0.272
+step 39000: past 1000 steps avg loss: 2.669 | accuracy: 0.266
+step 40000: past 1000 steps avg loss: 2.635 | accuracy: 0.253
+step 41000: past 1000 steps avg loss: 2.731 | accuracy: 0.260
+step 42000: past 1000 steps avg loss: 2.765 | accuracy: 0.235
+step 43000: past 1000 steps avg loss: 2.654 | accuracy: 0.251
+step 44000: past 1000 steps avg loss: 2.645 | accuracy: 0.253
+step 45000: past 1000 steps avg loss: 2.685 | accuracy: 0.266
+step 46000: past 1000 steps avg loss: 2.689 | accuracy: 0.245
+step 47000: past 1000 steps avg loss: 2.721 | accuracy: 0.266
+step 48000: past 1000 steps avg loss: 2.659 | accuracy: 0.281
+step 49000: past 1000 steps avg loss: 2.822 | accuracy: 0.228
+step 50000: past 1000 steps avg loss: 2.766 | accuracy: 0.243
+Epoch completed in: 3833.098070 seconds
+	Conv_forward: 4306.548662 sec, Maxpool_forward: 56.757837 sec, Softmax_forward: 115.609789 sec
+	Conv_backward: 29989.358915 sec, Maxpool_backward: 1509.389837 sec, Softmax_backward: 9649.168471 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.729 | test accuracy: 0.220
+step 52000: past 1000 steps test loss: 2.747 | test accuracy: 0.219
+step 53000: past 1000 steps test loss: 2.774 | test accuracy: 0.212
+step 54000: past 1000 steps test loss: 2.746 | test accuracy: 0.214
+step 55000: past 1000 steps test loss: 2.735 | test accuracy: 0.218
+step 56000: past 1000 steps test loss: 2.724 | test accuracy: 0.219
+step 57000: past 1000 steps test loss: 2.724 | test accuracy: 0.221
+step 58000: past 1000 steps test loss: 2.715 | test accuracy: 0.225
+step 59000: past 1000 steps test loss: 2.721 | test accuracy: 0.225
+step 60000: past 1000 steps test loss: 2.721 | test accuracy: 0.226
+Testing completed in: 58.790694 seconds
+--- Epoch 14 ---
+step 1000: past 1000 steps avg loss: 2.670 | accuracy: 0.255
+step 2000: past 1000 steps avg loss: 2.620 | accuracy: 0.272
+step 3000: past 1000 steps avg loss: 2.746 | accuracy: 0.247
+step 4000: past 1000 steps avg loss: 2.731 | accuracy: 0.246
+step 5000: past 1000 steps avg loss: 2.705 | accuracy: 0.257
+step 6000: past 1000 steps avg loss: 2.657 | accuracy: 0.260
+step 7000: past 1000 steps avg loss: 2.710 | accuracy: 0.271
+step 8000: past 1000 steps avg loss: 2.733 | accuracy: 0.275
+step 9000: past 1000 steps avg loss: 2.648 | accuracy: 0.270
+step 10000: past 1000 steps avg loss: 2.627 | accuracy: 0.258
+step 11000: past 1000 steps avg loss: 2.695 | accuracy: 0.240
+step 12000: past 1000 steps avg loss: 2.601 | accuracy: 0.257
+step 13000: past 1000 steps avg loss: 2.619 | accuracy: 0.271
+step 14000: past 1000 steps avg loss: 2.651 | accuracy: 0.249
+step 15000: past 1000 steps avg loss: 2.738 | accuracy: 0.245
+step 16000: past 1000 steps avg loss: 2.676 | accuracy: 0.277
+step 17000: past 1000 steps avg loss: 2.661 | accuracy: 0.267
+step 18000: past 1000 steps avg loss: 2.631 | accuracy: 0.267
+step 19000: past 1000 steps avg loss: 2.645 | accuracy: 0.281
+step 20000: past 1000 steps avg loss: 2.607 | accuracy: 0.263
+step 21000: past 1000 steps avg loss: 2.579 | accuracy: 0.266
+step 22000: past 1000 steps avg loss: 2.675 | accuracy: 0.253
+step 23000: past 1000 steps avg loss: 2.642 | accuracy: 0.288
+step 24000: past 1000 steps avg loss: 2.522 | accuracy: 0.288
+step 25000: past 1000 steps avg loss: 2.542 | accuracy: 0.302
+step 26000: past 1000 steps avg loss: 2.565 | accuracy: 0.289
+step 27000: past 1000 steps avg loss: 2.395 | accuracy: 0.310
+step 28000: past 1000 steps avg loss: 2.675 | accuracy: 0.252
+step 29000: past 1000 steps avg loss: 2.493 | accuracy: 0.262
+step 30000: past 1000 steps avg loss: 2.563 | accuracy: 0.260
+step 31000: past 1000 steps avg loss: 2.556 | accuracy: 0.257
+step 32000: past 1000 steps avg loss: 2.524 | accuracy: 0.259
+step 33000: past 1000 steps avg loss: 2.447 | accuracy: 0.259
+step 34000: past 1000 steps avg loss: 2.465 | accuracy: 0.261
+step 35000: past 1000 steps avg loss: 2.460 | accuracy: 0.285
+step 36000: past 1000 steps avg loss: 2.476 | accuracy: 0.286
+step 37000: past 1000 steps avg loss: 2.362 | accuracy: 0.301
+step 38000: past 1000 steps avg loss: 2.476 | accuracy: 0.279
+step 39000: past 1000 steps avg loss: 2.480 | accuracy: 0.269
+step 40000: past 1000 steps avg loss: 2.415 | accuracy: 0.271
+step 41000: past 1000 steps avg loss: 2.504 | accuracy: 0.268
+step 42000: past 1000 steps avg loss: 2.514 | accuracy: 0.260
+step 43000: past 1000 steps avg loss: 2.414 | accuracy: 0.291
+step 44000: past 1000 steps avg loss: 2.505 | accuracy: 0.258
+step 45000: past 1000 steps avg loss: 2.547 | accuracy: 0.265
+step 46000: past 1000 steps avg loss: 2.499 | accuracy: 0.262
+step 47000: past 1000 steps avg loss: 2.545 | accuracy: 0.271
+step 48000: past 1000 steps avg loss: 2.504 | accuracy: 0.278
+step 49000: past 1000 steps avg loss: 2.639 | accuracy: 0.237
+step 50000: past 1000 steps avg loss: 2.540 | accuracy: 0.263
+Epoch completed in: 3900.340242 seconds
+	Conv_forward: 4644.413812 sec, Maxpool_forward: 61.232020 sec, Softmax_forward: 124.716266 sec
+	Conv_backward: 32324.080185 sec, Maxpool_backward: 1627.239530 sec, Softmax_backward: 10423.874405 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.523 | test accuracy: 0.227
+step 52000: past 1000 steps test loss: 2.535 | test accuracy: 0.232
+step 53000: past 1000 steps test loss: 2.560 | test accuracy: 0.218
+step 54000: past 1000 steps test loss: 2.532 | test accuracy: 0.221
+step 55000: past 1000 steps test loss: 2.522 | test accuracy: 0.223
+step 56000: past 1000 steps test loss: 2.516 | test accuracy: 0.227
+step 57000: past 1000 steps test loss: 2.517 | test accuracy: 0.229
+step 58000: past 1000 steps test loss: 2.507 | test accuracy: 0.231
+step 59000: past 1000 steps test loss: 2.519 | test accuracy: 0.228
+step 60000: past 1000 steps test loss: 2.522 | test accuracy: 0.228
+Testing completed in: 60.618611 seconds
+--- Epoch 15 ---
+step 1000: past 1000 steps avg loss: 2.445 | accuracy: 0.263
+step 2000: past 1000 steps avg loss: 2.438 | accuracy: 0.283
+step 3000: past 1000 steps avg loss: 2.571 | accuracy: 0.272
+step 4000: past 1000 steps avg loss: 2.528 | accuracy: 0.240
+step 5000: past 1000 steps avg loss: 2.471 | accuracy: 0.265
+step 6000: past 1000 steps avg loss: 2.390 | accuracy: 0.270
+step 7000: past 1000 steps avg loss: 2.409 | accuracy: 0.280
+step 8000: past 1000 steps avg loss: 2.421 | accuracy: 0.265
+step 9000: past 1000 steps avg loss: 2.411 | accuracy: 0.271
+step 10000: past 1000 steps avg loss: 2.418 | accuracy: 0.267
+step 11000: past 1000 steps avg loss: 2.465 | accuracy: 0.262
+step 12000: past 1000 steps avg loss: 2.377 | accuracy: 0.278
+step 13000: past 1000 steps avg loss: 2.423 | accuracy: 0.274
+step 14000: past 1000 steps avg loss: 2.448 | accuracy: 0.244
+step 15000: past 1000 steps avg loss: 2.462 | accuracy: 0.265
+step 16000: past 1000 steps avg loss: 2.455 | accuracy: 0.264
+step 17000: past 1000 steps avg loss: 2.358 | accuracy: 0.274
+step 18000: past 1000 steps avg loss: 2.426 | accuracy: 0.264
+step 19000: past 1000 steps avg loss: 2.451 | accuracy: 0.272
+step 20000: past 1000 steps avg loss: 2.392 | accuracy: 0.270
+step 21000: past 1000 steps avg loss: 2.390 | accuracy: 0.282
+step 22000: past 1000 steps avg loss: 2.455 | accuracy: 0.268
+step 23000: past 1000 steps avg loss: 2.475 | accuracy: 0.281
+step 24000: past 1000 steps avg loss: 2.394 | accuracy: 0.288
+step 25000: past 1000 steps avg loss: 2.415 | accuracy: 0.277
+step 26000: past 1000 steps avg loss: 2.450 | accuracy: 0.294
+step 27000: past 1000 steps avg loss: 2.316 | accuracy: 0.306
+step 28000: past 1000 steps avg loss: 2.532 | accuracy: 0.248
+step 29000: past 1000 steps avg loss: 2.422 | accuracy: 0.264
+step 30000: past 1000 steps avg loss: 2.485 | accuracy: 0.257
+step 31000: past 1000 steps avg loss: 2.489 | accuracy: 0.261
+step 32000: past 1000 steps avg loss: 2.481 | accuracy: 0.263
+step 33000: past 1000 steps avg loss: 2.453 | accuracy: 0.259
+step 34000: past 1000 steps avg loss: 2.467 | accuracy: 0.259
+step 35000: past 1000 steps avg loss: 2.497 | accuracy: 0.279
+step 36000: past 1000 steps avg loss: 2.516 | accuracy: 0.280
+step 37000: past 1000 steps avg loss: 2.379 | accuracy: 0.289
+step 38000: past 1000 steps avg loss: 2.491 | accuracy: 0.266
+step 39000: past 1000 steps avg loss: 2.510 | accuracy: 0.255
+step 40000: past 1000 steps avg loss: 2.468 | accuracy: 0.247
+step 41000: past 1000 steps avg loss: 2.562 | accuracy: 0.263
+step 42000: past 1000 steps avg loss: 2.565 | accuracy: 0.253
+step 43000: past 1000 steps avg loss: 2.435 | accuracy: 0.283
+step 44000: past 1000 steps avg loss: 2.510 | accuracy: 0.269
+step 45000: past 1000 steps avg loss: 2.537 | accuracy: 0.277
+step 46000: past 1000 steps avg loss: 2.482 | accuracy: 0.268
+step 47000: past 1000 steps avg loss: 2.514 | accuracy: 0.259
+step 48000: past 1000 steps avg loss: 2.468 | accuracy: 0.287
+step 49000: past 1000 steps avg loss: 2.603 | accuracy: 0.237
+step 50000: past 1000 steps avg loss: 2.564 | accuracy: 0.260
+Epoch completed in: 3957.117705 seconds
+	Conv_forward: 4987.348715 sec, Maxpool_forward: 65.813946 sec, Softmax_forward: 134.079884 sec
+	Conv_backward: 34691.004204 sec, Maxpool_backward: 1747.570143 sec, Softmax_backward: 11209.106278 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.434 | test accuracy: 0.235
+step 52000: past 1000 steps test loss: 2.452 | test accuracy: 0.248
+step 53000: past 1000 steps test loss: 2.475 | test accuracy: 0.239
+step 54000: past 1000 steps test loss: 2.449 | test accuracy: 0.244
+step 55000: past 1000 steps test loss: 2.442 | test accuracy: 0.242
+step 56000: past 1000 steps test loss: 2.437 | test accuracy: 0.244
+step 57000: past 1000 steps test loss: 2.440 | test accuracy: 0.243
+step 58000: past 1000 steps test loss: 2.429 | test accuracy: 0.245
+step 59000: past 1000 steps test loss: 2.434 | test accuracy: 0.244
+step 60000: past 1000 steps test loss: 2.435 | test accuracy: 0.244
+Testing completed in: 60.471620 seconds
+--- Epoch 16 ---
+step 1000: past 1000 steps avg loss: 2.459 | accuracy: 0.264
+step 2000: past 1000 steps avg loss: 2.432 | accuracy: 0.280
+step 3000: past 1000 steps avg loss: 2.552 | accuracy: 0.255
+step 4000: past 1000 steps avg loss: 2.531 | accuracy: 0.251
+step 5000: past 1000 steps avg loss: 2.497 | accuracy: 0.262
+step 6000: past 1000 steps avg loss: 2.453 | accuracy: 0.259
+step 7000: past 1000 steps avg loss: 2.493 | accuracy: 0.269
+step 8000: past 1000 steps avg loss: 2.509 | accuracy: 0.256
+step 9000: past 1000 steps avg loss: 2.430 | accuracy: 0.267
+step 10000: past 1000 steps avg loss: 2.421 | accuracy: 0.270
+step 11000: past 1000 steps avg loss: 2.514 | accuracy: 0.253
+step 12000: past 1000 steps avg loss: 2.461 | accuracy: 0.258
+step 13000: past 1000 steps avg loss: 2.494 | accuracy: 0.259
+step 14000: past 1000 steps avg loss: 2.518 | accuracy: 0.241
+step 15000: past 1000 steps avg loss: 2.562 | accuracy: 0.229
+step 16000: past 1000 steps avg loss: 2.542 | accuracy: 0.256
+step 17000: past 1000 steps avg loss: 2.465 | accuracy: 0.268
+step 18000: past 1000 steps avg loss: 2.515 | accuracy: 0.249
+step 19000: past 1000 steps avg loss: 2.508 | accuracy: 0.272
+step 20000: past 1000 steps avg loss: 2.427 | accuracy: 0.263
+step 21000: past 1000 steps avg loss: 2.469 | accuracy: 0.263
+step 22000: past 1000 steps avg loss: 2.532 | accuracy: 0.260
+step 23000: past 1000 steps avg loss: 2.531 | accuracy: 0.248
+step 24000: past 1000 steps avg loss: 2.466 | accuracy: 0.272
+step 25000: past 1000 steps avg loss: 2.443 | accuracy: 0.290
+step 26000: past 1000 steps avg loss: 2.467 | accuracy: 0.285
+step 27000: past 1000 steps avg loss: 2.348 | accuracy: 0.302
+step 28000: past 1000 steps avg loss: 2.559 | accuracy: 0.241
+step 29000: past 1000 steps avg loss: 2.435 | accuracy: 0.254
+step 30000: past 1000 steps avg loss: 2.497 | accuracy: 0.263
+step 31000: past 1000 steps avg loss: 2.508 | accuracy: 0.247
+step 32000: past 1000 steps avg loss: 2.510 | accuracy: 0.254
+step 33000: past 1000 steps avg loss: 2.482 | accuracy: 0.248
+step 34000: past 1000 steps avg loss: 2.490 | accuracy: 0.254
+step 35000: past 1000 steps avg loss: 2.495 | accuracy: 0.272
+step 36000: past 1000 steps avg loss: 2.555 | accuracy: 0.263
+step 37000: past 1000 steps avg loss: 2.433 | accuracy: 0.278
+step 38000: past 1000 steps avg loss: 2.536 | accuracy: 0.258
+step 39000: past 1000 steps avg loss: 2.510 | accuracy: 0.261
+step 40000: past 1000 steps avg loss: 2.455 | accuracy: 0.265
+step 41000: past 1000 steps avg loss: 2.566 | accuracy: 0.255
+step 42000: past 1000 steps avg loss: 2.575 | accuracy: 0.250
+step 43000: past 1000 steps avg loss: 2.438 | accuracy: 0.279
+step 44000: past 1000 steps avg loss: 2.549 | accuracy: 0.261
+step 45000: past 1000 steps avg loss: 2.538 | accuracy: 0.279
+step 46000: past 1000 steps avg loss: 2.507 | accuracy: 0.257
+step 47000: past 1000 steps avg loss: 2.511 | accuracy: 0.268
+step 48000: past 1000 steps avg loss: 2.493 | accuracy: 0.283
+step 49000: past 1000 steps avg loss: 2.635 | accuracy: 0.241
+step 50000: past 1000 steps avg loss: 2.600 | accuracy: 0.246
+Epoch completed in: 3955.425739 seconds
+	Conv_forward: 5330.182118 sec, Maxpool_forward: 70.399965 sec, Softmax_forward: 143.450572 sec
+	Conv_backward: 37056.391423 sec, Maxpool_backward: 1867.816390 sec, Softmax_backward: 11994.127400 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.568 | test accuracy: 0.230
+step 52000: past 1000 steps test loss: 2.579 | test accuracy: 0.225
+step 53000: past 1000 steps test loss: 2.610 | test accuracy: 0.217
+step 54000: past 1000 steps test loss: 2.585 | test accuracy: 0.221
+step 55000: past 1000 steps test loss: 2.574 | test accuracy: 0.222
+step 56000: past 1000 steps test loss: 2.566 | test accuracy: 0.225
+step 57000: past 1000 steps test loss: 2.566 | test accuracy: 0.226
+step 58000: past 1000 steps test loss: 2.555 | test accuracy: 0.229
+step 59000: past 1000 steps test loss: 2.564 | test accuracy: 0.226
+step 60000: past 1000 steps test loss: 2.566 | test accuracy: 0.227
+Testing completed in: 60.436950 seconds
+--- Epoch 17 ---
+step 1000: past 1000 steps avg loss: 2.491 | accuracy: 0.261
+step 2000: past 1000 steps avg loss: 2.474 | accuracy: 0.275
+step 3000: past 1000 steps avg loss: 2.585 | accuracy: 0.255
+step 4000: past 1000 steps avg loss: 2.640 | accuracy: 0.243
+step 5000: past 1000 steps avg loss: 2.614 | accuracy: 0.255
+step 6000: past 1000 steps avg loss: 2.594 | accuracy: 0.257
+step 7000: past 1000 steps avg loss: 2.618 | accuracy: 0.262
+step 8000: past 1000 steps avg loss: 2.642 | accuracy: 0.254
+step 9000: past 1000 steps avg loss: 2.575 | accuracy: 0.267
+step 10000: past 1000 steps avg loss: 2.587 | accuracy: 0.259
+step 11000: past 1000 steps avg loss: 2.686 | accuracy: 0.240
+step 12000: past 1000 steps avg loss: 2.597 | accuracy: 0.262
+step 13000: past 1000 steps avg loss: 2.628 | accuracy: 0.256
+step 14000: past 1000 steps avg loss: 2.704 | accuracy: 0.240
+step 15000: past 1000 steps avg loss: 2.749 | accuracy: 0.239
+step 16000: past 1000 steps avg loss: 2.741 | accuracy: 0.248
+step 17000: past 1000 steps avg loss: 2.692 | accuracy: 0.249
+step 18000: past 1000 steps avg loss: 2.745 | accuracy: 0.251
+step 19000: past 1000 steps avg loss: 2.750 | accuracy: 0.266
+step 20000: past 1000 steps avg loss: 2.713 | accuracy: 0.252
+step 21000: past 1000 steps avg loss: 2.732 | accuracy: 0.240
+step 22000: past 1000 steps avg loss: 2.814 | accuracy: 0.239
+step 23000: past 1000 steps avg loss: 2.797 | accuracy: 0.263
+step 24000: past 1000 steps avg loss: 2.685 | accuracy: 0.271
+step 25000: past 1000 steps avg loss: 2.628 | accuracy: 0.281
+step 26000: past 1000 steps avg loss: 2.641 | accuracy: 0.280
+step 27000: past 1000 steps avg loss: 2.479 | accuracy: 0.290
+step 28000: past 1000 steps avg loss: 2.743 | accuracy: 0.239
+step 29000: past 1000 steps avg loss: 2.567 | accuracy: 0.263
+step 30000: past 1000 steps avg loss: 2.644 | accuracy: 0.265
+step 31000: past 1000 steps avg loss: 2.643 | accuracy: 0.252
+step 32000: past 1000 steps avg loss: 2.658 | accuracy: 0.247
+step 33000: past 1000 steps avg loss: 2.589 | accuracy: 0.231
+step 34000: past 1000 steps avg loss: 2.583 | accuracy: 0.247
+step 35000: past 1000 steps avg loss: 2.639 | accuracy: 0.267
+step 36000: past 1000 steps avg loss: 2.664 | accuracy: 0.262
+step 37000: past 1000 steps avg loss: 2.516 | accuracy: 0.290
+step 38000: past 1000 steps avg loss: 2.612 | accuracy: 0.270
+step 39000: past 1000 steps avg loss: 2.576 | accuracy: 0.260
+step 40000: past 1000 steps avg loss: 2.554 | accuracy: 0.253
+step 41000: past 1000 steps avg loss: 2.647 | accuracy: 0.267
+step 42000: past 1000 steps avg loss: 2.593 | accuracy: 0.236
+step 43000: past 1000 steps avg loss: 2.472 | accuracy: 0.288
+step 44000: past 1000 steps avg loss: 2.575 | accuracy: 0.260
+step 45000: past 1000 steps avg loss: 2.615 | accuracy: 0.280
+step 46000: past 1000 steps avg loss: 2.589 | accuracy: 0.248
+step 47000: past 1000 steps avg loss: 2.582 | accuracy: 0.256
+step 48000: past 1000 steps avg loss: 2.559 | accuracy: 0.285
+step 49000: past 1000 steps avg loss: 2.717 | accuracy: 0.229
+step 50000: past 1000 steps avg loss: 2.671 | accuracy: 0.248
+Epoch completed in: 3954.631623 seconds
+	Conv_forward: 5672.835912 sec, Maxpool_forward: 74.990597 sec, Softmax_forward: 152.855349 sec
+	Conv_backward: 39416.218272 sec, Maxpool_backward: 1988.001427 sec, Softmax_backward: 12784.363562 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.638 | test accuracy: 0.228
+step 52000: past 1000 steps test loss: 2.648 | test accuracy: 0.226
+step 53000: past 1000 steps test loss: 2.677 | test accuracy: 0.221
+step 54000: past 1000 steps test loss: 2.647 | test accuracy: 0.226
+step 55000: past 1000 steps test loss: 2.642 | test accuracy: 0.229
+step 56000: past 1000 steps test loss: 2.629 | test accuracy: 0.230
+step 57000: past 1000 steps test loss: 2.633 | test accuracy: 0.230
+step 58000: past 1000 steps test loss: 2.621 | test accuracy: 0.232
+step 59000: past 1000 steps test loss: 2.629 | test accuracy: 0.230
+step 60000: past 1000 steps test loss: 2.630 | test accuracy: 0.230
+Testing completed in: 59.395134 seconds
+--- Epoch 18 ---
+step 1000: past 1000 steps avg loss: 2.573 | accuracy: 0.251
+step 2000: past 1000 steps avg loss: 2.541 | accuracy: 0.279
+step 3000: past 1000 steps avg loss: 2.645 | accuracy: 0.262
+step 4000: past 1000 steps avg loss: 2.666 | accuracy: 0.243
+step 5000: past 1000 steps avg loss: 2.689 | accuracy: 0.250
+step 6000: past 1000 steps avg loss: 2.634 | accuracy: 0.243
+step 7000: past 1000 steps avg loss: 2.685 | accuracy: 0.255
+step 8000: past 1000 steps avg loss: 2.685 | accuracy: 0.258
+step 9000: past 1000 steps avg loss: 2.596 | accuracy: 0.272
+step 10000: past 1000 steps avg loss: 2.620 | accuracy: 0.263
+step 11000: past 1000 steps avg loss: 2.729 | accuracy: 0.248
+step 12000: past 1000 steps avg loss: 2.616 | accuracy: 0.270
+step 13000: past 1000 steps avg loss: 2.645 | accuracy: 0.267
+step 14000: past 1000 steps avg loss: 2.708 | accuracy: 0.240
+step 15000: past 1000 steps avg loss: 2.726 | accuracy: 0.247
+step 16000: past 1000 steps avg loss: 2.712 | accuracy: 0.246
+step 17000: past 1000 steps avg loss: 2.650 | accuracy: 0.258
+step 18000: past 1000 steps avg loss: 2.711 | accuracy: 0.250
+step 19000: past 1000 steps avg loss: 2.692 | accuracy: 0.264
+step 20000: past 1000 steps avg loss: 2.635 | accuracy: 0.258
+step 21000: past 1000 steps avg loss: 2.632 | accuracy: 0.252
+step 22000: past 1000 steps avg loss: 2.702 | accuracy: 0.243
+step 23000: past 1000 steps avg loss: 2.655 | accuracy: 0.272
+step 24000: past 1000 steps avg loss: 2.554 | accuracy: 0.277
+step 25000: past 1000 steps avg loss: 2.544 | accuracy: 0.279
+step 26000: past 1000 steps avg loss: 2.616 | accuracy: 0.281
+step 27000: past 1000 steps avg loss: 2.453 | accuracy: 0.295
+step 28000: past 1000 steps avg loss: 2.736 | accuracy: 0.250
+step 29000: past 1000 steps avg loss: 2.563 | accuracy: 0.267
+step 30000: past 1000 steps avg loss: 2.633 | accuracy: 0.241
+step 31000: past 1000 steps avg loss: 2.635 | accuracy: 0.262
+step 32000: past 1000 steps avg loss: 2.676 | accuracy: 0.258
+step 33000: past 1000 steps avg loss: 2.585 | accuracy: 0.244
+step 34000: past 1000 steps avg loss: 2.597 | accuracy: 0.245
+step 35000: past 1000 steps avg loss: 2.636 | accuracy: 0.272
+step 36000: past 1000 steps avg loss: 2.615 | accuracy: 0.274
+step 37000: past 1000 steps avg loss: 2.487 | accuracy: 0.291
+step 38000: past 1000 steps avg loss: 2.597 | accuracy: 0.260
+step 39000: past 1000 steps avg loss: 2.552 | accuracy: 0.261
+step 40000: past 1000 steps avg loss: 2.497 | accuracy: 0.256
+step 41000: past 1000 steps avg loss: 2.612 | accuracy: 0.255
+step 42000: past 1000 steps avg loss: 2.610 | accuracy: 0.233
+step 43000: past 1000 steps avg loss: 2.447 | accuracy: 0.296
+step 44000: past 1000 steps avg loss: 2.567 | accuracy: 0.257
+step 45000: past 1000 steps avg loss: 2.578 | accuracy: 0.286
+step 46000: past 1000 steps avg loss: 2.536 | accuracy: 0.250
+step 47000: past 1000 steps avg loss: 2.555 | accuracy: 0.272
+step 48000: past 1000 steps avg loss: 2.541 | accuracy: 0.282
+step 49000: past 1000 steps avg loss: 2.653 | accuracy: 0.249
+step 50000: past 1000 steps avg loss: 2.639 | accuracy: 0.254
+Epoch completed in: 3864.182162 seconds
+	Conv_forward: 6008.651120 sec, Maxpool_forward: 79.405441 sec, Softmax_forward: 161.847205 sec
+	Conv_backward: 41733.608537 sec, Maxpool_backward: 2103.814647 sec, Softmax_backward: 13551.306269 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.575 | test accuracy: 0.222
+step 52000: past 1000 steps test loss: 2.603 | test accuracy: 0.218
+step 53000: past 1000 steps test loss: 2.626 | test accuracy: 0.216
+step 54000: past 1000 steps test loss: 2.596 | test accuracy: 0.219
+step 55000: past 1000 steps test loss: 2.584 | test accuracy: 0.221
+step 56000: past 1000 steps test loss: 2.579 | test accuracy: 0.222
+step 57000: past 1000 steps test loss: 2.580 | test accuracy: 0.223
+step 58000: past 1000 steps test loss: 2.570 | test accuracy: 0.225
+step 59000: past 1000 steps test loss: 2.577 | test accuracy: 0.224
+step 60000: past 1000 steps test loss: 2.579 | test accuracy: 0.224
+Testing completed in: 58.972587 seconds
+--- Epoch 19 ---
+step 1000: past 1000 steps avg loss: 2.522 | accuracy: 0.278
+step 2000: past 1000 steps avg loss: 2.507 | accuracy: 0.279
+step 3000: past 1000 steps avg loss: 2.610 | accuracy: 0.261
+step 4000: past 1000 steps avg loss: 2.624 | accuracy: 0.259
+step 5000: past 1000 steps avg loss: 2.578 | accuracy: 0.260
+step 6000: past 1000 steps avg loss: 2.567 | accuracy: 0.255
+step 7000: past 1000 steps avg loss: 2.602 | accuracy: 0.272
+step 8000: past 1000 steps avg loss: 2.600 | accuracy: 0.267
+step 9000: past 1000 steps avg loss: 2.546 | accuracy: 0.270
+step 10000: past 1000 steps avg loss: 2.531 | accuracy: 0.276
+step 11000: past 1000 steps avg loss: 2.660 | accuracy: 0.247
+step 12000: past 1000 steps avg loss: 2.533 | accuracy: 0.260
+step 13000: past 1000 steps avg loss: 2.575 | accuracy: 0.271
+step 14000: past 1000 steps avg loss: 2.634 | accuracy: 0.260
+step 15000: past 1000 steps avg loss: 2.713 | accuracy: 0.248
+step 16000: past 1000 steps avg loss: 2.675 | accuracy: 0.269
+step 17000: past 1000 steps avg loss: 2.694 | accuracy: 0.259
+step 18000: past 1000 steps avg loss: 2.689 | accuracy: 0.260
+step 19000: past 1000 steps avg loss: 2.715 | accuracy: 0.288
+step 20000: past 1000 steps avg loss: 2.681 | accuracy: 0.262
+step 21000: past 1000 steps avg loss: 2.675 | accuracy: 0.262
+step 22000: past 1000 steps avg loss: 2.729 | accuracy: 0.241
+step 23000: past 1000 steps avg loss: 2.720 | accuracy: 0.269
+step 24000: past 1000 steps avg loss: 2.602 | accuracy: 0.286
+step 25000: past 1000 steps avg loss: 2.616 | accuracy: 0.295
+step 26000: past 1000 steps avg loss: 2.705 | accuracy: 0.275
+step 27000: past 1000 steps avg loss: 2.503 | accuracy: 0.287
+step 28000: past 1000 steps avg loss: 2.803 | accuracy: 0.246
+step 29000: past 1000 steps avg loss: 2.629 | accuracy: 0.259
+step 30000: past 1000 steps avg loss: 2.650 | accuracy: 0.253
+step 31000: past 1000 steps avg loss: 2.666 | accuracy: 0.261
+step 32000: past 1000 steps avg loss: 2.776 | accuracy: 0.256
+step 33000: past 1000 steps avg loss: 2.637 | accuracy: 0.244
+step 34000: past 1000 steps avg loss: 2.648 | accuracy: 0.244
+step 35000: past 1000 steps avg loss: 2.680 | accuracy: 0.277
+step 36000: past 1000 steps avg loss: 2.644 | accuracy: 0.254
+step 37000: past 1000 steps avg loss: 2.498 | accuracy: 0.298
+step 38000: past 1000 steps avg loss: 2.597 | accuracy: 0.265
+step 39000: past 1000 steps avg loss: 2.561 | accuracy: 0.263
+step 40000: past 1000 steps avg loss: 2.526 | accuracy: 0.246
+step 41000: past 1000 steps avg loss: 2.628 | accuracy: 0.247
+step 42000: past 1000 steps avg loss: 2.641 | accuracy: 0.242
+step 43000: past 1000 steps avg loss: 2.490 | accuracy: 0.278
+step 44000: past 1000 steps avg loss: 2.566 | accuracy: 0.257
+step 45000: past 1000 steps avg loss: 2.579 | accuracy: 0.282
+step 46000: past 1000 steps avg loss: 2.540 | accuracy: 0.258
+step 47000: past 1000 steps avg loss: 2.536 | accuracy: 0.261
+step 48000: past 1000 steps avg loss: 2.524 | accuracy: 0.273
+step 49000: past 1000 steps avg loss: 2.619 | accuracy: 0.255
+step 50000: past 1000 steps avg loss: 2.612 | accuracy: 0.257
+Epoch completed in: 3901.354110 seconds
+	Conv_forward: 6344.016281 sec, Maxpool_forward: 83.814588 sec, Softmax_forward: 170.822302 sec
+	Conv_backward: 44087.453673 sec, Maxpool_backward: 2219.628596 sec, Softmax_backward: 14319.022284 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.559 | test accuracy: 0.236
+step 52000: past 1000 steps test loss: 2.578 | test accuracy: 0.240
+step 53000: past 1000 steps test loss: 2.601 | test accuracy: 0.234
+step 54000: past 1000 steps test loss: 2.569 | test accuracy: 0.236
+step 55000: past 1000 steps test loss: 2.560 | test accuracy: 0.237
+step 56000: past 1000 steps test loss: 2.548 | test accuracy: 0.241
+step 57000: past 1000 steps test loss: 2.551 | test accuracy: 0.243
+step 58000: past 1000 steps test loss: 2.540 | test accuracy: 0.245
+step 59000: past 1000 steps test loss: 2.550 | test accuracy: 0.243
+step 60000: past 1000 steps test loss: 2.553 | test accuracy: 0.244
+Testing completed in: 59.018487 seconds
+--- Epoch 20 ---
+step 1000: past 1000 steps avg loss: 2.499 | accuracy: 0.259
+step 2000: past 1000 steps avg loss: 2.469 | accuracy: 0.278
+step 3000: past 1000 steps avg loss: 2.590 | accuracy: 0.266
+step 4000: past 1000 steps avg loss: 2.630 | accuracy: 0.257
+step 5000: past 1000 steps avg loss: 2.613 | accuracy: 0.270
+step 6000: past 1000 steps avg loss: 2.595 | accuracy: 0.253
+step 7000: past 1000 steps avg loss: 2.610 | accuracy: 0.270
+step 8000: past 1000 steps avg loss: 2.615 | accuracy: 0.270
+step 9000: past 1000 steps avg loss: 2.555 | accuracy: 0.281
+step 10000: past 1000 steps avg loss: 2.594 | accuracy: 0.269
+step 11000: past 1000 steps avg loss: 2.727 | accuracy: 0.251
+step 12000: past 1000 steps avg loss: 2.613 | accuracy: 0.280
+step 13000: past 1000 steps avg loss: 2.642 | accuracy: 0.266
+step 14000: past 1000 steps avg loss: 2.698 | accuracy: 0.258
+step 15000: past 1000 steps avg loss: 2.780 | accuracy: 0.246
+step 16000: past 1000 steps avg loss: 2.777 | accuracy: 0.260
+step 17000: past 1000 steps avg loss: 2.795 | accuracy: 0.259
+step 18000: past 1000 steps avg loss: 2.756 | accuracy: 0.269
+step 19000: past 1000 steps avg loss: 2.719 | accuracy: 0.278
+step 20000: past 1000 steps avg loss: 2.654 | accuracy: 0.258
+step 21000: past 1000 steps avg loss: 2.604 | accuracy: 0.273
+step 22000: past 1000 steps avg loss: 2.658 | accuracy: 0.254
+step 23000: past 1000 steps avg loss: 2.569 | accuracy: 0.277
+step 24000: past 1000 steps avg loss: 2.465 | accuracy: 0.291
+step 25000: past 1000 steps avg loss: 2.471 | accuracy: 0.309
+step 26000: past 1000 steps avg loss: 2.532 | accuracy: 0.283
+step 27000: past 1000 steps avg loss: 2.330 | accuracy: 0.310
+step 28000: past 1000 steps avg loss: 2.578 | accuracy: 0.257
+step 29000: past 1000 steps avg loss: 2.401 | accuracy: 0.264
+step 30000: past 1000 steps avg loss: 2.438 | accuracy: 0.267
+step 31000: past 1000 steps avg loss: 2.451 | accuracy: 0.268
+step 32000: past 1000 steps avg loss: 2.492 | accuracy: 0.270
+step 33000: past 1000 steps avg loss: 2.466 | accuracy: 0.261
+step 34000: past 1000 steps avg loss: 2.473 | accuracy: 0.267
+step 35000: past 1000 steps avg loss: 2.516 | accuracy: 0.294
+step 36000: past 1000 steps avg loss: 2.535 | accuracy: 0.279
+step 37000: past 1000 steps avg loss: 2.421 | accuracy: 0.300
+step 38000: past 1000 steps avg loss: 2.547 | accuracy: 0.276
+step 39000: past 1000 steps avg loss: 2.502 | accuracy: 0.272
+step 40000: past 1000 steps avg loss: 2.473 | accuracy: 0.262
+step 41000: past 1000 steps avg loss: 2.598 | accuracy: 0.262
+step 42000: past 1000 steps avg loss: 2.602 | accuracy: 0.243
+step 43000: past 1000 steps avg loss: 2.428 | accuracy: 0.288
+step 44000: past 1000 steps avg loss: 2.515 | accuracy: 0.263
+step 45000: past 1000 steps avg loss: 2.515 | accuracy: 0.267
+step 46000: past 1000 steps avg loss: 2.501 | accuracy: 0.258
+step 47000: past 1000 steps avg loss: 2.539 | accuracy: 0.272
+step 48000: past 1000 steps avg loss: 2.528 | accuracy: 0.279
+step 49000: past 1000 steps avg loss: 2.641 | accuracy: 0.247
+step 50000: past 1000 steps avg loss: 2.594 | accuracy: 0.252
+Epoch completed in: 3903.302058 seconds
+	Conv_forward: 6679.804774 sec, Maxpool_forward: 88.227072 sec, Softmax_forward: 179.811517 sec
+	Conv_backward: 46442.004767 sec, Maxpool_backward: 2335.556139 sec, Softmax_backward: 15086.984541 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.579 | test accuracy: 0.217
+step 52000: past 1000 steps test loss: 2.597 | test accuracy: 0.219
+step 53000: past 1000 steps test loss: 2.609 | test accuracy: 0.214
+step 54000: past 1000 steps test loss: 2.579 | test accuracy: 0.215
+step 55000: past 1000 steps test loss: 2.566 | test accuracy: 0.216
+step 56000: past 1000 steps test loss: 2.561 | test accuracy: 0.219
+step 57000: past 1000 steps test loss: 2.560 | test accuracy: 0.220
+step 58000: past 1000 steps test loss: 2.548 | test accuracy: 0.223
+step 59000: past 1000 steps test loss: 2.558 | test accuracy: 0.222
+step 60000: past 1000 steps test loss: 2.564 | test accuracy: 0.222
+Testing completed in: 59.173764 seconds
+--- Epoch 21 ---
+step 1000: past 1000 steps avg loss: 2.496 | accuracy: 0.277
+step 2000: past 1000 steps avg loss: 2.563 | accuracy: 0.267
+step 3000: past 1000 steps avg loss: 2.629 | accuracy: 0.264
+step 4000: past 1000 steps avg loss: 2.669 | accuracy: 0.233
+step 5000: past 1000 steps avg loss: 2.681 | accuracy: 0.250
+step 6000: past 1000 steps avg loss: 2.643 | accuracy: 0.258
+step 7000: past 1000 steps avg loss: 2.743 | accuracy: 0.249
+step 8000: past 1000 steps avg loss: 2.816 | accuracy: 0.251
+step 9000: past 1000 steps avg loss: 2.765 | accuracy: 0.255
+step 10000: past 1000 steps avg loss: 2.731 | accuracy: 0.263
+step 11000: past 1000 steps avg loss: 2.809 | accuracy: 0.230
+step 12000: past 1000 steps avg loss: 2.817 | accuracy: 0.244
+step 13000: past 1000 steps avg loss: 2.848 | accuracy: 0.250
+step 14000: past 1000 steps avg loss: 2.865 | accuracy: 0.249
+step 15000: past 1000 steps avg loss: 2.949 | accuracy: 0.241
+step 16000: past 1000 steps avg loss: 2.886 | accuracy: 0.245
+step 17000: past 1000 steps avg loss: 2.856 | accuracy: 0.235
+step 18000: past 1000 steps avg loss: 2.872 | accuracy: 0.252
+step 19000: past 1000 steps avg loss: 2.836 | accuracy: 0.268
+step 20000: past 1000 steps avg loss: 2.838 | accuracy: 0.264
+step 21000: past 1000 steps avg loss: 2.896 | accuracy: 0.248
+step 22000: past 1000 steps avg loss: 2.970 | accuracy: 0.249
+step 23000: past 1000 steps avg loss: 2.962 | accuracy: 0.272
+step 24000: past 1000 steps avg loss: 2.786 | accuracy: 0.278
+step 25000: past 1000 steps avg loss: 2.827 | accuracy: 0.294
+step 26000: past 1000 steps avg loss: 2.928 | accuracy: 0.268
+step 27000: past 1000 steps avg loss: 2.732 | accuracy: 0.296
+step 28000: past 1000 steps avg loss: 3.065 | accuracy: 0.223
+step 29000: past 1000 steps avg loss: 2.853 | accuracy: 0.251
+step 30000: past 1000 steps avg loss: 2.938 | accuracy: 0.248
+step 31000: past 1000 steps avg loss: 2.948 | accuracy: 0.236
+step 32000: past 1000 steps avg loss: 2.959 | accuracy: 0.237
+step 33000: past 1000 steps avg loss: 2.879 | accuracy: 0.237
+step 34000: past 1000 steps avg loss: 2.829 | accuracy: 0.252
+step 35000: past 1000 steps avg loss: 2.873 | accuracy: 0.261
+step 36000: past 1000 steps avg loss: 2.896 | accuracy: 0.256
+step 37000: past 1000 steps avg loss: 2.687 | accuracy: 0.272
+step 38000: past 1000 steps avg loss: 2.804 | accuracy: 0.261
+step 39000: past 1000 steps avg loss: 2.697 | accuracy: 0.255
+step 40000: past 1000 steps avg loss: 2.692 | accuracy: 0.255
+step 41000: past 1000 steps avg loss: 2.811 | accuracy: 0.257
+step 42000: past 1000 steps avg loss: 2.828 | accuracy: 0.224
+step 43000: past 1000 steps avg loss: 2.646 | accuracy: 0.286
+step 44000: past 1000 steps avg loss: 2.752 | accuracy: 0.255
+step 45000: past 1000 steps avg loss: 2.748 | accuracy: 0.265
+step 46000: past 1000 steps avg loss: 2.688 | accuracy: 0.254
+step 47000: past 1000 steps avg loss: 2.681 | accuracy: 0.270
+step 48000: past 1000 steps avg loss: 2.650 | accuracy: 0.284
+step 49000: past 1000 steps avg loss: 2.817 | accuracy: 0.237
+step 50000: past 1000 steps avg loss: 2.784 | accuracy: 0.250
+Epoch completed in: 3909.684864 seconds
+	Conv_forward: 7015.668346 sec, Maxpool_forward: 92.645616 sec, Softmax_forward: 188.797806 sec
+	Conv_backward: 48797.942776 sec, Maxpool_backward: 2451.478721 sec, Softmax_backward: 15860.146846 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.756 | test accuracy: 0.225
+step 52000: past 1000 steps test loss: 2.764 | test accuracy: 0.224
+step 53000: past 1000 steps test loss: 2.790 | test accuracy: 0.215
+step 54000: past 1000 steps test loss: 2.757 | test accuracy: 0.219
+step 55000: past 1000 steps test loss: 2.740 | test accuracy: 0.221
+step 56000: past 1000 steps test loss: 2.731 | test accuracy: 0.222
+step 57000: past 1000 steps test loss: 2.729 | test accuracy: 0.224
+step 58000: past 1000 steps test loss: 2.718 | test accuracy: 0.227
+step 59000: past 1000 steps test loss: 2.727 | test accuracy: 0.225
+step 60000: past 1000 steps test loss: 2.731 | test accuracy: 0.225
+Testing completed in: 58.945278 seconds
+--- Epoch 22 ---
+step 1000: past 1000 steps avg loss: 2.645 | accuracy: 0.253
+step 2000: past 1000 steps avg loss: 2.680 | accuracy: 0.283
+step 3000: past 1000 steps avg loss: 2.761 | accuracy: 0.251
+step 4000: past 1000 steps avg loss: 2.792 | accuracy: 0.227
+step 5000: past 1000 steps avg loss: 2.805 | accuracy: 0.253
+step 6000: past 1000 steps avg loss: 2.783 | accuracy: 0.267
+step 7000: past 1000 steps avg loss: 2.866 | accuracy: 0.255
+step 8000: past 1000 steps avg loss: 2.864 | accuracy: 0.263
+step 9000: past 1000 steps avg loss: 2.799 | accuracy: 0.272
+step 10000: past 1000 steps avg loss: 2.789 | accuracy: 0.267
+step 11000: past 1000 steps avg loss: 2.934 | accuracy: 0.236
+step 12000: past 1000 steps avg loss: 2.873 | accuracy: 0.259
+step 13000: past 1000 steps avg loss: 2.901 | accuracy: 0.249
+step 14000: past 1000 steps avg loss: 2.911 | accuracy: 0.250
+step 15000: past 1000 steps avg loss: 2.981 | accuracy: 0.248
+step 16000: past 1000 steps avg loss: 2.931 | accuracy: 0.251
+step 17000: past 1000 steps avg loss: 2.852 | accuracy: 0.257
+step 18000: past 1000 steps avg loss: 2.892 | accuracy: 0.263
+step 19000: past 1000 steps avg loss: 2.905 | accuracy: 0.280
+step 20000: past 1000 steps avg loss: 2.858 | accuracy: 0.241
+step 21000: past 1000 steps avg loss: 2.818 | accuracy: 0.263
+step 22000: past 1000 steps avg loss: 2.902 | accuracy: 0.240
+step 23000: past 1000 steps avg loss: 2.853 | accuracy: 0.285
+step 24000: past 1000 steps avg loss: 2.727 | accuracy: 0.284
+step 25000: past 1000 steps avg loss: 2.708 | accuracy: 0.286
+step 26000: past 1000 steps avg loss: 2.753 | accuracy: 0.282
+step 27000: past 1000 steps avg loss: 2.567 | accuracy: 0.290
+step 28000: past 1000 steps avg loss: 2.844 | accuracy: 0.232
+step 29000: past 1000 steps avg loss: 2.655 | accuracy: 0.268
+step 30000: past 1000 steps avg loss: 2.758 | accuracy: 0.246
+step 31000: past 1000 steps avg loss: 2.709 | accuracy: 0.242
+step 32000: past 1000 steps avg loss: 2.722 | accuracy: 0.239
+step 33000: past 1000 steps avg loss: 2.657 | accuracy: 0.233
+step 34000: past 1000 steps avg loss: 2.646 | accuracy: 0.260
+step 35000: past 1000 steps avg loss: 2.718 | accuracy: 0.271
+step 36000: past 1000 steps avg loss: 2.736 | accuracy: 0.269
+step 37000: past 1000 steps avg loss: 2.565 | accuracy: 0.279
+step 38000: past 1000 steps avg loss: 2.661 | accuracy: 0.273
+step 39000: past 1000 steps avg loss: 2.638 | accuracy: 0.267
+step 40000: past 1000 steps avg loss: 2.603 | accuracy: 0.257
+step 41000: past 1000 steps avg loss: 2.741 | accuracy: 0.250
+step 42000: past 1000 steps avg loss: 2.748 | accuracy: 0.239
+step 43000: past 1000 steps avg loss: 2.599 | accuracy: 0.286
+step 44000: past 1000 steps avg loss: 2.735 | accuracy: 0.253
+step 45000: past 1000 steps avg loss: 2.702 | accuracy: 0.277
+step 46000: past 1000 steps avg loss: 2.725 | accuracy: 0.251
+step 47000: past 1000 steps avg loss: 2.685 | accuracy: 0.263
+step 48000: past 1000 steps avg loss: 2.696 | accuracy: 0.265
+step 49000: past 1000 steps avg loss: 2.818 | accuracy: 0.237
+step 50000: past 1000 steps avg loss: 2.788 | accuracy: 0.242
+Epoch completed in: 3906.615779 seconds
+	Conv_forward: 7351.013780 sec, Maxpool_forward: 97.056626 sec, Softmax_forward: 197.772244 sec
+	Conv_backward: 51152.271092 sec, Maxpool_backward: 2567.293429 sec, Softmax_backward: 16632.651120 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.692 | test accuracy: 0.217
+step 52000: past 1000 steps test loss: 2.710 | test accuracy: 0.220
+step 53000: past 1000 steps test loss: 2.737 | test accuracy: 0.208
+step 54000: past 1000 steps test loss: 2.706 | test accuracy: 0.209
+step 55000: past 1000 steps test loss: 2.689 | test accuracy: 0.214
+step 56000: past 1000 steps test loss: 2.677 | test accuracy: 0.218
+step 57000: past 1000 steps test loss: 2.679 | test accuracy: 0.219
+step 58000: past 1000 steps test loss: 2.666 | test accuracy: 0.223
+step 59000: past 1000 steps test loss: 2.673 | test accuracy: 0.220
+step 60000: past 1000 steps test loss: 2.678 | test accuracy: 0.220
+Testing completed in: 59.167891 seconds
+--- Epoch 23 ---
+step 1000: past 1000 steps avg loss: 2.653 | accuracy: 0.256
+step 2000: past 1000 steps avg loss: 2.672 | accuracy: 0.272
+step 3000: past 1000 steps avg loss: 2.769 | accuracy: 0.247
+step 4000: past 1000 steps avg loss: 2.793 | accuracy: 0.235
+step 5000: past 1000 steps avg loss: 2.731 | accuracy: 0.252
+step 6000: past 1000 steps avg loss: 2.698 | accuracy: 0.260
+step 7000: past 1000 steps avg loss: 2.796 | accuracy: 0.253
+step 8000: past 1000 steps avg loss: 2.818 | accuracy: 0.261
+step 9000: past 1000 steps avg loss: 2.801 | accuracy: 0.256
+step 10000: past 1000 steps avg loss: 2.794 | accuracy: 0.249
+step 11000: past 1000 steps avg loss: 2.942 | accuracy: 0.236
+step 12000: past 1000 steps avg loss: 2.815 | accuracy: 0.253
+step 13000: past 1000 steps avg loss: 2.862 | accuracy: 0.260
+step 14000: past 1000 steps avg loss: 2.959 | accuracy: 0.243
+step 15000: past 1000 steps avg loss: 3.047 | accuracy: 0.244
+step 16000: past 1000 steps avg loss: 2.982 | accuracy: 0.244
+step 17000: past 1000 steps avg loss: 2.926 | accuracy: 0.250
+step 18000: past 1000 steps avg loss: 2.939 | accuracy: 0.262
+step 19000: past 1000 steps avg loss: 3.002 | accuracy: 0.260
+step 20000: past 1000 steps avg loss: 3.012 | accuracy: 0.253
+step 21000: past 1000 steps avg loss: 2.933 | accuracy: 0.255
+step 22000: past 1000 steps avg loss: 3.054 | accuracy: 0.234
+step 23000: past 1000 steps avg loss: 2.901 | accuracy: 0.271
+step 24000: past 1000 steps avg loss: 2.779 | accuracy: 0.274
+step 25000: past 1000 steps avg loss: 2.767 | accuracy: 0.292
+step 26000: past 1000 steps avg loss: 2.822 | accuracy: 0.276
+step 27000: past 1000 steps avg loss: 2.629 | accuracy: 0.290
+step 28000: past 1000 steps avg loss: 2.890 | accuracy: 0.246
+step 29000: past 1000 steps avg loss: 2.711 | accuracy: 0.270
+step 30000: past 1000 steps avg loss: 2.790 | accuracy: 0.244
+step 31000: past 1000 steps avg loss: 2.777 | accuracy: 0.249
+step 32000: past 1000 steps avg loss: 2.800 | accuracy: 0.249
+step 33000: past 1000 steps avg loss: 2.737 | accuracy: 0.242
+step 34000: past 1000 steps avg loss: 2.736 | accuracy: 0.247
+step 35000: past 1000 steps avg loss: 2.756 | accuracy: 0.268
+step 36000: past 1000 steps avg loss: 2.779 | accuracy: 0.265
+step 37000: past 1000 steps avg loss: 2.596 | accuracy: 0.284
+step 38000: past 1000 steps avg loss: 2.675 | accuracy: 0.271
+step 39000: past 1000 steps avg loss: 2.609 | accuracy: 0.272
+step 40000: past 1000 steps avg loss: 2.571 | accuracy: 0.253
+step 41000: past 1000 steps avg loss: 2.670 | accuracy: 0.251
+step 42000: past 1000 steps avg loss: 2.672 | accuracy: 0.249
+step 43000: past 1000 steps avg loss: 2.508 | accuracy: 0.286
+step 44000: past 1000 steps avg loss: 2.587 | accuracy: 0.268
+step 45000: past 1000 steps avg loss: 2.614 | accuracy: 0.275
+step 46000: past 1000 steps avg loss: 2.621 | accuracy: 0.265
+step 47000: past 1000 steps avg loss: 2.586 | accuracy: 0.271
+step 48000: past 1000 steps avg loss: 2.582 | accuracy: 0.279
+step 49000: past 1000 steps avg loss: 2.696 | accuracy: 0.245
+step 50000: past 1000 steps avg loss: 2.674 | accuracy: 0.254
+Epoch completed in: 3913.434973 seconds
+	Conv_forward: 7687.135659 sec, Maxpool_forward: 101.479133 sec, Softmax_forward: 206.774693 sec
+	Conv_backward: 53510.050156 sec, Maxpool_backward: 2683.327044 sec, Softmax_backward: 17406.880397 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.684 | test accuracy: 0.215
+step 52000: past 1000 steps test loss: 2.698 | test accuracy: 0.225
+step 53000: past 1000 steps test loss: 2.726 | test accuracy: 0.215
+step 54000: past 1000 steps test loss: 2.696 | test accuracy: 0.216
+step 55000: past 1000 steps test loss: 2.676 | test accuracy: 0.219
+step 56000: past 1000 steps test loss: 2.669 | test accuracy: 0.222
+step 57000: past 1000 steps test loss: 2.671 | test accuracy: 0.223
+step 58000: past 1000 steps test loss: 2.658 | test accuracy: 0.226
+step 59000: past 1000 steps test loss: 2.667 | test accuracy: 0.225
+step 60000: past 1000 steps test loss: 2.672 | test accuracy: 0.227
+Testing completed in: 58.944548 seconds
+--- Epoch 24 ---
+step 1000: past 1000 steps avg loss: 2.534 | accuracy: 0.268
+step 2000: past 1000 steps avg loss: 2.505 | accuracy: 0.286
+step 3000: past 1000 steps avg loss: 2.629 | accuracy: 0.259
+step 4000: past 1000 steps avg loss: 2.634 | accuracy: 0.276
+step 5000: past 1000 steps avg loss: 2.661 | accuracy: 0.256
+step 6000: past 1000 steps avg loss: 2.593 | accuracy: 0.274
+step 7000: past 1000 steps avg loss: 2.634 | accuracy: 0.266
+step 8000: past 1000 steps avg loss: 2.637 | accuracy: 0.273
+step 9000: past 1000 steps avg loss: 2.612 | accuracy: 0.263
+step 10000: past 1000 steps avg loss: 2.579 | accuracy: 0.265
+step 11000: past 1000 steps avg loss: 2.638 | accuracy: 0.256
+step 12000: past 1000 steps avg loss: 2.542 | accuracy: 0.285
+step 13000: past 1000 steps avg loss: 2.594 | accuracy: 0.272
+step 14000: past 1000 steps avg loss: 2.563 | accuracy: 0.272
+step 15000: past 1000 steps avg loss: 2.626 | accuracy: 0.271
+step 16000: past 1000 steps avg loss: 2.607 | accuracy: 0.270
+step 17000: past 1000 steps avg loss: 2.577 | accuracy: 0.255
+step 18000: past 1000 steps avg loss: 2.640 | accuracy: 0.280
+step 19000: past 1000 steps avg loss: 2.648 | accuracy: 0.294
+step 20000: past 1000 steps avg loss: 2.597 | accuracy: 0.272
+step 21000: past 1000 steps avg loss: 2.577 | accuracy: 0.270
+step 22000: past 1000 steps avg loss: 2.677 | accuracy: 0.272
+step 23000: past 1000 steps avg loss: 2.626 | accuracy: 0.280
+step 24000: past 1000 steps avg loss: 2.496 | accuracy: 0.307
+step 25000: past 1000 steps avg loss: 2.570 | accuracy: 0.313
+step 26000: past 1000 steps avg loss: 2.632 | accuracy: 0.309
+step 27000: past 1000 steps avg loss: 2.439 | accuracy: 0.314
+step 28000: past 1000 steps avg loss: 2.741 | accuracy: 0.263
+step 29000: past 1000 steps avg loss: 2.611 | accuracy: 0.280
+step 30000: past 1000 steps avg loss: 2.726 | accuracy: 0.263
+step 31000: past 1000 steps avg loss: 2.653 | accuracy: 0.256
+step 32000: past 1000 steps avg loss: 2.662 | accuracy: 0.262
+step 33000: past 1000 steps avg loss: 2.621 | accuracy: 0.262
+step 34000: past 1000 steps avg loss: 2.682 | accuracy: 0.258
+step 35000: past 1000 steps avg loss: 2.788 | accuracy: 0.298
+step 36000: past 1000 steps avg loss: 2.728 | accuracy: 0.298
+step 37000: past 1000 steps avg loss: 2.557 | accuracy: 0.286
+step 38000: past 1000 steps avg loss: 2.640 | accuracy: 0.297
+step 39000: past 1000 steps avg loss: 2.570 | accuracy: 0.269
+step 40000: past 1000 steps avg loss: 2.546 | accuracy: 0.275
+step 41000: past 1000 steps avg loss: 2.683 | accuracy: 0.292
+step 42000: past 1000 steps avg loss: 2.692 | accuracy: 0.259
+step 43000: past 1000 steps avg loss: 2.545 | accuracy: 0.283
+step 44000: past 1000 steps avg loss: 2.557 | accuracy: 0.275
+step 45000: past 1000 steps avg loss: 2.585 | accuracy: 0.280
+step 46000: past 1000 steps avg loss: 2.575 | accuracy: 0.277
+step 47000: past 1000 steps avg loss: 2.566 | accuracy: 0.288
+step 48000: past 1000 steps avg loss: 2.609 | accuracy: 0.293
+step 49000: past 1000 steps avg loss: 2.707 | accuracy: 0.262
+step 50000: past 1000 steps avg loss: 2.670 | accuracy: 0.273
+Epoch completed in: 3903.320902 seconds
+	Conv_forward: 8022.389902 sec, Maxpool_forward: 105.883278 sec, Softmax_forward: 215.751637 sec
+	Conv_backward: 55862.027678 sec, Maxpool_backward: 2799.096605 sec, Softmax_backward: 18178.630588 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.509 | test accuracy: 0.265
+step 52000: past 1000 steps test loss: 2.519 | test accuracy: 0.272
+step 53000: past 1000 steps test loss: 2.532 | test accuracy: 0.256
+step 54000: past 1000 steps test loss: 2.505 | test accuracy: 0.259
+step 55000: past 1000 steps test loss: 2.493 | test accuracy: 0.259
+step 56000: past 1000 steps test loss: 2.483 | test accuracy: 0.262
+step 57000: past 1000 steps test loss: 2.482 | test accuracy: 0.263
+step 58000: past 1000 steps test loss: 2.467 | test accuracy: 0.267
+step 59000: past 1000 steps test loss: 2.481 | test accuracy: 0.267
+step 60000: past 1000 steps test loss: 2.483 | test accuracy: 0.266
+Testing completed in: 58.973666 seconds
+--- Epoch 25 ---
+step 1000: past 1000 steps avg loss: 2.542 | accuracy: 0.275
+step 2000: past 1000 steps avg loss: 2.500 | accuracy: 0.312
+step 3000: past 1000 steps avg loss: 2.637 | accuracy: 0.268
+step 4000: past 1000 steps avg loss: 2.647 | accuracy: 0.261
+step 5000: past 1000 steps avg loss: 2.603 | accuracy: 0.270
+step 6000: past 1000 steps avg loss: 2.600 | accuracy: 0.278
+step 7000: past 1000 steps avg loss: 2.622 | accuracy: 0.278
+step 8000: past 1000 steps avg loss: 2.610 | accuracy: 0.293
+step 9000: past 1000 steps avg loss: 2.606 | accuracy: 0.285
+step 10000: past 1000 steps avg loss: 2.570 | accuracy: 0.288
+step 11000: past 1000 steps avg loss: 2.651 | accuracy: 0.263
+step 12000: past 1000 steps avg loss: 2.560 | accuracy: 0.286
+step 13000: past 1000 steps avg loss: 2.575 | accuracy: 0.292
+step 14000: past 1000 steps avg loss: 2.604 | accuracy: 0.274
+step 15000: past 1000 steps avg loss: 2.710 | accuracy: 0.260
+step 16000: past 1000 steps avg loss: 2.695 | accuracy: 0.266
+step 17000: past 1000 steps avg loss: 2.570 | accuracy: 0.289
+step 18000: past 1000 steps avg loss: 2.693 | accuracy: 0.279
+step 19000: past 1000 steps avg loss: 2.651 | accuracy: 0.285
+step 20000: past 1000 steps avg loss: 2.582 | accuracy: 0.287
+step 21000: past 1000 steps avg loss: 2.582 | accuracy: 0.281
+step 22000: past 1000 steps avg loss: 2.665 | accuracy: 0.281
+step 23000: past 1000 steps avg loss: 2.673 | accuracy: 0.285
+step 24000: past 1000 steps avg loss: 2.514 | accuracy: 0.315
+step 25000: past 1000 steps avg loss: 2.613 | accuracy: 0.307
+step 26000: past 1000 steps avg loss: 2.651 | accuracy: 0.306
+step 27000: past 1000 steps avg loss: 2.475 | accuracy: 0.330
+step 28000: past 1000 steps avg loss: 2.759 | accuracy: 0.273
+step 29000: past 1000 steps avg loss: 2.653 | accuracy: 0.269
+step 30000: past 1000 steps avg loss: 2.756 | accuracy: 0.274
+step 31000: past 1000 steps avg loss: 2.721 | accuracy: 0.265
+step 32000: past 1000 steps avg loss: 2.783 | accuracy: 0.267
+step 33000: past 1000 steps avg loss: 2.710 | accuracy: 0.261
+step 34000: past 1000 steps avg loss: 2.822 | accuracy: 0.258
+step 35000: past 1000 steps avg loss: 2.869 | accuracy: 0.297
+step 36000: past 1000 steps avg loss: 2.850 | accuracy: 0.267
+step 37000: past 1000 steps avg loss: 2.641 | accuracy: 0.296
+step 38000: past 1000 steps avg loss: 2.697 | accuracy: 0.293
+step 39000: past 1000 steps avg loss: 2.613 | accuracy: 0.285
+step 40000: past 1000 steps avg loss: 2.611 | accuracy: 0.264
+step 41000: past 1000 steps avg loss: 2.717 | accuracy: 0.283
+step 42000: past 1000 steps avg loss: 2.727 | accuracy: 0.275
+step 43000: past 1000 steps avg loss: 2.551 | accuracy: 0.290
+step 44000: past 1000 steps avg loss: 2.604 | accuracy: 0.283
+step 45000: past 1000 steps avg loss: 2.595 | accuracy: 0.285
+step 46000: past 1000 steps avg loss: 2.537 | accuracy: 0.277
+step 47000: past 1000 steps avg loss: 2.556 | accuracy: 0.293
+step 48000: past 1000 steps avg loss: 2.547 | accuracy: 0.299
+step 49000: past 1000 steps avg loss: 2.596 | accuracy: 0.264
+step 50000: past 1000 steps avg loss: 2.582 | accuracy: 0.281
+Epoch completed in: 3906.997726 seconds
+	Conv_forward: 8357.626855 sec, Maxpool_forward: 110.287893 sec, Softmax_forward: 224.719226 sec
+	Conv_backward: 58215.282370 sec, Maxpool_backward: 2914.854045 sec, Softmax_backward: 18952.842219 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.516 | test accuracy: 0.267
+step 52000: past 1000 steps test loss: 2.520 | test accuracy: 0.266
+step 53000: past 1000 steps test loss: 2.536 | test accuracy: 0.259
+step 54000: past 1000 steps test loss: 2.515 | test accuracy: 0.256
+step 55000: past 1000 steps test loss: 2.499 | test accuracy: 0.259
+step 56000: past 1000 steps test loss: 2.493 | test accuracy: 0.260
+step 57000: past 1000 steps test loss: 2.492 | test accuracy: 0.260
+step 58000: past 1000 steps test loss: 2.478 | test accuracy: 0.263
+step 59000: past 1000 steps test loss: 2.492 | test accuracy: 0.261
+step 60000: past 1000 steps test loss: 2.496 | test accuracy: 0.261
+Testing completed in: 58.911356 seconds
+--- Epoch 26 ---
+step 1000: past 1000 steps avg loss: 2.464 | accuracy: 0.273
+step 2000: past 1000 steps avg loss: 2.386 | accuracy: 0.311
+step 3000: past 1000 steps avg loss: 2.579 | accuracy: 0.270
+step 4000: past 1000 steps avg loss: 2.574 | accuracy: 0.248
+step 5000: past 1000 steps avg loss: 2.584 | accuracy: 0.272
+step 6000: past 1000 steps avg loss: 2.578 | accuracy: 0.263
+step 7000: past 1000 steps avg loss: 2.633 | accuracy: 0.273
+step 8000: past 1000 steps avg loss: 2.624 | accuracy: 0.272
+step 9000: past 1000 steps avg loss: 2.596 | accuracy: 0.267
+step 10000: past 1000 steps avg loss: 2.544 | accuracy: 0.283
+step 11000: past 1000 steps avg loss: 2.572 | accuracy: 0.262
+step 12000: past 1000 steps avg loss: 2.507 | accuracy: 0.285
+step 13000: past 1000 steps avg loss: 2.552 | accuracy: 0.281
+step 14000: past 1000 steps avg loss: 2.521 | accuracy: 0.264
+step 15000: past 1000 steps avg loss: 2.608 | accuracy: 0.267
+step 16000: past 1000 steps avg loss: 2.543 | accuracy: 0.287
+step 17000: past 1000 steps avg loss: 2.452 | accuracy: 0.292
+step 18000: past 1000 steps avg loss: 2.535 | accuracy: 0.294
+step 19000: past 1000 steps avg loss: 2.521 | accuracy: 0.279
+step 20000: past 1000 steps avg loss: 2.469 | accuracy: 0.280
+step 21000: past 1000 steps avg loss: 2.484 | accuracy: 0.297
+step 22000: past 1000 steps avg loss: 2.487 | accuracy: 0.289
+step 23000: past 1000 steps avg loss: 2.515 | accuracy: 0.292
+step 24000: past 1000 steps avg loss: 2.377 | accuracy: 0.325
+step 25000: past 1000 steps avg loss: 2.412 | accuracy: 0.313
+step 26000: past 1000 steps avg loss: 2.458 | accuracy: 0.306
+step 27000: past 1000 steps avg loss: 2.299 | accuracy: 0.344
+step 28000: past 1000 steps avg loss: 2.549 | accuracy: 0.260
+step 29000: past 1000 steps avg loss: 2.424 | accuracy: 0.291
+step 30000: past 1000 steps avg loss: 2.541 | accuracy: 0.285
+step 31000: past 1000 steps avg loss: 2.478 | accuracy: 0.272
+step 32000: past 1000 steps avg loss: 2.543 | accuracy: 0.276
+step 33000: past 1000 steps avg loss: 2.504 | accuracy: 0.270
+step 34000: past 1000 steps avg loss: 2.579 | accuracy: 0.269
+step 35000: past 1000 steps avg loss: 2.567 | accuracy: 0.299
+step 36000: past 1000 steps avg loss: 2.573 | accuracy: 0.282
+step 37000: past 1000 steps avg loss: 2.455 | accuracy: 0.310
+step 38000: past 1000 steps avg loss: 2.518 | accuracy: 0.293
+step 39000: past 1000 steps avg loss: 2.528 | accuracy: 0.282
+step 40000: past 1000 steps avg loss: 2.500 | accuracy: 0.263
+step 41000: past 1000 steps avg loss: 2.621 | accuracy: 0.269
+step 42000: past 1000 steps avg loss: 2.599 | accuracy: 0.263
+step 43000: past 1000 steps avg loss: 2.440 | accuracy: 0.295
+step 44000: past 1000 steps avg loss: 2.522 | accuracy: 0.283
+step 45000: past 1000 steps avg loss: 2.488 | accuracy: 0.282
+step 46000: past 1000 steps avg loss: 2.421 | accuracy: 0.273
+step 47000: past 1000 steps avg loss: 2.497 | accuracy: 0.283
+step 48000: past 1000 steps avg loss: 2.485 | accuracy: 0.283
+step 49000: past 1000 steps avg loss: 2.593 | accuracy: 0.239
+step 50000: past 1000 steps avg loss: 2.568 | accuracy: 0.259
+Epoch completed in: 3907.751762 seconds
+	Conv_forward: 8692.812002 sec, Maxpool_forward: 114.696645 sec, Softmax_forward: 233.691899 sec
+	Conv_backward: 60569.864562 sec, Maxpool_backward: 3030.617582 sec, Softmax_backward: 19726.462256 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.599 | test accuracy: 0.228
+step 52000: past 1000 steps test loss: 2.617 | test accuracy: 0.233
+step 53000: past 1000 steps test loss: 2.620 | test accuracy: 0.229
+step 54000: past 1000 steps test loss: 2.586 | test accuracy: 0.233
+step 55000: past 1000 steps test loss: 2.573 | test accuracy: 0.236
+step 56000: past 1000 steps test loss: 2.567 | test accuracy: 0.236
+step 57000: past 1000 steps test loss: 2.573 | test accuracy: 0.236
+step 58000: past 1000 steps test loss: 2.561 | test accuracy: 0.238
+step 59000: past 1000 steps test loss: 2.574 | test accuracy: 0.237
+step 60000: past 1000 steps test loss: 2.579 | test accuracy: 0.238
+Testing completed in: 59.093845 seconds
+--- Epoch 27 ---
+step 1000: past 1000 steps avg loss: 2.418 | accuracy: 0.289
+step 2000: past 1000 steps avg loss: 2.449 | accuracy: 0.289
+step 3000: past 1000 steps avg loss: 2.524 | accuracy: 0.263
+step 4000: past 1000 steps avg loss: 2.555 | accuracy: 0.250
+step 5000: past 1000 steps avg loss: 2.570 | accuracy: 0.288
+step 6000: past 1000 steps avg loss: 2.479 | accuracy: 0.284
+step 7000: past 1000 steps avg loss: 2.518 | accuracy: 0.279
+step 8000: past 1000 steps avg loss: 2.561 | accuracy: 0.261
+step 9000: past 1000 steps avg loss: 2.503 | accuracy: 0.268
+step 10000: past 1000 steps avg loss: 2.486 | accuracy: 0.271
+step 11000: past 1000 steps avg loss: 2.553 | accuracy: 0.269
+step 12000: past 1000 steps avg loss: 2.488 | accuracy: 0.270
+step 13000: past 1000 steps avg loss: 2.532 | accuracy: 0.288
+step 14000: past 1000 steps avg loss: 2.488 | accuracy: 0.274
+step 15000: past 1000 steps avg loss: 2.575 | accuracy: 0.264
+step 16000: past 1000 steps avg loss: 2.525 | accuracy: 0.267
+step 17000: past 1000 steps avg loss: 2.492 | accuracy: 0.266
+step 18000: past 1000 steps avg loss: 2.550 | accuracy: 0.282
+step 19000: past 1000 steps avg loss: 2.510 | accuracy: 0.282
+step 20000: past 1000 steps avg loss: 2.445 | accuracy: 0.289
+step 21000: past 1000 steps avg loss: 2.436 | accuracy: 0.292
+step 22000: past 1000 steps avg loss: 2.429 | accuracy: 0.300
+step 23000: past 1000 steps avg loss: 2.427 | accuracy: 0.300
+step 24000: past 1000 steps avg loss: 2.282 | accuracy: 0.318
+step 25000: past 1000 steps avg loss: 2.320 | accuracy: 0.318
+step 26000: past 1000 steps avg loss: 2.343 | accuracy: 0.313
+step 27000: past 1000 steps avg loss: 2.190 | accuracy: 0.340
+step 28000: past 1000 steps avg loss: 2.460 | accuracy: 0.271
+step 29000: past 1000 steps avg loss: 2.312 | accuracy: 0.284
+step 30000: past 1000 steps avg loss: 2.377 | accuracy: 0.291
+step 31000: past 1000 steps avg loss: 2.378 | accuracy: 0.286
+step 32000: past 1000 steps avg loss: 2.395 | accuracy: 0.273
+step 33000: past 1000 steps avg loss: 2.336 | accuracy: 0.282
+step 34000: past 1000 steps avg loss: 2.359 | accuracy: 0.285
+step 35000: past 1000 steps avg loss: 2.408 | accuracy: 0.297
+step 36000: past 1000 steps avg loss: 2.436 | accuracy: 0.279
+step 37000: past 1000 steps avg loss: 2.299 | accuracy: 0.306
+step 38000: past 1000 steps avg loss: 2.407 | accuracy: 0.297
+step 39000: past 1000 steps avg loss: 2.373 | accuracy: 0.280
+step 40000: past 1000 steps avg loss: 2.332 | accuracy: 0.287
+step 41000: past 1000 steps avg loss: 2.436 | accuracy: 0.287
+step 42000: past 1000 steps avg loss: 2.450 | accuracy: 0.273
+step 43000: past 1000 steps avg loss: 2.304 | accuracy: 0.316
+step 44000: past 1000 steps avg loss: 2.400 | accuracy: 0.288
+step 45000: past 1000 steps avg loss: 2.419 | accuracy: 0.306
+step 46000: past 1000 steps avg loss: 2.326 | accuracy: 0.282
+step 47000: past 1000 steps avg loss: 2.365 | accuracy: 0.311
+step 48000: past 1000 steps avg loss: 2.366 | accuracy: 0.302
+step 49000: past 1000 steps avg loss: 2.465 | accuracy: 0.269
+step 50000: past 1000 steps avg loss: 2.431 | accuracy: 0.286
+Epoch completed in: 3906.928471 seconds
+	Conv_forward: 9028.266009 sec, Maxpool_forward: 119.105533 sec, Softmax_forward: 242.670227 sec
+	Conv_backward: 62926.285923 sec, Maxpool_backward: 3146.410392 sec, Softmax_backward: 20497.197820 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.435 | test accuracy: 0.251
+step 52000: past 1000 steps test loss: 2.448 | test accuracy: 0.245
+step 53000: past 1000 steps test loss: 2.459 | test accuracy: 0.239
+step 54000: past 1000 steps test loss: 2.432 | test accuracy: 0.242
+step 55000: past 1000 steps test loss: 2.422 | test accuracy: 0.241
+step 56000: past 1000 steps test loss: 2.420 | test accuracy: 0.240
+step 57000: past 1000 steps test loss: 2.424 | test accuracy: 0.242
+step 58000: past 1000 steps test loss: 2.417 | test accuracy: 0.243
+step 59000: past 1000 steps test loss: 2.426 | test accuracy: 0.242
+step 60000: past 1000 steps test loss: 2.431 | test accuracy: 0.241
+Testing completed in: 59.038072 seconds
+--- Epoch 28 ---
+step 1000: past 1000 steps avg loss: 2.275 | accuracy: 0.287
+step 2000: past 1000 steps avg loss: 2.263 | accuracy: 0.300
+step 3000: past 1000 steps avg loss: 2.365 | accuracy: 0.278
+step 4000: past 1000 steps avg loss: 2.402 | accuracy: 0.262
+step 5000: past 1000 steps avg loss: 2.406 | accuracy: 0.284
+step 6000: past 1000 steps avg loss: 2.366 | accuracy: 0.280
+step 7000: past 1000 steps avg loss: 2.411 | accuracy: 0.297
+step 8000: past 1000 steps avg loss: 2.449 | accuracy: 0.284
+step 9000: past 1000 steps avg loss: 2.452 | accuracy: 0.289
+step 10000: past 1000 steps avg loss: 2.452 | accuracy: 0.284
+step 11000: past 1000 steps avg loss: 2.514 | accuracy: 0.257
+step 12000: past 1000 steps avg loss: 2.494 | accuracy: 0.277
+step 13000: past 1000 steps avg loss: 2.529 | accuracy: 0.277
+step 14000: past 1000 steps avg loss: 2.464 | accuracy: 0.271
+step 15000: past 1000 steps avg loss: 2.598 | accuracy: 0.274
+step 16000: past 1000 steps avg loss: 2.464 | accuracy: 0.280
+step 17000: past 1000 steps avg loss: 2.468 | accuracy: 0.280
+step 18000: past 1000 steps avg loss: 2.516 | accuracy: 0.270
+step 19000: past 1000 steps avg loss: 2.452 | accuracy: 0.303
+step 20000: past 1000 steps avg loss: 2.462 | accuracy: 0.271
+step 21000: past 1000 steps avg loss: 2.474 | accuracy: 0.274
+step 22000: past 1000 steps avg loss: 2.477 | accuracy: 0.278
+step 23000: past 1000 steps avg loss: 2.535 | accuracy: 0.287
+step 24000: past 1000 steps avg loss: 2.406 | accuracy: 0.324
+step 25000: past 1000 steps avg loss: 2.446 | accuracy: 0.311
+step 26000: past 1000 steps avg loss: 2.503 | accuracy: 0.286
+step 27000: past 1000 steps avg loss: 2.373 | accuracy: 0.334
+step 28000: past 1000 steps avg loss: 2.670 | accuracy: 0.246
+step 29000: past 1000 steps avg loss: 2.527 | accuracy: 0.280
+step 30000: past 1000 steps avg loss: 2.598 | accuracy: 0.262
+step 31000: past 1000 steps avg loss: 2.603 | accuracy: 0.262
+step 32000: past 1000 steps avg loss: 2.608 | accuracy: 0.256
+step 33000: past 1000 steps avg loss: 2.573 | accuracy: 0.265
+step 34000: past 1000 steps avg loss: 2.548 | accuracy: 0.271
+step 35000: past 1000 steps avg loss: 2.636 | accuracy: 0.287
+step 36000: past 1000 steps avg loss: 2.660 | accuracy: 0.261
+step 37000: past 1000 steps avg loss: 2.502 | accuracy: 0.295
+step 38000: past 1000 steps avg loss: 2.635 | accuracy: 0.284
+step 39000: past 1000 steps avg loss: 2.603 | accuracy: 0.273
+step 40000: past 1000 steps avg loss: 2.600 | accuracy: 0.265
+step 41000: past 1000 steps avg loss: 2.654 | accuracy: 0.268
+step 42000: past 1000 steps avg loss: 2.646 | accuracy: 0.251
+step 43000: past 1000 steps avg loss: 2.508 | accuracy: 0.294
+step 44000: past 1000 steps avg loss: 2.617 | accuracy: 0.263
+step 45000: past 1000 steps avg loss: 2.651 | accuracy: 0.274
+step 46000: past 1000 steps avg loss: 2.552 | accuracy: 0.269
+step 47000: past 1000 steps avg loss: 2.525 | accuracy: 0.295
+step 48000: past 1000 steps avg loss: 2.511 | accuracy: 0.281
+step 49000: past 1000 steps avg loss: 2.624 | accuracy: 0.253
+step 50000: past 1000 steps avg loss: 2.676 | accuracy: 0.265
+Epoch completed in: 3903.115791 seconds
+	Conv_forward: 9363.605811 sec, Maxpool_forward: 123.516414 sec, Softmax_forward: 251.647366 sec
+	Conv_backward: 65279.253890 sec, Maxpool_backward: 3262.196729 sec, Softmax_backward: 21267.785884 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.756 | test accuracy: 0.226
+step 52000: past 1000 steps test loss: 2.764 | test accuracy: 0.230
+step 53000: past 1000 steps test loss: 2.789 | test accuracy: 0.227
+step 54000: past 1000 steps test loss: 2.752 | test accuracy: 0.231
+step 55000: past 1000 steps test loss: 2.731 | test accuracy: 0.234
+step 56000: past 1000 steps test loss: 2.728 | test accuracy: 0.235
+step 57000: past 1000 steps test loss: 2.729 | test accuracy: 0.236
+step 58000: past 1000 steps test loss: 2.718 | test accuracy: 0.237
+step 59000: past 1000 steps test loss: 2.729 | test accuracy: 0.236
+step 60000: past 1000 steps test loss: 2.736 | test accuracy: 0.236
+Testing completed in: 59.017958 seconds
+--- Epoch 29 ---
+step 1000: past 1000 steps avg loss: 2.521 | accuracy: 0.277
+step 2000: past 1000 steps avg loss: 2.535 | accuracy: 0.289
+step 3000: past 1000 steps avg loss: 2.631 | accuracy: 0.258
+step 4000: past 1000 steps avg loss: 2.676 | accuracy: 0.263
+step 5000: past 1000 steps avg loss: 2.655 | accuracy: 0.283
+step 6000: past 1000 steps avg loss: 2.620 | accuracy: 0.276
+step 7000: past 1000 steps avg loss: 2.639 | accuracy: 0.290
+step 8000: past 1000 steps avg loss: 2.640 | accuracy: 0.283
+step 9000: past 1000 steps avg loss: 2.630 | accuracy: 0.281
+step 10000: past 1000 steps avg loss: 2.563 | accuracy: 0.291
+step 11000: past 1000 steps avg loss: 2.650 | accuracy: 0.264
+step 12000: past 1000 steps avg loss: 2.611 | accuracy: 0.269
+step 13000: past 1000 steps avg loss: 2.643 | accuracy: 0.277
+step 14000: past 1000 steps avg loss: 2.600 | accuracy: 0.264
+step 15000: past 1000 steps avg loss: 2.724 | accuracy: 0.256
+step 16000: past 1000 steps avg loss: 2.640 | accuracy: 0.267
+step 17000: past 1000 steps avg loss: 2.661 | accuracy: 0.260
+step 18000: past 1000 steps avg loss: 2.699 | accuracy: 0.274
+step 19000: past 1000 steps avg loss: 2.659 | accuracy: 0.280
+step 20000: past 1000 steps avg loss: 2.650 | accuracy: 0.255
+step 21000: past 1000 steps avg loss: 2.616 | accuracy: 0.278
+step 22000: past 1000 steps avg loss: 2.705 | accuracy: 0.259
+step 23000: past 1000 steps avg loss: 2.674 | accuracy: 0.267
+step 24000: past 1000 steps avg loss: 2.539 | accuracy: 0.315
+step 25000: past 1000 steps avg loss: 2.544 | accuracy: 0.318
+step 26000: past 1000 steps avg loss: 2.598 | accuracy: 0.285
+step 27000: past 1000 steps avg loss: 2.439 | accuracy: 0.320
+step 28000: past 1000 steps avg loss: 2.705 | accuracy: 0.252
+step 29000: past 1000 steps avg loss: 2.519 | accuracy: 0.274
+step 30000: past 1000 steps avg loss: 2.635 | accuracy: 0.266
+step 31000: past 1000 steps avg loss: 2.618 | accuracy: 0.265
+step 32000: past 1000 steps avg loss: 2.599 | accuracy: 0.261
+step 33000: past 1000 steps avg loss: 2.560 | accuracy: 0.260
+step 34000: past 1000 steps avg loss: 2.542 | accuracy: 0.264
+step 35000: past 1000 steps avg loss: 2.610 | accuracy: 0.286
+step 36000: past 1000 steps avg loss: 2.635 | accuracy: 0.257
+step 37000: past 1000 steps avg loss: 2.496 | accuracy: 0.288
+step 38000: past 1000 steps avg loss: 2.608 | accuracy: 0.281
+step 39000: past 1000 steps avg loss: 2.548 | accuracy: 0.286
+step 40000: past 1000 steps avg loss: 2.527 | accuracy: 0.275
+step 41000: past 1000 steps avg loss: 2.638 | accuracy: 0.283
+step 42000: past 1000 steps avg loss: 2.659 | accuracy: 0.268
+step 43000: past 1000 steps avg loss: 2.480 | accuracy: 0.304
+step 44000: past 1000 steps avg loss: 2.584 | accuracy: 0.268
+step 45000: past 1000 steps avg loss: 2.580 | accuracy: 0.293
+step 46000: past 1000 steps avg loss: 2.430 | accuracy: 0.287
+step 47000: past 1000 steps avg loss: 2.444 | accuracy: 0.304
+step 48000: past 1000 steps avg loss: 2.469 | accuracy: 0.286
+step 49000: past 1000 steps avg loss: 2.588 | accuracy: 0.263
+step 50000: past 1000 steps avg loss: 2.599 | accuracy: 0.263
+Epoch completed in: 3910.473202 seconds
+	Conv_forward: 9699.361457 sec, Maxpool_forward: 127.936126 sec, Softmax_forward: 260.629717 sec
+	Conv_backward: 67634.344819 sec, Maxpool_backward: 3378.103270 sec, Softmax_backward: 22042.512946 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.577 | test accuracy: 0.245
+step 52000: past 1000 steps test loss: 2.580 | test accuracy: 0.248
+step 53000: past 1000 steps test loss: 2.590 | test accuracy: 0.245
+step 54000: past 1000 steps test loss: 2.552 | test accuracy: 0.248
+step 55000: past 1000 steps test loss: 2.533 | test accuracy: 0.251
+step 56000: past 1000 steps test loss: 2.529 | test accuracy: 0.251
+step 57000: past 1000 steps test loss: 2.531 | test accuracy: 0.252
+step 58000: past 1000 steps test loss: 2.522 | test accuracy: 0.255
+step 59000: past 1000 steps test loss: 2.530 | test accuracy: 0.251
+step 60000: past 1000 steps test loss: 2.534 | test accuracy: 0.251
+Testing completed in: 59.016188 seconds
+--- Epoch 30 ---
+step 1000: past 1000 steps avg loss: 2.432 | accuracy: 0.277
+step 2000: past 1000 steps avg loss: 2.423 | accuracy: 0.296
+step 3000: past 1000 steps avg loss: 2.539 | accuracy: 0.266
+step 4000: past 1000 steps avg loss: 2.535 | accuracy: 0.276
+step 5000: past 1000 steps avg loss: 2.533 | accuracy: 0.291
+step 6000: past 1000 steps avg loss: 2.482 | accuracy: 0.289
+step 7000: past 1000 steps avg loss: 2.500 | accuracy: 0.283
+step 8000: past 1000 steps avg loss: 2.550 | accuracy: 0.283
+step 9000: past 1000 steps avg loss: 2.523 | accuracy: 0.284
+step 10000: past 1000 steps avg loss: 2.504 | accuracy: 0.295
+step 11000: past 1000 steps avg loss: 2.584 | accuracy: 0.274
+step 12000: past 1000 steps avg loss: 2.536 | accuracy: 0.268
+step 13000: past 1000 steps avg loss: 2.530 | accuracy: 0.275
+step 14000: past 1000 steps avg loss: 2.490 | accuracy: 0.273
+step 15000: past 1000 steps avg loss: 2.561 | accuracy: 0.278
+step 16000: past 1000 steps avg loss: 2.488 | accuracy: 0.277
+step 17000: past 1000 steps avg loss: 2.475 | accuracy: 0.287
+step 18000: past 1000 steps avg loss: 2.515 | accuracy: 0.276
+step 19000: past 1000 steps avg loss: 2.493 | accuracy: 0.289
+step 20000: past 1000 steps avg loss: 2.451 | accuracy: 0.279
+step 21000: past 1000 steps avg loss: 2.443 | accuracy: 0.279
+step 22000: past 1000 steps avg loss: 2.520 | accuracy: 0.275
+step 23000: past 1000 steps avg loss: 2.539 | accuracy: 0.290
+step 24000: past 1000 steps avg loss: 2.423 | accuracy: 0.313
+step 25000: past 1000 steps avg loss: 2.435 | accuracy: 0.310
+step 26000: past 1000 steps avg loss: 2.474 | accuracy: 0.281
+step 27000: past 1000 steps avg loss: 2.314 | accuracy: 0.322
+step 28000: past 1000 steps avg loss: 2.576 | accuracy: 0.257
+step 29000: past 1000 steps avg loss: 2.444 | accuracy: 0.279
+step 30000: past 1000 steps avg loss: 2.528 | accuracy: 0.267
+step 31000: past 1000 steps avg loss: 2.545 | accuracy: 0.279
+step 32000: past 1000 steps avg loss: 2.504 | accuracy: 0.280
+step 33000: past 1000 steps avg loss: 2.460 | accuracy: 0.275
+step 34000: past 1000 steps avg loss: 2.488 | accuracy: 0.269
+step 35000: past 1000 steps avg loss: 2.535 | accuracy: 0.296
+step 36000: past 1000 steps avg loss: 2.573 | accuracy: 0.267
+step 37000: past 1000 steps avg loss: 2.428 | accuracy: 0.293
+step 38000: past 1000 steps avg loss: 2.519 | accuracy: 0.284
+step 39000: past 1000 steps avg loss: 2.443 | accuracy: 0.285
+step 40000: past 1000 steps avg loss: 2.429 | accuracy: 0.274
+step 41000: past 1000 steps avg loss: 2.512 | accuracy: 0.290
+step 42000: past 1000 steps avg loss: 2.505 | accuracy: 0.264
+step 43000: past 1000 steps avg loss: 2.375 | accuracy: 0.303
+step 44000: past 1000 steps avg loss: 2.474 | accuracy: 0.274
+step 45000: past 1000 steps avg loss: 2.484 | accuracy: 0.300
+step 46000: past 1000 steps avg loss: 2.391 | accuracy: 0.276
+step 47000: past 1000 steps avg loss: 2.370 | accuracy: 0.298
+step 48000: past 1000 steps avg loss: 2.383 | accuracy: 0.285
+step 49000: past 1000 steps avg loss: 2.476 | accuracy: 0.277
+step 50000: past 1000 steps avg loss: 2.501 | accuracy: 0.284
+Epoch completed in: 3905.825340 seconds
+	Conv_forward: 10034.929852 sec, Maxpool_forward: 132.347745 sec, Softmax_forward: 269.606850 sec
+	Conv_backward: 69987.900219 sec, Maxpool_backward: 3493.951473 sec, Softmax_backward: 22814.697017 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.485 | test accuracy: 0.230
+step 52000: past 1000 steps test loss: 2.486 | test accuracy: 0.240
+step 53000: past 1000 steps test loss: 2.504 | test accuracy: 0.239
+step 54000: past 1000 steps test loss: 2.475 | test accuracy: 0.241
+step 55000: past 1000 steps test loss: 2.461 | test accuracy: 0.245
+step 56000: past 1000 steps test loss: 2.456 | test accuracy: 0.246
+step 57000: past 1000 steps test loss: 2.455 | test accuracy: 0.249
+step 58000: past 1000 steps test loss: 2.446 | test accuracy: 0.251
+step 59000: past 1000 steps test loss: 2.454 | test accuracy: 0.249
+step 60000: past 1000 steps test loss: 2.460 | test accuracy: 0.249
+Testing completed in: 59.278472 seconds
+--- Epoch 31 ---
+step 1000: past 1000 steps avg loss: 2.356 | accuracy: 0.291
+step 2000: past 1000 steps avg loss: 2.367 | accuracy: 0.295
+step 3000: past 1000 steps avg loss: 2.489 | accuracy: 0.278
+step 4000: past 1000 steps avg loss: 2.483 | accuracy: 0.265
+step 5000: past 1000 steps avg loss: 2.510 | accuracy: 0.286
+step 6000: past 1000 steps avg loss: 2.464 | accuracy: 0.292
+step 7000: past 1000 steps avg loss: 2.476 | accuracy: 0.284
+step 8000: past 1000 steps avg loss: 2.507 | accuracy: 0.283
+step 9000: past 1000 steps avg loss: 2.500 | accuracy: 0.277
+step 10000: past 1000 steps avg loss: 2.457 | accuracy: 0.294
+step 11000: past 1000 steps avg loss: 2.535 | accuracy: 0.274
+step 12000: past 1000 steps avg loss: 2.500 | accuracy: 0.275
+step 13000: past 1000 steps avg loss: 2.544 | accuracy: 0.294
+step 14000: past 1000 steps avg loss: 2.488 | accuracy: 0.270
+step 15000: past 1000 steps avg loss: 2.565 | accuracy: 0.257
+step 16000: past 1000 steps avg loss: 2.483 | accuracy: 0.279
+step 17000: past 1000 steps avg loss: 2.476 | accuracy: 0.269
+step 18000: past 1000 steps avg loss: 2.504 | accuracy: 0.272
+step 19000: past 1000 steps avg loss: 2.491 | accuracy: 0.289
+step 20000: past 1000 steps avg loss: 2.417 | accuracy: 0.272
+step 21000: past 1000 steps avg loss: 2.434 | accuracy: 0.283
+step 22000: past 1000 steps avg loss: 2.467 | accuracy: 0.282
+step 23000: past 1000 steps avg loss: 2.503 | accuracy: 0.287
+step 24000: past 1000 steps avg loss: 2.400 | accuracy: 0.312
+step 25000: past 1000 steps avg loss: 2.429 | accuracy: 0.315
+step 26000: past 1000 steps avg loss: 2.483 | accuracy: 0.298
+step 27000: past 1000 steps avg loss: 2.347 | accuracy: 0.323
+step 28000: past 1000 steps avg loss: 2.610 | accuracy: 0.257
+step 29000: past 1000 steps avg loss: 2.468 | accuracy: 0.283
+step 30000: past 1000 steps avg loss: 2.609 | accuracy: 0.267
+step 31000: past 1000 steps avg loss: 2.602 | accuracy: 0.274
+step 32000: past 1000 steps avg loss: 2.567 | accuracy: 0.266
+step 33000: past 1000 steps avg loss: 2.500 | accuracy: 0.260
+step 34000: past 1000 steps avg loss: 2.521 | accuracy: 0.244
+step 35000: past 1000 steps avg loss: 2.572 | accuracy: 0.290
+step 36000: past 1000 steps avg loss: 2.546 | accuracy: 0.274
+step 37000: past 1000 steps avg loss: 2.410 | accuracy: 0.297
+step 38000: past 1000 steps avg loss: 2.545 | accuracy: 0.298
+step 39000: past 1000 steps avg loss: 2.466 | accuracy: 0.271
+step 40000: past 1000 steps avg loss: 2.449 | accuracy: 0.277
+step 41000: past 1000 steps avg loss: 2.550 | accuracy: 0.283
+step 42000: past 1000 steps avg loss: 2.541 | accuracy: 0.270
+step 43000: past 1000 steps avg loss: 2.370 | accuracy: 0.302
+step 44000: past 1000 steps avg loss: 2.425 | accuracy: 0.278
+step 45000: past 1000 steps avg loss: 2.443 | accuracy: 0.289
+step 46000: past 1000 steps avg loss: 2.385 | accuracy: 0.280
+step 47000: past 1000 steps avg loss: 2.358 | accuracy: 0.298
+step 48000: past 1000 steps avg loss: 2.389 | accuracy: 0.295
+step 49000: past 1000 steps avg loss: 2.452 | accuracy: 0.276
+step 50000: past 1000 steps avg loss: 2.467 | accuracy: 0.292
+Epoch completed in: 3911.745399 seconds
+	Conv_forward: 10371.527518 sec, Maxpool_forward: 136.773767 sec, Softmax_forward: 278.614943 sec
+	Conv_backward: 72341.958808 sec, Maxpool_backward: 3610.161166 sec, Softmax_backward: 23589.963543 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.459 | test accuracy: 0.243
+step 52000: past 1000 steps test loss: 2.462 | test accuracy: 0.253
+step 53000: past 1000 steps test loss: 2.477 | test accuracy: 0.248
+step 54000: past 1000 steps test loss: 2.447 | test accuracy: 0.251
+step 55000: past 1000 steps test loss: 2.433 | test accuracy: 0.252
+step 56000: past 1000 steps test loss: 2.433 | test accuracy: 0.251
+step 57000: past 1000 steps test loss: 2.437 | test accuracy: 0.251
+step 58000: past 1000 steps test loss: 2.426 | test accuracy: 0.254
+step 59000: past 1000 steps test loss: 2.437 | test accuracy: 0.252
+step 60000: past 1000 steps test loss: 2.445 | test accuracy: 0.252
+Testing completed in: 59.317112 seconds
+--- Epoch 32 ---
+step 1000: past 1000 steps avg loss: 2.310 | accuracy: 0.299
+step 2000: past 1000 steps avg loss: 2.356 | accuracy: 0.309
+step 3000: past 1000 steps avg loss: 2.479 | accuracy: 0.266
+step 4000: past 1000 steps avg loss: 2.511 | accuracy: 0.273
+step 5000: past 1000 steps avg loss: 2.522 | accuracy: 0.285
+step 6000: past 1000 steps avg loss: 2.495 | accuracy: 0.287
+step 7000: past 1000 steps avg loss: 2.510 | accuracy: 0.291
+step 8000: past 1000 steps avg loss: 2.538 | accuracy: 0.280
+step 9000: past 1000 steps avg loss: 2.526 | accuracy: 0.290
+step 10000: past 1000 steps avg loss: 2.470 | accuracy: 0.284
+step 11000: past 1000 steps avg loss: 2.547 | accuracy: 0.282
+step 12000: past 1000 steps avg loss: 2.452 | accuracy: 0.292
+step 13000: past 1000 steps avg loss: 2.515 | accuracy: 0.282
+step 14000: past 1000 steps avg loss: 2.465 | accuracy: 0.275
+step 15000: past 1000 steps avg loss: 2.528 | accuracy: 0.270
+step 16000: past 1000 steps avg loss: 2.439 | accuracy: 0.285
+step 17000: past 1000 steps avg loss: 2.399 | accuracy: 0.279
+step 18000: past 1000 steps avg loss: 2.441 | accuracy: 0.305
+step 19000: past 1000 steps avg loss: 2.439 | accuracy: 0.286
+step 20000: past 1000 steps avg loss: 2.367 | accuracy: 0.282
+step 21000: past 1000 steps avg loss: 2.363 | accuracy: 0.295
+step 22000: past 1000 steps avg loss: 2.391 | accuracy: 0.299
+step 23000: past 1000 steps avg loss: 2.435 | accuracy: 0.299
+step 24000: past 1000 steps avg loss: 2.322 | accuracy: 0.308
+step 25000: past 1000 steps avg loss: 2.350 | accuracy: 0.311
+step 26000: past 1000 steps avg loss: 2.426 | accuracy: 0.308
+step 27000: past 1000 steps avg loss: 2.302 | accuracy: 0.336
+step 28000: past 1000 steps avg loss: 2.499 | accuracy: 0.275
+step 29000: past 1000 steps avg loss: 2.379 | accuracy: 0.289
+step 30000: past 1000 steps avg loss: 2.468 | accuracy: 0.282
+step 31000: past 1000 steps avg loss: 2.444 | accuracy: 0.273
+step 32000: past 1000 steps avg loss: 2.428 | accuracy: 0.277
+step 33000: past 1000 steps avg loss: 2.383 | accuracy: 0.274
+step 34000: past 1000 steps avg loss: 2.430 | accuracy: 0.283
+step 35000: past 1000 steps avg loss: 2.525 | accuracy: 0.299
+step 36000: past 1000 steps avg loss: 2.509 | accuracy: 0.297
+step 37000: past 1000 steps avg loss: 2.380 | accuracy: 0.307
+step 38000: past 1000 steps avg loss: 2.466 | accuracy: 0.299
+step 39000: past 1000 steps avg loss: 2.455 | accuracy: 0.291
+step 40000: past 1000 steps avg loss: 2.424 | accuracy: 0.281
+step 41000: past 1000 steps avg loss: 2.525 | accuracy: 0.287
+step 42000: past 1000 steps avg loss: 2.500 | accuracy: 0.275
+step 43000: past 1000 steps avg loss: 2.376 | accuracy: 0.306
+step 44000: past 1000 steps avg loss: 2.422 | accuracy: 0.281
+step 45000: past 1000 steps avg loss: 2.427 | accuracy: 0.287
+step 46000: past 1000 steps avg loss: 2.359 | accuracy: 0.294
+step 47000: past 1000 steps avg loss: 2.367 | accuracy: 0.298
+step 48000: past 1000 steps avg loss: 2.336 | accuracy: 0.298
+step 49000: past 1000 steps avg loss: 2.452 | accuracy: 0.279
+step 50000: past 1000 steps avg loss: 2.431 | accuracy: 0.292
+Epoch completed in: 3953.360161 seconds
+	Conv_forward: 10710.785234 sec, Maxpool_forward: 141.265342 sec, Softmax_forward: 287.752103 sec
+	Conv_backward: 74715.551122 sec, Maxpool_backward: 3728.337546 sec, Softmax_backward: 24376.287378 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 2.468 | test accuracy: 0.259
+step 52000: past 1000 steps test loss: 2.465 | test accuracy: 0.261
+step 53000: past 1000 steps test loss: 2.478 | test accuracy: 0.258
+step 54000: past 1000 steps test loss: 2.448 | test accuracy: 0.261
+step 55000: past 1000 steps test loss: 2.430 | test accuracy: 0.262
+step 56000: past 1000 steps test loss: 2.426 | test accuracy: 0.263
+step 57000: past 1000 steps test loss: 2.427 | test accuracy: 0.263
+step 58000: past 1000 steps test loss: 2.417 | test accuracy: 0.267
+step 59000: past 1000 steps test loss: 2.428 | test accuracy: 0.264
+step 60000: past 1000 steps test loss: 2.432 | test accuracy: 0.262
+Testing completed in: 60.295459 seconds
+
+Tesing Complete
+

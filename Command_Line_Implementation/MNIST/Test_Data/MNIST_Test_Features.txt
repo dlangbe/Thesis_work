@@ -1,0 +1,25 @@
+nvcc -std=c++14 -g -I -O3 -c CNN.cpp
+nvcc -std=c++14 -g -I -O3 -o cnn  CNN.o layers.o networks.o
+** Reading images and labels **
+** Setting initial filter weights **
+** Setting initial softmax weights **
+Argc = 10
+0.005000 1 8 3 1 100 1 0
+** Layers initialized **
+--- Epoch 1 ---
+step 10000: past 10000 steps avg loss: 0.555 | accuracy: 0.827
+step 20000: past 10000 steps avg loss: 0.399 | accuracy: 0.879
+step 30000: past 10000 steps avg loss: 0.364 | accuracy: 0.891
+step 40000: past 10000 steps avg loss: 0.356 | accuracy: 0.892
+step 50000: past 10000 steps avg loss: 0.346 | accuracy: 0.899
+Epoch completed in: 105.700753 seconds
+	Conv_forward: 47.502168 sec, Maxpool_forward: 1.843853 sec, Softmax_forward: 3.255943 sec
+	Conv_backward: 39.341035 sec, Maxpool_backward: 2.792308 sec, Softmax_backward: 8.566457 sec
+
+
+Testing:
+step 60000: past 10000 steps test loss: 0.310 | test accuracy: 0.912
+Testing completed in: 10.918797 seconds
+
+Tesing Complete
+

@@ -1,0 +1,18 @@
+#PBS -N MNIST_Tests
+
+#PBS -l select=1:ncpus=1:mem=12gb
+#PBS -l Walltime=48:00:00
+#PBS -j oe
+#PBS -o CIFAR_Tests_Num_Filters.txt
+
+cd /home/dlangbe/Thesis/CIFAR
+
+make
+
+# inputs are fout, learning_rate, num_epochs, num_filters, filter_size, num_nodes, batch_size, conv_layers, secure
+./cnn output.txt 0.001 8 16 3 1 100 1 0
+./cnn output.txt 0.001 8 24 3 1 100 1 0
+./cnn output.txt 0.001 8 32 3 1 100 1 0
+./cnn output.txt 0.001 8 64 3 1 100 1 0
+./cnn output.txt 0.001 8 128 3 1 100 1 0
+

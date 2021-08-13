@@ -1,0 +1,779 @@
+g++    -c -o networks.o networks.cpp
+nvcc -std=c++14 -g -I -O3 -o cnn  CNN.o layers.o networks.o
+** Reading images and labels **
+** Setting initial filter weights **
+** Setting initial softmax weights **
+Argc = 10
+0.005000 32 8 3 1 100 1 1
+** Layers initialized **
+--- Epoch 1 ---
+step 10000: past 10000 steps avg loss: 0.587 | accuracy: 0.817
+step 20000: past 10000 steps avg loss: 0.430 | accuracy: 0.871
+step 30000: past 10000 steps avg loss: 0.397 | accuracy: 0.881
+step 40000: past 10000 steps avg loss: 0.409 | accuracy: 0.876
+step 50000: past 10000 steps avg loss: 0.402 | accuracy: 0.880
+Epoch completed in: 1733.421702 seconds
+	Conv_forward: 78.536679 sec, Maxpool_forward: 2.779424 sec, Softmax_forward: 5.655783 sec
+	Conv_backward: 693.915800 sec, Maxpool_backward: 86.980541 sec, Softmax_backward: 588.636925 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 0.504 | test accuracy: 0.867
+step 52000: past 1000 steps test loss: 0.430 | test accuracy: 0.880
+step 53000: past 1000 steps test loss: 0.474 | test accuracy: 0.869
+step 54000: past 1000 steps test loss: 0.457 | test accuracy: 0.872
+step 55000: past 1000 steps test loss: 0.445 | test accuracy: 0.874
+step 56000: past 1000 steps test loss: 0.430 | test accuracy: 0.879
+step 57000: past 1000 steps test loss: 0.421 | test accuracy: 0.881
+step 58000: past 1000 steps test loss: 0.415 | test accuracy: 0.881
+step 59000: past 1000 steps test loss: 0.398 | test accuracy: 0.884
+step 60000: past 1000 steps test loss: 0.391 | test accuracy: 0.887
+Testing completed in: 17.979835 seconds
+
+--- Epoch 2 ---
+step 10000: past 10000 steps avg loss: 0.768 | accuracy: 1.779
+step 20000: past 10000 steps avg loss: 0.381 | accuracy: 0.889
+step 30000: past 10000 steps avg loss: 0.376 | accuracy: 0.889
+step 40000: past 10000 steps avg loss: 0.402 | accuracy: 0.879
+step 50000: past 10000 steps avg loss: 0.415 | accuracy: 0.879
+Epoch completed in: 1780.193300 seconds
+	Conv_forward: 173.264430 sec, Maxpool_forward: 6.127075 sec, Softmax_forward: 12.458981 sec
+	Conv_backward: 1415.751244 sec, Maxpool_backward: 174.365851 sec, Softmax_backward: 1193.998372 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 0.467 | test accuracy: 0.877
+step 52000: past 1000 steps test loss: 0.401 | test accuracy: 0.892
+step 53000: past 1000 steps test loss: 0.440 | test accuracy: 0.887
+step 54000: past 1000 steps test loss: 0.425 | test accuracy: 0.890
+step 55000: past 1000 steps test loss: 0.414 | test accuracy: 0.892
+step 56000: past 1000 steps test loss: 0.398 | test accuracy: 0.896
+step 57000: past 1000 steps test loss: 0.390 | test accuracy: 0.898
+step 58000: past 1000 steps test loss: 0.383 | test accuracy: 0.898
+step 59000: past 1000 steps test loss: 0.364 | test accuracy: 0.901
+step 60000: past 1000 steps test loss: 0.357 | test accuracy: 0.905
+Testing completed in: 18.024845 seconds
+
+--- Epoch 3 ---
+step 10000: past 10000 steps avg loss: 0.707 | accuracy: 1.806
+step 20000: past 10000 steps avg loss: 0.389 | accuracy: 0.886
+step 30000: past 10000 steps avg loss: 0.370 | accuracy: 0.896
+step 40000: past 10000 steps avg loss: 0.383 | accuracy: 0.891
+step 50000: past 10000 steps avg loss: 0.415 | accuracy: 0.884
+Epoch completed in: 1762.567555 seconds
+	Conv_forward: 268.047489 sec, Maxpool_forward: 9.463878 sec, Softmax_forward: 19.247840 sec
+	Conv_backward: 2124.072280 sec, Maxpool_backward: 261.587320 sec, Softmax_backward: 1795.686077 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 0.417 | test accuracy: 0.885
+step 52000: past 1000 steps test loss: 0.358 | test accuracy: 0.899
+step 53000: past 1000 steps test loss: 0.391 | test accuracy: 0.894
+step 54000: past 1000 steps test loss: 0.377 | test accuracy: 0.896
+step 55000: past 1000 steps test loss: 0.369 | test accuracy: 0.896
+step 56000: past 1000 steps test loss: 0.356 | test accuracy: 0.901
+step 57000: past 1000 steps test loss: 0.348 | test accuracy: 0.901
+step 58000: past 1000 steps test loss: 0.342 | test accuracy: 0.901
+step 59000: past 1000 steps test loss: 0.326 | test accuracy: 0.905
+step 60000: past 1000 steps test loss: 0.321 | test accuracy: 0.908
+Testing completed in: 17.960965 seconds
+
+--- Epoch 4 ---
+step 10000: past 10000 steps avg loss: 0.683 | accuracy: 1.806
+step 20000: past 10000 steps avg loss: 0.415 | accuracy: 0.883
+step 30000: past 10000 steps avg loss: 0.372 | accuracy: 0.893
+step 40000: past 10000 steps avg loss: 0.372 | accuracy: 0.893
+step 50000: past 10000 steps avg loss: 0.373 | accuracy: 0.892
+Epoch completed in: 1824.432928 seconds
+	Conv_forward: 365.268721 sec, Maxpool_forward: 12.900282 sec, Softmax_forward: 26.255763 sec
+	Conv_backward: 2849.569685 sec, Maxpool_backward: 352.462754 sec, Softmax_backward: 2423.559083 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 0.411 | test accuracy: 0.884
+step 52000: past 1000 steps test loss: 0.355 | test accuracy: 0.898
+step 53000: past 1000 steps test loss: 0.384 | test accuracy: 0.892
+step 54000: past 1000 steps test loss: 0.373 | test accuracy: 0.894
+step 55000: past 1000 steps test loss: 0.366 | test accuracy: 0.893
+step 56000: past 1000 steps test loss: 0.352 | test accuracy: 0.898
+step 57000: past 1000 steps test loss: 0.344 | test accuracy: 0.899
+step 58000: past 1000 steps test loss: 0.340 | test accuracy: 0.900
+step 59000: past 1000 steps test loss: 0.323 | test accuracy: 0.905
+step 60000: past 1000 steps test loss: 0.317 | test accuracy: 0.908
+Testing completed in: 18.609584 seconds
+
+--- Epoch 5 ---
+step 10000: past 10000 steps avg loss: 0.663 | accuracy: 1.813
+step 20000: past 10000 steps avg loss: 0.384 | accuracy: 0.892
+step 30000: past 10000 steps avg loss: 0.387 | accuracy: 0.888
+step 40000: past 10000 steps avg loss: 0.416 | accuracy: 0.876
+step 50000: past 10000 steps avg loss: 0.402 | accuracy: 0.885
+Epoch completed in: 1839.396083 seconds
+	Conv_forward: 463.334794 sec, Maxpool_forward: 16.370859 sec, Softmax_forward: 33.336041 sec
+	Conv_backward: 3582.096491 sec, Maxpool_backward: 443.806797 sec, Softmax_backward: 3056.994279 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 0.441 | test accuracy: 0.884
+step 52000: past 1000 steps test loss: 0.377 | test accuracy: 0.897
+step 53000: past 1000 steps test loss: 0.415 | test accuracy: 0.893
+step 54000: past 1000 steps test loss: 0.402 | test accuracy: 0.895
+step 55000: past 1000 steps test loss: 0.390 | test accuracy: 0.895
+step 56000: past 1000 steps test loss: 0.377 | test accuracy: 0.899
+step 57000: past 1000 steps test loss: 0.368 | test accuracy: 0.900
+step 58000: past 1000 steps test loss: 0.362 | test accuracy: 0.900
+step 59000: past 1000 steps test loss: 0.343 | test accuracy: 0.904
+step 60000: past 1000 steps test loss: 0.338 | test accuracy: 0.908
+Testing completed in: 18.585880 seconds
+
+--- Epoch 6 ---
+step 10000: past 10000 steps avg loss: 0.683 | accuracy: 1.813
+step 20000: past 10000 steps avg loss: 0.377 | accuracy: 0.896
+step 30000: past 10000 steps avg loss: 0.364 | accuracy: 0.898
+step 40000: past 10000 steps avg loss: 0.390 | accuracy: 0.887
+step 50000: past 10000 steps avg loss: 0.419 | accuracy: 0.881
+Epoch completed in: 1858.533994 seconds
+	Conv_forward: 561.440511 sec, Maxpool_forward: 19.844672 sec, Softmax_forward: 40.417956 sec
+	Conv_backward: 4331.119838 sec, Maxpool_backward: 535.228316 sec, Softmax_backward: 3692.855072 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: 0.507 | test accuracy: 0.878
+step 52000: past 1000 steps test loss: 0.429 | test accuracy: 0.894
+step 53000: past 1000 steps test loss: 0.470 | test accuracy: 0.890
+step 54000: past 1000 steps test loss: 0.455 | test accuracy: 0.893
+step 55000: past 1000 steps test loss: 0.441 | test accuracy: 0.894
+step 56000: past 1000 steps test loss: 0.424 | test accuracy: 0.897
+step 57000: past 1000 steps test loss: 0.416 | test accuracy: 0.898
+step 58000: past 1000 steps test loss: 0.408 | test accuracy: 0.899
+step 59000: past 1000 steps test loss: 0.387 | test accuracy: 0.903
+step 60000: past 1000 steps test loss: 0.381 | test accuracy: 0.906
+Testing completed in: 18.668878 seconds
+
+--- Epoch 7 ---
+step 10000: past 10000 steps avg loss: 0.756 | accuracy: 1.801
+step 20000: past 10000 steps avg loss: 0.440 | accuracy: 0.883
+step 30000: past 10000 steps avg loss: 0.409 | accuracy: 0.888
+step 40000: past 10000 steps avg loss: 0.504 | accuracy: 0.870
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.519
+Epoch completed in: 1834.287090 seconds
+	Conv_forward: 659.695964 sec, Maxpool_forward: 23.330318 sec, Softmax_forward: 47.513484 sec
+	Conv_backward: 5054.121372 sec, Maxpool_backward: 626.698127 sec, Softmax_backward: 4322.986960 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 18.606300 seconds
+
+--- Epoch 8 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1327.555678 seconds
+	Conv_forward: 756.037082 sec, Maxpool_forward: 26.731107 sec, Softmax_forward: 54.426986 sec
+	Conv_backward: 5366.184691 sec, Maxpool_backward: 715.511434 sec, Softmax_backward: 4799.928929 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 18.021084 seconds
+
+--- Epoch 9 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1302.426081 seconds
+	Conv_forward: 850.609246 sec, Maxpool_forward: 30.063037 sec, Softmax_forward: 61.191822 sec
+	Conv_backward: 5673.255025 sec, Maxpool_backward: 802.509380 sec, Softmax_backward: 5267.514621 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.956796 seconds
+
+--- Epoch 10 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1302.843928 seconds
+	Conv_forward: 945.126932 sec, Maxpool_forward: 33.400685 sec, Softmax_forward: 67.957757 sec
+	Conv_backward: 5980.385337 sec, Maxpool_backward: 889.531188 sec, Softmax_backward: 5735.142876 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 18.011923 seconds
+
+--- Epoch 11 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1300.853343 seconds
+	Conv_forward: 1039.406532 sec, Maxpool_forward: 36.726820 sec, Softmax_forward: 74.714128 sec
+	Conv_backward: 6286.249664 sec, Maxpool_backward: 976.570291 sec, Softmax_backward: 6202.078637 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.886834 seconds
+
+--- Epoch 12 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1326.036004 seconds
+	Conv_forward: 1134.723093 sec, Maxpool_forward: 40.100926 sec, Softmax_forward: 81.564580 sec
+	Conv_backward: 6596.917550 sec, Maxpool_backward: 1065.467007 sec, Softmax_backward: 6678.874663 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.962220 seconds
+
+--- Epoch 13 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1320.083683 seconds
+	Conv_forward: 1229.793921 sec, Maxpool_forward: 43.463306 sec, Softmax_forward: 88.398534 sec
+	Conv_backward: 6906.426087 sec, Maxpool_backward: 1153.953109 sec, Softmax_backward: 7153.153054 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 18.115864 seconds
+
+--- Epoch 14 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1313.230186 seconds
+	Conv_forward: 1324.616098 sec, Maxpool_forward: 46.811786 sec, Softmax_forward: 95.211227 sec
+	Conv_backward: 7214.324299 sec, Maxpool_backward: 1241.940388 sec, Softmax_backward: 7625.302963 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.702829 seconds
+
+--- Epoch 15 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1288.801517 seconds
+	Conv_forward: 1418.098559 sec, Maxpool_forward: 50.103612 sec, Softmax_forward: 101.898790 sec
+	Conv_backward: 7518.015765 sec, Maxpool_backward: 1328.072662 sec, Softmax_backward: 8087.811546 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.794111 seconds
+
+--- Epoch 16 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1289.063996 seconds
+	Conv_forward: 1511.678896 sec, Maxpool_forward: 53.399337 sec, Softmax_forward: 108.594491 sec
+	Conv_backward: 7821.811661 sec, Maxpool_backward: 1414.234276 sec, Softmax_backward: 8550.390950 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.704725 seconds
+
+--- Epoch 17 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1301.030028 seconds
+	Conv_forward: 1605.589420 sec, Maxpool_forward: 56.720201 sec, Softmax_forward: 115.333704 sec
+	Conv_backward: 8127.517011 sec, Maxpool_backward: 1501.303593 sec, Softmax_backward: 9017.512841 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.785213 seconds
+
+--- Epoch 18 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1299.725571 seconds
+	Conv_forward: 1699.606058 sec, Maxpool_forward: 60.037879 sec, Softmax_forward: 122.075665 sec
+	Conv_backward: 8433.169734 sec, Maxpool_backward: 1588.180022 sec, Softmax_backward: 9483.916315 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.824608 seconds
+
+--- Epoch 19 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1299.411081 seconds
+	Conv_forward: 1793.640998 sec, Maxpool_forward: 63.355946 sec, Softmax_forward: 128.817405 sec
+	Conv_backward: 8738.726234 sec, Maxpool_backward: 1675.026700 sec, Softmax_backward: 9950.231332 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.835071 seconds
+
+--- Epoch 20 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1300.114855 seconds
+	Conv_forward: 1887.754389 sec, Maxpool_forward: 66.673468 sec, Softmax_forward: 135.557392 sec
+	Conv_backward: 9044.491959 sec, Maxpool_backward: 1761.899476 sec, Softmax_backward: 10416.725162 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.869563 seconds
+
+--- Epoch 21 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1299.888549 seconds
+	Conv_forward: 1981.884268 sec, Maxpool_forward: 69.992886 sec, Softmax_forward: 142.301047 sec
+	Conv_backward: 9350.231625 sec, Maxpool_backward: 1848.717364 sec, Softmax_backward: 10883.158195 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.905006 seconds
+
+--- Epoch 22 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1302.973985 seconds
+	Conv_forward: 2076.161328 sec, Maxpool_forward: 73.321840 sec, Softmax_forward: 149.061134 sec
+	Conv_backward: 9656.883057 sec, Maxpool_backward: 1935.720595 sec, Softmax_backward: 11350.652861 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.898606 seconds
+
+--- Epoch 23 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1302.357494 seconds
+	Conv_forward: 2170.392655 sec, Maxpool_forward: 76.652358 sec, Softmax_forward: 155.824925 sec
+	Conv_backward: 9963.502480 sec, Maxpool_backward: 2022.643231 sec, Softmax_backward: 11817.845375 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.909269 seconds
+
+--- Epoch 24 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1302.425444 seconds
+	Conv_forward: 2264.632726 sec, Maxpool_forward: 79.979778 sec, Softmax_forward: 162.586789 sec
+	Conv_backward: 10270.157951 sec, Maxpool_backward: 2109.589130 sec, Softmax_backward: 12285.039640 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.946539 seconds
+
+--- Epoch 25 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1302.980980 seconds
+	Conv_forward: 2358.828946 sec, Maxpool_forward: 83.316481 sec, Softmax_forward: 169.350587 sec
+	Conv_backward: 10576.607907 sec, Maxpool_backward: 2196.707377 sec, Softmax_backward: 12752.766057 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.941261 seconds
+
+--- Epoch 26 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1302.144998 seconds
+	Conv_forward: 2453.074270 sec, Maxpool_forward: 86.645251 sec, Softmax_forward: 176.113334 sec
+	Conv_backward: 10883.211308 sec, Maxpool_backward: 2283.632579 sec, Softmax_backward: 13219.951843 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.838054 seconds
+
+--- Epoch 27 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1302.152241 seconds
+	Conv_forward: 2547.231324 sec, Maxpool_forward: 89.972785 sec, Softmax_forward: 182.864456 sec
+	Conv_backward: 11189.789620 sec, Maxpool_backward: 2370.496592 sec, Softmax_backward: 13687.192710 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.903005 seconds
+
+--- Epoch 28 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1302.527273 seconds
+	Conv_forward: 2641.447883 sec, Maxpool_forward: 93.304307 sec, Softmax_forward: 189.624418 sec
+	Conv_backward: 11496.393010 sec, Maxpool_backward: 2457.449764 sec, Softmax_backward: 14154.488201 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.915755 seconds
+
+--- Epoch 29 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1304.718320 seconds
+	Conv_forward: 2735.740208 sec, Maxpool_forward: 96.639906 sec, Softmax_forward: 196.399382 sec
+	Conv_backward: 11803.550480 sec, Maxpool_backward: 2544.508084 sec, Softmax_backward: 14622.660716 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.951617 seconds
+
+--- Epoch 30 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1324.877979 seconds
+	Conv_forward: 2831.325737 sec, Maxpool_forward: 100.020169 sec, Softmax_forward: 203.260064 sec
+	Conv_backward: 12115.385917 sec, Maxpool_backward: 2633.004340 sec, Softmax_backward: 15098.182702 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 18.400886 seconds
+
+--- Epoch 31 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1329.829103 seconds
+	Conv_forward: 2927.609161 sec, Maxpool_forward: 103.423950 sec, Softmax_forward: 210.178906 sec
+	Conv_backward: 12428.304449 sec, Maxpool_backward: 2721.872601 sec, Softmax_backward: 15575.541124 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 18.347645 seconds
+
+--- Epoch 32 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.110
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 1319.324775 seconds
+	Conv_forward: 3023.326778 sec, Maxpool_forward: 106.799160 sec, Softmax_forward: 217.038801 sec
+	Conv_backward: 12738.895484 sec, Maxpool_backward: 2809.995765 sec, Softmax_backward: 16049.040164 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 17.682489 seconds
+
+
+Tesing Complete
+

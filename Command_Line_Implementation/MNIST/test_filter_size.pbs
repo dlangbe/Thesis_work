@@ -1,0 +1,15 @@
+#PBS -N MNIST_Tests
+
+#PBS -l select=1:ncpus=1:mem=12gb
+#PBS -l Walltime=48:00:00
+#PBS -j oe
+#PBS -o MNIST_Tests_Filter_Size_5.txt
+
+cd /home/dlangbe/Thesis/MNIST
+
+make
+
+# inputs are fout, learning_rate, num_epochs, num_filters, filter_size, num_nodes, batch_size, conv_layers, secure
+./cnn output.txt 0.005 8 8 5 1 100 1 0
+./cnn output.txt 0.005 8 8 7 1 100 1 0
+./cnn output.txt 0.005 8 8 9 1 100 1 0

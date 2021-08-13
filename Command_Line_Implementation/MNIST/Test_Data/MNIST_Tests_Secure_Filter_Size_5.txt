@@ -1,0 +1,519 @@
+nvcc -std=c++14 -g -I -O3 -c CNN.cpp
+g++    -c -o layers.o layers.cpp
+nvcc -std=c++14 -g -I -O3 -o cnn  CNN.o layers.o networks.o
+** Reading images and labels **
+** Setting initial filter weights **
+** Setting initial softmax weights **
+Argc = 10
+0.005000 8 8 5 1 100 1 1
+** Layers initialized **
+--- Epoch 1 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.214
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2448.374447 seconds
+	Conv_forward: 248.400634 sec, Maxpool_forward: 3.045191 sec, Softmax_forward: 5.844561 sec
+	Conv_backward: 1227.882302 sec, Maxpool_backward: 82.403062 sec, Softmax_backward: 548.845513 sec
+
+--- Epoch 2 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2329.888463 seconds
+	Conv_forward: 496.582546 sec, Maxpool_forward: 6.090868 sec, Softmax_forward: 11.692898 sec
+	Conv_backward: 2339.119309 sec, Maxpool_backward: 164.801969 sec, Softmax_backward: 1092.160329 sec
+
+--- Epoch 3 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2329.604697 seconds
+	Conv_forward: 745.062292 sec, Maxpool_forward: 9.131361 sec, Softmax_forward: 17.366833 sec
+	Conv_backward: 3449.992486 sec, Maxpool_backward: 246.978950 sec, Softmax_backward: 1636.441676 sec
+
+--- Epoch 4 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2323.143799 seconds
+	Conv_forward: 993.878102 sec, Maxpool_forward: 12.150010 sec, Softmax_forward: 22.356946 sec
+	Conv_backward: 4558.895155 sec, Maxpool_backward: 328.305949 sec, Softmax_backward: 2179.978644 sec
+
+--- Epoch 5 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2323.781061 seconds
+	Conv_forward: 1242.485195 sec, Maxpool_forward: 15.167442 sec, Softmax_forward: 27.342975 sec
+	Conv_backward: 5667.797314 sec, Maxpool_backward: 409.660147 sec, Softmax_backward: 2724.427049 sec
+
+--- Epoch 6 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2324.043683 seconds
+	Conv_forward: 1489.696476 sec, Maxpool_forward: 18.184377 sec, Softmax_forward: 32.331532 sec
+	Conv_backward: 6776.934813 sec, Maxpool_backward: 491.069560 sec, Softmax_backward: 3270.215318 sec
+
+--- Epoch 7 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2324.212938 seconds
+	Conv_forward: 1736.563432 sec, Maxpool_forward: 21.201119 sec, Softmax_forward: 37.320890 sec
+	Conv_backward: 7886.245250 sec, Maxpool_backward: 572.509674 sec, Softmax_backward: 3816.265817 sec
+
+--- Epoch 8 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2324.271887 seconds
+	Conv_forward: 1983.356041 sec, Maxpool_forward: 24.218454 sec, Softmax_forward: 42.311232 sec
+	Conv_backward: 8995.563309 sec, Maxpool_backward: 653.952513 sec, Softmax_backward: 4362.461945 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 50.186158 seconds
+
+
+Tesing Complete
+
+** Reading images and labels **
+** Setting initial filter weights **
+** Setting initial softmax weights **
+Argc = 10
+0.005000 8 8 7 1 100 1 1
+** Layers initialized **
+--- Epoch 1 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.143
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3452.642286 seconds
+	Conv_forward: 371.952673 sec, Maxpool_forward: 2.551008 sec, Softmax_forward: 4.233805 sec
+	Conv_backward: 2218.012911 sec, Maxpool_backward: 68.258601 sec, Softmax_backward: 511.492250 sec
+
+--- Epoch 2 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3391.142874 seconds
+	Conv_forward: 743.925902 sec, Maxpool_forward: 5.105577 sec, Softmax_forward: 8.471769 sec
+	Conv_backward: 4369.198430 sec, Maxpool_backward: 136.567793 sec, Softmax_backward: 1026.559583 sec
+
+--- Epoch 3 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3392.082922 seconds
+	Conv_forward: 1115.865081 sec, Maxpool_forward: 7.660067 sec, Softmax_forward: 12.709885 sec
+	Conv_backward: 6520.374266 sec, Maxpool_backward: 204.872218 sec, Softmax_backward: 1542.627136 sec
+
+--- Epoch 4 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3392.860305 seconds
+	Conv_forward: 1488.042448 sec, Maxpool_forward: 10.214668 sec, Softmax_forward: 16.947799 sec
+	Conv_backward: 8671.625413 sec, Maxpool_backward: 273.177005 sec, Softmax_backward: 2059.168811 sec
+
+--- Epoch 5 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3391.697723 seconds
+	Conv_forward: 1858.644130 sec, Maxpool_forward: 12.769477 sec, Softmax_forward: 21.185299 sec
+	Conv_backward: 10822.883221 sec, Maxpool_backward: 341.483453 sec, Softmax_backward: 2576.099888 sec
+
+--- Epoch 6 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3391.756418 seconds
+	Conv_forward: 2229.092583 sec, Maxpool_forward: 15.324236 sec, Softmax_forward: 25.421582 sec
+	Conv_backward: 12974.092936 sec, Maxpool_backward: 409.780681 sec, Softmax_backward: 3093.304792 sec
+
+--- Epoch 7 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3393.837055 seconds
+	Conv_forward: 2601.161922 sec, Maxpool_forward: 17.879352 sec, Softmax_forward: 29.654969 sec
+	Conv_backward: 15125.663561 sec, Maxpool_backward: 478.060986 sec, Softmax_backward: 3610.646258 sec
+
+--- Epoch 8 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3397.015679 seconds
+	Conv_forward: 2975.681471 sec, Maxpool_forward: 20.434874 sec, Softmax_forward: 33.883322 sec
+	Conv_backward: 17277.878206 sec, Maxpool_backward: 546.306679 sec, Softmax_backward: 4128.140504 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 77.492033 seconds
+
+
+Tesing Complete
+
+nvcc -std=c++14 -g -I -O3 -o cnn  CNN.o layers.o networks.o
+** Reading images and labels **
+** Setting initial filter weights **
+** Setting initial softmax weights **
+Argc = 10
+0.005000 8 8 5 1 100 1 1
+** Layers initialized **
+--- Epoch 1 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.214
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2164.260591 seconds
+	Conv_forward: 180.427362 sec, Maxpool_forward: 2.380995 sec, Softmax_forward: 4.832535 sec
+	Conv_backward: 1132.338869 sec, Maxpool_backward: 74.174604 sec, Softmax_backward: 481.492645 sec
+
+--- Epoch 2 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2067.728400 seconds
+	Conv_forward: 360.493001 sec, Maxpool_forward: 4.771043 sec, Softmax_forward: 9.691423 sec
+	Conv_backward: 2168.683380 sec, Maxpool_backward: 148.391805 sec, Softmax_backward: 958.302255 sec
+
+--- Epoch 3 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2034.574766 seconds
+	Conv_forward: 537.949717 sec, Maxpool_forward: 7.109146 sec, Softmax_forward: 14.440262 sec
+	Conv_backward: 3188.676498 sec, Maxpool_backward: 221.297979 sec, Softmax_backward: 1427.852040 sec
+
+--- Epoch 4 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2039.153032 seconds
+	Conv_forward: 715.807528 sec, Maxpool_forward: 9.448506 sec, Softmax_forward: 19.191909 sec
+	Conv_backward: 4210.890541 sec, Maxpool_backward: 294.328018 sec, Softmax_backward: 1898.804466 sec
+
+--- Epoch 5 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2039.446882 seconds
+	Conv_forward: 893.626203 sec, Maxpool_forward: 11.787109 sec, Softmax_forward: 23.941597 sec
+	Conv_backward: 5232.852407 sec, Maxpool_backward: 367.343773 sec, Softmax_backward: 2370.493381 sec
+
+--- Epoch 6 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2053.077865 seconds
+	Conv_forward: 1072.250617 sec, Maxpool_forward: 14.142792 sec, Softmax_forward: 28.727619 sec
+	Conv_backward: 6260.022143 sec, Maxpool_backward: 440.925110 sec, Softmax_backward: 2846.363422 sec
+
+--- Epoch 7 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2087.771858 seconds
+	Conv_forward: 1252.982537 sec, Maxpool_forward: 16.561147 sec, Softmax_forward: 33.651195 sec
+	Conv_backward: 7301.196346 sec, Maxpool_backward: 516.043642 sec, Softmax_backward: 3331.841038 sec
+
+--- Epoch 8 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.000
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.000
+Epoch completed in: 2085.417485 seconds
+	Conv_forward: 1433.580399 sec, Maxpool_forward: 18.977336 sec, Softmax_forward: 38.568960 sec
+	Conv_backward: 8341.531090 sec, Maxpool_backward: 591.031006 sec, Softmax_backward: 3816.736907 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 37.224155 seconds
+
+
+Tesing Complete
+
+** Reading images and labels **
+** Setting initial filter weights **
+** Setting initial softmax weights **
+Argc = 10
+0.005000 8 8 7 1 100 1 1
+** Layers initialized **
+--- Epoch 1 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.143
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3098.869231 seconds
+	Conv_forward: 291.008107 sec, Maxpool_forward: 1.979225 sec, Softmax_forward: 4.005863 sec
+	Conv_backward: 2036.022149 sec, Maxpool_backward: 61.490865 sec, Softmax_backward: 457.692275 sec
+
+--- Epoch 2 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3047.007599 seconds
+	Conv_forward: 581.850886 sec, Maxpool_forward: 3.955941 sec, Softmax_forward: 8.011282 sec
+	Conv_backward: 4015.960631 sec, Maxpool_backward: 122.951313 sec, Softmax_backward: 918.283288 sec
+
+--- Epoch 3 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3098.629382 seconds
+	Conv_forward: 876.463639 sec, Maxpool_forward: 6.016154 sec, Softmax_forward: 12.165347 sec
+	Conv_backward: 6024.841495 sec, Maxpool_backward: 185.843746 sec, Softmax_backward: 1388.717747 sec
+
+--- Epoch 4 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3116.798567 seconds
+	Conv_forward: 1172.445760 sec, Maxpool_forward: 8.129100 sec, Softmax_forward: 16.427074 sec
+	Conv_backward: 8043.712547 sec, Maxpool_backward: 249.221403 sec, Softmax_backward: 1862.611623 sec
+
+--- Epoch 5 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3169.396285 seconds
+	Conv_forward: 1473.611424 sec, Maxpool_forward: 10.280360 sec, Softmax_forward: 20.760955 sec
+	Conv_backward: 10096.099240 sec, Maxpool_backward: 313.636757 sec, Softmax_backward: 2344.792055 sec
+
+--- Epoch 6 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3171.929380 seconds
+	Conv_forward: 1775.049103 sec, Maxpool_forward: 12.420450 sec, Softmax_forward: 25.059199 sec
+	Conv_backward: 12150.670359 sec, Maxpool_backward: 378.100556 sec, Softmax_backward: 2827.399490 sec
+
+--- Epoch 7 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3136.833219 seconds
+	Conv_forward: 2073.090181 sec, Maxpool_forward: 14.535965 sec, Softmax_forward: 29.313757 sec
+	Conv_backward: 14182.503982 sec, Maxpool_backward: 441.844760 sec, Softmax_backward: 3304.831233 sec
+
+--- Epoch 8 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 3037.232295 seconds
+	Conv_forward: 2362.997550 sec, Maxpool_forward: 16.501677 sec, Softmax_forward: 33.300930 sec
+	Conv_backward: 16154.717635 sec, Maxpool_backward: 503.098605 sec, Softmax_backward: 3765.544811 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 59.371614 seconds
+
+
+Tesing Complete
+
+** Reading images and labels **
+** Setting initial filter weights **
+** Setting initial softmax weights **
+Argc = 10
+0.005000 8 8 9 1 100 1 1
+** Layers initialized **
+--- Epoch 1 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 6477.280466 seconds
+	Conv_forward: 396.632384 sec, Maxpool_forward: 1.651438 sec, Softmax_forward: 3.364373 sec
+	Conv_backward: 5545.162195 sec, Maxpool_backward: 50.860727 sec, Softmax_backward: 311.411797 sec
+
+--- Epoch 2 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 6493.781768 seconds
+	Conv_forward: 794.074869 sec, Maxpool_forward: 3.305564 sec, Softmax_forward: 6.736921 sec
+	Conv_backward: 11102.247468 sec, Maxpool_backward: 101.764441 sec, Softmax_backward: 623.259269 sec
+
+--- Epoch 3 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 6493.843024 seconds
+	Conv_forward: 1191.415654 sec, Maxpool_forward: 4.958453 sec, Softmax_forward: 10.107887 sec
+	Conv_backward: 16657.774037 sec, Maxpool_backward: 152.672013 sec, Softmax_backward: 935.081811 sec
+
+--- Epoch 4 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 6489.717702 seconds
+	Conv_forward: 1588.425360 sec, Maxpool_forward: 6.610175 sec, Softmax_forward: 13.474028 sec
+	Conv_backward: 22209.004687 sec, Maxpool_backward: 203.563195 sec, Softmax_backward: 1246.761965 sec
+
+--- Epoch 5 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 6510.049848 seconds
+	Conv_forward: 1986.381014 sec, Maxpool_forward: 8.270766 sec, Softmax_forward: 16.858827 sec
+	Conv_backward: 27778.589429 sec, Maxpool_backward: 254.500195 sec, Softmax_backward: 1558.786171 sec
+
+--- Epoch 6 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 6434.877924 seconds
+	Conv_forward: 2379.542851 sec, Maxpool_forward: 9.902151 sec, Softmax_forward: 20.186131 sec
+	Conv_backward: 33281.442629 sec, Maxpool_backward: 305.193486 sec, Softmax_backward: 1868.800634 sec
+
+--- Epoch 7 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 6432.112706 seconds
+	Conv_forward: 2772.524248 sec, Maxpool_forward: 11.532465 sec, Softmax_forward: 23.509573 sec
+	Conv_backward: 38781.882472 sec, Maxpool_backward: 355.863343 sec, Softmax_backward: 2178.659518 sec
+
+--- Epoch 8 ---
+step 10000: past 10000 steps avg loss: nan | accuracy: 0.100
+step 20000: past 10000 steps avg loss: nan | accuracy: 0.099
+step 30000: past 10000 steps avg loss: nan | accuracy: 0.097
+step 40000: past 10000 steps avg loss: nan | accuracy: 0.096
+step 50000: past 10000 steps avg loss: nan | accuracy: 0.101
+Epoch completed in: 6433.783828 seconds
+	Conv_forward: 3165.606924 sec, Maxpool_forward: 13.163770 sec, Softmax_forward: 26.836149 sec
+	Conv_backward: 44283.550702 sec, Maxpool_backward: 406.539209 sec, Softmax_backward: 2488.619371 sec
+
+
+Testing:
+step 51000: past 1000 steps test loss: nan | test accuracy: 0.100
+step 52000: past 1000 steps test loss: nan | test accuracy: 0.050
+step 53000: past 1000 steps test loss: nan | test accuracy: 0.033
+step 54000: past 1000 steps test loss: nan | test accuracy: 0.025
+step 55000: past 1000 steps test loss: nan | test accuracy: 0.020
+step 56000: past 1000 steps test loss: nan | test accuracy: 0.017
+step 57000: past 1000 steps test loss: nan | test accuracy: 0.014
+step 58000: past 1000 steps test loss: nan | test accuracy: 0.013
+step 59000: past 1000 steps test loss: nan | test accuracy: 0.011
+step 60000: past 1000 steps test loss: nan | test accuracy: 0.010
+Testing completed in: 80.017530 seconds
+
+
+Tesing Complete
+
