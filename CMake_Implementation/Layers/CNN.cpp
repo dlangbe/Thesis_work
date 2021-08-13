@@ -41,6 +41,11 @@ int main(void) {
 
     std::srand(1);
 
+    int soft_size = (image_size - (filter_size-1)) / 2;
+    
+
+    std::srand(1);
+
     /************************************************ allocate memory ************************************************/
 
     // allocate image and label arrays
@@ -140,15 +145,16 @@ int main(void) {
     run_sCNN(images, labels, num_images, image_size, image_size, num_classes, num_train, learning_rate, per_print, num_epochs, 
                 num_filters, filter_size, filters_init[0], soft_weight_init, soft_bias_init, colors);
 
-    // run_FedAvg(images, labels, num_images, num_train, learning_rate, per_print, num_epochs, num_filters, filter_size, 
-    //     filters_init, soft_weight_init, soft_bias_init, num_nodes, batch_size);
+    // run_sFedAvg(images, labels, num_images, image_size, image_size, num_classes, num_train, learning_rate, 
+    //     per_print, num_epochs, num_filters, filter_size, filters_init, soft_weight_init, soft_bias_init, 
+    //     num_nodes, batch_size, colors);
 
     /************************************************ initialize layers ************************************************/
 
-    // Conv_layer conv(28, 28, num_filters, filter_size, learning_rate);
+    // Conv_layer conv(image_size, image_size, num_filters, filter_size, learning_rate);
     // Maxpool_layer maxpool(26, 26, num_filters);
     // Avgpool_layer avgpool(26, 26, num_filters);
-    // Softmax_layer softmax(13*13*num_filters, 10, learning_rate);
+    // Softmax_layer softmax(soft_size*soft_size*num_filters, num_classes, learning_rate);
 
     // printf("** Layers initialized **\n");
 
@@ -166,10 +172,10 @@ int main(void) {
 
     // // declare variables that can be reused
     // float *out, *soft_out, *last_pool_input, *last_soft_input;
-    // out = (float *) calloc(10, sizeof(float));
-    // soft_out = (float *) calloc(1352, sizeof(float));
-    // last_pool_input = (float *) calloc(26*26*8, sizeof(float));
-    // last_soft_input = (float *) calloc(13*13*8, sizeof(float));
+    // out = (float *) calloc(num_classes, sizeof(float));
+    // soft_out = (float *) calloc(soft_size52, sizeof(float));
+    // last_pool_input = (float *) calloc(26*26*num_filters, sizeof(float));
+    // last_soft_input = (float *) calloc(soft_size*soft_size*num_filters, sizeof(float));
 
     // for (int epoch = 0; epoch < num_epochs; epoch++) {
     //     printf("--- Epoch %d ---\n", epoch+1);
@@ -233,7 +239,7 @@ int main(void) {
     // for (i = num_train; i < num_images; i++) {
     //     // re-initialize totals for each image
     //     float *totals;
-    //     totals = (float *) calloc(10, sizeof(float));
+    //     totals = (float *) calloc(num_classes, sizeof(float));
 
     //     forward(conv, maxpool, softmax, images[i], filters_init, labels[i], out, loss_p, accuracy_p, last_pool_input,
     //         last_soft_input, totals, soft_weight_init, soft_bias_init);

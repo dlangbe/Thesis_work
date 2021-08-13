@@ -6,21 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/Documents/Research/Thesis_work/Layers/CNN.cpp
-stdio.h
--
-stdlib.h
--
-cstdio
--
-time.h
--
-math.h
--
-fstream
--
-chrono
--
+D:/Documents/Research/Thesis_work/Layers/layers.cpp
 layers.hpp
 D:/Documents/Research/Thesis_work/Layers/layers.hpp
 networks.hpp

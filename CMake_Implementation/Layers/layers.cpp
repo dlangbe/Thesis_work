@@ -1016,7 +1016,6 @@ void strain(Conv_layer &conv, Avgpool_layer &avgpool, Softmax_layer &softmax, un
     free(totals);
     return;
 }
-
 void normalize_image(unsigned char *input, float *output, int rows, int cols, int colors) {
     for (int r = 0; r < rows; r++) {
         for (int c = 0; c < cols; c++) {
